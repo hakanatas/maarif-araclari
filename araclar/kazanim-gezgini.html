@@ -143,10 +143,37 @@
   .site-nav .etkin { color: var(--petrol); font-weight: 600; }
   .site-nav .nav-ev { margin-right: auto; font-weight: 600; color: var(--petrol); }
   @media print { .site-nav { display: none; } }
+
+  .veri-damgasi {
+    margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--line);
+    font-size: 0.74rem; line-height: 1.6; color: var(--ink-faint);
+  }
+  .veri-damgasi b { color: var(--ink-soft); font-weight: 600; }
 </style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><a class="nav-oge" href="./kod-pusulasi.html">🧭 Kod Pusulası</a><span class="nav-oge etkin" aria-current="page">🗺️ Kazanım Gezgini</span><a class="nav-oge" href="./ders-plani.html">📋 Ders Planı Atölyesi</a><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a></nav>
+<script>
+/* Araçlar arası ortak URL durumu.
+   Her araç seçimini adres çubuğuna yazar; böylece bağlantı paylaşılabilir,
+   yer imine eklenebilir ve araçlar birbirine seçim taşıyabilir. */
+window.URLD = {
+  oku() { return Object.fromEntries(new URLSearchParams(location.search)); },
+  yaz(obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj)) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    history.replaceState(null, '', s ? location.pathname + '?' + s : location.pathname);
+  },
+  bag(dosya, obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj || {})) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    return './' + dosya + (s ? '?' + s : '');
+  }
+};
+</script>
+
+<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><a class="nav-oge" href="./kod-pusulasi.html">🧭 Kod Pusulası</a><span class="nav-oge etkin" aria-current="page">🗺️ Kazanım Gezgini</span><a class="nav-oge" href="./ders-plani.html">📋 Ders Planı Atölyesi</a><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a><a class="nav-oge" href="./beceri-panosu.html">📊 Beceri Gelişim Panosu</a></nav>
 <div class="wrap">
   <header>
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
@@ -170,7 +197,7 @@
 
   <footer>
     Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programı PDF'leri (Ağustos 2026); çıktılar otomatik ayrıştırıldı, başvuru amaçlıdır — bağlayıcı metin resmî PDF'lerdir. İngilizce ve Çoklu Yabancı Dil programları farklı yapıda olduğundan bu sürümde yer almıyor. Kod tanımlarının tamamı için <a href="./kod-pusulasi.html">Kod Pusulası</a>'na bakın. Bu sayfa resmî bir MEB ürünü değildir.
-  </footer>
+  <p class="veri-damgasi"><b>Veri sürümü: 26 Ağustos 2026</b> — 18 resmî belgeden otomatik üretildi. 444 beceri kodu · 1.256 öğrenme çıktısı · 274 tema · 90 çıktı düzeyi köprü · 23 tema düzeyi köprü. Resmî belgeler güncellenmiş olabilir; bağlayıcı olan <a href="https://tymm.meb.gov.tr">kaynaktaki</a> son sürümdür.</p></footer>
 </div>
 
 <script>
@@ -204,7 +231,7 @@ function cizSinif(){
     const b=document.createElement('button'); b.className='cip'+(sinifSec.has(s)?' acik':'');
     b.textContent=/^\d+$/.test(s)? s+'. sınıf' : s;
     b.setAttribute('aria-pressed', sinifSec.has(s));
-    b.onclick=()=>{ sinifSec.has(s)?sinifSec.delete(s):sinifSec.add(s); temaSec=''; doldurTema(); gosterilen=60; ciz(); };
+    b.onclick=()=>{ sinifSec.has(s)?sinifSec.delete(s):sinifSec.add(s); temaSec=''; doldurTema(); gosterilen=60; ciz(); durumYaz(); };
     kap.appendChild(b);
   }
 }
@@ -280,10 +307,29 @@ function refAc(b){
   yuva.querySelector('.kapat').onclick=()=>{ yuva.innerHTML=''; b.setAttribute('aria-expanded','false'); };
 }
 
-doldurDers(); cizSinif(); ciz();
-$('q').addEventListener('input',e=>{ sorgu=trLow(e.target.value.trim()); gosterilen=60; ciz(); });
-$('ders').addEventListener('change',e=>{ dersSec=e.target.value; temaSec=''; doldurTema(); gosterilen=60; ciz(); });
-$('tema').addEventListener('change',e=>{ temaSec=e.target.value; gosterilen=60; ciz(); });
+function durumYaz(){ URLD.yaz({ ders: dersSec, sinif: [...sinifSec].join(','), tema: temaSec, q: $('q').value.trim() }); }
+function durumOku(){
+  const d = URLD.oku();
+  if (d.q) { $('q').value = d.q; sorgu = trLow(d.q.trim()); }
+  if (d.sinif) sinifSec = new Set(d.sinif.split(',').filter(Boolean));
+  if (d.ders) {
+    dersSec = d.ders; $('ders').value = d.ders; doldurTema();
+    if (d.tema) {
+      // Diğer araçlar tema NUMARASI gönderir; bu araç tema ADIYLA filtreler.
+      let ad = d.tema;
+      if (/^\d+$/.test(d.tema)) {
+        const eslesen = C.find(c => c.ders === dersSec && c.temaNo === d.tema &&
+                                    (!sinifSec.size || sinifSec.has(String(c.sinif))));
+        if (eslesen) ad = eslesen.tema;
+      }
+      if ([...$('tema').options].some(o => o.value === ad)) { temaSec = ad; $('tema').value = ad; }
+    }
+  }
+}
+doldurDers(); durumOku(); cizSinif(); ciz();
+$('q').addEventListener('input',e=>{ sorgu=trLow(e.target.value.trim()); gosterilen=60; ciz(); durumYaz(); });
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; temaSec=''; doldurTema(); gosterilen=60; ciz(); durumYaz(); });
+$('tema').addEventListener('change',e=>{ temaSec=e.target.value; gosterilen=60; ciz(); durumYaz(); });
 $('daha').onclick=()=>{ gosterilen+=60; ciz(); };
 </script>
 </body>

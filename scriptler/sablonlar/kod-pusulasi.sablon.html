@@ -205,7 +205,7 @@ function filtreBar() {
     b.className = 'filtre' + (acikFiltreler.has(f.id) ? ' acik' : '');
     b.textContent = f.ad;
     b.setAttribute('aria-pressed', acikFiltreler.has(f.id));
-    b.onclick = () => { acikFiltreler.has(f.id) ? acikFiltreler.delete(f.id) : acikFiltreler.add(f.id); gosterilen = 40; ciz(); };
+    b.onclick = () => { acikFiltreler.has(f.id) ? acikFiltreler.delete(f.id) : acikFiltreler.add(f.id); gosterilen = 40; ciz(); durumYaz(); };
     kap.appendChild(b);
   }
 }
@@ -280,11 +280,18 @@ function ciz() {
   $('bos').hidden = hits.length > 0;
   $('daha').hidden = hits.length <= gosterilen;
   for (const b of document.querySelectorAll('.ref')) {
-    b.onclick = () => { $('q').value = b.dataset.kod; sorgu = trLow(b.dataset.kod); gosterilen = 40; ciz(); window.scrollTo({top:0}); };
+    b.onclick = () => { $('q').value = b.dataset.kod; sorgu = trLow(b.dataset.kod); gosterilen = 40; ciz(); durumYaz(); window.scrollTo({top:0}); };
   }
 }
 
-$('q').addEventListener('input', ev => { sorgu = trLow(ev.target.value.trim()); gosterilen = 40; ciz(); });
+function durumYaz(){ URLD.yaz({ q: $('q').value.trim(), fw: [...acikFiltreler].join(',') }); }
+function durumOku(){
+  const d = URLD.oku();
+  if (d.q) { $('q').value = d.q; sorgu = trLow(d.q.trim()); }
+  if (d.fw) acikFiltreler = new Set(d.fw.split(',').filter(Boolean));
+}
+$('q').addEventListener('input', ev => { sorgu = trLow(ev.target.value.trim()); gosterilen = 40; ciz(); durumYaz(); });
 $('daha').onclick = () => { gosterilen += 40; ciz(); };
+durumOku();
 ciz();
 </script>

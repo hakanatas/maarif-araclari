@@ -149,10 +149,37 @@
   .site-nav .etkin { color: var(--petrol); font-weight: 600; }
   .site-nav .nav-ev { margin-right: auto; font-weight: 600; color: var(--petrol); }
   @media print { .site-nav { display: none; } }
+
+  .veri-damgasi {
+    margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--line);
+    font-size: 0.74rem; line-height: 1.6; color: var(--ink-faint);
+  }
+  .veri-damgasi b { color: var(--ink-soft); font-weight: 600; }
 </style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><span class="nav-oge etkin" aria-current="page">🧭 Kod Pusulası</span><a class="nav-oge" href="./kazanim-gezgini.html">🗺️ Kazanım Gezgini</a><a class="nav-oge" href="./ders-plani.html">📋 Ders Planı Atölyesi</a><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a></nav>
+<script>
+/* Araçlar arası ortak URL durumu.
+   Her araç seçimini adres çubuğuna yazar; böylece bağlantı paylaşılabilir,
+   yer imine eklenebilir ve araçlar birbirine seçim taşıyabilir. */
+window.URLD = {
+  oku() { return Object.fromEntries(new URLSearchParams(location.search)); },
+  yaz(obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj)) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    history.replaceState(null, '', s ? location.pathname + '?' + s : location.pathname);
+  },
+  bag(dosya, obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj || {})) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    return './' + dosya + (s ? '?' + s : '');
+  }
+};
+</script>
+
+<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><span class="nav-oge etkin" aria-current="page">🧭 Kod Pusulası</span><a class="nav-oge" href="./kazanim-gezgini.html">🗺️ Kazanım Gezgini</a><a class="nav-oge" href="./ders-plani.html">📋 Ders Planı Atölyesi</a><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a><a class="nav-oge" href="./beceri-panosu.html">📊 Beceri Gelişim Panosu</a></nav>
 <div class="wrap">
   <header>
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
@@ -172,7 +199,7 @@
 
   <footer>
     Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî beceri çerçevesi sayfaları ve 18 ortaokul öğretim programı PDF'i (Ağustos 2026). Kullanım sayıları programlardaki kod geçişlerinden otomatik sayılmıştır; İngilizce programlardaki eşdeğer kodlar (CS→KB, SELS→SDB, V→D, D→E) dahildir. Bu sayfa resmî bir MEB ürünü değildir; öğretmen çalışmalarını kolaylaştırmak için hazırlanmış bir başvuru aracıdır.
-  </footer>
+  <p class="veri-damgasi"><b>Veri sürümü: 26 Ağustos 2026</b> — 18 resmî belgeden otomatik üretildi. 444 beceri kodu · 1.256 öğrenme çıktısı · 274 tema · 90 çıktı düzeyi köprü · 23 tema düzeyi köprü. Resmî belgeler güncellenmiş olabilir; bağlayıcı olan <a href="https://tymm.meb.gov.tr">kaynaktaki</a> son sürümdür.</p></footer>
 </div>
 
 <script>
@@ -230,7 +257,7 @@ function filtreBar() {
     b.className = 'filtre' + (acikFiltreler.has(f.id) ? ' acik' : '');
     b.textContent = f.ad;
     b.setAttribute('aria-pressed', acikFiltreler.has(f.id));
-    b.onclick = () => { acikFiltreler.has(f.id) ? acikFiltreler.delete(f.id) : acikFiltreler.add(f.id); gosterilen = 40; ciz(); };
+    b.onclick = () => { acikFiltreler.has(f.id) ? acikFiltreler.delete(f.id) : acikFiltreler.add(f.id); gosterilen = 40; ciz(); durumYaz(); };
     kap.appendChild(b);
   }
 }
@@ -305,12 +332,19 @@ function ciz() {
   $('bos').hidden = hits.length > 0;
   $('daha').hidden = hits.length <= gosterilen;
   for (const b of document.querySelectorAll('.ref')) {
-    b.onclick = () => { $('q').value = b.dataset.kod; sorgu = trLow(b.dataset.kod); gosterilen = 40; ciz(); window.scrollTo({top:0}); };
+    b.onclick = () => { $('q').value = b.dataset.kod; sorgu = trLow(b.dataset.kod); gosterilen = 40; ciz(); durumYaz(); window.scrollTo({top:0}); };
   }
 }
 
-$('q').addEventListener('input', ev => { sorgu = trLow(ev.target.value.trim()); gosterilen = 40; ciz(); });
+function durumYaz(){ URLD.yaz({ q: $('q').value.trim(), fw: [...acikFiltreler].join(',') }); }
+function durumOku(){
+  const d = URLD.oku();
+  if (d.q) { $('q').value = d.q; sorgu = trLow(d.q.trim()); }
+  if (d.fw) acikFiltreler = new Set(d.fw.split(',').filter(Boolean));
+}
+$('q').addEventListener('input', ev => { sorgu = trLow(ev.target.value.trim()); gosterilen = 40; ciz(); durumYaz(); });
 $('daha').onclick = () => { gosterilen += 40; ciz(); };
+durumOku();
 ciz();
 </script>
 </body>

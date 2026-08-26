@@ -1,0 +1,483 @@
+<title>Beceri Gelişim Panosu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --madder: #A83A2E; --madder-soft: #F5E6E3;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --yok: #E9E5DA; --basliyor: #F2EBDB; --gelisiyor: #B9D6DC; --kazandi: #166069;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --madder: #E08A7E; --madder-soft: #3A2420;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --yok: #263138; --basliyor: #3B3218; --gelisiyor: #2E5A63; --kazandi: #6FC2CB;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --madder: #E08A7E; --madder-soft: #3A2420;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --yok: #263138; --basliyor: #3B3218; --gelisiyor: #2E5A63; --kazandi: #6FC2CB;
+    --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem; line-height: 1.55;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.4rem; }
+  h1 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.4rem; line-height: 1.1; }
+  .sub { color: var(--ink-soft); margin: 0 0 1rem; max-width: 72ch; }
+
+  .satir { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.9rem; }
+  select, input[type=text], button.arac {
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1.5px solid var(--line); border-radius: 8px; padding: 0.45rem 0.7rem;
+  }
+  button.arac { cursor: pointer; }
+  button.birincil { background: var(--petrol); color: var(--paper); border-color: var(--petrol); font-weight: 600; }
+  select:focus, input:focus, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .et { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+
+  .uyari-kutu {
+    background: var(--ochre-soft); border-left: 3px solid var(--ochre);
+    border-radius: 0 8px 8px 0; padding: 0.7rem 1rem; margin: 0 0 1.2rem; font-size: 0.86rem; color: var(--ink-soft);
+  }
+  .uyari-kutu b { color: var(--ochre); }
+
+  .bos-durum { text-align: center; color: var(--ink-faint); padding: 3rem 1rem; border: 1px dashed var(--line); border-radius: 10px; }
+
+  .matris-kap { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem; overflow-x: auto; }
+  table.matris { border-collapse: separate; border-spacing: 0; font-size: 0.85rem; }
+  table.matris th, table.matris td { padding: 0; }
+  .ogr-bas {
+    position: sticky; left: 0; z-index: 2; background: var(--surface);
+    text-align: left; padding: 0.35rem 0.7rem 0.35rem 0.2rem !important;
+    min-width: 148px; border-right: 1px solid var(--line);
+  }
+  .ogr-kap { display: flex; align-items: center; gap: 0.1rem; }
+  .ogr-bas input { border: 1px solid transparent; background: none; width: 118px; padding: 0.15rem 0.3rem; font-size: 0.86rem; border-radius: 5px; }
+  .ogr-sil {
+    border: none; background: none; color: var(--ink-faint); cursor: pointer;
+    font-size: 1rem; line-height: 1; padding: 0.1rem 0.3rem; border-radius: 5px;
+    opacity: 0; transition: opacity 0.12s;
+  }
+  tbody tr:hover .ogr-sil, .ogr-sil:focus-visible { opacity: 1; }
+  .ogr-sil:hover { color: var(--ochre); background: var(--ochre-soft); }
+  @media print { .ogr-sil { display: none; } }
+  .ogr-bas input:hover { border-color: var(--line); }
+  .ogr-bas input:focus { border-color: var(--petrol); background: var(--paper); }
+  .sb-bas {
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; font-weight: 500;
+    color: var(--ink-faint); padding: 0.4rem 0.15rem 0.2rem !important; height: 126px; white-space: nowrap;
+    vertical-align: bottom; cursor: help; width: 34px; max-width: 34px;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .kod-bas {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--petrol);
+    text-align: center; padding: 0.25rem 0 !important; border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft); background: var(--surface);
+    border-left: 1px solid var(--line-soft); border-right: 1px solid var(--line-soft);
+  }
+  .hucre {
+    width: 30px; height: 30px; border: 1px solid var(--surface); border-radius: 5px;
+    background: var(--yok); cursor: pointer; padding: 0; display: block; margin: 1px;
+  }
+  .hucre[data-d="1"] { background: var(--basliyor); }
+  .hucre[data-d="2"] { background: var(--gelisiyor); }
+  .hucre[data-d="3"] { background: var(--kazandi); }
+  .hucre:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .ilerleme { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--ink-faint); padding-left: 0.6rem !important; white-space: nowrap; }
+
+  .istem-kutu { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem 1rem; margin-top: 1.2rem; }
+  .istem-kutu h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.5rem; font-weight: 500; }
+  .istem-kutu p { font-size: 0.85rem; color: var(--ink-soft); margin: 0 0 0.7rem; line-height: 1.55; }
+  .istem-alt { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  .istem-durum { font-size: 0.8rem; color: var(--petrol); }
+  textarea.istem-metin {
+    width: 100%; min-height: 220px; box-sizing: border-box; resize: vertical; margin-top: 0.7rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.78rem; line-height: 1.6;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.7rem 0.8rem;
+  }
+  textarea.istem-metin:focus { border-color: var(--petrol); outline: none; }
+  @media print { .istem-kutu { display: none !important; } }
+
+  .lejant { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 0.8rem 0.2rem 0; font-size: 0.78rem; color: var(--ink-soft); align-items: center; }
+  .lejant i { display: inline-block; width: 14px; height: 14px; border-radius: 4px; margin-right: 0.35rem; vertical-align: -2px; }
+  .l0 { background: var(--yok); } .l1 { background: var(--basliyor); } .l2 { background: var(--gelisiyor); } .l3 { background: var(--kazandi); }
+
+  .ozet { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
+  .ozet-kart { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0.8rem 1rem; }
+  .ozet-kart h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.5rem; font-weight: 500; }
+  .ozet-satir { display: grid; grid-template-columns: 1fr 70px max-content; gap: 0.5rem; align-items: center; font-size: 0.82rem; margin: 0.25rem 0; }
+  .ozet-cubuk { height: 7px; background: var(--line-soft); border-radius: 4px; overflow: hidden; }
+  .ozet-cubuk i { display: block; height: 100%; background: var(--petrol); border-radius: 4px; }
+  .ozet-satir .n { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .dikkat { color: var(--madder); font-weight: 600; }
+
+  footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--ink-faint); }
+  footer a { color: var(--petrol); }
+  @media print {
+    .satir, .lejant, footer, .uyari-kutu, .site-nav { display: none !important; }
+    .matris-kap { border: none; padding: 0; overflow: visible; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Beceri Gelişim Panosu</h1>
+    <p class="sub">Model, öğrencinin gelişimini <b>süreç bileşeni düzeyinde</b> izlemeyi istiyor. Bu pano o matrisi kurar: sınıf listenizi girin, temayı seçin, derste gözlemledikçe hücreye dokunun. Dört durum arasında geçiş yapar: boş → başlıyor → gelişiyor → kazandı.</p>
+  </header>
+
+  <div class="uyari-kutu">
+    <b>Veriniz yalnız bu tarayıcıda saklanır.</b> Sunucu yok; girdikleriniz kimseye gitmez, ama başka bir cihazda da görünmez ve tarayıcı verisi silinirse kaybolur. Kalıcı tutmak için <b>Yedek al</b> ile dosyaya kaydedin, diğer cihazda <b>Yedeği yükle</b> ile geri alın. Öğrenci adı yerine numara veya baş harf kullanmanız önerilir.
+  </div>
+
+  <div class="satir">
+    <select id="ders" aria-label="Ders"><option value="">Ders seçin…</option></select>
+    <select id="sinif" aria-label="Sınıf" disabled><option value="">Sınıf</option></select>
+    <select id="tema" aria-label="Tema" disabled><option value="">Tema</option></select>
+    <input type="text" id="sube" placeholder="Şube (5/A)" aria-label="Şube" size="10">
+  </div>
+  <div class="satir">
+    <button class="arac birincil" id="ogr-ekle">+ Öğrenci ekle</button>
+    <button class="arac" id="ogr-toplu">Liste yapıştır…</button>
+    <button class="arac" id="yazdir">Yazdır</button>
+    <span style="margin-left:auto"></span>
+    <button class="arac" id="yedek-al">Yedek al</button>
+    <button class="arac" id="yedek-yukle">Yedeği yükle</button>
+    <input type="file" id="dosya" accept="application/json" hidden>
+  </div>
+
+  <div class="bos-durum" id="bos">Başlamak için ders, sınıf ve tema seçin.</div>
+  <div id="pano" hidden>
+    <div class="matris-kap"><div id="matris"></div></div>
+    <div class="lejant">
+      <span><i class="l0"></i>henüz gözlemlenmedi</span>
+      <span><i class="l1"></i>başlıyor</span>
+      <span><i class="l2"></i>gelişiyor</span>
+      <span><i class="l3"></i>kazandı</span>
+      <span style="color:var(--ink-faint)">hücreye tıklayın · Shift+tık geri alır</span>
+    </div>
+    <div class="ozet" id="ozet"></div>
+
+    <div class="istem-kutu" id="istem-kutu" hidden>
+      <h3>Gözleminizi eyleme çevirin</h3>
+      <p>Sınıfın en çok zorlandığı süreç bileşenleri, programın kendi cümleleriyle birlikte hazır bir <b>yapay zekâ istemine</b> dönüşür. Öğrenci adları isteme girmez; yalnız kaç öğrencinin desteğe ihtiyaç duyduğu yazılır.</p>
+      <div class="istem-alt">
+        <button type="button" class="arac birincil" id="istem-uret">Destekleme istemi hazırla</button>
+        <button type="button" class="arac" id="istem-kopyala" hidden>Kopyala</button>
+        <span class="istem-durum" id="istem-durum"></span>
+      </div>
+      <textarea class="istem-metin" id="istem-metin" spellcheck="false" aria-label="Üretilen istem" hidden></textarea>
+    </div>
+  </div>
+
+  <footer>
+    Süreç bileşenleri ve çıktı kodları <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarından alınmıştır. Değerlendirme ölçütleri size aittir; bu pano bir not defteridir, resmî bir ölçme aracı değildir. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a> · <a href="./disiplinler-haritasi.html">Disiplinler Arası Harita</a>
+  </footer>
+</div>
+
+<script>
+const VERI = {/*DATA*/};
+const C = VERI.ciktilar;
+const $ = id => document.getElementById(id);
+const esc = s => { const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; };
+const HARF = 'abcçdefgğhıijklm';
+const DURUM = ['henüz gözlemlenmedi','başlıyor','gelişiyor','kazandı'];
+
+let dersSec='', sinifSec='', temaSec='', sube='';
+let veri = {};   // anahtar -> { ogrenciler:[ad], hucre:{ 'ogrIndex|kod|sbIndex': 0-3 } }
+
+function anahtar(){ return `bgp|${dersSec}|${sinifSec}|${temaSec}|${sube}`; }
+function oku(){
+  try { veri = JSON.parse(localStorage.getItem('beceri-panosu') || '{}'); }
+  catch(e) { veri = {}; }
+}
+function yaz(){
+  try { localStorage.setItem('beceri-panosu', JSON.stringify(veri)); }
+  catch(e) { /* özel sekme / dolu depo */ }
+}
+function kayit(){
+  const k = anahtar();
+  if(!veri[k]) veri[k] = { ogrenciler: [], hucre: {} };
+  return veri[k];
+}
+
+// ---- seçiciler
+function doldurDers(){
+  for(const d of [...new Set(C.map(c=>c.ders))]) {
+    const o=document.createElement('option'); o.value=o.textContent=d; $('ders').appendChild(o);
+  }
+}
+function doldurSinif(){
+  const sel=$('sinif'); sel.innerHTML='<option value="">Sınıf</option>'; sel.disabled=!dersSec;
+  if(!dersSec) return;
+  const s=[...new Set(C.filter(c=>c.ders===dersSec).map(c=>String(c.sinif)))]
+    .sort((a,b)=>(parseInt(a)||99)-(parseInt(b)||99)||a.localeCompare(b,'tr'));
+  for(const x of s){ const o=document.createElement('option'); o.value=x; o.textContent=/^\d+$/.test(x)?x+'. sınıf':x; sel.appendChild(o); }
+}
+function doldurTema(){
+  const sel=$('tema'); sel.innerHTML='<option value="">Tema</option>'; sel.disabled=!(dersSec&&sinifSec);
+  if(sel.disabled) return;
+  const gorulen = new Set();
+  for(const c of C){
+    if(c.ders!==dersSec || String(c.sinif)!==sinifSec) continue;
+    if(gorulen.has(c.temaNo)) continue;
+    gorulen.add(c.temaNo);
+    const o=document.createElement('option'); o.value=c.temaNo; o.textContent=`${c.temaNo}. ${c.tema}`; sel.appendChild(o);
+  }
+}
+function ciktilar(){
+  return C.filter(c=>c.ders===dersSec && String(c.sinif)===sinifSec && c.temaNo===temaSec && c.sb && c.sb.length);
+}
+
+// ---- matris
+function cizMatris(){
+  if(!(dersSec&&sinifSec&&temaSec)){ $('pano').hidden=true; $('bos').hidden=false; return; }
+  const cs = ciktilar();
+  $('bos').hidden = true; $('pano').hidden = false;
+  if(!cs.length){
+    $('matris').innerHTML = '<p style="color:var(--ink-faint);padding:1rem">Bu temanın çıktılarında ayrıştırılmış süreç bileşeni yok; pano kurulamıyor.</p>';
+    $('ozet').innerHTML=''; return;
+  }
+  const k = kayit();
+  let h = '<table class="matris"><thead><tr><th class="ogr-bas"></th>';
+  for(const c of cs) c.sb.forEach((sb,i)=>{
+    h += `<th class="sb-bas" title="${esc(c.code)} ${HARF[i]}) ${esc(sb)}">${HARF[i]}) ${esc(sb.slice(0,20))}${sb.length>20?'…':''}</th>`;
+  });
+  h += '<th></th></tr><tr><th class="ogr-bas"><span class="et">Öğrenci</span></th>';
+  for(const c of cs) h += `<th class="kod-bas" colspan="${c.sb.length}" title="${esc(c.statement)}">${esc(c.code)}</th>`;
+  h += '<th class="ilerleme"><span class="et">İlerleme</span></th></tr></thead><tbody>';
+
+  k.ogrenciler.forEach((ad, oi)=>{
+    h += `<tr><td class="ogr-bas"><span class="ogr-kap"><input type="text" value="${esc(ad)}" data-oi="${oi}" aria-label="Öğrenci adı" placeholder="ad / numara"><button class="ogr-sil" data-oi="${oi}" title="Öğrenciyi listeden çıkar" aria-label="${esc(ad||'#'+(oi+1))} adlı öğrenciyi sil">×</button></span></td>`;
+    let toplam=0, puan=0;
+    for(const c of cs) c.sb.forEach((sb,si)=>{
+      const hk = `${oi}|${c.code}|${si}`;
+      const d = k.hucre[hk] || 0;
+      toplam++; puan += d;
+      h += `<td><button class="hucre" data-d="${d}" data-hk="${hk}"
+             aria-label="${esc(ad||'öğrenci')} · ${esc(c.code)} ${HARF[si]} · ${DURUM[d]}"
+             title="${esc(c.code)} ${HARF[si]}) — ${DURUM[d]}"></button></td>`;
+    });
+    const yuzde = toplam ? Math.round(puan/(toplam*3)*100) : 0;
+    h += `<td class="ilerleme">%${yuzde}</td></tr>`;
+  });
+  h += '</tbody></table>';
+  if(!k.ogrenciler.length) h += '<p style="color:var(--ink-faint);padding:0.8rem 0.2rem">Henüz öğrenci yok — "+ Öğrenci ekle" ya da "Liste yapıştır".</p>';
+  $('matris').innerHTML = h;
+
+  $('matris').querySelectorAll('.hucre').forEach(b=>{
+    b.addEventListener('click', ev=>{
+      const kk = kayit();
+      const su = kk.hucre[b.dataset.hk] || 0;
+      kk.hucre[b.dataset.hk] = ev.shiftKey ? (su+3)%4 : (su+1)%4;
+      yaz(); cizMatris();
+    });
+  });
+  $('matris').querySelectorAll('.ogr-bas input').forEach(inp=>{
+    inp.addEventListener('change', ()=>{ kayit().ogrenciler[+inp.dataset.oi] = inp.value; yaz(); cizOzet(); });
+  });
+  $('matris').querySelectorAll('.ogr-sil').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const oi = +b.dataset.oi, kk = kayit();
+      const ad = kk.ogrenciler[oi] || ('#' + (oi + 1));
+      if(!confirm(`"${ad}" listeden çıkarılsın mı? Bu öğrencinin işaretleri de silinir.`)) return;
+      kk.ogrenciler.splice(oi, 1);
+      // hücre anahtarları "öğrenciSırası|kod|bileşen" biçiminde; silinenin üstündekiler bir kayar
+      const yeniHucre = {};
+      for(const [anahtar, deger] of Object.entries(kk.hucre)){
+        const p = anahtar.split('|'), i = +p[0];
+        if(i === oi) continue;
+        p[0] = i > oi ? i - 1 : i;
+        yeniHucre[p.join('|')] = deger;
+      }
+      kk.hucre = yeniHucre;
+      yaz(); cizMatris();
+    });
+  });
+  cizOzet();
+}
+
+function cizOzet(){
+  const cs = ciktilar(); const k = kayit();
+  const kutu = $('istem-kutu');
+  if(kutu) kutu.hidden = !(cs.length && k.ogrenciler.length);
+  if(!cs.length || !k.ogrenciler.length){ $('ozet').innerHTML=''; return; }
+  // süreç bileşeni bazında sınıf ortalaması
+  const satirlar = [];
+  for(const c of cs) c.sb.forEach((sb,si)=>{
+    let t=0;
+    k.ogrenciler.forEach((_,oi)=> t += (k.hucre[`${oi}|${c.code}|${si}`] || 0));
+    satirlar.push({ ad: `${c.code} ${HARF[si]}`, ipucu: sb, oran: t/(k.ogrenciler.length*3) });
+  });
+  satirlar.sort((a,b)=>a.oran-b.oran);
+  const zayif = satirlar.slice(0,5), guclu = satirlar.slice(-3).reverse();
+
+  // öğrenci bazında
+  const ogr = k.ogrenciler.map((ad,oi)=>{
+    let t=0, n=0;
+    for(const c of cs) c.sb.forEach((_,si)=>{ t += (k.hucre[`${oi}|${c.code}|${si}`]||0); n++; });
+    return { ad: ad || `#${oi+1}`, oran: n ? t/(n*3) : 0 };
+  }).sort((a,b)=>a.oran-b.oran);
+
+  const cubuk = x => `<div class="ozet-cubuk"><i style="width:${Math.round(x.oran*100)}%"></i></div>`;
+  $('ozet').innerHTML = `
+    <div class="ozet-kart"><h3>En çok desteğe ihtiyaç duyulan bileşenler</h3>
+      ${zayif.map(x=>`<div class="ozet-satir" title="${esc(x.ipucu)}"><span>${esc(x.ad)}</span>${cubuk(x)}<span class="n">%${Math.round(x.oran*100)}</span></div>`).join('')}</div>
+    <div class="ozet-kart"><h3>En çok ilerlenen bileşenler</h3>
+      ${guclu.map(x=>`<div class="ozet-satir" title="${esc(x.ipucu)}"><span>${esc(x.ad)}</span>${cubuk(x)}<span class="n">%${Math.round(x.oran*100)}</span></div>`).join('')}</div>
+    <div class="ozet-kart"><h3>Öğrenci ilerlemesi (düşükten yükseğe)</h3>
+      ${ogr.slice(0,8).map(x=>`<div class="ozet-satir"><span class="${x.oran<0.34?'dikkat':''}">${esc(x.ad)}</span>${cubuk(x)}<span class="n">%${Math.round(x.oran*100)}</span></div>`).join('')}
+      ${ogr.length>8?`<p style="font-size:0.76rem;color:var(--ink-faint);margin:0.4rem 0 0">…ve ${ogr.length-8} öğrenci daha</p>`:''}</div>`;
+}
+
+
+// ---- gözlemden isteme
+/* Pano bir şey üretmez, gözlem tutar. Ama tuttuğu gözlem "sınıfın hangi süreç
+   bileşeninde takıldığı" bilgisidir; bu, farklılaştırma planlamak için en değerli
+   girdidir. Aşağısı o gözlemi, programın kendi cümleleriyle birlikte, herhangi bir
+   yapay zekâ sohbetine yapıştırılabilir bir isteme çevirir. Öğrenci adı taşınmaz. */
+function istemUret(){
+  const cs = ciktilar(), k = kayit();
+  if(!cs.length || !k.ogrenciler.length) return '';
+  const n = k.ogrenciler.length;
+
+  const satir = [];
+  for(const c of cs) c.sb.forEach((sb, si) => {
+    let t = 0, geride = 0;
+    k.ogrenciler.forEach((_, oi) => {
+      const d = k.hucre[`${oi}|${c.code}|${si}`] || 0;
+      t += d; if(d <= 1) geride++;
+    });
+    satir.push({ kod: c.code, harf: HARF[si], sb, cikti: c.statement,
+                 oran: t / (n * 3), geride });
+  });
+  satir.sort((a, b) => a.oran - b.oran);
+  const zayif = satir.filter(x => x.oran < 0.67).slice(0, 6);
+  const liste = (zayif.length ? zayif : satir.slice(0, 4));
+
+  const sinifAd = /^\d+$/.test(sinifSec) ? sinifSec + '. sınıf' : sinifSec;
+  const tema = cs[0] ? cs[0].tema : temaSec;
+
+  return 'Sen farklılaştırılmış öğretim konusunda deneyimli bir ortaokul öğretmenisin.\n\n'
+    + 'Aşağıda Türkiye Yüzyılı Maarif Modeli\'nin resmî öğretim programından alınmış çıktılar ve '
+    + 'benim sınıfımda tuttuğum gözlem var.\n\n'
+    + '## Sınıf\n'
+    + `Ders: ${dersSec}\nSınıf: ${sinifAd}${sube ? ' / ' + sube : ''}\nTema: ${temaSec}. ${tema}\n`
+    + `Öğrenci sayısı: ${n}\n\n`
+    + '## Sınıfın en çok zorlandığı süreç bileşenleri\n'
+    + liste.map(x =>
+        `- ${x.kod} ${x.harf}) ${x.sb}\n`
+      + `    ait olduğu öğrenme çıktısı: ${x.cikti}\n`
+      + `    sınıf ortalaması: %${Math.round(x.oran * 100)} · henüz yeterli düzeye gelmeyen: ${x.geride}/${n} öğrenci`
+      ).join('\n')
+    + '\n\n## Görev\n'
+    + 'Bu bileşenlerin her biri için, önümüzdeki iki ders saatinde uygulanabilecek bir destekleme yolu öner:\n'
+    + '1. Bileşeni hangi küçük basamaklara böleceğim.\n'
+    + '2. Sınıfın tamamını durdurmadan, geride kalan öğrencilerle çalışabileceğim bir düzenleme (istasyon, eşli çalışma, kısa küme gibi).\n'
+    + '3. Kullanacağım somut etkinlik: yönerge, süre, malzeme.\n'
+    + '4. İlerlemeyi neye bakarak anlayacağım — gözlenebilir tek bir kanıt.\n'
+    + '5. Aynı bileşende zaten yeterli düzeydeki öğrencilere verilecek paralel görev.\n\n'
+    + '## Kurallar\n'
+    + '- Yukarıdaki çıktı ve bileşen metinlerinin dışına çıkma; olmayan bir kod uydurma.\n'
+    + '- Her öneriyi hangi bileşene yazdığını başlıkta belirt.\n'
+    + '- Genel geçer tavsiye verme; doğrudan uygulanabilir somutlukta yaz.\n'
+    + '- Öğrenci adı ya da kişisel bilgi istemiyorum, verme.';
+}
+
+function istemBagla(){
+  const durum = m => { const d = $('istem-durum'); if(d){ d.textContent = m; setTimeout(() => { d.textContent = ''; }, 2500); } };
+  $('istem-uret').addEventListener('click', () => {
+    const m = istemUret();
+    const ta = $('istem-metin');
+    if(!m){ durum('Önce sınıf listesini girin.'); return; }
+    ta.value = m; ta.hidden = false; $('istem-kopyala').hidden = false;
+    ta.scrollIntoView({ block: 'nearest' });
+  });
+  $('istem-kopyala').addEventListener('click', async () => {
+    const ta = $('istem-metin');
+    try { await navigator.clipboard.writeText(ta.value); durum('Kopyalandı.'); }
+    catch(e){ ta.select(); durum('Kopyalanamadı — metin seçildi, Ctrl+C.'); }
+  });
+}
+
+// ---- olaylar
+function durumYaz(){ URLD.yaz({ ders: dersSec, sinif: sinifSec, tema: temaSec, sube }); }
+function durumOku(){
+  const d = URLD.oku();
+  if(d.sube){ sube = d.sube; $('sube').value = d.sube; }
+  if(!d.ders) return;
+  dersSec = d.ders; $('ders').value = d.ders; doldurSinif();
+  if(d.sinif){ sinifSec = d.sinif; $('sinif').value = d.sinif; }
+  doldurTema();
+  if(d.tema && [...$('tema').options].some(o=>o.value===d.tema)){ temaSec = d.tema; $('tema').value = d.tema; }
+}
+
+doldurDers(); oku(); durumOku(); cizMatris(); istemBagla();
+
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; temaSec=''; doldurSinif(); doldurTema(); cizMatris(); durumYaz(); });
+$('sinif').addEventListener('change',e=>{ sinifSec=e.target.value; temaSec=''; doldurTema(); cizMatris(); durumYaz(); });
+$('tema').addEventListener('change',e=>{ temaSec=e.target.value; cizMatris(); durumYaz(); });
+$('sube').addEventListener('change',e=>{ sube=e.target.value.trim(); cizMatris(); durumYaz(); });
+
+$('ogr-ekle').addEventListener('click',()=>{
+  if(!(dersSec&&sinifSec&&temaSec)) return;
+  kayit().ogrenciler.push(''); yaz(); cizMatris();
+  const son = $('matris').querySelectorAll('.ogr-bas input');
+  if(son.length) son[son.length-1].focus();
+});
+$('ogr-toplu').addEventListener('click',()=>{
+  if(!(dersSec&&sinifSec&&temaSec)) return;
+  const metin = prompt('Öğrenci listesini yapıştırın (her satıra bir ad ya da numara):');
+  if(!metin) return;
+  const k = kayit();
+  for(const ad of metin.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)) k.ogrenciler.push(ad);
+  yaz(); cizMatris();
+});
+$('yazdir').addEventListener('click',()=>window.print());
+
+$('yedek-al').addEventListener('click',()=>{
+  const blob = new Blob([JSON.stringify({ surum: 1, tarih: new Date().toISOString(), veri }, null, 1)],
+                        { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'beceri-panosu-yedek.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+});
+$('yedek-yukle').addEventListener('click',()=>$('dosya').click());
+$('dosya').addEventListener('change',ev=>{
+  const f = ev.target.files[0]; if(!f) return;
+  const fr = new FileReader();
+  fr.onload = ()=>{
+    try {
+      const g = JSON.parse(fr.result);
+      const gelen = g.veri || g;
+      let n = 0;
+      for(const [k, v] of Object.entries(gelen)){ veri[k] = v; n++; }
+      yaz(); cizMatris();
+      alert(n + ' pano geri yüklendi.');
+    } catch(e) { alert('Dosya okunamadı: geçerli bir yedek dosyası değil.'); }
+    ev.target.value = '';
+  };
+  fr.readAsText(f);
+});
+</script>

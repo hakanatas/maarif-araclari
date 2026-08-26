@@ -179,7 +179,7 @@ function cizSinif(){
     const b=document.createElement('button'); b.className='cip'+(sinifSec.has(s)?' acik':'');
     b.textContent=/^\d+$/.test(s)? s+'. sınıf' : s;
     b.setAttribute('aria-pressed', sinifSec.has(s));
-    b.onclick=()=>{ sinifSec.has(s)?sinifSec.delete(s):sinifSec.add(s); temaSec=''; doldurTema(); gosterilen=60; ciz(); };
+    b.onclick=()=>{ sinifSec.has(s)?sinifSec.delete(s):sinifSec.add(s); temaSec=''; doldurTema(); gosterilen=60; ciz(); durumYaz(); };
     kap.appendChild(b);
   }
 }
@@ -255,9 +255,28 @@ function refAc(b){
   yuva.querySelector('.kapat').onclick=()=>{ yuva.innerHTML=''; b.setAttribute('aria-expanded','false'); };
 }
 
-doldurDers(); cizSinif(); ciz();
-$('q').addEventListener('input',e=>{ sorgu=trLow(e.target.value.trim()); gosterilen=60; ciz(); });
-$('ders').addEventListener('change',e=>{ dersSec=e.target.value; temaSec=''; doldurTema(); gosterilen=60; ciz(); });
-$('tema').addEventListener('change',e=>{ temaSec=e.target.value; gosterilen=60; ciz(); });
+function durumYaz(){ URLD.yaz({ ders: dersSec, sinif: [...sinifSec].join(','), tema: temaSec, q: $('q').value.trim() }); }
+function durumOku(){
+  const d = URLD.oku();
+  if (d.q) { $('q').value = d.q; sorgu = trLow(d.q.trim()); }
+  if (d.sinif) sinifSec = new Set(d.sinif.split(',').filter(Boolean));
+  if (d.ders) {
+    dersSec = d.ders; $('ders').value = d.ders; doldurTema();
+    if (d.tema) {
+      // Diğer araçlar tema NUMARASI gönderir; bu araç tema ADIYLA filtreler.
+      let ad = d.tema;
+      if (/^\d+$/.test(d.tema)) {
+        const eslesen = C.find(c => c.ders === dersSec && c.temaNo === d.tema &&
+                                    (!sinifSec.size || sinifSec.has(String(c.sinif))));
+        if (eslesen) ad = eslesen.tema;
+      }
+      if ([...$('tema').options].some(o => o.value === ad)) { temaSec = ad; $('tema').value = ad; }
+    }
+  }
+}
+doldurDers(); durumOku(); cizSinif(); ciz();
+$('q').addEventListener('input',e=>{ sorgu=trLow(e.target.value.trim()); gosterilen=60; ciz(); durumYaz(); });
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; temaSec=''; doldurTema(); gosterilen=60; ciz(); durumYaz(); });
+$('tema').addEventListener('change',e=>{ temaSec=e.target.value; gosterilen=60; ciz(); durumYaz(); });
 $('daha').onclick=()=>{ gosterilen+=60; ciz(); };
 </script>

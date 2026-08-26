@@ -101,6 +101,8 @@
   .uyari b { color: var(--madder); }
 
   footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--ink-faint); }
+  .veri-damgasi { margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--line); font-size: 0.74rem; line-height: 1.6; color: var(--ink-faint); }
+  .veri-damgasi b { color: var(--ink-soft); font-weight: 600; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .kart:hover { transform: none; } }
 </style>
 </head>
@@ -110,7 +112,7 @@
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
     <h1>Maarif Araç Kutusu</h1>
     <div class="col">
-      <p class="lede">Maarif Modeli'nin resmî ortaokul öğretim programları makine tarafından okunabilir hâle getirildi; üzerine öğretmenin günlük işini kısaltan dört araç kuruldu. Hepsi tarayıcıda çalışır, kurulum ve üyelik istemez.</p>
+      <p class="lede">Maarif Modeli'nin resmî ortaokul öğretim programları makine tarafından okunabilir hâle getirildi; üzerine öğretmenin günlük işini kısaltan beş araç kuruldu. Hepsi tarayıcıda çalışır, kurulum ve üyelik istemez.</p>
     </div>
     <ul class="sayilar">
       <li><b>15</b><span>öğretim programı</span></li>
@@ -149,8 +151,15 @@
 
       <a class="kart" href="./araclar/disiplinler-haritasi.html">
         <div class="ust"><span class="ikon">🕸️</span><h3>Disiplinler Arası Harita</h3></div>
-        <p>Kendi temanızı yıl takviminde bulun: aynı haftalarda diğer derslerde ne işleniyor, program hangi dersle köprü kurmanızı istiyor, ortak beceri ve değerler neler — tek brifingte. Bütünü görmek için ders ağına geçin.</p>
-        <p class="veri">4 sınıf düzeyinde yıl takvimi · 192 bağlantılı tema · 90 çıktı köprüsü</p>
+        <p>Hangi ders hangi dersle, hangi temada köprü kuruyor? Ağı isterseniz grafik, isterseniz matris olarak okuyun; köprüyü doğuran çıktı ve programdan alıntılanmış cümle görünsün. <b>Ortak beceriler</b> sekmesi iki programın aynı beceriyi nerede çalıştığını, <b>yıl takvimi</b> aynı haftalarda diğer derslerde ne işlendiğini gösterir; <b>ara ve raporla</b> ile bütün katmanlarda arayıp zümreye tek sayfalık çıktı alırsınız.</p>
+        <p class="veri">4 görünüm · 192 bağlantılı tema · 90 çıktı köprüsü · yazdırılabilir zümre raporu</p>
+        <span class="git">Aç →</span>
+      </a>
+
+      <a class="kart" href="./araclar/beceri-panosu.html">
+        <div class="ust"><span class="ikon">📊</span><h3>Beceri Gelişim Panosu</h3></div>
+        <p>Model gelişimi çıktı değil <b>süreç bileşeni</b> düzeyinde izlemeyi istiyor. Sınıf listenizi girin, temayı seçin, gözlemledikçe hücreye dokunun; hangi bileşende sınıfın takıldığı ve kimin desteğe ihtiyacı olduğu kendiliğinden görünsün.</p>
+        <p class="veri">Öğrenci × süreç bileşeni matrisi · veri tarayıcıda kalır, yedeklenebilir</p>
         <span class="git">Aç →</span>
       </a>
 
@@ -165,6 +174,7 @@
       <li><b>Öğrenme çıktıları</b> program PDF'lerinden çıkarılır. Her dersin kendi kod dili vardır: Fen beş parçalı kod kullanır, seçmeliler sınıf yerine düzeyle, Türkçe ise dört sınıfı birleştiren kod zincirleriyle. <code>02_ogrenme_ciktilari.py</code></li>
       <li><b>Tema blokları</b> ve sekiz ögeli öğretim döngüsü çıkarılır. <code>03_temalar.py</code></li>
       <li><b>Köprüler</b>: bir dersin adının anıldığı cümle, bulunduğu bölgeye göre sınıflandırılır — çıktının kendi uygulama metnindeyse o çıktıya bağlanır, temanın geneline ait bir bölümdeyse hiçbir çıktıya bağlanmaz. <code>04_cikti_duzeyi_kopruler.py</code></li>
+      <li><b>Tazelik denetimi</b>: resmî belgeler indirilmeden, yalnız HTTP başlıklarına bakılarak değişip değişmedikleri sorgulanır; sayfaların altındaki veri sürümü damgası buradan üretilir. <code>06_kaynak_denetimi.py</code></li>
     </ol>
     <p style="margin-top:1rem">Üretilen veri setleri <code style="font-family:'IBM Plex Mono',monospace;font-size:0.85em">veri/</code> klasöründe JSON olarak durur; isteyen doğrulayabilir, program güncellendiğinde yeniden üretebilir.</p>
 
@@ -176,6 +186,7 @@
   <footer>
     Kaynak belgeler: T.C. Millî Eğitim Bakanlığı, Türkiye Yüzyılı Maarif Modeli (<a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a>), Ağustos 2026 itibarıyla.
     Araçların kodu MIT lisansıyla açıktır; belgelerin telif hakkı MEB'e aittir.
+    <!--DAMGA--><p class="veri-damgasi"><b>Veri sürümü: 26 Ağustos 2026</b> — 18 resmî belgeden otomatik üretildi. 444 beceri kodu · 1.256 öğrenme çıktısı · 274 tema · 90 çıktı düzeyi köprü · 23 tema düzeyi köprü. Resmî belgeler güncellenmiş olabilir; bağlayıcı olan <a href="https://tymm.meb.gov.tr">kaynaktaki</a> son sürümdür.</p><!--/DAMGA-->
   </footer>
 </div>
 </body>

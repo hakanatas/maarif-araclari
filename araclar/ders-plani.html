@@ -104,6 +104,29 @@
   .fark .dest h4 { color: var(--madder); }
 
   .bos-durum { text-align: center; color: var(--ink-faint); padding: 3.5rem 1rem; border: 1px dashed var(--line); border-radius: 10px; }
+  /* --- istem atölyesi --- */
+  .istem-blok { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem 1rem; }
+  .istem-giris { font-size: 0.86rem; color: var(--ink-soft); margin: 0 0 0.75rem; line-height: 1.55; }
+  .istem-secim { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+  .istem-cip {
+    border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft);
+    border-radius: 99px; padding: 0.32rem 0.8rem; font-size: 0.82rem; font-family: inherit; cursor: pointer;
+  }
+  .istem-cip:hover { border-color: var(--petrol); color: var(--ink); }
+  .istem-cip[aria-pressed="true"] { background: var(--petrol); border-color: var(--petrol); color: #fff; font-weight: 600; }
+  .istem-cip:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .istem-ne { font-size: 0.82rem; color: var(--ink-faint); margin: 0 0 0.6rem; }
+  textarea.istem-metin {
+    width: 100%; min-height: 250px; box-sizing: border-box; resize: vertical;
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.78rem; line-height: 1.6;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.7rem 0.8rem;
+  }
+  textarea.istem-metin:focus { border-color: var(--petrol); outline: none; }
+  .istem-alt { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.6rem; }
+  .istem-durum { font-size: 0.8rem; color: var(--petrol); }
+  .istem-uyari { font-size: 0.78rem; color: var(--ink-faint); margin: 0.7rem 0 0; line-height: 1.55; }
+  @media print { .istem-blok { display: none !important; } }
+
   footer { margin-top: 2rem; font-size: 0.78rem; color: var(--ink-faint); }
   footer a { color: var(--petrol); }
 
@@ -135,10 +158,37 @@
   .site-nav .etkin { color: var(--petrol); font-weight: 600; }
   .site-nav .nav-ev { margin-right: auto; font-weight: 600; color: var(--petrol); }
   @media print { .site-nav { display: none; } }
+
+  .veri-damgasi {
+    margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--line);
+    font-size: 0.74rem; line-height: 1.6; color: var(--ink-faint);
+  }
+  .veri-damgasi b { color: var(--ink-soft); font-weight: 600; }
 </style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><a class="nav-oge" href="./kod-pusulasi.html">🧭 Kod Pusulası</a><a class="nav-oge" href="./kazanim-gezgini.html">🗺️ Kazanım Gezgini</a><span class="nav-oge etkin" aria-current="page">📋 Ders Planı Atölyesi</span><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a></nav>
+<script>
+/* Araçlar arası ortak URL durumu.
+   Her araç seçimini adres çubuğuna yazar; böylece bağlantı paylaşılabilir,
+   yer imine eklenebilir ve araçlar birbirine seçim taşıyabilir. */
+window.URLD = {
+  oku() { return Object.fromEntries(new URLSearchParams(location.search)); },
+  yaz(obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj)) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    history.replaceState(null, '', s ? location.pathname + '?' + s : location.pathname);
+  },
+  bag(dosya, obj) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(obj || {})) if (v !== '' && v != null) p.set(k, v);
+    const s = p.toString();
+    return './' + dosya + (s ? '?' + s : '');
+  }
+};
+</script>
+
+<nav class="site-nav" aria-label="Araçlar"><a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a><a class="nav-oge" href="./kod-pusulasi.html">🧭 Kod Pusulası</a><a class="nav-oge" href="./kazanim-gezgini.html">🗺️ Kazanım Gezgini</a><span class="nav-oge etkin" aria-current="page">📋 Ders Planı Atölyesi</span><a class="nav-oge" href="./disiplinler-haritasi.html">🕸️ Disiplinler Arası Harita</a><a class="nav-oge" href="./beceri-panosu.html">📊 Beceri Gelişim Panosu</a></nav>
 <div class="wrap">
   <header>
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
@@ -160,7 +210,7 @@
 
   <footer>
     Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programları (Ağustos 2026); bölüm metinleri otomatik ayrıştırıldı, bağlayıcı metin resmî PDF'lerdir. Kod tanımları için <a href="./kod-pusulasi.html">Kod Pusulası</a>, çıktı listeleri için <a href="./kazanim-gezgini.html">Kazanım Gezgini</a>. Bu sayfa resmî bir MEB ürünü değildir.
-  </footer>
+  <p class="veri-damgasi"><b>Veri sürümü: 26 Ağustos 2026</b> — 18 resmî belgeden otomatik üretildi. 444 beceri kodu · 1.256 öğrenme çıktısı · 274 tema · 90 çıktı düzeyi köprü · 23 tema düzeyi köprü. Resmî belgeler güncellenmiş olabilir; bağlayıcı olan <a href="https://tymm.meb.gov.tr">kaynaktaki</a> son sürümdür.</p></footer>
 </div>
 
 <script>
@@ -277,21 +327,240 @@ function cizPlan(){
   h+=`<h3 class="bolum"><span class="no">${String(no++).padStart(2,'0')}</span>Öğretmen Notları / Yansıtma</h3>
       <div contenteditable="true" data-alan="notlar">${taslak.notlar??'<i>Uygulama sonrası gözlemleriniz…</i>'}</div>`;
 
+  PLAN_CIKTI = ciktilar;
+  h += `<h3 class="bolum yazdirma-gizle"><span class="no">${String(no++).padStart(2,'0')}</span>Yapay Zekâ İstemleri</h3>` + istemBlok();
+
   $('plan').innerHTML=h;
   $('plan').hidden=false;
 
   document.querySelectorAll('[contenteditable]').forEach(el=>el.addEventListener('input', taslakYaz));
   document.querySelectorAll('.cikti-sec').forEach(cb=>cb.addEventListener('change', e=>{
     e.target.closest('.cikti').classList.toggle('disi', !e.target.checked); taslakYaz();
+    if(istemSec) istemYaz(istemSec);   // istem yalnız işaretli çıktılardan beslenir
   }));
+  istemBagla();
 }
 
+// ---- yapay zekâ istemleri
+/* Statik bir sayfa metin üretemez; ama öğretmenin elindeki resmî veriyi
+   kullanılabilir bir isteme dönüştürebilir. Aşağıdaki üretici, seçili temanın
+   programdaki kendi cümlelerini ve işaretli çıktıların süreç bileşenlerini
+   alıp herhangi bir yapay zekâ sohbetine yapıştırılabilir istem kurar. */
+let PLAN_CIKTI = [], istemSec = '';
+const IHARF = 'abcçdefgğhıijklm';
+
+const ISTEM_TURU = [
+  ['olcme',   'Ölçme aracı',        'Öğrenme kanıtları bölümüne uygun soru ve performans görevi seti'],
+  ['rubrik',  'Analitik rubrik',    'Süreç bileşeni bazında dört düzeyli değerlendirme ölçeği'],
+  ['destek',  'Destekleme',         'Zorlanan öğrenciler için basamaklandırılmış etkinlik önerileri'],
+  ['zengin',  'Zenginleştirme',     'Hazır olan öğrenciler için derinleştirici görevler'],
+  ['on',      'Ön değerlendirme',   'Temaya başlamadan önce ön bilgiyi yoklayan kısa sorular'],
+  ['kopru',   'Köprü etkinliği',    'Programın işaret ettiği disiplinler arası bağı etkinliğe çevirir'],
+  ['veli',    'Veli bilgilendirme', 'Temayı ve evde nasıl desteklenebileceğini anlatan kısa metin'],
+];
+
+function alanMetni(k){
+  const el = document.querySelector(`[data-alan="${k}"]`);
+  const m = el ? el.innerText.trim() : '';
+  return m && m !== 'Uygulama sonrası gözlemleriniz…' ? m : '';
+}
+
+function seciliCiktilar(){
+  const cb = [...document.querySelectorAll('.cikti-sec')];
+  return PLAN_CIKTI.filter((c, i) => (cb[i] ? cb[i].checked : true));
+}
+
+function ciktiBlogu(bilesenli){
+  const cs = seciliCiktilar();
+  if(!cs.length) return '(bu temada işaretli öğrenme çıktısı yok)';
+  return cs.map(c => {
+    let m = '- ' + c.code + ': ' + c.statement;
+    if(bilesenli && c.sb && c.sb.length)
+      m += '\n' + c.sb.map((x, i) => '    ' + IHARF[i] + ') ' + x).join('\n');
+    return m;
+  }).join('\n');
+}
+
+function beceriBlogu(){
+  const t = temaSec, B = [['alan','Alan becerileri'],['kavramsal','Kavramsal beceriler'],
+    ['egilimler','Eğilimler'],['sdb','Sosyal-duygusal öğrenme becerileri'],['degerler','Değerler'],
+    ['okuryazarlik','Okuryazarlık becerileri']];
+  return B.filter(([k]) => t[k]).map(([k, ad]) => '- ' + ad + ': ' + t[k]).join('\n');
+}
+
+function bolum(baslik, metin){
+  return metin ? '\n\n## ' + baslik + '\n' + metin : '';
+}
+
+function ustBilgi(){
+  const t = temaSec;
+  const sinif = /^\d+$/.test(t.sinif) ? t.sinif + '. sınıf' : t.sinif;
+  return 'Ders: ' + t.ders + '\nSınıf: ' + sinif + '\nTema: ' + t.temaNo + '. ' + trBaslik(t.tema)
+       + (t.saat ? '\nAyrılan süre: ' + t.saat + ' ders saati' : '');
+}
+
+const KURAL = '\n\n## Kurallar\n'
+  + '- Yukarıdaki resmî metnin dışına çıkma; olmayan bir öğrenme çıktısı ya da kod uydurma.\n'
+  + '- Her önerinin hangi çıktı koduna ve hangi süreç bileşenine hizmet ettiğini parantez içinde yaz.\n'
+  + '- Türkiye Yüzyılı Maarif Modeli terimlerini kullan (öğrenme çıktısı, süreç bileşeni, öğrenme kanıtı).\n'
+  + '- Dil sade ve öğretmenin doğrudan kullanabileceği somutlukta olsun; genel geçer tavsiye verme.\n'
+  + '- Emin olmadığın yeri "öğretmen kararı" diye işaretle, doldurma.';
+
+function istemUret(tur){
+  const t = temaSec;
+  const ortak = 'Aşağıda Türkiye Yüzyılı Maarif Modeli\'nin resmî öğretim programından alınmış bir temanın verileri var.\n\n'
+    + '## Tema\n' + ustBilgi();
+
+  if(tur === 'olcme')
+    return 'Sen Türkiye\'de ortaokul düzeyinde ders veren, ölçme ve değerlendirme konusunda deneyimli bir öğretmensin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları ve süreç bileşenleri', ciktiBlogu(true))
+      + bolum('Programın öngördüğü öğrenme kanıtları', alanMetni('kanitlar'))
+      + bolum('İçerik çerçevesi', alanMetni('icerik'))
+      + '\n\n## Görev\nBu temayı bitiren bir sınıfta uygulanacak bir ölçme aracı taslağı hazırla:\n'
+      + '1. Süreç bileşenlerini kapsayan 8-10 soru (çoktan seçmeli, kısa yanıtlı ve açık uçlu karışık).\n'
+      + '2. Bir performans görevi: yönerge, öğrenciye verilecek malzeme, süre ve beklenen ürün.\n'
+      + '3. Her sorunun/görevin karşısına hangi çıktının hangi bileşenini ölçtüğünü yaz.\n'
+      + '4. Sonda kısa bir cevap anahtarı ve puanlama ölçütü ver.' + KURAL;
+
+  if(tur === 'rubrik')
+    return 'Sen ölçme ve değerlendirme uzmanı bir ortaokul öğretmenisin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları ve süreç bileşenleri', ciktiBlogu(true))
+      + bolum('Programın öngördüğü öğrenme kanıtları', alanMetni('kanitlar'))
+      + '\n\n## Görev\nHer süreç bileşeni için bir satır olacak biçimde analitik bir rubrik hazırla.\n'
+      + '- Dört düzey kullan: henüz gözlenmedi / başlıyor / gelişiyor / kazandı.\n'
+      + '- Her hücrede öğrencinin gözlenebilir davranışını yaz; "kısmen yapar" gibi belirsiz ifadeler kullanma.\n'
+      + '- Çıktıyı markdown tablosu olarak ver; ilk sütun bileşen kodu ve kısa adı olsun.\n'
+      + '- Tablonun altına, öğretmenin sınıfta hangi kanıta bakarak karar vereceğini 3-4 maddede özetle.' + KURAL;
+
+  if(tur === 'destek' || tur === 'zengin'){
+    const zeng = tur === 'zengin';
+    return 'Sen farklılaştırılmış öğretim konusunda deneyimli bir ortaokul öğretmenisin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları ve süreç bileşenleri', ciktiBlogu(true))
+      + bolum('Programın ' + (zeng ? 'zenginleştirme' : 'destekleme') + ' önerisi',
+              alanMetni(zeng ? 'zenginlestirme' : 'destekleme'))
+      + bolum('Temel kabuller (öğrencinin hazır geldiği varsayılan bilgiler)', alanMetni('temelKabuller'))
+      + '\n\n## Görev\n'
+      + (zeng
+        ? 'Temayı hızlı kavrayan öğrenciler için 5 zenginleştirme görevi öner. Her görev aynı çıktıyı derinleştirsin, yeni bir konuya kaçmasın.\n'
+        : 'Bu temada zorlanan öğrenciler için 5 destekleme etkinliği öner. Her etkinlik, çıktıyı küçük basamaklara böl(erek) ilerlesin.\n')
+      + 'Her öneri için şunları yaz: hangi bileşene hizmet ettiği · süre · gerekli malzeme · yönerge · öğretmenin neye bakarak ilerlediğini anlayacağı işaret.\n'
+      + (zeng ? '' : 'Bir de "önce şu eksiği kapat" listesi ver: bu temaya girmeden tamamlanması gereken ön beceriler.') + KURAL;
+  }
+
+  if(tur === 'on')
+    return 'Sen ortaokul düzeyinde ders veren deneyimli bir öğretmensin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları', ciktiBlogu(false))
+      + bolum('Programın ön değerlendirme önerisi', alanMetni('onDegerlendirme'))
+      + bolum('Temel kabuller', alanMetni('temelKabuller'))
+      + '\n\n## Görev\nTemaya başlamadan önce bir ders saatinin ilk 15 dakikasında uygulanacak bir ön değerlendirme hazırla:\n'
+      + '1. 6-8 kısa soru; her biri temel kabullerden birini yoklasın.\n'
+      + '2. Sınıfça yapılabilecek bir hızlı etkinlik (parmak kaldırma, kart, kısa yazma gibi).\n'
+      + '3. "Şu yanıtı veren öğrenci şu eksikliği taşıyor" biçiminde bir yorumlama tablosu.\n'
+      + '4. Eksik çıkması hâlinde ilk derste ne yapılacağına dair 3 somut öneri.' + KURAL;
+
+  if(tur === 'kopru')
+    return 'Sen disiplinler arası çalışma tasarlayan bir ortaokul öğretmenisin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları ve süreç bileşenleri', ciktiBlogu(true))
+      + bolum('Programın disiplinler arası ilişki notu', temaSec.disiplinler || '')
+      + bolum('Programın köprü kurma önerisi', alanMetni('kopruKurma'))
+      + bolum('Öğrenme-öğretme uygulamaları', alanMetni('uygulamalar'))
+      + '\n\n## Görev\nProgramın işaret ettiği disiplinler arası bağı somut bir ortak etkinliğe çevir:\n'
+      + '1. İki dersin öğretmeninin birlikte yürütebileceği 2 ders saatlik bir etkinlik tasarla.\n'
+      + '2. Her iki dersin hangi çıktısının nerede devreye girdiğini açıkça göster.\n'
+      + '3. İş bölümü öner: hangi öğretmen neyi yapar, ortak ürün nedir.\n'
+      + '4. Ortak ürünün her iki derste ayrı ayrı nasıl değerlendirileceğini yaz.\n'
+      + 'Programda ilişkilendirilen ders adı geçmiyorsa bunu belirt ve uydurma.' + KURAL;
+
+  if(tur === 'veli')
+    return 'Sen velilerle açık ve sade bir dille iletişim kuran bir ortaokul öğretmenisin.\n\n'
+      + ortak
+      + bolum('İşaretli öğrenme çıktıları', ciktiBlogu(false))
+      + bolum('İçerik çerçevesi', alanMetni('icerik'))
+      + bolum('Öğrenme kanıtları', alanMetni('kanitlar'))
+      + '\n\n## Görev\nVelilere gönderilecek en fazla 250 kelimelik bir bilgilendirme metni yaz:\n'
+      + '1. Bu temada çocuğun ne öğreneceği — kod ve terim kullanmadan, günlük dille.\n'
+      + '2. Evde destek olmak için 3 somut, malzeme gerektirmeyen öneri.\n'
+      + '3. Değerlendirmenin nasıl yapılacağına dair bir cümle.\n'
+      + 'Resmî ama sıcak bir ton kullan; velinin kaygısını artıracak ifadelerden kaçın.' + KURAL;
+
+  return '';
+}
+
+function istemBlok(){
+  return `<div class="istem-blok">
+    <p class="istem-giris">Bu sayfa metin üretmez; <b>üretecek olana verilecek istemi</b> hazırlar. Bir tür seçin: yukarıdaki resmî tema metni ve işaretli çıktılarınız hazır bir isteme dönüşsün. Kopyalayıp kullandığınız yapay zekâ sohbetine yapıştırın.</p>
+    <div class="istem-secim">${ISTEM_TURU.map(([k, ad]) => `<button type="button" class="istem-cip" data-tur="${k}" aria-pressed="false">${ad}</button>`).join('')}</div>
+    <p class="istem-ne" id="istem-ne">Tür seçin.</p>
+    <textarea class="istem-metin" id="istem-metin" spellcheck="false" aria-label="Üretilen istem" placeholder="Yukarıdan bir istem türü seçin…"></textarea>
+    <div class="istem-alt">
+      <button type="button" class="arac birincil" id="istem-kopyala">Kopyala</button>
+      <button type="button" class="arac" id="istem-indir">Metin olarak indir</button>
+      <span class="istem-durum" id="istem-durum"></span>
+    </div>
+    <p class="istem-uyari">İstem, işaretli çıktılar ve <b>sizin düzenlediğiniz</b> plan metniyle kurulur; çıktı seçimini değiştirdiğinizde kendini yeniler. Yapay zekânın döndürdüğü metin resmî değildir — sınıfa girmeden önce çıktı kodlarıyla karşılaştırın.</p>
+  </div>`;
+}
+
+function istemYaz(tur){
+  const ta = $('istem-metin');
+  if(!ta) return;
+  ta.value = istemUret(tur);
+  const t = ISTEM_TURU.find(x => x[0] === tur);
+  if($('istem-ne')) $('istem-ne').textContent = t ? t[2] : '';
+}
+
+function istemBagla(){
+  document.querySelectorAll('.istem-cip').forEach(b => b.addEventListener('click', () => {
+    istemSec = b.dataset.tur;
+    document.querySelectorAll('.istem-cip').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    istemYaz(istemSec);
+    $('istem-durum').textContent = '';
+  }));
+  const durum = m => { const d = $('istem-durum'); if(d){ d.textContent = m; setTimeout(() => { d.textContent = ''; }, 2500); } };
+  $('istem-kopyala').addEventListener('click', async () => {
+    const ta = $('istem-metin');
+    if(!ta.value){ durum('Önce bir tür seçin.'); return; }
+    try { await navigator.clipboard.writeText(ta.value); durum('Kopyalandı.'); }
+    catch(e){ ta.select(); durum('Kopyalanamadı — metin seçildi, Ctrl+C.'); }
+  });
+  $('istem-indir').addEventListener('click', () => {
+    const ta = $('istem-metin');
+    if(!ta.value){ durum('Önce bir tür seçin.'); return; }
+    const t = temaSec;
+    const ad = `istem-${istemSec}-${t.ders}-${t.sinif}-${t.temaNo}.txt`.replace(/[^\wçğıöşüÇĞİÖŞÜ.-]+/g, '_');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ta.value], { type: 'text/plain;charset=utf-8' }));
+    a.download = ad;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    durum('İndirildi.');
+  });
+}
+
+function durumYaz(){ URLD.yaz({ ders: dersSec, sinif: sinifSec, tema: temaSec ? temaSec.temaNo : '' }); }
+function durumOku(){
+  const d = URLD.oku();
+  if (!d.ders) return;
+  dersSec = d.ders; $('ders').value = d.ders; doldurSinif();
+  if (d.sinif) { sinifSec = d.sinif; $('sinif').value = d.sinif; }
+  doldurTema();
+  if (d.tema) {
+    $('tema').value = d.tema;
+    temaSec = TEMALAR.find(t=>t.ders===dersSec && t.sinif===sinifSec && t.temaNo===d.tema) || null;
+  }
+}
 doldurDers();
-$('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; temaSec=null; doldurSinif(); doldurTema(); cizPlan(); });
-$('sinif').addEventListener('change',e=>{ sinifSec=e.target.value; temaSec=null; doldurTema(); cizPlan(); });
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; temaSec=null; doldurSinif(); doldurTema(); cizPlan(); durumYaz(); });
+$('sinif').addEventListener('change',e=>{ sinifSec=e.target.value; temaSec=null; doldurTema(); cizPlan(); durumYaz(); });
 $('tema').addEventListener('change',e=>{
-  temaSec=TEMALAR.find(t=>t.ders===dersSec&&t.sinif===sinifSec&&t.temaNo===e.target.value)||null; cizPlan();
+  temaSec=TEMALAR.find(t=>t.ders===dersSec&&t.sinif===sinifSec&&t.temaNo===e.target.value)||null; cizPlan(); durumYaz();
 });
+durumOku(); cizPlan();
 $('yazdir').addEventListener('click',()=>window.print());
 $('sifirla').addEventListener('click',()=>{ try{ localStorage.removeItem(anahtar()); }catch(e){} cizPlan(); });
 </script>

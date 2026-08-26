@@ -267,12 +267,18 @@ for kod, v in out.items():
 for k in ck_idx:
     ck_idx[k].sort(key=lambda x: x['c'])
 
+# tema geneli köprüler de haritaya girmeli: şablon bunları "tema geneli" etiketiyle
+# ayrı gösterir. (Daha önce bu indeks yazılmadığı için haritada hiç görünmüyorlardı.)
+tk_idx = {k: v['kopru'] for k, v in tema_out.items()}
+
 harita = {
     'temalar': h_temalar,
+    'temaKopru': tk_idx,
     'kodlar': {e['code']: {'n': e['name'], 'd': e['def'][:150] + ('…' if len(e['def']) > 150 else '')}
                for e in beceriler},
     'ciktiKopru': ck_idx,
 }
 json.dump(harita, open(os.path.join(VERI, 'harita.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 print('harita.json →', len(h_temalar), 'tema,',
-      sum(1 for x in h_temalar if x['hedefler']), 'bağlantılı,', len(ck_idx), 'çıktı kanıtlı tema')
+      sum(1 for x in h_temalar if x['hedefler']), 'bağlantılı,', len(ck_idx), 'çıktı kanıtlı tema,',
+      len(tk_idx), 'tema geneli kanıtlı tema')
