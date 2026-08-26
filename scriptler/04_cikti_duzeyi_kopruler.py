@@ -257,7 +257,7 @@ for t in temalar:
     kodset = sorted(set(KOD_RE2.findall(' '.join(
         str(t.get(k, '')) for k in ['egilimler', 'sdb', 'degerler', 'okuryazarlik', 'kavramsal']))))
     h_temalar.append({'ders': t['ders'], 'sinif': t['sinif'], 'temaNo': t['temaNo'], 'tema': t['tema'],
-                      'hedefler': hs, 'kod': kodset,
+                      'saat': t.get('saat', ''), 'hedefler': hs, 'kod': kodset,
                       'cikti': adet.get((t['ders'], t['sinif'], t['temaNo']), 0)})
 
 ck_idx = {}

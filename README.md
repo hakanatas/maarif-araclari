@@ -11,7 +11,7 @@ Türkiye Yüzyılı Maarif Modeli'nin **resmî ortaokul öğretim programları**
 | 🧭 **[Kod Pusulası](araclar/kod-pusulasi.html)** | `SDB2.2`, `KB2.14`, `D14.1` gibi kodların tanımı, süreç bileşenleri, göstergeleri ve hangi derste kaç kez geçtiği | 444 kod |
 | 🗺️ **[Kazanım Gezgini](araclar/kazanim-gezgini.html)** | 15 dersin bütün öğrenme çıktıları; ders/sınıf/tema filtresi, arama, süreç bileşenleri | 1256 çıktı |
 | 📋 **[Ders Planı Atölyesi](araclar/ders-plani.html)** | Tema seçince 8 ögeli plan resmî metinle dolar; düzenlenir, yazdırılır | 274 tema |
-| 🕸️ **[Disiplinler Arası Harita](araclar/disiplinler-haritasi.html)** | Dersler arası köprü ağı; köprüyü doğuran çıktı, program alıntısı ve plan ögesi | 192 tema, 90 çıktı köprüsü |
+| 🕸️ **[Disiplinler Arası Harita](araclar/disiplinler-haritasi.html)** | **Yıl takvimi:** temanızı işlerken diğer derslerde ne işleniyor + programın istediği köprüler. **Ders ağı:** bütün köprü ilişkileri, çıktı ve alıntılarıyla | 274 tema, 90 çıktı köprüsü |
 
 Açılış sayfası: [`index.html`](index.html)
 
@@ -75,6 +75,8 @@ Yalnız arayüzü değiştirecekseniz `scriptler/sablonlar/` altındaki şablonu
 - Köprü katmanı ders adının metinde anılmasına dayanır; adı geçmeden kurulan ilişkiler yakalanmaz. Sayılar bu yüzden bir **alt sınırdır**.
 - Haritadaki "beceri-değer dokusu örtüşen temalar" listesi resmî bir ilişki değil, türetilmiş bir benzerlik ölçüsüdür. Kodlar programlarda kimi yerde grup (`OB1`), kimi yerde alt düzeyde (`OB1.2`) yazıldığı için akraba temalar eşleşmeyebilir.
 - 274 temanın 247'sinde beş çekirdek plan ögesi eksiksiz ayrıştı; kalanlarda eksik bölüm arayüzde gösterilmez.
+- Yıl takvimindeki hafta aralıkları **tahmindir**: temaların programdaki sırayla ve yazılı ders saatleriyle 36 haftalık yıla yayıldığı varsayılır. Ders adları ve saatler resmîdir, haftalara dağıtım hesaplanmıştır.
+- Büyük harfli tema başlıklarında PDF font eşlemesi bazen `İ` harfini noktasız `I` yapıyor; başlıklar aynı metnin gövdesindeki doğru yazımdan otomatik onarılır (`03_temalar.py`).
 
 ## Lisans
 

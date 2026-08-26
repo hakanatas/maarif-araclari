@@ -56,6 +56,31 @@ ETIKETLER = [
 ET_RE = re.compile('|'.join(f'(?P<{k}>{p})' for k, p in ETIKETLER))
 SINIR = ['yansitmalar', 'okulTemelli']  # blok sonu işaretleri
 
+def nokta_sozlugu(metin):
+    """PDF'te büyük harfli başlıklarda İ bazen noktasız I'ya düşer (font eşlemesi).
+    Aynı metnin gövdesinde doğru yazım bulunduğundan, noktasız izdüşümden noktalı
+    biçime bir sözlük kurup başlıkları onarırız. Sabit liste değil, veriye dayalı."""
+    soz = {}
+    for w in re.findall(r'[A-Za-zÇĞİÖŞÜçğıöşü]{3,}', metin):
+        # Türkçe kurallarına göre büyüt: i -> İ, ı -> I
+        buyuk = w.replace('i', 'İ').replace('ı', 'I').upper()
+        if 'İ' not in buyuk:
+            continue
+        soz.setdefault(buyuk.replace('İ', 'I'), set()).add(buyuk)
+    return soz
+
+
+def basligi_onar(baslik, soz):
+    out = []
+    for w in baslik.split():
+        if 'I' in w and 'İ' not in w:
+            aday = soz.get(w)
+            if aday and len(aday) == 1:      # yalnız tek adaylı, kesin durumlar
+                w = next(iter(aday))
+        out.append(w)
+    return ' '.join(out)
+
+
 def temiz(s):
     s = re.sub(r'\s+', ' ', s).strip()
     return re.sub(r'(\w)- (\w)', r'\1\2', s)
@@ -73,6 +98,7 @@ for_app = []
 for stem, ders, kod_pat, mod in PROGRAMLAR:
     metin = open(os.path.join(DIR, stem + '.txt'), encoding='utf-8').read()
     metin = sayfa_temizle(metin, ders)
+    nokta_soz = nokta_sozlugu(metin)
     kod_re = re.compile(kod_pat)
 
     # blok sınırları: DERS SAATİ konumları
@@ -122,6 +148,8 @@ for stem, ders, kod_pat, mod in PROGRAMLAR:
             hm = None
             for hm in re.finditer(r'(?:TEMA|ÜNİTE)\s*:?\s*\n+\s*([A-ZÇĞİÖŞÜ][^\n]{3,80})', onsoz): pass
             if hm: tema = temiz(hm.group(1))
+        if tema == tema.upper():
+            tema = basligi_onar(tema, nokta_soz)
 
         # bölümleri kes
         parcalar = {}

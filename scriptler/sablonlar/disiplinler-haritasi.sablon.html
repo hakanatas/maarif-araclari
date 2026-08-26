@@ -104,6 +104,70 @@
            text-transform: uppercase; color: var(--ink-faint); border: 1px solid var(--line);
            border-radius: 4px; padding: 0.05em 0.35em; }
   .ck-rozet.tk { background: none; color: var(--ink-faint); border: 1px solid var(--line); }
+
+  /* --- sekmeler --- */
+  .sekmeler { display: flex; gap: 0.3rem; border-bottom: 1px solid var(--line); margin: 0 0 1rem; }
+  .sekme {
+    font: inherit; font-size: 0.92rem; font-weight: 600; cursor: pointer; background: none;
+    border: 1px solid transparent; border-bottom: 0; border-radius: 8px 8px 0 0;
+    padding: 0.5rem 1rem; color: var(--ink-faint); margin-bottom: -1px;
+  }
+  .sekme[aria-selected="true"] { color: var(--petrol); border-color: var(--line); background: var(--surface); }
+  .sekme:focus-visible { outline: 2px solid var(--focus); }
+
+  /* --- yıl takvimi --- */
+  .takvim { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem 0.6rem; overflow-x: auto; }
+  .tk-izgara { min-width: 720px; }
+  .tk-satir { display: grid; grid-template-columns: 148px 1fr; gap: 0.6rem; align-items: center; margin-bottom: 0.3rem; }
+  .tk-ders { font-size: 0.82rem; text-align: right; line-height: 1.25; }
+  .tk-ders .hs { display: block; font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--ink-faint); }
+  .tk-serit { position: relative; height: 30px; background: var(--line-soft); border-radius: 5px; }
+  .tk-blok {
+    position: absolute; top: 0; bottom: 0; border: 1px solid var(--surface);
+    background: var(--petrol-soft); color: var(--ink); border-radius: 4px; cursor: pointer;
+    font-size: 0.7rem; line-height: 28px; padding: 0 0.35rem; overflow: hidden; white-space: nowrap;
+    text-align: left;
+  }
+  .tk-blok:hover, .tk-blok:focus-visible { background: var(--petrol); color: var(--paper); outline: none; z-index: 3; }
+  .tk-blok.secili { background: var(--petrol); color: var(--paper); font-weight: 600; z-index: 2; }
+  .tk-blok.esz { background: var(--ochre-soft); border-color: var(--ochre); }
+  .tk-blok.kopru { box-shadow: inset 0 -3px 0 var(--gelen); }
+  .tk-eksen { display: grid; grid-template-columns: 148px 1fr; gap: 0.6rem; margin-top: 0.35rem; }
+  .tk-hafta { position: relative; height: 18px; }
+  .tk-hafta span {
+    position: absolute; top: 0; font-family: "IBM Plex Mono", monospace; font-size: 0.64rem;
+    color: var(--ink-faint); transform: translateX(-50%);
+  }
+  .tk-imlec { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--gelen); opacity: 0.55; pointer-events: none; z-index: 4; }
+
+  /* --- brifing --- */
+  .brifing { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.3rem; margin-top: 1rem; }
+  .brifing h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.2rem; margin: 0 0 0.2rem; }
+  .brifing .kunye { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: var(--ink-faint); margin-bottom: 0.9rem; }
+  .br-blok { margin-top: 1rem; }
+  .br-blok > h4 {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.4rem; font-weight: 500;
+  }
+  .esz-satir {
+    display: grid; grid-template-columns: minmax(120px, max-content) 1fr; gap: 0.3rem 0.8rem;
+    padding: 0.45rem 0; border-top: 1px solid var(--line-soft); font-size: 0.88rem; align-items: baseline;
+  }
+  .esz-satir .ed { color: var(--ink-soft); }
+  .esz-satir .et2 { font-weight: 600; }
+  .esz-satir.vurgu { background: var(--ochre-soft); border-radius: 6px; padding-left: 0.5rem; padding-right: 0.5rem; }
+  .esz-rozet {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; background: var(--gelen);
+    color: var(--paper); border-radius: 99px; padding: 0.1em 0.5em; margin-left: 0.4rem; white-space: nowrap;
+  }
+  .ortak-kod { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
+  .varsayim { font-size: 0.8rem; color: var(--ink-faint); margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.6rem; }
+  .br-eylem { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+  .br-eylem a {
+    font-size: 0.82rem; text-decoration: none; color: var(--petrol); border: 1px solid var(--line);
+    border-radius: 8px; padding: 0.35rem 0.8rem; background: var(--paper);
+  }
+  .br-eylem a:hover { border-color: var(--petrol); }
   .dokum { margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.7rem; }
   .dokum h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.4rem; }
   .dokum-tema { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem; margin: 0.35rem 0; font-size: 0.84rem; }
@@ -143,9 +207,22 @@
   <header>
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
     <h1>Disiplinler Arası Harita</h1>
-    <p class="sub">Öğretim programlarının kendi "Disiplinler Arası İlişkiler" bölümlerinden çıkarılan bağlantı ağı. Bir <b>derse</b> tıklayın: verdiği/aldığı köprüler ve tema tema dökümü açılır. Bir <b>çizgiye</b> tıklayın: o köprüyü kuran temaların tam listesi gelir. Temaların altında <b>köprüyü doğuran öğrenme çıktısı</b> ve programdan alıntılanan cümlesi görünür; belirli bir çıktıya bağlanamayan ifadeler "tema geneli" olarak ayrı işaretlenir.</p>
+    <p class="sub">İki görünüm: <b>Yıl takvimi</b> günlük iş içindir — kendi temanızı bulun, aynı haftalarda diğer derslerde ne işlendiğini ve programın hangi dersle köprü kurmanızı istediğini görün. <b>Ders ağı</b> ise bütünü gösterir: hangi ders hangi dersle kaç temada ilişkilendiriliyor, köprüyü doğuran öğrenme çıktısı ve programdan alıntılanan cümle nedir.</p>
   </header>
 
+  <div class="sekmeler" role="tablist">
+    <button class="sekme" id="sekme-takvim" role="tab" aria-selected="true" aria-controls="gorunum-takvim">Yıl takvimi</button>
+    <button class="sekme" id="sekme-ag" role="tab" aria-selected="false" aria-controls="gorunum-ag">Ders ağı</button>
+  </div>
+
+  <section id="gorunum-takvim" role="tabpanel" aria-labelledby="sekme-takvim">
+    <p class="sub">Bir sınıf seçin: o seviyedeki bütün derslerin temaları, programdaki ders saatlerine göre yıl boyunca nereye düştüğüyle birlikte dizilir. Bir temaya tıklayın; <b>siz onu işlerken diğer derslerde ne işleniyor</b> ve program hangi dersle köprü kurmanızı istiyor, tek brifingte görün.</p>
+    <div class="cips" id="takvim-sinif" role="group" aria-label="Sınıf seçimi"></div>
+    <div class="takvim"><div class="tk-izgara" id="tk-izgara"></div></div>
+    <div id="brifing"></div>
+  </section>
+
+  <section id="gorunum-ag" role="tabpanel" aria-labelledby="sekme-ag" hidden>
   <div class="cips" id="sinif-filtre" role="group" aria-label="Sınıf filtresi"></div>
   <div class="cips"><span class="et">Katman:</span><button class="cip acik" id="ck-toggle" aria-pressed="true">Çıktı düzeyi köprüler ağda</button></div>
 
@@ -169,8 +246,9 @@
   </div>
   <div class="tema-panel" id="tema-panel" hidden></div>
 
-  <button class="tablo-ac" id="tablo-ac" aria-expanded="false">Bağlantı tablosunu göster</button>
+  <button class="tablo-ac" id="tablo-ac" aria-expanded="false">Denetim tablosunu göster</button>
   <div class="tablo-kap" id="tablo-kap" hidden></div>
+  </section>
 
   <footer>
     Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Ağustos 2026). Çıktı düzeyi köprüler, bir dersin adının anıldığı cümlenin hangi bölgede geçtiğine bakılarak sınıflandırılır: cümle bir öğrenme çıktısının kendi uygulama metnindeyse o çıktıya bağlanır (69 çıktı, 90 bağ), temanın geneline ait bir bölümdeyse hiçbir çıktıya bağlanmaz (23 bağ). Bu ayrım olmadan tema geneli ifadeler listedeki son çıktıya yapışıp olmayan bir bağ üretiyordu. "Benzer temalar", temaların beceri-değer kodu kesişimlerinden (Jaccard) hesaplanır. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a>. Bu sayfa resmî bir MEB ürünü değildir.
@@ -510,4 +588,161 @@ $('tablo-ac').addEventListener('click',()=>{
   $('tablo-ac').textContent = k.hidden? 'Bağlantı tablosunu göster':'Bağlantı tablosunu gizle';
   $('tablo-ac').setAttribute('aria-expanded', String(!k.hidden));
 });
+
+// ============ YIL TAKVİMİ ============
+const HAFTA = 36;
+let tkSinif = '5', tkSecili = null;
+
+function grupKod(k){ return k.split('.')[0]; }
+
+function cizelge(sinif){
+  const dersler = {};
+  for(const t of TEMALAR){
+    if(String(t.sinif) !== String(sinif)) continue;
+    const saat = parseInt(t.saat, 10);
+    if(!saat) continue;
+    (dersler[t.ders] = dersler[t.ders] || []).push(t);
+  }
+  const out = [];
+  for(const ders of Object.keys(dersler)){
+    const liste = dersler[ders].sort((a,b)=>parseInt(a.temaNo)-parseInt(b.temaNo));
+    const toplam = liste.reduce((x,t)=>x+parseInt(t.saat,10), 0);
+    if(!toplam) continue;
+    let birikim = 0;
+    const bloklar = liste.map(t=>{
+      const bas = birikim / toplam * HAFTA;
+      birikim += parseInt(t.saat, 10);
+      return { t, bas, son: birikim / toplam * HAFTA };
+    });
+    out.push({ ders, toplam, haftalik: toplam / HAFTA, bloklar });
+  }
+  out.sort((a,b)=> b.haftalik - a.haftalik || a.ders.localeCompare(b.ders,'tr'));
+  return out;
+}
+
+function blokBul(sinif, ders, temaNo){
+  const c = cizelge(sinif).find(x=>x.ders===ders);
+  return c ? c.bloklar.find(b=>b.t.temaNo===temaNo) : null;
+}
+
+function cizTakvimSinif(){
+  const kap = $('takvim-sinif'); kap.innerHTML = '<span class="et">Sınıf:</span>';
+  for(const s of ['5','6','7','8']){
+    const b = document.createElement('button');
+    b.className = 'cip' + (tkSinif===s ? ' acik' : '');
+    b.textContent = s + '. sınıf';
+    b.setAttribute('aria-pressed', tkSinif===s);
+    b.onclick = ()=>{ tkSinif = s; tkSecili = null; cizTakvimSinif(); cizTakvim(); $('brifing').innerHTML=''; };
+    kap.appendChild(b);
+  }
+}
+
+function cizTakvim(){
+  const c = cizelge(tkSinif);
+  const sec = tkSecili ? blokBul(tkSinif, tkSecili.ders, tkSecili.temaNo) : null;
+  let h = '';
+  for(const satir of c){
+    h += `<div class="tk-satir"><div class="tk-ders">${esc(kisa(satir.ders))}<span class="hs">${satir.haftalik.toFixed(1)} saat/hafta</span></div><div class="tk-serit">`;
+    for(const b of satir.bloklar){
+      const sol = b.bas / HAFTA * 100, gen = (b.son - b.bas) / HAFTA * 100;
+      const secMi = tkSecili && b.t.ders===tkSecili.ders && b.t.temaNo===tkSecili.temaNo;
+      const eszMi = sec && !secMi && b.bas < sec.son - 0.15 && b.son > sec.bas + 0.15;
+      const kopruMu = sec && eszMi && (tkSecili.hedefler||[]).includes(b.t.ders);
+      h += `<button class="tk-blok${secMi?' secili':''}${eszMi?' esz':''}${kopruMu?' kopru':''}"
+              style="left:${sol.toFixed(2)}%;width:${gen.toFixed(2)}%"
+              data-ders="${esc(b.t.ders)}" data-tema="${esc(b.t.temaNo)}"
+              title="${esc(trBaslik(b.t.tema))} · ${esc(b.t.saat)} saat · ${Math.round(b.bas)+1}-${Math.ceil(b.son)}. hafta">${esc(trBaslik(b.t.tema))}</button>`;
+    }
+    h += `</div></div>`;
+  }
+  h += `<div class="tk-eksen"><div></div><div class="tk-hafta">`;
+  for(let w=0; w<=HAFTA; w+=4) h += `<span style="left:${(w/HAFTA*100).toFixed(2)}%">${w===0?'1. hafta':w+'.'}</span>`;
+  h += `</div></div>`;
+  $('tk-izgara').innerHTML = h;
+  $('tk-izgara').querySelectorAll('.tk-blok').forEach(b=>{
+    b.onclick = ()=>{
+      const t = TEMALAR.find(x=>x.ders===b.dataset.ders && String(x.sinif)===String(tkSinif) && x.temaNo===b.dataset.tema);
+      tkSecili = t; cizTakvim(); cizBrifing();
+      $('brifing').scrollIntoView({behavior:'smooth', block:'nearest'});
+    };
+  });
+}
+
+function cizBrifing(){
+  const t = tkSecili;
+  if(!t){ $('brifing').innerHTML=''; return; }
+  const sec = blokBul(tkSinif, t.ders, t.temaNo);
+  const c = cizelge(tkSinif);
+  const benimKod = new Set((t.kod||[]).map(grupKod));
+
+  // eşzamanlı temalar
+  const esz = [];
+  for(const satir of c){
+    if(satir.ders === t.ders) continue;
+    for(const b of satir.bloklar){
+      if(b.bas < sec.son - 0.15 && b.son > sec.bas + 0.15){
+        const ortak = [...new Set((b.t.kod||[]).map(grupKod))].filter(k=>benimKod.has(k));
+        esz.push({ ders: satir.ders, t: b.t, bas: b.bas, son: b.son, ortak,
+                   kopru: (t.hedefler||[]).includes(satir.ders) });
+      }
+    }
+  }
+  esz.sort((a,b)=> (b.kopru - a.kopru) || (b.ortak.length - a.ortak.length));
+
+  const ck = ckBul(t, null), tk = tkBul(t, null);
+  const hafta = `${Math.round(sec.bas)+1}–${Math.ceil(sec.son)}. hafta`;
+
+  let h = `<div class="brifing"><h3>${esc(trBaslik(t.tema))}</h3>
+    <p class="kunye">${esc(t.ders)} · ${esc(tkSinif)}. sınıf · ${esc(t.saat)} ders saati · yaklaşık ${hafta}${t.cikti?` · ${t.cikti} öğrenme çıktısı`:''}</p>`;
+
+  // 1) resmî köprüler
+  h += `<div class="br-blok"><h4>Programın istediği köprüler</h4>`;
+  if((t.hedefler||[]).length){
+    h += `<p style="margin:0;font-size:0.9rem">${t.hedefler.map(x=>`<span class="hedef-cip">${esc(kisa(x))}</span>`).join(' ')}</p>`;
+  } else {
+    h += `<p style="margin:0;font-size:0.88rem;color:var(--ink-faint)">Bu temanın "Disiplinler Arası İlişkiler" satırı programda belirtilmemiş ya da metinden ayrıştırılamamış.</p>`;
+  }
+  h += `</div>`;
+
+  // 2) eşzamanlı temalar
+  h += `<div class="br-blok"><h4>Siz bu temayı işlerken diğer derslerde (${esz.length} tema)</h4>`;
+  if(!esz.length) h += `<p style="margin:0;font-size:0.88rem;color:var(--ink-faint)">Eşzamanlı tema bulunamadı.</p>`;
+  for(const e of esz){
+    h += `<div class="esz-satir${e.kopru?' vurgu':''}">
+      <span class="ed">${esc(kisa(e.ders))}${e.kopru?`<span class="esz-rozet">program bu dersi işaret ediyor</span>`:''}</span>
+      <span><span class="et2">${esc(trBaslik(e.t.tema))}</span>
+      <span class="dt-sinif"> ${Math.round(e.bas)+1}–${Math.ceil(e.son)}. hafta</span>
+      ${e.ortak.length?`<span class="ortak-kod">${e.ortak.slice(0,8).map(k=>{const b=KOD[k];return `<span class="kod-cip" title="${esc(b?b.n:'')}">${esc(k)}</span>`;}).join('')}</span>`:''}</span></div>`;
+  }
+  h += `</div>`;
+
+  // 3) programdaki gerekçe cümleleri
+  if(ck.length || tk.length){
+    h += `<div class="br-blok"><h4>Programın kendi ifadesi</h4>${ckHTML(ck, true)}${tkHTML(tk, true)}</div>`;
+  }
+
+  // 4) eylem bağlantıları
+  h += `<div class="br-eylem">
+    <a href="./ders-plani.html" target="_blank" rel="noopener">Bu temanın ders planını aç →</a>
+    <a href="./kazanim-gezgini.html" target="_blank" rel="noopener">Çıktılarını incele →</a>
+  </div>`;
+
+  h += `<p class="varsayim"><b>Hafta hesabı bir tahmindir.</b> Temaların programdaki sırayla ve yazılı ders saatleriyle, 36 haftalık yıla yayılarak işlendiği varsayılır. Okulunuzun akışı farklıysa haftalar kayar; eşzamanlılık listesini buna göre okuyun. Ders adları ve ders saatleri resmî programdan alınmıştır.</p>`;
+  h += `</div>`;
+  $('brifing').innerHTML = h;
+}
+
+// sekme geçişi
+function sekmeGec(hedef){
+  const takvimMi = hedef === 'takvim';
+  $('gorunum-takvim').hidden = !takvimMi;
+  $('gorunum-ag').hidden = takvimMi;
+  $('sekme-takvim').setAttribute('aria-selected', String(takvimMi));
+  $('sekme-ag').setAttribute('aria-selected', String(!takvimMi));
+}
+$('sekme-takvim').addEventListener('click', ()=>sekmeGec('takvim'));
+$('sekme-ag').addEventListener('click', ()=>sekmeGec('ag'));
+
+cizTakvimSinif(); cizTakvim(); sekmeGec('takvim');
+
 </script>
