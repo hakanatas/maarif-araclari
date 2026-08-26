@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maarif Araç Kutusu</title>
+<meta name="description" content="Türkiye Yüzyılı Maarif Modeli ortaokul programları için dört açık kaynak öğretmen aracı: kod sözlüğü, kazanım gezgini, ders planı atölyesi ve disiplinler arası harita.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%A7%B0%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --madder: #A83A2E; --madder-soft: #F5E6E3;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --madder: #E08A7E; --madder-soft: #3A2420;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --madder: #E08A7E; --madder-soft: #3A2420;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 1rem; line-height: 1.6;
+  }
+  a { color: var(--petrol); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 3.5rem 1.3rem 4rem; }
+  .col { max-width: 66ch; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: clamp(2.1rem, 5.5vw, 3.2rem); line-height: 1.08; margin: 0 0 0.8rem;
+    text-wrap: balance;
+  }
+  .lede { font-size: 1.12rem; color: var(--ink-soft); margin: 0 0 1.6rem; }
+
+  .sayilar { display: flex; flex-wrap: wrap; gap: 0 2.2rem; margin: 0 0 0.6rem; padding: 0; list-style: none; }
+  .sayilar li { padding: 0.4rem 0; }
+  .sayilar b {
+    display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.5rem;
+    font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums;
+  }
+  .sayilar span { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+
+  hr.kural { border: 0; border-top: 1px solid var(--line); margin: 2.6rem 0 0; }
+
+  h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.45rem; font-weight: 600; margin: 2.4rem 0 0.5rem; }
+  p { margin: 0 0 1rem; }
+
+  .kartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin: 1.4rem 0 0; }
+  .kart {
+    display: flex; flex-direction: column; gap: 0.5rem; text-decoration: none; color: inherit;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 1.2rem 1.3rem 1.1rem; transition: border-color 0.15s, transform 0.15s;
+  }
+  .kart:hover, .kart:focus-visible { border-color: var(--petrol); transform: translateY(-2px); outline: none; }
+  .kart .ust { display: flex; align-items: baseline; gap: 0.55rem; }
+  .kart .ikon { font-size: 1.15rem; }
+  .kart h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.2rem; font-weight: 600; margin: 0; }
+  .kart p { font-size: 0.93rem; color: var(--ink-soft); margin: 0; flex-grow: 1; }
+  .kart .veri {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--ink-faint);
+    border-top: 1px dashed var(--line); padding-top: 0.55rem;
+  }
+  .kart .git { font-size: 0.85rem; color: var(--petrol); font-weight: 600; }
+
+  .akis { display: grid; gap: 0.6rem; margin: 1.2rem 0 0; padding: 0; list-style: none; counter-reset: adim; }
+  .akis li {
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--petrol);
+    border-radius: 6px; padding: 0.7rem 1rem; font-size: 0.93rem;
+  }
+  .akis li b { font-weight: 600; }
+  .akis li code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: var(--ochre-soft); color: var(--ochre); border-radius: 4px; padding: 0.05em 0.35em; }
+
+  .uyari {
+    background: var(--madder-soft); border-left: 3px solid var(--madder);
+    border-radius: 0 8px 8px 0; padding: 0.8rem 1.1rem; margin: 1.4rem 0 0; font-size: 0.92rem;
+  }
+  .uyari b { color: var(--madder); }
+
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--ink-faint); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .kart:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Maarif Araç Kutusu</h1>
+    <div class="col">
+      <p class="lede">Maarif Modeli'nin resmî ortaokul öğretim programları makine tarafından okunabilir hâle getirildi; üzerine öğretmenin günlük işini kısaltan dört araç kuruldu. Hepsi tarayıcıda çalışır, kurulum ve üyelik istemez.</p>
+    </div>
+    <ul class="sayilar">
+      <li><b>15</b><span>öğretim programı</span></li>
+      <li><b>1256</b><span>öğrenme çıktısı</span></li>
+      <li><b>274</b><span>tema</span></li>
+      <li><b>444</b><span>beceri &amp; değer kodu</span></li>
+    </ul>
+  </header>
+
+  <hr class="kural">
+
+  <section>
+    <h2>Araçlar</h2>
+    <div class="kartlar">
+
+      <a class="kart" href="./araclar/kod-pusulasi.html">
+        <div class="ust"><span class="ikon">🧭</span><h3>Kod Pusulası</h3></div>
+        <p>Programlardaki <b>SDB2.2</b>, <b>KB2.14</b>, <b>D14.1</b> gibi kodların ne anlama geldiğini aramadan bulun. Tanım, süreç bileşenleri, göstergeler ve kodun hangi derste kaç kez geçtiği tek kartta.</p>
+        <p class="veri">444 kod · 277 kodun ders bazlı kullanım dağılımı</p>
+        <span class="git">Aç →</span>
+      </a>
+
+      <a class="kart" href="./araclar/kazanim-gezgini.html">
+        <div class="ust"><span class="ikon">🗺️</span><h3>Kazanım Gezgini</h3></div>
+        <p>On beş dersin bütün öğrenme çıktıları tek arayüzde: ders, sınıf ve tema filtresi, serbest arama, açılır süreç bileşenleri. Çıktıdaki beceri etiketine dokununca tanımı yerinde belirir.</p>
+        <p class="veri">1256 çıktı · 15 ders · 5-8. sınıf ve seçmeli düzeyler</p>
+        <span class="git">Aç →</span>
+      </a>
+
+      <a class="kart" href="./araclar/ders-plani.html">
+        <div class="ust"><span class="ikon">📋</span><h3>Ders Planı Atölyesi</h3></div>
+        <p>Tema seçin; planın sekiz ögesi programdaki resmî metinle dolsun. Her bölümü kendi sınıfınıza göre düzenleyin, işlemeyeceğiniz çıktıları çıkarın, temiz bir A4 planı yazdırın.</p>
+        <p class="veri">274 tema · temel kabuller, köprü kurma, ölçme, farklılaştırma</p>
+        <span class="git">Aç →</span>
+      </a>
+
+      <a class="kart" href="./araclar/disiplinler-haritasi.html">
+        <div class="ust"><span class="ikon">🕸️</span><h3>Disiplinler Arası Harita</h3></div>
+        <p>Hangi ders hangi dersle, hangi temada köprü kuruyor? Bağlantıya tıklayın; köprüyü doğuran öğrenme çıktısı, programdan alıntılanmış cümlesi ve köprünün doğduğu plan ögesi görünsün.</p>
+        <p class="veri">192 bağlantılı tema · 105 çıktıda belgelenmiş 133 köprü</p>
+        <span class="git">Aç →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="col">
+    <h2>Bu veriler nereden geliyor?</h2>
+    <p>Tamamı Millî Eğitim Bakanlığı'nın resmî sitesi <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> üzerinde yayımlanan belgelerden üretildi. Kaynaktan araca giden yol dört adımda otomatik ve yeniden çalıştırılabilir:</p>
+    <ol class="akis">
+      <li><b>Beceri çerçeveleri</b> sitenin kendi sayfalarından ayrıştırılır — PDF eklerindeki tablolar metne çevrildiğinde bozulduğu için HTML tercih edilir. <code>01_beceriler.py</code></li>
+      <li><b>Öğrenme çıktıları</b> program PDF'lerinden çıkarılır. Her dersin kendi kod dili vardır: Fen beş parçalı kod kullanır, seçmeliler sınıf yerine düzeyle, Türkçe ise dört sınıfı birleştiren kod zincirleriyle. <code>02_ogrenme_ciktilari.py</code></li>
+      <li><b>Tema blokları</b> ve sekiz ögeli öğretim döngüsü çıkarılır. <code>03_temalar.py</code></li>
+      <li><b>Çıktı düzeyi köprüler</b>: her çıktının metin bölgesinde anılan dersler, kanıt cümlesi ve köprünün doğduğu plan ögesiyle birlikte kaydedilir. <code>04_cikti_duzeyi_kopruler.py</code></li>
+    </ol>
+    <p style="margin-top:1rem">Üretilen veri setleri <code style="font-family:'IBM Plex Mono',monospace;font-size:0.85em">veri/</code> klasöründe JSON olarak durur; isteyen doğrulayabilir, program güncellendiğinde yeniden üretebilir.</p>
+
+    <div class="uyari">
+      <b>Resmî değildir.</b> Bu araçlar MEB tarafından hazırlanmamış, onaylanmamıştır. Metinler otomatik ayrıştırma ile çıkarıldığı için eksik veya hatalı aktarım olabilir; bağlayıcı olan, resmî sitedeki öğretim programı PDF'leridir. Araçları başvuru ve hazırlık kolaylığı olarak kullanın, kaynağın yerine değil.
+    </div>
+  </section>
+
+  <footer>
+    Kaynak belgeler: T.C. Millî Eğitim Bakanlığı, Türkiye Yüzyılı Maarif Modeli (<a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a>), Ağustos 2026 itibarıyla.
+    Araçların kodu MIT lisansıyla açıktır; belgelerin telif hakkı MEB'e aittir.
+  </footer>
+</div>
+</body>
+</html>

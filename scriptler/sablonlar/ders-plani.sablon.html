@@ -1,0 +1,272 @@
+<title>Ders Planı Atölyesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --madder: #A83A2E; --madder-soft: #F5E6E3;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --madder: #E08A7E; --madder-soft: #3A2420;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --madder: #E08A7E; --madder-soft: #3A2420;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem; line-height: 1.55;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.4rem; line-height: 1.1;
+  }
+  .sub { color: var(--ink-soft); margin: 0 0 1.4rem; max-width: 70ch; }
+
+  .panel { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  select, button.arac, input[type=text] {
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1.5px solid var(--line); border-radius: 8px; padding: 0.5rem 0.7rem;
+  }
+  select:focus, button:focus-visible, input:focus, [contenteditable]:focus {
+    outline: 2px solid var(--focus); outline-offset: 1px;
+  }
+  button.arac { cursor: pointer; }
+  button.birincil { background: var(--petrol); color: var(--paper); border-color: var(--petrol); font-weight: 600; }
+  .ipucu { font-size: 0.8rem; color: var(--ink-faint); margin: 0 0 1.2rem; }
+
+  .plan { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.6rem 1.8rem; }
+  .plan-baslik { border-bottom: 2px solid var(--petrol); padding-bottom: 0.8rem; margin-bottom: 1rem; }
+  .plan-baslik h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.4rem; margin: 0 0 0.2rem; }
+  .plan-baslik .alt { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--ink-faint); }
+  .kimlik { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.7rem; font-size: 0.85rem; }
+  .kimlik label { color: var(--ink-faint); }
+  .kimlik input { padding: 0.2rem 0.5rem; border-radius: 5px; font-size: 0.85rem; }
+
+  .b-tablo { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; margin: 0.9rem 0; font-size: 0.88rem; }
+  .b-tablo .et { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); padding-top: 0.15rem; white-space: nowrap; }
+
+  h3.bolum {
+    font-family: "Bricolage Grotesque", sans-serif; font-size: 1.02rem; font-weight: 600;
+    margin: 1.5rem 0 0.4rem; display: flex; align-items: baseline; gap: 0.5rem;
+  }
+  h3.bolum .no { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--petrol); }
+  [contenteditable] {
+    border: 1px dashed transparent; border-radius: 6px; padding: 0.35rem 0.5rem; margin: 0 -0.5rem;
+    font-size: 0.9rem; color: var(--ink-soft); transition: border-color 0.15s;
+  }
+  [contenteditable]:hover { border-color: var(--line); }
+  [contenteditable]:focus { border-color: var(--petrol); border-style: solid; color: var(--ink); }
+  .kod-chip { border-bottom: 1px dotted var(--ochre); color: var(--ochre); cursor: help; font-family: "IBM Plex Mono", monospace; font-size: 0.85em; }
+
+  .cikti { border-left: 3px solid var(--petrol-soft); padding: 0.3rem 0 0.3rem 0.9rem; margin: 0.5rem 0; }
+  .cikti .ck { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; font-weight: 600; color: var(--petrol); margin-right: 0.4rem; }
+  .cikti .cs { font-weight: 600; }
+  .cikti ul { margin: 0.25rem 0 0; padding-left: 1.2rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .cikti-sec { margin-right: 0.5rem; accent-color: var(--petrol); }
+  .cikti.disi { opacity: 0.45; }
+  .cikti.disi ul { display: none; }
+
+  .fark { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  @media (max-width: 640px) { .fark { grid-template-columns: 1fr; } }
+  .fark .kutu { border: 1px solid var(--line-soft); border-radius: 8px; padding: 0.6rem 0.8rem; }
+  .fark .kutu h4 { margin: 0 0 0.3rem; font-size: 0.82rem; font-family: "IBM Plex Mono", monospace; letter-spacing: 0.06em; text-transform: uppercase; }
+  .fark .zeng h4 { color: var(--petrol); }
+  .fark .dest h4 { color: var(--madder); }
+
+  .bos-durum { text-align: center; color: var(--ink-faint); padding: 3.5rem 1rem; border: 1px dashed var(--line); border-radius: 10px; }
+  footer { margin-top: 2rem; font-size: 0.78rem; color: var(--ink-faint); }
+  footer a { color: var(--petrol); }
+
+  @media print {
+    body { background: #fff; color: #111; font-size: 10.5pt; }
+    .panel, .ipucu, .sub, .eyebrow, h1, footer, .yazdirma-gizle { display: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    .plan { border: none; padding: 0; }
+    [contenteditable] { border: none !important; margin: 0; padding: 0.2rem 0; color: #222; }
+    .cikti.disi { display: none; }
+    .kod-chip { color: #555; border-bottom: none; }
+    h3.bolum { break-after: avoid; }
+    .cikti, .fark .kutu { break-inside: avoid; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Ders Planı Atölyesi</h1>
+    <p class="sub">Ders, sınıf ve tema seçin; planın 8 ögeli iskeleti programdaki resmî metinle dolsun. Her bölümü tıklayıp kendi sınıfınıza uyarlayın, çıktılardan işleyeceklerinizi seçin, sonra yazdırın.</p>
+  </header>
+
+  <div class="panel">
+    <select id="ders" aria-label="Ders"><option value="">Ders seçin…</option></select>
+    <select id="sinif" aria-label="Sınıf" disabled><option value="">Sınıf</option></select>
+    <select id="tema" aria-label="Tema" disabled><option value="">Tema</option></select>
+    <button class="arac birincil" id="yazdir" hidden>Yazdır / PDF</button>
+    <button class="arac" id="sifirla" hidden>Resmî metne dön</button>
+  </div>
+  <p class="ipucu" id="ipucu">Düzenlemeleriniz bu tarayıcıda taslak olarak saklanır; "Resmî metne dön" ile programdaki hâline dönebilirsiniz. Kesikli altı çizili kodların üzerine gelin: tanımı görünür.</p>
+
+  <div class="bos-durum" id="bos">Plan hazırlamak için yukarıdan ders, sınıf ve tema seçin.<br>274 temanın tamamı yüklü.</div>
+  <div class="plan" id="plan" hidden></div>
+
+  <footer>
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programları (Ağustos 2026); bölüm metinleri otomatik ayrıştırıldı, bağlayıcı metin resmî PDF'lerdir. Kod tanımları için <a href="./kod-pusulasi.html">Kod Pusulası</a>, çıktı listeleri için <a href="./kazanim-gezgini.html">Kazanım Gezgini</a>. Bu sayfa resmî bir MEB ürünü değildir.
+  </footer>
+</div>
+
+<script>
+const VERI = {/*DATA*/};
+const TEMALAR = VERI.temalar, CIKTI = VERI.ciktilar, KOD = VERI.kodlar;
+const $ = id => document.getElementById(id);
+const esc = s => { const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; };
+
+const KUCUK={'I':'ı','İ':'i','Ç':'ç','Ğ':'ğ','Ö':'ö','Ş':'ş','Ü':'ü'};
+const BAGLAC=new Set(['ve','ile','de','da','mi','mı','mu','mü','için']);
+function trBaslik(s){
+  if(s!==s.toUpperCase()) return s;
+  return s.split(/\s+/).map(w=>{
+    const tam=[...w].map(ch=>KUCUK[ch]||ch.toLowerCase()).join('');
+    if(BAGLAC.has(tam)) return tam;
+    return w[0]+[...w.slice(1)].map(ch=>KUCUK[ch]||ch.toLowerCase()).join('');
+  }).join(' ');
+}
+const KOD_RE = /\b(KB\d[\d.]*|SDB\d[\d.]*|OB\d[\d.]*|E\d\.\d+|D\d+(?:\.\d+)?|MAB\d?[\d.]*|TAB\d[\d.]*|FBAB\d[\d.]*|SBAB\d[\d.]*|SAB\d[\d.]*|BEOSAB\d[\d.]*|BTYAB\d[\d.]*|TSRMAB\d[\d.]*|DAB\d[\d.]*|YDAB\d[\d.]*|YDDB\d[\d.]*)\b/g;
+function kodla(html){
+  return html.replace(KOD_RE, m => {
+    const b = KOD[m] || KOD[m.replace(/\.$/,'')];
+    if(!b) return m;
+    const t = esc(b.n + (b.d ? ' — ' + b.d : ''));
+    return `<span class="kod-chip" title="${t}">${m}</span>`;
+  });
+}
+
+let dersSec='', sinifSec='', temaSec=null;
+
+function doldurDers(){
+  const dersler=[...new Set(TEMALAR.map(t=>t.ders))];
+  for(const d of dersler){ const o=document.createElement('option'); o.value=o.textContent=d; $('ders').appendChild(o); }
+}
+function doldurSinif(){
+  const sel=$('sinif'); sel.innerHTML='<option value="">Sınıf</option>'; sel.disabled=!dersSec;
+  if(!dersSec) return;
+  const s=[...new Set(TEMALAR.filter(t=>t.ders===dersSec).map(t=>t.sinif))].sort((a,b)=>(parseInt(a)||99)-(parseInt(b)||99)||String(a).localeCompare(b,'tr'));
+  for(const x of s){ const o=document.createElement('option'); o.value=x; o.textContent=/^\d+$/.test(x)?x+'. sınıf':x; sel.appendChild(o); }
+  if(s.length===1){ sel.value=s[0]; sinifSec=s[0]; }
+}
+function doldurTema(){
+  const sel=$('tema'); sel.innerHTML='<option value="">Tema</option>'; sel.disabled=!(dersSec&&sinifSec);
+  if(!dersSec||!sinifSec) return;
+  const ts=TEMALAR.filter(t=>t.ders===dersSec&&t.sinif===sinifSec).sort((a,b)=>parseInt(a.temaNo)-parseInt(b.temaNo));
+  for(const t of ts){ const o=document.createElement('option'); o.value=t.temaNo; o.textContent=`${t.temaNo}. ${trBaslik(t.tema)}`; sel.appendChild(o); }
+}
+
+const BOLUMLER = [
+  ['temelKabuller','Temel Kabuller','Önceki süreçlerden getirildiği kabul edilen bilgi ve beceriler'],
+  ['onDegerlendirme','Ön Değerlendirme Süreci','Ön bilgi ve ihtiyaçların belirlenmesi'],
+  ['kopruKurma','Köprü Kurma','Mevcut bilgiler ile yeni öğrenmeler arasında bağ'],
+  ['uygulamalar','Öğrenme-Öğretme Uygulamaları','Öğrenme yaşantılarının akışı'],
+  ['kanitlar','Öğrenme Kanıtları (Ölçme ve Değerlendirme)','Kullanılacak ölçme araçları'],
+];
+
+function anahtar(){ return `plan|${dersSec}|${sinifSec}|${temaSec?.temaNo}`; }
+function taslakOku(){ try { return JSON.parse(localStorage.getItem(anahtar())||'null'); } catch(e){ return null; } }
+function taslakYaz(){
+  try {
+    const veri={};
+    document.querySelectorAll('[data-alan]').forEach(el=>veri[el.dataset.alan]=el.innerHTML);
+    veri._secim=[...document.querySelectorAll('.cikti-sec')].map(c=>c.checked);
+    localStorage.setItem(anahtar(), JSON.stringify(veri));
+  } catch(e){}
+}
+
+function cizPlan(){
+  const t=temaSec;
+  if(!t){ $('plan').hidden=true; $('bos').hidden=false; $('yazdir').hidden=true; $('sifirla').hidden=true; return; }
+  $('bos').hidden=true; $('yazdir').hidden=false; $('sifirla').hidden=false;
+  const taslak=taslakOku()||{};
+  const ciktilar=CIKTI.filter(c=>c.ders===t.ders && (t.kodlar||[]).some(k=>c.code===k||c.code.startsWith(k+'.')));
+
+  let h=`<div class="plan-baslik"><h2>${esc(trBaslik(t.tema))}</h2>
+    <span class="alt">${esc(t.ders)} · ${/^\d+$/.test(t.sinif)?esc(t.sinif)+'. sınıf':esc(t.sinif)} · ${t.temaNo}. tema${t.saat?` · ${esc(t.saat)} ders saati`:''}</span>
+    <div class="kimlik yazdirma-tut"><label>Öğretmen: <input type="text" id="ogretmen" placeholder="adınız"></label>
+    <label>Tarih aralığı: <input type="text" id="tarih" placeholder="__/__ — __/__"></label></div></div>`;
+
+  // beceri satırları
+  const B=[['alan','Alan Becerileri'],['kavramsal','Kavramsal Beceriler'],['egilimler','Eğilimler'],['sdb','Sosyal-Duygusal'],['degerler','Değerler'],['okuryazarlik','Okuryazarlık'],['disiplinler','Disiplinler Arası'],['beceriler','Beceriler Arası']];
+  const satirlar=B.filter(([k])=>t[k]).map(([k,ad])=>`<span class="et">${ad}</span><span>${kodla(esc(t[k]))}</span>`).join('');
+  if(satirlar) h+=`<div class="b-tablo">${satirlar}</div>`;
+
+  // öğrenme çıktıları
+  h+=`<h3 class="bolum"><span class="no">01</span>Öğrenme Çıktıları ve Süreç Bileşenleri <span class="no yazdirma-gizle">(işaretlediğiniz çıktılar plana girer)</span></h3>`;
+  if(ciktilar.length){
+    ciktilar.forEach((c,i)=>{
+      const secili = taslak._secim ? taslak._secim[i]!==false : true;
+      h+=`<div class="cikti${secili?'':' disi'}"><label><input type="checkbox" class="cikti-sec yazdirma-gizle"${secili?' checked':''}><span class="ck">${esc(c.code)}</span><span class="cs">${esc(c.statement)}</span></label>`;
+      if(c.sb&&c.sb.length) h+=`<ul>${c.sb.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`;
+      h+=`</div>`;
+    });
+  } else h+=`<p class="ipucu">Bu temanın çıktıları otomatik eşlenemedi — Kazanım Gezgini'nden kopyalayabilirsiniz.</p>`;
+
+  // içerik çerçevesi
+  if(t.icerik) h+=`<h3 class="bolum"><span class="no">02</span>İçerik Çerçevesi</h3><div contenteditable="true" data-alan="icerik">${taslak.icerik??kodla(esc(t.icerik))}</div>`;
+
+  let no=3;
+  for(const [k,ad,ipucu] of BOLUMLER){
+    if(!t[k]) continue;
+    h+=`<h3 class="bolum"><span class="no">${String(no++).padStart(2,'0')}</span>${ad}</h3>
+        <div contenteditable="true" data-alan="${k}">${taslak[k]??kodla(esc(t[k]))}</div>`;
+  }
+
+  // farklılaştırma
+  if(t.zenginlestirme||t.destekleme){
+    h+=`<h3 class="bolum"><span class="no">${String(no++).padStart(2,'0')}</span>Farklılaştırma</h3><div class="fark">`;
+    if(t.zenginlestirme) h+=`<div class="kutu zeng"><h4>Zenginleştirme</h4><div contenteditable="true" data-alan="zenginlestirme">${taslak.zenginlestirme??kodla(esc(t.zenginlestirme))}</div></div>`;
+    if(t.destekleme) h+=`<div class="kutu dest"><h4>Destekleme</h4><div contenteditable="true" data-alan="destekleme">${taslak.destekleme??kodla(esc(t.destekleme))}</div></div>`;
+    h+=`</div>`;
+  }
+
+  h+=`<h3 class="bolum"><span class="no">${String(no++).padStart(2,'0')}</span>Öğretmen Notları / Yansıtma</h3>
+      <div contenteditable="true" data-alan="notlar">${taslak.notlar??'<i>Uygulama sonrası gözlemleriniz…</i>'}</div>`;
+
+  $('plan').innerHTML=h;
+  $('plan').hidden=false;
+
+  document.querySelectorAll('[contenteditable]').forEach(el=>el.addEventListener('input', taslakYaz));
+  document.querySelectorAll('.cikti-sec').forEach(cb=>cb.addEventListener('change', e=>{
+    e.target.closest('.cikti').classList.toggle('disi', !e.target.checked); taslakYaz();
+  }));
+}
+
+doldurDers();
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; temaSec=null; doldurSinif(); doldurTema(); cizPlan(); });
+$('sinif').addEventListener('change',e=>{ sinifSec=e.target.value; temaSec=null; doldurTema(); cizPlan(); });
+$('tema').addEventListener('change',e=>{
+  temaSec=TEMALAR.find(t=>t.ders===dersSec&&t.sinif===sinifSec&&t.temaNo===e.target.value)||null; cizPlan();
+});
+$('yazdir').addEventListener('click',()=>window.print());
+$('sifirla').addEventListener('click',()=>{ try{ localStorage.removeItem(anahtar()); }catch(e){} cizPlan(); });
+</script>

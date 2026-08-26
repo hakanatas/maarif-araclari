@@ -1,0 +1,487 @@
+<title>Disiplinler Arası Harita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --giden: #0A7FA5; --gelen: #C74B2E;
+    --edge: #1F2B33; --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --giden: #2B9BC0; --gelen: #DB5C42;
+      --edge: #E8E6DF; --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --giden: #2B9BC0; --gelen: #DB5C42;
+    --edge: #E8E6DF; --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem; line-height: 1.55;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.4rem; }
+  h1 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.4rem; line-height: 1.1; }
+  .sub { color: var(--ink-soft); margin: 0 0 1rem; max-width: 72ch; }
+
+  .cips { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin-bottom: 0.9rem; }
+  .cips .et { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-right: 0.3rem; }
+  .cip {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; font-weight: 500;
+    padding: 0.28em 0.7em; border-radius: 99px; cursor: pointer;
+    background: var(--surface); color: var(--ink-soft); border: 1px solid var(--line);
+  }
+  .cip.acik { background: var(--petrol); color: var(--paper); border-color: var(--petrol); }
+  .cip:focus-visible { outline: 2px solid var(--focus); }
+
+  .duzen { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr); gap: 1.2rem; align-items: start; }
+  @media (max-width: 880px) { .duzen { grid-template-columns: 1fr; } }
+  .graf-kutu { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.8rem; }
+  svg { width: 100%; height: auto; display: block; }
+  .kenar { fill: none; stroke: var(--edge); opacity: 0.13; cursor: pointer; transition: opacity 0.15s, stroke 0.15s; }
+  .kenar.giden { stroke: var(--giden); opacity: 0.85; }
+  .kenar.gelen { stroke: var(--gelen); opacity: 0.85; }
+  .kenar.vurgu { stroke: var(--giden); opacity: 1; }
+  .kenar.sonuk { opacity: 0.04; }
+  .dugum circle { fill: var(--petrol-soft); stroke: var(--petrol); stroke-width: 1.5; cursor: pointer; }
+  .dugum.secili circle, .dugum:hover circle { fill: var(--petrol); }
+  .dugum.dis circle { fill: var(--surface); stroke: var(--ink-faint); stroke-dasharray: 3 2; }
+  .dugum text { font-family: "IBM Plex Sans", sans-serif; font-size: 11.5px; fill: var(--ink); cursor: pointer; }
+  .dugum.sonuk { opacity: 0.3; }
+  .dugum:focus-visible { outline: 2px solid var(--focus); }
+  .lejant { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.5rem 0.3rem 0; font-size: 0.78rem; color: var(--ink-soft); }
+  .lejant span::before { content: ''; display: inline-block; width: 16px; height: 3px; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
+  .lejant .l-giden::before { background: var(--giden); }
+  .lejant .l-gelen::before { background: var(--gelen); }
+  .lejant .l-tum::before { background: var(--edge); opacity: 0.25; }
+  .lejant .l-ck::before { background: repeating-linear-gradient(90deg, var(--ochre) 0 5px, transparent 5px 9px); }
+
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.2rem; max-height: 640px; overflow-y: auto; }
+  .panel h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.15rem; margin: 0 0 0.2rem; }
+  .panel .ipucu { font-size: 0.82rem; color: var(--ink-faint); margin: 0.2rem 0 0.8rem; }
+  .bag-grup h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0.9rem 0 0.4rem; }
+  .bag-grup.g-giden h3 { color: var(--giden); }
+  .bag-grup.g-gelen h3 { color: var(--gelen); }
+  .bag { margin: 0.25rem 0; }
+  .bag summary { cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; list-style: none; }
+  .bag summary::-webkit-details-marker { display: none; }
+  .bag .cubuk { flex: 1; height: 7px; background: var(--line-soft); border-radius: 4px; overflow: hidden; min-width: 40px; }
+  .bag .cubuk i { display: block; height: 100%; border-radius: 4px; }
+  .g-giden .cubuk i, .bag.yon-giden .cubuk i { background: var(--giden); }
+  .g-gelen .cubuk i, .bag.yon-gelen .cubuk i { background: var(--gelen); }
+  .bag .n { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .bag ul { margin: 0.3rem 0 0.4rem; padding-left: 1.1rem; font-size: 0.8rem; color: var(--ink-soft); }
+  .bag ul li { margin: 0.1rem 0; }
+
+  .ck-blok { margin: 0.35rem 0 0.5rem 0.2rem; border-left: 2px solid var(--ochre); padding-left: 0.7rem; }
+  .ck-satir { margin: 0.35rem 0; font-size: 0.8rem; }
+  .ck-kod { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: var(--ochre); }
+  .ck-st { color: var(--ink); }
+  .ck-alinti { display: block; color: var(--ink-soft); font-style: italic; margin-top: 0.12rem; }
+  .ck-oge { display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; letter-spacing: 0.06em;
+            text-transform: uppercase; background: var(--ochre-soft); color: var(--ochre); border-radius: 4px;
+            padding: 0.05em 0.4em; margin-top: 0.15rem; }
+  .ck-rozet { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; background: var(--ochre-soft);
+              color: var(--ochre); border-radius: 99px; padding: 0.05em 0.45em; margin-left: 0.3rem;
+              white-space: nowrap; display: inline-block; }
+  .dokum { margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.7rem; }
+  .dokum h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.4rem; }
+  .dokum-tema { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem; margin: 0.35rem 0; font-size: 0.84rem; }
+  .dokum-tema .dt-ad { font-weight: 600; }
+  .dokum-tema .dt-sinif { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--ink-faint); }
+  .dokum-tema .dt-yok { font-size: 0.76rem; color: var(--ink-faint); font-style: italic; }
+  .mini-cip { font-size: 0.72rem; background: var(--petrol-soft); color: var(--petrol); border-radius: 99px; padding: 0.08em 0.55em; cursor: pointer; border: 1px solid transparent; }
+  .mini-cip:hover, .mini-cip:focus-visible { border-color: var(--petrol); outline: none; }
+  .mini-cip.ck { background: var(--ochre-soft); color: var(--ochre); border-style: dashed; border-color: color-mix(in srgb, var(--ochre) 45%, transparent); }
+
+  h2.bolum-baslik { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.3rem; margin: 2.2rem 0 0.5rem; }
+  .satir { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem; }
+  select { font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 0.45rem 0.7rem; max-width: 100%; }
+  select:focus, button:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .tema-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.2rem; }
+  .resmi { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.4rem 0 0.8rem; }
+  .resmi .etiket, .etiket { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .hedef-cip { font-size: 0.8rem; background: var(--petrol-soft); color: var(--petrol); border: 1px solid color-mix(in srgb, var(--petrol) 30%, transparent); border-radius: 99px; padding: 0.15em 0.7em; }
+  .benzer { border-left: 3px solid var(--line-soft); padding: 0.35rem 0 0.35rem 0.8rem; margin: 0.45rem 0; }
+  .benzer .bb { font-size: 0.88rem; }
+  .benzer .bb b { color: var(--petrol); }
+  .benzer .ortak { margin-top: 0.2rem; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .kod-cip { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; background: var(--ochre-soft); color: var(--ochre); border-radius: 4px; padding: 0.06em 0.4em; cursor: help; }
+
+  .tablo-ac { font: inherit; background: var(--surface); color: var(--petrol); border: 1px solid var(--line); border-radius: 8px; padding: 0.4rem 1rem; cursor: pointer; margin-top: 1rem; }
+  .tablo-kap { overflow-x: auto; margin-top: 0.7rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.85rem; background: var(--surface); border: 1px solid var(--line); }
+  th, td { text-align: left; padding: 0.45rem 0.8rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; }
+
+  footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--ink-faint); }
+  footer a { color: var(--petrol); }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Disiplinler Arası Harita</h1>
+    <p class="sub">Öğretim programlarının kendi "Disiplinler Arası İlişkiler" bölümlerinden çıkarılan bağlantı ağı. Bir <b>derse</b> tıklayın: verdiği/aldığı köprüler ve tema tema dökümü açılır. Bir <b>çizgiye</b> tıklayın: o köprüyü kuran temaların tam listesi gelir. Temaların altında <b>köprüyü doğuran öğrenme çıktısı</b>, programdan alıntılanan cümlesi ve köprünün doğduğu plan ögesiyle birlikte görünür.</p>
+  </header>
+
+  <div class="cips" id="sinif-filtre" role="group" aria-label="Sınıf filtresi"></div>
+  <div class="cips"><span class="et">Katman:</span><button class="cip acik" id="ck-toggle" aria-pressed="true">Çıktı düzeyi köprüler ağda</button></div>
+
+  <div class="duzen">
+    <div class="graf-kutu">
+      <svg id="graf" viewBox="0 0 720 640" role="img" aria-label="Dersler arası bağlantı grafiği"></svg>
+      <div class="lejant"><span class="l-giden">seçili dersin temalarından giden</span><span class="l-gelen">seçili derse gelen</span><span class="l-tum">tüm bağlantılar (kalınlık = tema sayısı)</span><span class="l-ck">kesikli: yalnız öğrenme çıktısı metninde belgelenmiş</span></div>
+    </div>
+    <div class="panel" id="panel">
+      <h2 id="p-baslik">Bir ders ya da bağlantı seçin</h2>
+      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir; 105 öğrenme çıktısında ise köprünün metindeki gerekçesi de bulundu ve ilgili temanın altında alıntılanır. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
+      <div id="p-icerik"></div>
+    </div>
+  </div>
+
+  <h2 class="bolum-baslik">Tema bazında köprüler</h2>
+  <div class="satir">
+    <select id="ders" aria-label="Ders"><option value="">Ders seçin…</option></select>
+    <select id="sinif" aria-label="Sınıf" disabled><option value="">Sınıf</option></select>
+    <select id="tema" aria-label="Tema" disabled><option value="">Tema</option></select>
+  </div>
+  <div class="tema-panel" id="tema-panel" hidden></div>
+
+  <button class="tablo-ac" id="tablo-ac" aria-expanded="false">Bağlantı tablosunu göster</button>
+  <div class="tablo-kap" id="tablo-kap" hidden></div>
+
+  <footer>
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Ağustos 2026). Çıktı düzeyi köprüler, her öğrenme çıktısının kendi metin bölgesinde geçen ders atıflarından çıkarılmış ve kaynak cümlesiyle birlikte saklanmıştır (105 çıktı, 133 bağ). "Benzer temalar", temaların beceri-değer kodu kesişimlerinden (Jaccard) hesaplanır. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a>. Bu sayfa resmî bir MEB ürünü değildir.
+  </footer>
+</div>
+
+<script>
+const VERI = {/*DATA*/};
+const TEMALAR = VERI.temalar, KOD = VERI.kodlar, CK = VERI.ciktiKopru || {};
+const $ = id => document.getElementById(id);
+const esc = s => { const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; };
+const KISA = {'T.C. İnkılap Tarihi ve Atatürkçülük':'İnkılap Tarihi','Din Kültürü ve Ahlak Bilgisi':'Din Kültürü',
+ 'Bilişim Teknolojileri ve Yazılım':'Bilişim Tek.','Görgü Kuralları ve Nezaket (Seçmeli)':'Görgü Kuralları (S)',
+ 'Masal ve Destanlarımız (Seçmeli)':'Masal-Destan (S)','Yazarlık ve Yazma Becerileri (Seçmeli)':'Yazarlık (S)',
+ 'Okuma Becerileri (Seçmeli)':'Okuma Bec. (S)','İnsan Hakları ve Vatandaşlık':'İnsan Hakları (İlkokul)',
+ 'Hayat Bilgisi':'Hayat Bilgisi (İlkokul)','Beden Eğitimi ve Spor':'Beden Eğitimi','Teknoloji ve Tasarım':'Teknoloji-Tasarım'};
+const kisa = d => KISA[d] || d;
+const DIS = new Set(['Hayat Bilgisi','İnsan Hakları ve Vatandaşlık','İngilizce']);
+const sinifEt = s => /^\d+$/.test(s) ? s+'. sınıf' : s;
+const KUCUK={'I':'ı','İ':'i','Ç':'ç','Ğ':'ğ','Ö':'ö','Ş':'ş','Ü':'ü'};
+const BAGLAC=new Set(['ve','ile','de','da','için','mi','mı']);
+function trBaslik(s){
+  if(!s || s!==s.toUpperCase()) return s;
+  return s.split(/\s+/).map(w=>{
+    const tam=[...w].map(c=>KUCUK[c]||c.toLowerCase()).join('');
+    if(BAGLAC.has(tam)) return tam;
+    return w[0]+[...w.slice(1)].map(c=>KUCUK[c]||c.toLowerCase()).join('');
+  }).join(' ');
+}
+
+// --- sınıf filtresi
+const FILTRELER = [
+  {id:'*', ad:'Tümü', test: s=>true},
+  {id:'5', ad:'5. sınıf', test: s=>s==='5'},
+  {id:'6', ad:'6. sınıf', test: s=>s==='6'},
+  {id:'7', ad:'7. sınıf', test: s=>s==='7'},
+  {id:'8', ad:'8. sınıf', test: s=>s==='8'},
+  {id:'ilk', ad:'İlkokul (1-4)', test: s=>['1','2','3','4'].includes(s)},
+  {id:'sec', ad:'Seçmeli düzeyleri', test: s=>String(s).startsWith('Düzey')||s==='—'},
+];
+let filtre = FILTRELER[0];
+let ckEkle = true;
+let secili = null;       // seçili ders
+let seciliKenar = null;  // {a, b}
+
+function aktifTemalar(){ return TEMALAR.filter(t=>filtre.test(String(t.sinif))); }
+
+// kenarlar: (kaynak|hedef) -> {w, temalar:[{sinif, tema, temaNo}]}
+function hesaplaKenarlar(){
+  const m = new Map();
+  const ekle = (kaynak, hedef, t, ckMi) => {
+    const k = kaynak + '|' + hedef;
+    if(!m.has(k)) m.set(k, {kaynak, hedef, w: 0, temalar: [], temaAnahtar: new Set(), ckSayi: 0, temaDuzeyi: 0});
+    const e = m.get(k);
+    const ta = t.ders + '|' + t.sinif + '|' + t.temaNo;
+    if(!e.temaAnahtar.has(ta)){ e.temaAnahtar.add(ta); e.temalar.push(t); e.w++; }
+    if(ckMi) e.ckSayi++; else e.temaDuzeyi++;
+  };
+  for(const t of aktifTemalar()){
+    for(const h of (t.hedefler||[])) ekle(t.ders, h, t, false);
+    if(ckEkle){
+      const hedefler = new Set(ckBul(t, null).map(x=>x.hedef));
+      for(const h of hedefler){ if(h!==t.ders && !(t.hedefler||[]).includes(h)) ekle(t.ders, h, t, true); }
+    }
+  }
+  return [...m.values()].sort((a,b)=>b.w-a.w);
+}
+function hesaplaDugumler(edges){
+  const m = new Map();
+  for(const t of aktifTemalar()){
+    if(!m.has(t.ders)) m.set(t.ders, {ders: t.ders, tema: 0});
+    m.get(t.ders).tema++;
+  }
+  for(const e of edges){
+    if(!m.has(e.kaynak)) m.set(e.kaynak, {ders: e.kaynak, tema: 0});
+    if(!m.has(e.hedef)) m.set(e.hedef, {ders: e.hedef, tema: 0});
+  }
+  return [...m.values()].sort((a,b)=>b.tema-a.tema);
+}
+
+let EDGES = [], NODES = [], pos = {};
+const CX=360, CY=320, R=225;
+function yerles(){
+  EDGES = hesaplaKenarlar();
+  NODES = hesaplaDugumler(EDGES);
+  NODES.forEach((n,i)=>{
+    const a = -Math.PI/2 + i*2*Math.PI/NODES.length;
+    pos[n.ders] = {x: CX+R*Math.cos(a), y: CY+R*Math.sin(a)};
+  });
+}
+
+function yol(a, b){
+  const p1=pos[a], p2=pos[b];
+  const mx=(p1.x+p2.x)/2, my=(p1.y+p2.y)/2, k=0.42;
+  return `M${p1.x.toFixed(1)},${p1.y.toFixed(1)} Q${(mx+(CX-mx)*k).toFixed(1)},${(my+(CY-my)*k).toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`;
+}
+
+function cizGraf(){
+  const maxW = Math.max(...EDGES.map(e=>e.w), 1);
+  const maxT = Math.max(...NODES.map(n=>n.tema), 1);
+  const svg = $('graf');
+  let h = '<g>';
+  EDGES.forEach((e,i)=>{
+    const w = 1 + 6*Math.sqrt(e.w/maxW);
+    let cls='kenar';
+    const kenarSecili = seciliKenar && ((e.kaynak===seciliKenar.a&&e.hedef===seciliKenar.b)||(e.kaynak===seciliKenar.b&&e.hedef===seciliKenar.a));
+    if(seciliKenar){ cls += kenarSecili ? ' vurgu' : ' sonuk'; }
+    else if(secili){
+      if(e.kaynak===secili) cls+=' giden';
+      else if(e.hedef===secili) cls+=' gelen';
+      else cls+=' sonuk';
+    }
+    const ckOnly = e.temaDuzeyi === 0;
+    const dash = ckOnly ? ' stroke-dasharray="5 4"' : '';
+    const not = ckOnly ? ' · yalnız çıktı düzeyinde belgelenmiş' : (e.ckSayi ? ` · ${e.ckSayi} çıktı kanıtı` : '');
+    h += `<path class="${cls}" data-i="${i}"${dash} d="${yol(e.kaynak,e.hedef)}" stroke-width="${w.toFixed(1)}"><title>${esc(e.kaynak)} → ${esc(e.hedef)} · ${e.w} tema${not} (tıkla: liste)</title></path>`;
+  });
+  h += '</g><g>';
+  for(const n of NODES){
+    const p = pos[n.ders];
+    const r = 6 + 10*Math.sqrt(n.tema/maxT);
+    const dis = DIS.has(n.ders);
+    const bagli = secili && (n.ders===secili || EDGES.some(e=>(e.kaynak===secili&&e.hedef===n.ders)||(e.hedef===secili&&e.kaynak===n.ders)));
+    const kenarUcu = seciliKenar && (n.ders===seciliKenar.a || n.ders===seciliKenar.b);
+    let cls='dugum'+(dis?' dis':'')+(n.ders===secili||kenarUcu?' secili':'');
+    if((secili&&!bagli) || (seciliKenar&&!kenarUcu)) cls+=' sonuk';
+    const sag = p.x >= CX;
+    h += `<g class="${cls}" tabindex="0" role="button" aria-label="${esc(n.ders)}" data-ders="${esc(n.ders)}">
+      <circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}"><title>${esc(n.ders)}${n.tema?` · ${n.tema} tema`:''}</title></circle>
+      <text x="${(p.x+(sag?r+7:-(r+7))).toFixed(1)}" y="${(p.y+4).toFixed(1)}" text-anchor="${sag?'start':'end'}">${esc(kisa(n.ders))}</text></g>`;
+  }
+  h += '</g>';
+  svg.innerHTML = h;
+  svg.querySelectorAll('.dugum').forEach(g=>{
+    const d = g.dataset.ders;
+    const sec = () => { seciliKenar=null; secili = (secili===d? null : d); cizGraf(); cizPanel(); };
+    g.addEventListener('click', sec);
+    g.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sec(); } });
+  });
+  svg.querySelectorAll('.kenar').forEach(p=>{
+    p.addEventListener('click', ()=>{
+      const e = EDGES[+p.dataset.i];
+      secili=null; seciliKenar = {a: e.kaynak, b: e.hedef};
+      cizGraf(); cizKenarPanel();
+    });
+  });
+}
+
+function ckBul(t, hedef){
+  const liste = CK[`${t.ders}|${t.sinif}|${t.temaNo}`] || [];
+  const cikti = [];
+  for(const c of liste){
+    for(const [h, kanitlar] of Object.entries(c.k)){
+      if(hedef && h!==hedef) continue;
+      cikti.push({kod: c.c, st: c.s, hedef: h, kanit: kanitlar[0]});
+    }
+  }
+  return cikti;
+}
+function ckHTML(liste, hedefGoster){
+  if(!liste.length) return '';
+  return `<div class="ck-blok">` + liste.map(x=>`
+    <div class="ck-satir"><span class="ck-kod">${esc(x.kod)}</span> <span class="ck-st">${esc(x.st)}</span>${hedefGoster?` <span class="ck-rozet">→ ${esc(kisa(x.hedef))}</span>`:''}
+    <span class="ck-alinti">"${esc(x.kanit.a)}"</span>
+    ${x.kanit.o?`<span class="ck-oge">${esc(x.kanit.o)}</span>`:''}</div>`).join('') + `</div>`;
+}
+
+function temaSatir(t, hedef){
+  const ck = ckBul(t, hedef);
+  const rozet = ck.length ? `<span class="ck-rozet">${ck.length} çıktı kanıtı</span>` : '';
+  return `<li><b>${esc(trBaslik(t.tema))}</b> <span class="dt-sinif">(${esc(sinifEt(String(t.sinif)))}${t.cikti?` · ${t.cikti} çıktı`:''})</span>${rozet}${ckHTML(ck, false)}</li>`;
+}
+
+function bagDetay(liste, yonCls){
+  const maxN = Math.max(...liste.map(x=>x.w), 1);
+  return liste.map(e=>{
+    const oteki = yonCls==='yon-giden' ? e.hedef : e.kaynak;
+    const temalar = e.temalar.map(t=>temaSatir(t, e.hedef)).join('');
+    return `<details class="bag ${yonCls}"><summary><span>${esc(kisa(oteki))}</span><span class="cubuk"><i style="width:${Math.max(6,Math.round(e.w/maxN*100))}%"></i></span><span class="n">${e.w}</span></summary><ul>${temalar}</ul></details>`;
+  }).join('');
+}
+
+function cizPanel(){
+  if(!secili){ $('p-baslik').textContent='Bir ders ya da bağlantı seçin'; $('p-icerik').innerHTML=''; $('p-ipucu').hidden=false; return; }
+  $('p-ipucu').hidden=true;
+  $('p-baslik').textContent = secili + (filtre.id==='*' ? '' : ` · ${filtre.ad}`);
+  const giden = EDGES.filter(e=>e.kaynak===secili).sort((a,b)=>b.w-a.w);
+  const gelen = EDGES.filter(e=>e.hedef===secili).sort((a,b)=>b.w-a.w);
+  let h='';
+  if(giden.length) h+=`<div class="bag-grup g-giden"><h3>Temalarından köprü kurduğu dersler (${giden.reduce((t,e)=>t+e.w,0)} tema-köprüsü)</h3>${bagDetay(giden,'yon-giden')}</div>`;
+  if(gelen.length) h+=`<div class="bag-grup g-gelen"><h3>Kendisine köprü kuran dersler (${gelen.reduce((t,e)=>t+e.w,0)} tema-köprüsü)</h3>${bagDetay(gelen,'yon-gelen')}</div>`;
+  // tema tema döküm
+  const kendi = aktifTemalar().filter(t=>t.ders===secili)
+    .sort((a,b)=>(parseInt(a.sinif)||99)-(parseInt(b.sinif)||99)||parseInt(a.temaNo)-parseInt(b.temaNo));
+  if(kendi.length){
+    h+=`<div class="dokum"><h3>Tema tema döküm (${kendi.length} tema)</h3>`;
+    for(const t of kendi){
+      const ck = ckBul(t, null);
+      const ckHedef = [...new Set(ck.map(x=>x.hedef))].filter(x=>!(t.hedefler||[]).includes(x));
+      let cips = (t.hedefler&&t.hedefler.length)
+        ? t.hedefler.map(x=>`<button class="mini-cip" data-git="${esc(x)}">${esc(kisa(x))}</button>`).join('')
+        : '';
+      cips += ckHedef.map(x=>`<button class="mini-cip ck" data-git="${esc(x)}" title="yalnız öğrenme çıktısı metninde belgelenmiş">${esc(kisa(x))}</button>`).join('');
+      if(!cips) cips = `<span class="dt-yok">köprü belirtilmemiş</span>`;
+      h+=`<div class="dokum-tema"><span class="dt-sinif">${esc(sinifEt(String(t.sinif)))} · T${esc(t.temaNo)}</span><span class="dt-ad">${esc(trBaslik(t.tema))}</span> → ${cips}</div>`;
+      if(ck.length) h+=`<details class="bag"><summary style="font-size:0.78rem;color:var(--ochre);margin-left:0.4rem">${ck.length} çıktı kanıtı</summary>${ckHTML(ck, true)}</details>`;
+    }
+    h+=`</div>`;
+  }
+  if(!h) h='<p class="ipucu">Bu ders için ayrıştırılabilen bağlantı yok.</p>';
+  $('p-icerik').innerHTML=h;
+  $('p-icerik').querySelectorAll('.mini-cip[data-git]').forEach(b=>{
+    b.addEventListener('click', ()=>{ seciliKenar=null; secili=b.dataset.git; cizGraf(); cizPanel(); });
+  });
+}
+
+function cizKenarPanel(){
+  const {a, b} = seciliKenar;
+  $('p-ipucu').hidden=true;
+  $('p-baslik').textContent = `${kisa(a)} ⇄ ${kisa(b)}`;
+  const ab = EDGES.find(e=>e.kaynak===a&&e.hedef===b);
+  const ba = EDGES.find(e=>e.kaynak===b&&e.hedef===a);
+  let h='';
+  if(ab) h+=`<div class="bag-grup g-giden"><h3>${esc(kisa(a))} → ${esc(kisa(b))} (${ab.w} tema)</h3><ul style="margin:0.2rem 0;padding-left:1.1rem;font-size:0.84rem;color:var(--ink-soft)">${ab.temalar.map(t=>temaSatir(t, b)).join('')}</ul></div>`;
+  if(ba) h+=`<div class="bag-grup g-gelen"><h3>${esc(kisa(b))} → ${esc(kisa(a))} (${ba.w} tema)</h3><ul style="margin:0.2rem 0;padding-left:1.1rem;font-size:0.84rem;color:var(--ink-soft)">${ba.temalar.map(t=>temaSatir(t, a)).join('')}</ul></div>`;
+  $('p-icerik').innerHTML = h || '<p class="ipucu">Bu yönde bağlantı yok.</p>';
+}
+
+function cizFiltre(){
+  const kap=$('sinif-filtre'); kap.innerHTML='<span class="et">Sınıf:</span>';
+  for(const f of FILTRELER){
+    const say = TEMALAR.filter(t=>f.test(String(t.sinif)) && (t.hedefler||[]).length).length;
+    if(f.id!=='*' && !say) continue;
+    const b=document.createElement('button');
+    b.className='cip'+(filtre.id===f.id?' acik':'');
+    b.textContent=f.ad;
+    b.setAttribute('aria-pressed', filtre.id===f.id);
+    b.onclick=()=>{ filtre=f; yerles(); cizFiltre(); cizGraf(); if(seciliKenar) cizKenarPanel(); else cizPanel(); cizTablo(); };
+    kap.appendChild(b);
+  }
+}
+
+// --- tema bazlı köprüler (Jaccard)
+function doldur(){
+  for(const d of [...new Set(TEMALAR.map(t=>t.ders))]){ const o=document.createElement('option'); o.value=o.textContent=d; $('ders').appendChild(o); }
+}
+let dersSec='', sinifSec='';
+function doldurSinif(){
+  const sel=$('sinif'); sel.innerHTML='<option value="">Sınıf</option>'; sel.disabled=!dersSec;
+  if(!dersSec) return;
+  const s=[...new Set(TEMALAR.filter(t=>t.ders===dersSec).map(t=>String(t.sinif)))].sort((a,b)=>(parseInt(a)||99)-(parseInt(b)||99)||a.localeCompare(b,'tr'));
+  for(const x of s){ const o=document.createElement('option'); o.value=x; o.textContent=sinifEt(x); sel.appendChild(o); }
+  if(s.length===1){ sel.value=s[0]; sinifSec=s[0]; doldurTema(); }
+}
+function doldurTema(){
+  const sel=$('tema'); sel.innerHTML='<option value="">Tema</option>'; sel.disabled=!(dersSec&&sinifSec);
+  if(sel.disabled) return;
+  for(const t of TEMALAR.filter(t=>t.ders===dersSec&&String(t.sinif)===sinifSec).sort((a,b)=>parseInt(a.temaNo)-parseInt(b.temaNo))){
+    const o=document.createElement('option'); o.value=t.temaNo; o.textContent=`${t.temaNo}. ${trBaslik(t.tema)}`; sel.appendChild(o);
+  }
+}
+function jaccard(a,b){
+  const A=new Set(a), B=new Set(b);
+  const kes=[...A].filter(x=>B.has(x));
+  return {oran: new Set([...A,...B]).size? kes.length/new Set([...A,...B]).size : 0, kes};
+}
+function cizTema(){
+  const t = TEMALAR.find(x=>x.ders===dersSec&&String(x.sinif)===sinifSec&&x.temaNo===$('tema').value);
+  const kap=$('tema-panel');
+  if(!t){ kap.hidden=true; return; }
+  kap.hidden=false;
+  let h=`<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:0 0 0.3rem">${esc(trBaslik(t.tema))}</h2>`;
+  h+=`<div class="resmi"><span class="etiket">Programın belirttiği köprüler:</span>`;
+  h+= (t.hedefler&&t.hedefler.length) ? t.hedefler.map(x=>`<span class="hedef-cip">${esc(kisa(x))}</span>`).join('')
+                        : '<span class="etiket">bu temada belirtilmemiş / ayrıştırılamadı</span>';
+  h+=`</div>`;
+  const ckHepsi = ckBul(t, null);
+  if(ckHepsi.length){
+    h+=`<span class="etiket">Köprüyü doğuran öğrenme çıktıları (${ckHepsi.length})</span>${ckHTML(ckHepsi, true)}`;
+  }
+  if(t.kod && t.kod.length){
+    const adaylar = TEMALAR.filter(x=>x.ders!==t.ders && x.kod && x.kod.length)
+      .map(x=>({x, j: jaccard(t.kod, x.kod)}))
+      .filter(o=>o.j.kes.length>=3)
+      .sort((a,b)=>b.j.oran-a.j.oran).slice(0,5);
+    if(adaylar.length){
+      h+=`<span class="etiket">Beceri-değer dokusu en çok örtüşen temalar</span>`;
+      for(const {x, j} of adaylar){
+        h+=`<div class="benzer"><div class="bb"><b>${esc(kisa(x.ders))}</b> · ${esc(trBaslik(x.tema))} <span style="color:var(--ink-faint)">(${esc(sinifEt(String(x.sinif)))} · %${Math.round(j.oran*100)} örtüşme)</span></div>
+        <div class="ortak">${j.kes.slice(0,10).map(k=>{const bb=KOD[k];return `<span class="kod-cip" title="${esc(bb? bb.n+(bb.d?' — '+bb.d:'') : '')}">${esc(k)}</span>`;}).join('')}</div></div>`;
+      }
+    }
+  }
+  kap.innerHTML=h;
+}
+
+function cizTablo(){
+  let h='<table><thead><tr><th>Kaynak ders</th><th>Hedef ders</th><th>Tema</th><th>Çıktı kanıtı</th><th>Temalar</th></tr></thead><tbody>';
+  for(const e of EDGES) h+=`<tr><td>${esc(e.kaynak)}</td><td>${esc(e.hedef)}</td><td>${e.w}</td><td>${e.ckSayi||'—'}</td><td>${e.temalar.map(t=>`${esc(sinifEt(String(t.sinif)))}: ${esc(trBaslik(t.tema))}`).join(' · ')}</td></tr>`;
+  $('tablo-kap').innerHTML=h+'</tbody></table>';
+}
+
+yerles(); cizFiltre(); cizGraf(); cizPanel(); doldur(); cizTablo();
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; doldurSinif(); doldurTema(); cizTema(); });
+$('sinif').addEventListener('change',e=>{ sinifSec=e.target.value; doldurTema(); cizTema(); });
+$('tema').addEventListener('change', cizTema);
+$('ck-toggle').addEventListener('click',()=>{
+  ckEkle = !ckEkle;
+  const b = $('ck-toggle');
+  b.classList.toggle('acik', ckEkle); b.setAttribute('aria-pressed', String(ckEkle));
+  b.textContent = ckEkle ? 'Çıktı düzeyi köprüler ağda' : 'Yalnız tema düzeyi bağlantılar';
+  yerles(); cizGraf(); if(seciliKenar) cizKenarPanel(); else cizPanel(); cizTablo();
+});
+$('tablo-ac').addEventListener('click',()=>{
+  const k=$('tablo-kap'); k.hidden=!k.hidden;
+  $('tablo-ac').textContent = k.hidden? 'Bağlantı tablosunu göster':'Bağlantı tablosunu gizle';
+  $('tablo-ac').setAttribute('aria-expanded', String(!k.hidden));
+});
+</script>

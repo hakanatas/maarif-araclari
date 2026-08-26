@@ -1,0 +1,290 @@
+<title>Kod Pusulası</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --madder: #A83A2E; --madder-soft: #F5E6E3;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --violet: #5B4B8A; --violet-soft: #EAE6F2;
+    --moss: #4E6B2F; --moss-soft: #E9EEDF;
+    --slate: #3D5A73; --slate-soft: #E4EBF1;
+    --bar: #16606922;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --madder: #E08A7E; --madder-soft: #3A2420;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --violet: #B0A1DE; --violet-soft: #2A2440;
+      --moss: #A4C078; --moss-soft: #232E18;
+      --slate: #93B4CE; --slate-soft: #1F2C37;
+      --bar: #6FC2CB33;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --madder: #E08A7E; --madder-soft: #3A2420;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --violet: #B0A1DE; --violet-soft: #2A2440;
+    --moss: #A4C078; --moss-soft: #232E18;
+    --slate: #93B4CE; --slate-soft: #1F2C37;
+    --bar: #6FC2CB33;
+    --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 0.96rem; line-height: 1.55;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; }
+  header .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.4rem; line-height: 1.1;
+  }
+  .sub { color: var(--ink-soft); margin: 0 0 1.4rem; max-width: 68ch; }
+
+  .arama { position: sticky; top: 0; z-index: 5; background: var(--paper); padding: 0.6rem 0 0.8rem; border-bottom: 1px solid var(--line); }
+  .arama input {
+    width: 100%; font: inherit; font-size: 1.05rem; color: var(--ink);
+    background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px;
+    padding: 0.65rem 1rem;
+  }
+  .arama input:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+  .filtreler { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+  .filtre {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 500;
+    padding: 0.28em 0.7em; border-radius: 99px; cursor: pointer;
+    background: var(--surface); color: var(--ink-soft); border: 1px solid var(--line);
+  }
+  .filtre:focus-visible { outline: 2px solid var(--focus); }
+  .filtre.acik { background: var(--petrol); color: var(--paper); border-color: var(--petrol); }
+  .sayac { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); margin: 0.9rem 0 0.6rem; }
+
+  .kartlar { display: grid; gap: 0.7rem; }
+  .kart {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+  }
+  .kart-ust { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; }
+  .kod {
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 0.85rem;
+    padding: 0.1em 0.5em; border-radius: 5px; white-space: nowrap;
+    background: var(--fs, var(--ochre-soft)); color: var(--fc, var(--ochre));
+    border: 1px solid color-mix(in srgb, var(--fc, var(--ochre)) 30%, transparent);
+  }
+  .kart h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.08rem; font-weight: 600; margin: 0; }
+  .fwtag { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; white-space: nowrap; }
+  .kirinti { font-size: 0.78rem; color: var(--ink-faint); margin: 0.15rem 0 0; }
+  .tanim { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.92rem; }
+  details { margin-top: 0.55rem; }
+  summary {
+    cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--petrol);
+  }
+  summary:focus-visible { outline: 2px solid var(--focus); border-radius: 3px; }
+  .sb-liste { margin: 0.45rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
+  .sb-liste li { padding-left: 0.9rem; border-left: 2px solid var(--line-soft); font-size: 0.88rem; }
+  .sb-kod { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); margin-right: 0.35rem; }
+  .g-liste { margin: 0.25rem 0 0.1rem; padding-left: 0.9rem; list-style: none; display: grid; gap: 0.15rem; }
+  .g-liste li { font-size: 0.8rem; color: var(--ink-soft); border-left: 2px dotted var(--line-soft); padding-left: 0.7rem; }
+  .refler { margin-top: 0.55rem; display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+  .refler .etiket { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+  .ref {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; cursor: pointer;
+    background: none; border: 1px dashed var(--line); border-radius: 5px;
+    padding: 0.08em 0.45em; color: var(--petrol);
+  }
+  .ref:focus-visible { outline: 2px solid var(--focus); }
+  .kullanim { margin-top: 0.7rem; border-top: 1px dashed var(--line-soft); padding-top: 0.55rem; }
+  .kullanim .etiket { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+  .cubuklar { display: grid; grid-template-columns: max-content 1fr max-content; gap: 0.15rem 0.6rem; margin-top: 0.35rem; align-items: center; }
+  .cubuklar .ders { font-size: 0.78rem; color: var(--ink-soft); white-space: nowrap; }
+  .cubuk { height: 8px; border-radius: 4px; background: var(--bar); position: relative; overflow: hidden; }
+  .cubuk i { position: absolute; inset: 0 auto 0 0; background: var(--fc, var(--petrol)); border-radius: 4px; }
+  .cubuklar .n { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .bos { text-align: center; color: var(--ink-faint); padding: 3rem 1rem; }
+  .daha {
+    display: block; margin: 1.2rem auto 0; font: inherit; cursor: pointer;
+    background: var(--surface); color: var(--petrol); border: 1px solid var(--line);
+    border-radius: 8px; padding: 0.5rem 1.4rem;
+  }
+  .daha:focus-visible { outline: 2px solid var(--focus); }
+  footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--ink-faint); }
+  footer a { color: var(--petrol); }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Kod Pusulası</h1>
+    <p class="sub">Öğretim programlarında geçen beceri, değer ve eğilim kodlarının aranabilir sözlüğü. Bir kod yazın (örn. <b>SDB2.2</b>) ya da kavram arayın (örn. <b>empati</b>); tanımı, süreç bileşenlerini ve kodun hangi derste kaç kez geçtiğini görün.</p>
+  </header>
+
+  <div class="arama">
+    <input id="q" type="search" placeholder="Kod veya kavram ara… (SDB2.2, merak, iş birliği, muhakeme)" autocomplete="off" aria-label="Kod veya kavram ara">
+    <div class="filtreler" id="filtreler" role="group" aria-label="Çerçeve filtreleri"></div>
+  </div>
+
+  <p class="sayac" id="sayac"></p>
+  <div class="kartlar" id="sonuclar"></div>
+  <button class="daha" id="daha" hidden>Daha fazla göster</button>
+  <p class="bos" id="bos" hidden>Eşleşen kod bulunamadı. Yazımı kontrol edin ya da filtreleri temizleyin.</p>
+
+  <footer>
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî beceri çerçevesi sayfaları ve 18 ortaokul öğretim programı PDF'i (Ağustos 2026). Kullanım sayıları programlardaki kod geçişlerinden otomatik sayılmıştır; İngilizce programlardaki eşdeğer kodlar (CS→KB, SELS→SDB, V→D, D→E) dahildir. Bu sayfa resmî bir MEB ürünü değildir; öğretmen çalışmalarını kolaylaştırmak için hazırlanmış bir başvuru aracıdır.
+  </footer>
+</div>
+
+<script>
+const VERI = {/*DATA*/};
+const FW = {
+  KB:   { ad: 'Kavramsal Beceriler',            renk: 'petrol' },
+  E:    { ad: 'Eğilimler',                      renk: 'ochre'  },
+  SDB:  { ad: 'Sosyal-Duygusal Öğrenme',        renk: 'violet' },
+  D:    { ad: 'Erdem-Değer-Eylem',              renk: 'madder' },
+  OB:   { ad: 'Okuryazarlık Becerileri',        renk: 'moss'   },
+  TAB:  { ad: 'Türkçe Alan B.',                 renk: 'slate'  },
+  MAB:  { ad: 'Matematik Alan B.',              renk: 'slate'  },
+  FBAB: { ad: 'Fen Bilimleri Alan B.',          renk: 'slate'  },
+  SBAB: { ad: 'Sosyal Bilimler Alan B.',        renk: 'slate'  },
+  SAB:  { ad: 'Sanat Alan B.',                  renk: 'slate'  },
+  BEOSAB:{ ad: 'Beden Eğitimi Alan B.',         renk: 'slate'  },
+  BTYAB:{ ad: 'Bilişim Alan B.',                renk: 'slate'  },
+  TSRMAB:{ ad: 'Tasarım Alan B.',               renk: 'slate'  },
+  DAB:  { ad: 'Din Eğitimi Alan B.',            renk: 'slate'  },
+  YDAB: { ad: 'Yabancı Dil Alan B.',            renk: 'slate'  },
+  YDDB: { ad: 'Yabancı Dil Destek B.',          renk: 'slate'  },
+  FB:   { ad: 'Fiziksel Beceriler',             renk: 'petrol' }
+};
+const RENK = { petrol:['var(--petrol-soft)','var(--petrol)'], ochre:['var(--ochre-soft)','var(--ochre)'],
+  violet:['var(--violet-soft)','var(--violet)'], madder:['var(--madder-soft)','var(--madder)'],
+  moss:['var(--moss-soft)','var(--moss)'], slate:['var(--slate-soft)','var(--slate)'] };
+
+// Türkçe küçük harfe çevirme
+const trLow = s => s.replace(/İ/g,'i').replace(/I/g,'ı').toLowerCase();
+
+const entries = VERI.entries;
+const usage = VERI.usage;
+const idx = entries.map(e => ({
+  e,
+  hay: trLow([e.code, e.name, e.groupName||'', e.def, e.sb.map(s=>s.code+' '+s.text+' '+s.g.join(' ')).join(' ')].join(' '))
+}));
+
+// filtre grupları: temel çerçeveler tek tek, alan becerileri tek çip
+const ALAN = ['TAB','MAB','FBAB','SBAB','SAB','BEOSAB','BTYAB','TSRMAB','DAB','YDAB','YDDB'];
+const FILTRELER = [
+  { id:'KB', ad:'KB · Kavramsal' }, { id:'E', ad:'E · Eğilimler' },
+  { id:'SDB', ad:'SDB · Sosyal-Duygusal' }, { id:'D', ad:'D · Değerler' },
+  { id:'OB', ad:'OB · Okuryazarlık' }, { id:'ALAN', ad:'Alan Becerileri' }
+];
+let acikFiltreler = new Set();
+let sorgu = '';
+let gosterilen = 40;
+
+const $ = id => document.getElementById(id);
+
+function filtreBar() {
+  const kap = $('filtreler'); kap.innerHTML = '';
+  for (const f of FILTRELER) {
+    const b = document.createElement('button');
+    b.className = 'filtre' + (acikFiltreler.has(f.id) ? ' acik' : '');
+    b.textContent = f.ad;
+    b.setAttribute('aria-pressed', acikFiltreler.has(f.id));
+    b.onclick = () => { acikFiltreler.has(f.id) ? acikFiltreler.delete(f.id) : acikFiltreler.add(f.id); gosterilen = 40; ciz(); };
+    kap.appendChild(b);
+  }
+}
+
+function eslesir(rec) {
+  if (acikFiltreler.size) {
+    const fwOk = acikFiltreler.has(rec.e.fw) || (acikFiltreler.has('ALAN') && ALAN.includes(rec.e.fw));
+    if (!fwOk) return false;
+  }
+  if (!sorgu) return true;
+  return sorgu.split(/\s+/).every(k => rec.hay.includes(k));
+}
+
+function esc(s){ const d=document.createElement('span'); d.textContent=s; return d.innerHTML; }
+
+function kartHTML(e) {
+  const fw = FW[e.fw] || { ad: e.fw, renk: 'slate' };
+  const [fs, fc] = RENK[fw.renk];
+  const u = usage[e.code];
+  let html = `<article class="kart" style="--fs:${fs};--fc:${fc}">`;
+  html += `<div class="kart-ust"><span class="kod">${esc(e.code)}</span><h2>${esc(e.name)}</h2><span class="fwtag">${esc(fw.ad)}</span></div>`;
+  if (e.group) html += `<p class="kirinti">${esc(e.group)} · ${esc(e.groupName||'')}</p>`;
+  if (e.def) html += `<p class="tanim">${esc(e.def)}</p>`;
+  if (e.sb.length) {
+    html += `<details><summary>Süreç bileşenleri (${e.sb.length})</summary><ul class="sb-liste">`;
+    for (const s of e.sb) {
+      html += `<li><span class="sb-kod">${esc(s.code)}</span>${esc(s.text)}`;
+      if (s.g.length) html += `<ul class="g-liste">` + s.g.map(g=>`<li>${esc(g)}</li>`).join('') + `</ul>`;
+      html += `</li>`;
+    }
+    html += `</ul></details>`;
+  }
+  if (e.refs && e.refs.length) {
+    html += `<div class="refler"><span class="etiket">İlişkili kavramsal beceriler:</span>` +
+      e.refs.map(r=>`<button class="ref" data-kod="${esc(r)}">${esc(r)}</button>`).join('') + `</div>`;
+  }
+  if (u) {
+    const sirali = Object.entries(u).sort((a,b)=>b[1]-a[1]);
+    const max = sirali[0][1];
+    const top = sirali.slice(0, 8);
+    html += `<div class="kullanim"><span class="etiket">Programlardaki geçişler (${sirali.reduce((t,x)=>t+x[1],0)} kez, ${sirali.length} ders)</span><div class="cubuklar">`;
+    for (const [ders, n] of top) {
+      html += `<span class="ders">${esc(ders)}</span><span class="cubuk"><i style="width:${Math.max(4, Math.round(n/max*100))}%"></i></span><span class="n">${n}</span>`;
+    }
+    html += `</div></div>`;
+  }
+  html += `</article>`;
+  return html;
+}
+
+function ciz() {
+  filtreBar();
+  const hits = idx.filter(eslesir);
+  // kod tam eşleşmesi en üste
+  const q = trLow(sorgu.trim());
+  const skor = e => {
+    if (!q) return 3;
+    const c = trLow(e.code), n = trLow(e.name);
+    if (c === q) return 0;
+    if (c.startsWith(q)) return 1;
+    if (n.includes(q)) return 2;
+    return 3;
+  };
+  hits.sort((a,b)=>{
+    const ax = skor(a.e), bx = skor(b.e);
+    if (ax!==bx) return ax-bx;
+    return a.e.code.localeCompare(b.e.code, 'tr');
+  });
+  $('sayac').textContent = `${hits.length} kod` + (sorgu||acikFiltreler.size ? ` (toplam ${entries.length})` : '');
+  const gorunur = hits.slice(0, gosterilen);
+  $('sonuclar').innerHTML = gorunur.map(h=>kartHTML(h.e)).join('');
+  $('bos').hidden = hits.length > 0;
+  $('daha').hidden = hits.length <= gosterilen;
+  for (const b of document.querySelectorAll('.ref')) {
+    b.onclick = () => { $('q').value = b.dataset.kod; sorgu = trLow(b.dataset.kod); gosterilen = 40; ciz(); window.scrollTo({top:0}); };
+  }
+}
+
+$('q').addEventListener('input', ev => { sorgu = trLow(ev.target.value.trim()); gosterilen = 40; ciz(); });
+$('daha').onclick = () => { gosterilen += 40; ciz(); };
+ciz();
+</script>

@@ -1,0 +1,263 @@
+<title>Kazanım Gezgini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --madder: #A83A2E; --madder-soft: #F5E6E3;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --madder: #E08A7E; --madder-soft: #3A2420;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --madder: #E08A7E; --madder-soft: #3A2420;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --focus: #6FC2CB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 0.96rem; line-height: 1.55;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--petrol); margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 0.4rem; line-height: 1.1;
+  }
+  .sub { color: var(--ink-soft); margin: 0 0 1.4rem; max-width: 70ch; }
+
+  .panel { position: sticky; top: 0; z-index: 5; background: var(--paper); padding: 0.6rem 0 0.8rem; border-bottom: 1px solid var(--line); }
+  .satir { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .satir + .satir { margin-top: 0.55rem; }
+  select, input[type=search] {
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1.5px solid var(--line); border-radius: 8px; padding: 0.5rem 0.7rem;
+  }
+  input[type=search] { flex: 1 1 260px; }
+  select { max-width: 100%; }
+  select:focus, input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .cips { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+  .cip {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; font-weight: 500;
+    padding: 0.28em 0.65em; border-radius: 99px; cursor: pointer;
+    background: var(--surface); color: var(--ink-soft); border: 1px solid var(--line);
+  }
+  .cip.acik { background: var(--petrol); color: var(--paper); border-color: var(--petrol); }
+  .cip:focus-visible { outline: 2px solid var(--focus); }
+  .sayac { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); margin: 0.9rem 0 0.4rem; }
+
+  .grup-baslik {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1.05rem;
+    margin: 1.6rem 0 0.6rem; display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .grup-baslik .ders-ad { color: var(--petrol); }
+  .grup-baslik .tema-ad::before { content: '· '; color: var(--ink-faint); }
+  .grup-baslik .adet { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--ink-faint); }
+
+  .kartlar { display: grid; gap: 0.6rem; }
+  .kart { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0.85rem 1.05rem; }
+  .kart-ust { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; }
+  .kod {
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 0.82rem;
+    padding: 0.1em 0.5em; border-radius: 5px; white-space: nowrap;
+    background: var(--petrol-soft); color: var(--petrol);
+    border: 1px solid color-mix(in srgb, var(--petrol) 30%, transparent);
+  }
+  .sinif-rozet {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--ink-faint);
+    margin-left: auto; white-space: nowrap;
+  }
+  .kart h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.02rem; font-weight: 600; margin: 0; flex: 1 1 60%; }
+  details { margin-top: 0.5rem; }
+  summary {
+    cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--petrol);
+  }
+  summary:focus-visible { outline: 2px solid var(--focus); border-radius: 3px; }
+  .sb-liste { margin: 0.45rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.3rem; }
+  .sb-liste li { padding-left: 0.9rem; border-left: 2px solid var(--line-soft); font-size: 0.88rem; }
+  .sb-harf { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: var(--ink-faint); margin-right: 0.3rem; }
+  .aciklama { margin: 0.45rem 0 0; font-size: 0.88rem; color: var(--ink-soft); }
+  .refler { margin-top: 0.55rem; display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+  .refler .etiket { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin-right: 0.15rem; }
+  .ref {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; cursor: pointer;
+    background: var(--ochre-soft); border: 1px solid color-mix(in srgb, var(--ochre) 30%, transparent);
+    border-radius: 5px; padding: 0.08em 0.45em; color: var(--ochre);
+  }
+  .ref:focus-visible { outline: 2px solid var(--focus); }
+  .ref-acik {
+    margin-top: 0.5rem; font-size: 0.84rem; background: var(--ochre-soft);
+    border-left: 3px solid var(--ochre); border-radius: 0 6px 6px 0; padding: 0.5rem 0.8rem; color: var(--ink-soft);
+  }
+  .ref-acik b { color: var(--ink); }
+  .ref-acik .kapat { float: right; background: none; border: 0; cursor: pointer; color: var(--ink-faint); font: inherit; }
+  .bos { text-align: center; color: var(--ink-faint); padding: 3rem 1rem; }
+  .daha {
+    display: block; margin: 1.2rem auto 0; font: inherit; cursor: pointer;
+    background: var(--surface); color: var(--petrol); border: 1px solid var(--line);
+    border-radius: 8px; padding: 0.5rem 1.4rem;
+  }
+  footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--ink-faint); }
+  footer a { color: var(--petrol); }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <h1>Kazanım Gezgini</h1>
+    <p class="sub">15 öğretim programındaki 1256 öğrenme çıktısı tek arayüzde. Ders, sınıf ve tema seçin ya da arayın; süreç bileşenlerini açın, koddaki beceri etiketlerine dokunup ne anlama geldiğini görün.</p>
+  </header>
+
+  <div class="panel">
+    <div class="satir">
+      <input id="q" type="search" placeholder="Çıktı ara… (kesir, harita, İstiklâl Marşı, MAT.6.2.1)" aria-label="Öğrenme çıktısı ara" autocomplete="off">
+      <select id="ders" aria-label="Ders seç"><option value="">Tüm dersler</option></select>
+      <select id="tema" aria-label="Tema seç"><option value="">Tüm temalar</option></select>
+    </div>
+    <div class="satir cips" id="siniflar" role="group" aria-label="Sınıf filtreleri"></div>
+  </div>
+
+  <p class="sayac" id="sayac"></p>
+  <div id="sonuclar"></div>
+  <button class="daha" id="daha" hidden>Daha fazla göster</button>
+  <p class="bos" id="bos" hidden>Eşleşen öğrenme çıktısı yok. Filtreleri gevşetmeyi deneyin.</p>
+
+  <footer>
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programı PDF'leri (Ağustos 2026); çıktılar otomatik ayrıştırıldı, başvuru amaçlıdır — bağlayıcı metin resmî PDF'lerdir. İngilizce ve Çoklu Yabancı Dil programları farklı yapıda olduğundan bu sürümde yer almıyor. Kod tanımlarının tamamı için <a href="./kod-pusulasi.html">Kod Pusulası</a>'na bakın. Bu sayfa resmî bir MEB ürünü değildir.
+  </footer>
+</div>
+
+<script>
+const VERI = {/*DATA*/};
+const C = VERI.ciktilar, KOD = VERI.kodlar;
+const trLow = s => s.replace(/İ/g,'i').replace(/I/g,'ı').toLowerCase();
+
+const idx = C.map(c => ({ c, hay: trLow([c.code, c.statement, c.tema, c.ders, (c.sb||[]).join(' '), c.aciklama||''].join(' ')) }));
+
+const DERSLER = [...new Set(C.map(c=>c.ders))];
+const SINIFLAR = [...new Set(C.map(c=>c.sinif))].sort((a,b)=>{
+  const na=parseInt(a)||99, nb=parseInt(b)||99; return na-nb || String(a).localeCompare(b,'tr');
+});
+
+let sorgu='', dersSec='', temaSec='', sinifSec=new Set(), gosterilen=60;
+const $ = id => document.getElementById(id);
+
+function doldurDers(){
+  for (const d of DERSLER){ const o=document.createElement('option'); o.value=o.textContent=d; $('ders').appendChild(o); }
+}
+function doldurTema(){
+  const sel=$('tema'); sel.innerHTML='<option value="">Tüm temalar</option>';
+  if(!dersSec) return;
+  const temalar=[...new Set(C.filter(c=>c.ders===dersSec && (!sinifSec.size||sinifSec.has(c.sinif))).map(c=>c.tema))];
+  for(const t of temalar){ const o=document.createElement('option'); o.value=o.textContent=t; sel.appendChild(o); }
+}
+function cizSinif(){
+  const kap=$('siniflar'); kap.innerHTML='';
+  const et=document.createElement('span'); et.className='sayac'; et.style.margin='0'; et.textContent='Sınıf:'; kap.appendChild(et);
+  for(const s of SINIFLAR){
+    const b=document.createElement('button'); b.className='cip'+(sinifSec.has(s)?' acik':'');
+    b.textContent=/^\d+$/.test(s)? s+'. sınıf' : s;
+    b.setAttribute('aria-pressed', sinifSec.has(s));
+    b.onclick=()=>{ sinifSec.has(s)?sinifSec.delete(s):sinifSec.add(s); temaSec=''; doldurTema(); gosterilen=60; ciz(); };
+    kap.appendChild(b);
+  }
+}
+function esc(s){ const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; }
+
+function eslesir(r){
+  const c=r.c;
+  if(dersSec && c.ders!==dersSec) return false;
+  if(temaSec && c.tema!==temaSec) return false;
+  if(sinifSec.size && !sinifSec.has(c.sinif)) return false;
+  if(sorgu && !sorgu.split(/\s+/).every(k=>r.hay.includes(k))) return false;
+  return true;
+}
+
+function kartHTML(c){
+  let h=`<article class="kart">`;
+  h+=`<div class="kart-ust"><span class="kod">${esc(c.code)}</span><h3>${esc(c.statement)}</h3><span class="sinif-rozet">${/^\d+$/.test(c.sinif)? esc(c.sinif)+'. sınıf' : esc(c.sinif)}</span></div>`;
+  if(c.sb && c.sb.length){
+    const harfler='abcçdefgğhıijklm';
+    h+=`<details><summary>Süreç bileşenleri (${c.sb.length})</summary><ul class="sb-liste">`;
+    c.sb.forEach((s,i)=>{ h+=`<li><span class="sb-harf">${harfler[i]||'•'})</span>${esc(s)}</li>`; });
+    h+=`</ul></details>`;
+  }
+  if(c.aciklama){
+    h+=`<details><summary>Uygulama açıklaması</summary><p class="aciklama">${esc(c.aciklama)}</p></details>`;
+  }
+  if(c.refs && c.refs.length){
+    h+=`<div class="refler"><span class="etiket">Beceri etiketleri:</span>`+
+      c.refs.map(r=>`<button class="ref" data-kod="${esc(r)}" aria-expanded="false">${esc(r)}</button>`).join('')+`</div><div class="ref-yuva"></div>`;
+  }
+  h+=`</article>`;
+  return h;
+}
+
+function ciz(){
+  const hits=idx.filter(eslesir);
+  $('sayac').textContent=`${hits.length} öğrenme çıktısı`+((sorgu||dersSec||temaSec||sinifSec.size)?` (toplam ${C.length})`:'');
+  const gorunur=hits.slice(0,gosterilen);
+  // ders→tema gruplama
+  let html='', sonGrup='';
+  let acikKartlar='';
+  const parcalar=[];
+  for(const r of gorunur){
+    const g=r.c.ders+'|'+r.c.tema+'|'+r.c.sinif;
+    if(g!==sonGrup){
+      if(acikKartlar) parcalar.push(`<div class="kartlar">${acikKartlar}</div>`);
+      acikKartlar='';
+      const adet=hits.filter(x=>x.c.ders===r.c.ders&&x.c.tema===r.c.tema&&x.c.sinif===r.c.sinif).length;
+      parcalar.push(`<h2 class="grup-baslik"><span class="ders-ad">${esc(r.c.ders)}</span><span class="tema-ad">${esc(r.c.tema)}</span><span class="adet">${/^\d+$/.test(r.c.sinif)? esc(r.c.sinif)+'. sınıf · ':''}${adet} çıktı</span></h2>`);
+      sonGrup=g;
+    }
+    acikKartlar+=kartHTML(r.c);
+  }
+  if(acikKartlar) parcalar.push(`<div class="kartlar">${acikKartlar}</div>`);
+  $('sonuclar').innerHTML=parcalar.join('');
+  $('bos').hidden=hits.length>0;
+  $('daha').hidden=hits.length<=gosterilen;
+  for(const b of document.querySelectorAll('.ref')) b.onclick=()=>refAc(b);
+}
+
+function refAc(b){
+  const kart=b.closest('.kart'); const yuva=kart.querySelector('.ref-yuva');
+  const kod=b.dataset.kod;
+  const acikMi = b.getAttribute('aria-expanded')==='true';
+  kart.querySelectorAll('.ref').forEach(x=>x.setAttribute('aria-expanded','false'));
+  if(acikMi){ yuva.innerHTML=''; return; }
+  b.setAttribute('aria-expanded','true');
+  const bilgi=KOD[kod];
+  const ic = bilgi
+    ? `<b>${esc(kod)} — ${esc(bilgi.n)}</b>${bilgi.d?`: ${esc(bilgi.d)}`:''}`
+    : `<b>${esc(kod)}</b>: bu kodun tanımı sözlükte yok; tam liste için Kod Pusulası'na bakın.`;
+  yuva.innerHTML=`<div class="ref-acik"><button class="kapat" aria-label="Kapat">×</button>${ic} <a href="./kod-pusulasi.html" target="_blank" rel="noopener">Kod Pusulası ↗</a></div>`;
+  yuva.querySelector('.kapat').onclick=()=>{ yuva.innerHTML=''; b.setAttribute('aria-expanded','false'); };
+}
+
+doldurDers(); cizSinif(); ciz();
+$('q').addEventListener('input',e=>{ sorgu=trLow(e.target.value.trim()); gosterilen=60; ciz(); });
+$('ders').addEventListener('change',e=>{ dersSec=e.target.value; temaSec=''; doldurTema(); gosterilen=60; ciz(); });
+$('tema').addEventListener('change',e=>{ temaSec=e.target.value; gosterilen=60; ciz(); });
+$('daha').onclick=()=>{ gosterilen+=60; ciz(); };
+</script>
