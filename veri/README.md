@@ -8,7 +8,8 @@ Tümü [tymm.meb.gov.tr](https://tymm.meb.gov.tr) üzerindeki resmî belgelerden
 | `beceri-kullanim.json` | Her kodun hangi derste kaç kez geçtiği (277 kod) | `01_beceriler.py` |
 | `ogrenme-ciktilari.json` | 1256 öğrenme çıktısı: kod, ders, sınıf, tema, ifade, süreç bileşenleri | `02_ogrenme_ciktilari.py` |
 | `temalar.json` | 274 tema bloğu: ders saati, beceri satırları, 8 ögeli öğretim döngüsü | `03_temalar.py` |
-| `cikti-duzeyi-kopruler.json` | 105 çıktıda belgelenmiş 133 disiplinler arası köprü + kanıt cümlesi | `04_cikti_duzeyi_kopruler.py` |
+| `cikti-duzeyi-kopruler.json` | 69 öğrenme çıktısının kendi uygulama metninde belgelenmiş 90 köprü + kanıt cümlesi | `04_cikti_duzeyi_kopruler.py` |
+| `tema-duzeyi-kopruler.json` | Temanın geneline ait bölümlerde geçen, belirli bir çıktıya bağlanamayan 23 köprü ifadesi | `04_cikti_duzeyi_kopruler.py` |
 | `harita.json` | Haritanın kullandığı birleşik veri (temalar + kod sözlüğü + köprüler) | `04` sonrası birleştirme |
 
 Kaynak belgelerin telif hakkı Millî Eğitim Bakanlığı'na aittir.

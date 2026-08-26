@@ -11,7 +11,7 @@ Türkiye Yüzyılı Maarif Modeli'nin **resmî ortaokul öğretim programları**
 | 🧭 **[Kod Pusulası](araclar/kod-pusulasi.html)** | `SDB2.2`, `KB2.14`, `D14.1` gibi kodların tanımı, süreç bileşenleri, göstergeleri ve hangi derste kaç kez geçtiği | 444 kod |
 | 🗺️ **[Kazanım Gezgini](araclar/kazanim-gezgini.html)** | 15 dersin bütün öğrenme çıktıları; ders/sınıf/tema filtresi, arama, süreç bileşenleri | 1256 çıktı |
 | 📋 **[Ders Planı Atölyesi](araclar/ders-plani.html)** | Tema seçince 8 ögeli plan resmî metinle dolar; düzenlenir, yazdırılır | 274 tema |
-| 🕸️ **[Disiplinler Arası Harita](araclar/disiplinler-haritasi.html)** | Dersler arası köprü ağı; köprüyü doğuran çıktı, program alıntısı ve plan ögesi | 192 tema, 133 çıktı köprüsü |
+| 🕸️ **[Disiplinler Arası Harita](araclar/disiplinler-haritasi.html)** | Dersler arası köprü ağı; köprüyü doğuran çıktı, program alıntısı ve plan ögesi | 192 tema, 90 çıktı köprüsü |
 
 Açılış sayfası: [`index.html`](index.html)
 
@@ -28,10 +28,11 @@ index.html              açılış sayfası
 araclar/                yayına hazır uygulamalar (üretilmiş dosyalar)
 veri/                   ayrıştırmayla üretilen JSON veri setleri
 scriptler/              ayrıştırıcılar ve site derleyicisi
+  00_kaynaklari_indir.py        resmî kaynaklar     → kaynak/
   01_beceriler.py               beceri çerçeveleri  → veri/beceriler.json
   02_ogrenme_ciktilari.py       öğrenme çıktıları   → veri/ogrenme-ciktilari.json
   03_temalar.py                 tema blokları       → veri/temalar.json
-  04_cikti_duzeyi_kopruler.py   çıktı köprüleri     → veri/cikti-duzeyi-kopruler.json
+  04_cikti_duzeyi_kopruler.py   köprüler            → veri/{cikti,tema}-duzeyi-kopruler.json
   05_uygulamalari_uret.py       şablon + veri       → araclar/*.html
   sablonlar/                    veri gömülmemiş HTML şablonları
 ```
@@ -43,17 +44,17 @@ Kaynak: [tymm.meb.gov.tr](https://tymm.meb.gov.tr) üzerindeki resmî beceri çe
 1. **Beceri çerçeveleri** sitenin HTML sayfalarından ayrıştırılır — PDF eklerindeki tablolar metne çevrildiğinde bozulduğu için.
 2. **Öğrenme çıktıları** program PDF'lerinden çıkarılır. Her dersin kendi kod dili vardır: Fen Bilimleri beş parçalı kod kullanır (`FB.5.1.1.1`), seçmeli dersler sınıf yerine düzeyle (`GKN.1.1.1`), Türkçe ise dört sınıfı tek satırda birleştiren kod zincirleriyle (`T.O.5.1. / T.O.6.1. / …`).
 3. **Tema blokları** "DERS SAATİ" çapasıyla bulunur; sekiz ögeli öğretim döngüsü (temel kabuller, ön değerlendirme, köprü kurma, uygulamalar, öğrenme kanıtları, farklılaştırma) etiket etiket kesilir.
-4. **Çıktı düzeyi köprüler**: tema bloğu, içindeki çıktı kodlarının konumlarına göre segmentlere ayrılır; bir segmentte anılan başka ders adı, kanıt cümlesi ve köprünün doğduğu plan ögesiyle birlikte kaydedilir.
+4. **Köprüler**: bir dersin adının anıldığı cümle, tema bloğu içindeki konumuna göre sınıflandırılır. Cümle bir öğrenme çıktısının kendi uygulama metnindeyse o çıktıya bağlanır (69 çıktı, 90 bağ); temanın geneline ait bir bölümdeyse (Köprü Kurma, Ön Değerlendirme, Temel Kabuller, Farklılaştırma) hiçbir çıktıya bağlanmaz, tema düzeyinde kaydedilir (23 bağ).
 
-Bir bulgu: çıktı düzeyinde belgelenen 133 köprünün **93'ü "Köprü Kurma" ögesinde**, 35'i "Öğrenme-Öğretme Uygulamaları"nda doğuyor — modelin disiplinler arası bağı köprü kurma adımına yerleştiren tasarımı metinde de böyle işliyor.
+Bu ayrım şart: tema geneli bölümler çıktı listesinden **sonra** geldiği için naif bir bölütleme onları listedeki son çıktıya yapıştırır ve olmayan bir bağ üretir. Ayrıca bazı programlarda (ör. Fen Bilimleri) "Öğrenme-Öğretme Uygulamaları" başlığı metne hiç düşmez; bölüm adı bu yüzden başlığa değil, konuma bakılarak belirlenir.
 
 ## Yeniden üretme
 
-Ayrıştırıcılar, program PDF'lerinin `pdftotext -layout` ile çevrilmiş metinlerini bekler (`~/maarif_ortaokul/metin/prog/`). PDF'ler telif nedeniyle depoya dahil edilmemiştir; resmî siteden indirilmelidir.
+PDF'ler telif nedeniyle depoya dahil edilmemiştir; `00_kaynaklari_indir.py` bunları resmî siteden indirip `kaynak/metin/` altına metne çevirir (curl ve poppler-utils gerekir).
 
 ```bash
-# 1) PDF'leri indirin ve metne çevirin
-pdftotext -layout <program>.pdf metin/prog/<program>.txt
+# 1) Resmî kaynakları indirin
+python3 scriptler/00_kaynaklari_indir.py
 
 # 2) Veriyi yeniden üretin
 python3 scriptler/01_beceriler.py
@@ -71,7 +72,8 @@ Yalnız arayüzü değiştirecekseniz `scriptler/sablonlar/` altındaki şablonu
 
 - İngilizce, Almanca ve Çoklu Yabancı Dil programları farklı yapıda olduğu için bu sürümün dışındadır.
 - Fen Bilimleri ve Teknoloji-Tasarım programlarında tema düzeyi "Disiplinler Arası İlişkiler" satırı ayrıştırılamamıştır; bu iki ders haritada giden bağlantılarını çıktı düzeyi katmandan kazanır.
-- Çıktı düzeyi köprü katmanı ders adının metinde anılmasına dayanır; adı geçmeden kurulan ilişkiler yakalanmaz.
+- Köprü katmanı ders adının metinde anılmasına dayanır; adı geçmeden kurulan ilişkiler yakalanmaz. Sayılar bu yüzden bir **alt sınırdır**.
+- Haritadaki "beceri-değer dokusu örtüşen temalar" listesi resmî bir ilişki değil, türetilmiş bir benzerlik ölçüsüdür. Kodlar programlarda kimi yerde grup (`OB1`), kimi yerde alt düzeyde (`OB1.2`) yazıldığı için akraba temalar eşleşmeyebilir.
 - 274 temanın 247'sinde beş çekirdek plan ögesi eksiksiz ayrıştı; kalanlarda eksik bölüm arayüzde gösterilmez.
 
 ## Lisans

@@ -8,21 +8,13 @@
   "kopru": {
    "Fen Bilimleri": [
     {
-     "a": "Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çeki",
-     "o": "Öğrenme-Öğretme Uygulamaları"
-    },
-    {
-     "a": "1 Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çe",
+     "a": "Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çeki…",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Sosyal Bilgiler": [
     {
-     "a": "Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çeki",
-     "o": "Öğrenme-Öğretme Uygulamaları"
-    },
-    {
-     "a": "1 Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çe",
+     "a": "Çok basamaklı sayıları okuma ve yazmaya geçmeden önce farklı derslerin çalışma konuları matematik ile ilişkilendirilerek sosyal bilgiler, fen bilimleri gibi derslerin içeriğinde yer alan bazı konulardan (örneğin sırasıyla nüfus ve bütçe, Dünya’nın Güneş’e uzaklığı, güç, enerji) ve ölçme bağlamlarından (örneğin uzunluk) ilgi çeki…",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
@@ -38,22 +30,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Görsel sanatlar dersi ile ilişkilendirilerek estetik bakış açısıyla oluşturulan özgün tasarım çalışmaları için sanal bir sergi düzenlenebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "MAT.5.6.2": {
-  "ders": "Matematik",
-  "sinif": "5",
-  "temaNo": "6",
-  "tema": "Veriden Olasılığa",
-  "statement": "Olayları az ya da çok olasılıklı şeklinde yapılandırabilme",
-  "kopru": {
-   "Sosyal Bilgiler": [
-    {
-     "a": "Köprü Kurma Sosyal bilgiler gibi derslerden seçilen çeşitli örnek olaylar (yarın yağmur yağması, sınıfa kedi girmesi gibi) üzerinden sınıfta bir tartışma ortamı oluşturulur.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -103,21 +80,6 @@
    ]
   }
  },
- "MAT.6.5.2": {
-  "ders": "Matematik",
-  "sinif": "6",
-  "temaNo": "5",
-  "tema": "İstatistiksel Araştırma Süreci",
-  "statement": "Başkaları tarafından oluşturulan kategorik veya nicel (kesikli) veriye dayalı istatistiksel sonuç veya yorumları tartışabilme",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Sonuç değerlendirmede öğrencilere ders dışında fen bilimleri ile ilgili konularda istatistiksel araştırma sürecini deneyimleyebilecekleri bir performans görevi verilerek araştırma sonuçlarına yönelik bir ürün (poster, afiş, broşür gibi) oluşturmaları ve sınıf içinde sunum yapmaları istenebilir.",
-     "o": "Öğrenme Kanıtları"
-    }
-   ]
-  }
- },
  "MAT.6.5.1": {
   "ders": "Matematik",
   "sinif": "6",
@@ -127,23 +89,8 @@
   "kopru": {
    "Sosyal Bilgiler": [
     {
-     "a": "1 Sosyal farkındalık becerileri veya sosyal bilgiler dersi ile ilişkili olarak engelsiz yaşam, yaşlı hakları ya da kişisel alanların korunması gibi gerçek yaşam durumlarına yönelik nicel (kesikli) veriye ulaştıracak araştırma soruları hakkında ipuçları verilerek öğrencilerin tartışmaları sağlanır ve bu süreç duyarlılık ve mahrem",
+     "a": "Sosyal farkındalık becerileri veya sosyal bilgiler dersi ile ilişkili olarak engelsiz yaşam, yaşlı hakları ya da kişisel alanların korunması gibi gerçek yaşam durumlarına yönelik nicel (kesikli) veriye ulaştıracak araştırma soruları hakkında ipuçları verilerek öğrencilerin tartışmaları sağlanır ve bu süreç duyarlılık ve mahremiy…",
      "o": "Öğrenme-Öğretme Uygulamaları"
-    }
-   ]
-  }
- },
- "MAT.7.1.4": {
-  "ders": "Matematik",
-  "sinif": "7",
-  "temaNo": "1",
-  "tema": "Sayılar ve Nicelikler",
-  "statement": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Sosyal bilgiler dersi bağlamında tarihî olayların zaman çizelgesine yerleştirilmesi veya fen bilimlerinde sıcaklık ölçme aracı olarak kullanılan termometrenin yapısının incelenmesi gibi durumlar üzerinden 0 (sıfır) tartışılır.",
-     "o": "Köprü Kurma"
     }
    ]
   }
@@ -158,34 +105,7 @@
    "Fen Bilimleri": [
     {
      "a": "Öğrencilerin sürdürülebilirlik okuryazarlıklarını geliştirmek için fen bilimleri dersi ile ilişkilendirilerek örneğin “Bir şehrin günlük enerji tüketimi 500 megawatt (MW) ve günlük yenilenebilir enerji üretimi 'y' megawatt (MW) olarak ölçülüyor.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "MAT.7.3.2": {
-  "ders": "Matematik",
-  "sinif": "7",
-  "temaNo": "3",
-  "tema": "Dönüşüm",
-  "statement": "Yansıma dönüşümündeki deneyimlerini orta dikme ve açıortay inşasına yansıtabilme",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Fen bilimleri disiplini ile bağlantı kurularak bir cismin aynadaki görüntüsünün cismin aynaya olan uzaklığı ile ilgili ilişkisi sorgulanır.",
-     "o": "Köprü Kurma"
-    }
-   ],
-   "Sosyal Bilgiler": [
-    {
-     "a": "Bu çalışmalar aracılığıyla görsel sanatlar, sosyal bilgiler ve matematik disiplinleri arasında ilişki kurulabilir.",
-     "o": "Farklılaştırma · Zenginleştirme"
-    }
-   ],
-   "Görsel Sanatlar": [
-    {
-     "a": "Bu çalışmalar aracılığıyla görsel sanatlar, sosyal bilgiler ve matematik disiplinleri arasında ilişki kurulabilir.",
-     "o": "Farklılaştırma · Zenginleştirme"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -215,7 +135,7 @@
    "Fen Bilimleri": [
     {
      "a": "Uygulamaları Sınıf içinde fen bilimleri dersi ile ilişkili (uyku sürelerinin ölçümü gibi) merak uyandıran gerçek bir yaşam durumu üzerinden sağlıklı yaşam değerinin kazanılmasına yönelik beden sağlığının korunması hakkında tartışma ortamı oluşturulur (E1.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -250,7 +170,7 @@
   "kopru": {
    "Fen Bilimleri": [
     {
-     "a": "2 Öğrencilere telefon tarifelerindeki kullanım süresine bağlı ücretlendirme, antrenmanlardaki zamana bağlı yakılan kalori miktarı ve ürün sayısına bağlı toplam maliyet hesapları gibi gerçek yaşam durumları ile hareket eden bir cismin konum-zaman ilişkisi ve elektrik devrelerinde direnç sabit olduğunda oluşan akım-voltaj ilişkisi",
+     "a": "…umları ile hareket eden bir cismin konum-zaman ilişkisi ve elektrik devrelerinde direnç sabit olduğunda oluşan akım-voltaj ilişkisi gibi farklı disiplinlerde (fen bilimleri gibi) karşılaşılan doğrusal ilişki içeren durumlar sunulabilir.…",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
@@ -266,7 +186,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Bu çalışma, görsel sanatlar dersi ile ilişkilendirilerek öğrencilerin Escher (Eşer)'in eserlerindeki tarzı matematiksel ve estetik değeri bağlamında yorumlamaları sağlanabilir (D7.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -281,13 +201,13 @@
    "Sosyal Bilgiler": [
     {
      "a": "Gerçek yaşam durumlarından beden eğitimi veya sosyal bilgiler dersleri ile ilişkilendirilebilecek örnekler öğrenciler tarafından sorgulanır.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Beden Eğitimi ve Spor": [
     {
      "a": "Gerçek yaşam durumlarından beden eğitimi veya sosyal bilgiler dersleri ile ilişkilendirilebilecek örnekler öğrenciler tarafından sorgulanır.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -302,52 +222,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Görsel sanatlar dersi ile bağlantı kurularak çizimler gerçekleştirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.5.1.2.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "5",
-  "temaNo": "1",
-  "tema": "Gökyüzündeki Komşularımız ve Biz",
-  "statement": "Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Bu süreç görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.5.1.2.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "5",
-  "temaNo": "1",
-  "tema": "Gökyüzündeki Komşularımız ve Biz",
-  "statement": "Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Model tasarım süreci görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.5.2.1.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "5",
-  "temaNo": "2",
-  "tema": "Kuvveti Tanıyalım",
-  "statement": "Basit araç gereçler kullanarak bir dinamometre modeli tasarlayabilme",
-  "kopru": {
-   "Teknoloji ve Tasarım": [
-    {
-     "a": "Model tasarlama süreci teknoloji ve tasarım dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -362,37 +237,22 @@
    "Matematik": [
     {
      "a": "Ağırlık ve kütle arasındaki ilişki matematik dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
  },
- "FB.5.2.3.2": {
+ "FB.5.2.1.2": {
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "2",
   "tema": "Kuvveti Tanıyalım",
-  "statement": "Günlük yaşamda sürtünmeyi artırma veya azaltmaya yönelik bilimsel bir model tasarlayabilme",
+  "statement": "Basit araç gereçler kullanarak bir dinamometre modeli tasarlayabilme",
   "kopru": {
    "Teknoloji ve Tasarım": [
     {
-     "a": "Model tasarım süreci teknoloji ve tasarım dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.5.3.1.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "5",
-  "temaNo": "3",
-  "tema": "Canlıların Yapısına Yolculuk",
-  "statement": "Bitki ve hayvan hücrelerini temel kısımları ve özellikleri açısından karşılaştırabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Hücre, hücrenin temel kısımları ile bitki ve hayvan hücresi incelemeleri, çizimleri ve poster karşılaştırmaları sırasında görsel sanatlar dersinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "a": "Model tasarlama süreci teknoloji ve tasarım dersi ile ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -407,13 +267,13 @@
    "Türkçe": [
     {
      "a": "Analoji kurma aşamasında sosyal bilgiler, rol oynama sürecinde kendini ifade ederken Türkçe dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Sosyal Bilgiler": [
     {
      "a": "Analoji kurma aşamasında sosyal bilgiler, rol oynama sürecinde kendini ifade ederken Türkçe dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -428,7 +288,22 @@
    "Bilişim Teknolojileri ve Yazılım": [
     {
      "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulur (OB2).",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "FB.5.3.1.1": {
+  "ders": "Fen Bilimleri",
+  "sinif": "5",
+  "temaNo": "3",
+  "tema": "Canlıların Yapısına Yolculuk",
+  "statement": "Bitki ve hayvan hücrelerini temel kısımları ve özellikleri açısından karşılaştırabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Hücre, hücrenin temel kısımları ile bitki ve hayvan hücresi incelemeleri, çizimleri ve poster karşılaştırmaları sırasında görsel sanatlar dersinden faydalanılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -443,34 +318,13 @@
    "Matematik": [
     {
      "a": "Işık ışınları çizilirken matematik dersi, ışık kaynakları çizilirken görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Görsel Sanatlar": [
     {
      "a": "Işık ışınları çizilirken matematik dersi, ışık kaynakları çizilirken görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.5.4.3.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "5",
-  "temaNo": "4",
-  "tema": "Işığın Dünyası",
-  "statement": "Tam gölgeye yönelik bilimsel gözlem yapabilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "Işık ışınları çizimi ve tangram şekilleri matematik dersi, ışık kaynakları çizimi görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ],
-   "Görsel Sanatlar": [
-    {
-     "a": "Işık ışınları çizimi ve tangram şekilleri matematik dersi, ışık kaynakları çizimi görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -485,7 +339,7 @@
    "Sosyal Bilgiler": [
     {
      "a": "Bu konular sosyal bilgiler dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -500,7 +354,7 @@
    "Türkçe": [
     {
      "a": "Rol oynama tekniği sürecinde öğrencilerin kendilerini ifade etmeleri Türkçe dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -515,7 +369,7 @@
    "Türkçe": [
     {
      "a": "Tartışma sırasında Türkçe dersinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -530,7 +384,7 @@
    "Türkçe": [
     {
      "a": "Tartışma etkinliği sürecinde Türkçe dersi ile ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -545,22 +399,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Model tasarım sürecinde görsel sanatlar dersi ile ilişki kurulabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.6.1.2.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "6",
-  "temaNo": "1",
-  "tema": "Güneş Sistemi ve Tutulmalar",
-  "statement": "Güneş ve Ay tutulması ile ilgili bilimsel model oluşturabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Model tasarım sürecinde görsel sanatlar dersi ile ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -575,7 +414,7 @@
    "Türkçe": [
     {
      "a": "Tartışma sırasında Türkçe dersinde yer alan iletişim becerilerinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -590,7 +429,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Bu verileri kaydederken gözlemlerini çizmeleri istenerek görsel sanatlar dersiyle ilişki kurulur.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -605,28 +444,13 @@
    "Türkçe": [
     {
      "a": "Öğrencilerin bilgileri özetlemeleri Türkçe dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Matematik": [
     {
      "a": "Elekriksel direncin bağlı olduğu faktörlerle ilgili olarak matematiksel bağFEN BILIMLERI DERSİ ÖĞRETİM PROGRAMI lantıya girilmemesi istenir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.1.1.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "1",
-  "tema": "Uzay Çağı",
-  "statement": "Uzay gözlem araçları ile ilgili bilimsel model oluşturabilme",
-  "kopru": {
-   "Teknoloji ve Tasarım": [
-    {
-     "a": "Model tasarım süreci teknoloji ve tasarım dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -641,22 +465,22 @@
    "Matematik": [
     {
      "a": "Işık yılı kavramı ile matematik dersi arasında ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
  },
- "FB.7.3.1.2": {
+ "FB.7.1.1.2": {
   "ders": "Fen Bilimleri",
   "sinif": "7",
-  "temaNo": "3",
-  "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Sindirim sisteminin sağlığı için yapılması gerekenler konusunda bilgi toplayabilme",
+  "temaNo": "1",
+  "tema": "Uzay Çağı",
+  "statement": "Uzay gözlem araçları ile ilgili bilimsel model oluşturabilme",
   "kopru": {
-   "Bilişim Teknolojileri ve Yazılım": [
+   "Teknoloji ve Tasarım": [
     {
-     "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulur (OB2).",
-     "o": "Köprü Kurma"
+     "a": "Model tasarım süreci teknoloji ve tasarım dersi ile ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -671,88 +495,28 @@
    "Türkçe": [
     {
      "a": "Rol oynama sürecinde beden eğitimi ve Türkçe dersleriyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Beden Eğitimi ve Spor": [
     {
      "a": "Rol oynama sürecinde beden eğitimi ve Türkçe dersleriyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
  },
- "FB.7.3.2.2": {
+ "FB.7.3.1.2": {
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "3",
   "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Kan bağışının toplumsal dayanışma açısından önemini tartışabilme",
-  "kopru": {
-   "Türkçe": [
-    {
-     "a": "Tartışma sırasında Türkçe dersindeki dil becerilerinden yararlanılabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.3.2.3": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "3",
-  "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Dolaşım sisteminin sağlığı için yapılması gerekenler konusunda bilgi toplayabilme",
+  "statement": "Sindirim sisteminin sağlığı için yapılması gerekenler konusunda bilgi toplayabilme",
   "kopru": {
    "Bilişim Teknolojileri ve Yazılım": [
     {
      "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulur (OB2).",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.3.3.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "3",
-  "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Solunum sisteminin sağlığı için yapılması gerekenler konusunda bilgi toplayabilme",
-  "kopru": {
-   "Bilişim Teknolojileri ve Yazılım": [
-    {
-     "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulur (OB2).",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.3.4.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "3",
-  "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Boşaltım sistemini oluşturan yapı ve organları model üzerinde gözlemleyebilme",
-  "kopru": {
-   "Türkçe": [
-    {
-     "a": "Performans görevinin tasarlanmasında teknoloji tasarım dersiyle, görevin sunumunda ise Türkçe dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.3.4.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "3",
-  "tema": "Vücudumuzdaki Sistemler",
-  "statement": "Boşaltım sisteminin sağlığı için yapılması gerekenler konusunda bilgi toplayabilme",
-  "kopru": {
-   "Bilişim Teknolojileri ve Yazılım": [
-    {
-     "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulur (OB2).",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -767,13 +531,13 @@
    "Türkçe": [
     {
      "a": "Etkinlik sürecinde öğrenciler kendilerini ifade ederken Türkçe dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Görsel Sanatlar": [
     {
      "a": "içeriklerin hazırlanma sürecinde görsel sanatlar dersinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -785,16 +549,10 @@
   "tema": "Maddenin Doğasına Yolculuk",
   "statement": "Atomların elektron dizilimlerini yapılandırabilme",
   "kopru": {
-   "Türkçe": [
-    {
-     "a": "Drama sürecinde öğrenciler kendini ifade ederken Türkçe dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
-    }
-   ],
    "Matematik": [
     {
      "a": "Hesaplamalarda matematik dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -809,34 +567,13 @@
    "Bilişim Teknolojileri ve Yazılım": [
     {
      "a": "Poster, afiş hazırlarken görsel sanatlar, dijital ortamlardan yararlanırken ise bilişim teknolojileri dersleri ile ilişkilendirmeleri beklenebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Görsel Sanatlar": [
     {
      "a": "Poster, afiş hazırlarken görsel sanatlar, dijital ortamlardan yararlanırken ise bilişim teknolojileri dersleri ile ilişkilendirmeleri beklenebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.7.6.1.3": {
-  "ders": "Fen Bilimleri",
-  "sinif": "7",
-  "temaNo": "6",
-  "tema": "Elektriklenme",
-  "statement": "Cisimlerin elektrik yüklerini sınıflandırabilme",
-  "kopru": {
-   "Bilişim Teknolojileri ve Yazılım": [
-    {
-     "a": "Model tasarım süreci görsel sanatlar, dijital ortamlardan yararlanırken ise bilişim teknolojileri dersleri ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ],
-   "Görsel Sanatlar": [
-    {
-     "a": "Model tasarım süreci görsel sanatlar, dijital ortamlardan yararlanırken ise bilişim teknolojileri dersleri ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -851,13 +588,13 @@
    "Türkçe": [
     {
      "a": "Raporlaştırma ve sunma aşamalarında Türkçe dersinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Sosyal Bilgiler": [
     {
      "a": "Bu aşamada su kaynakları ve su ayak izi bağlamında sosyal bilgiler dersiyle ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -872,7 +609,7 @@
    "Sosyal Bilgiler": [
     {
      "a": "Bu konuda sosyal bilgiler dersi ile disiplinler arası ilişki kurulabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -887,7 +624,7 @@
    "Matematik": [
     {
      "a": "Bu süreç, matematik dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -902,22 +639,7 @@
    "Türkçe": [
     {
      "a": "Analoji kurma aşamasında sosyal bilgiler, rol oynama sürecinde ve iş birlikli tartışma teknikleri kullanma aşamasında kendilerini ifade ederken Türkçe dersiyle ilişki kurmaları sağlanır.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.3.2.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "3",
-  "tema": "Yaşamın Gizemi",
-  "statement": "Mitoz ve mayoz kavramları arasındaki ilişkiyi karşılaştırabilme",
-  "kopru": {
-   "Türkçe": [
-    {
-     "a": "Tartışma ve tablo oluşturma sırasında Türkçe dersinde yer alan iletişim becerilerinden faydalanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -932,37 +654,7 @@
    "Bilişim Teknolojileri ve Yazılım": [
     {
      "a": "Güvenilir genel ağ adreslerinden yararlanma, dijital sunum, video hazırlama noktasında bilişim teknolojileri dersleriyle ilişki kurulabilir (OB2).",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.4.2.3": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "4",
-  "tema": "Sesin Dünyası",
-  "statement": "Ses kirliliğini önlemeye yönelik bilimsel sorgulama yapabilme",
-  "kopru": {
-   "Müzik": [
-    {
-     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin doğal ve yapay ses kaynaklarını müzik dersinden bildikleri ve çevrelerindeki ses kaynakları ile ilgili gözlemleri olduğu kabul edilmektedir.",
-     "o": "Temel Kabuller"
-    }
-   ]
-  }
- },
- "FB.8.4.1.3": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "4",
-  "tema": "Sesin Dünyası",
-  "statement": "Sesin frekansına göre ince veya kalın olarak işitilmesine neden olan ses özellikleri ile ilgili deney yapabilme",
-  "kopru": {
-   "Müzik": [
-    {
-     "a": "Öğrencilerin oluşturdukları sesin ince ve kalın olarak belirlenmesi müzik dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -977,7 +669,7 @@
    "Türkçe": [
     {
      "a": "Öğrencilerin tartışma sürecinde kullandıkları beceriler Türkçe dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -992,94 +684,7 @@
    "Görsel Sanatlar": [
     {
      "a": "Görsel sanatlar dersinde poster, afiş vb.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.6.2.5": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "6",
-  "tema": "Elektriğin Yolculuğu",
-  "statement": "Elektrik enerjisinin bilinçli ve tasarruflu kullanılmasının önemini tartışabilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "Matematik dersinde doğrunun eğimini öğrendiği kabul edilmektedir.",
-     "o": "Temel Kabuller"
-    }
-   ],
-   "Türkçe": [
-    {
-     "a": "Tartışma esnasında Türkçe dersindeki dil becerilerinden yararlanılabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.6.1.1": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "6",
-  "tema": "Elektriğin Yolculuğu",
-  "statement": "Ampullerin bağlanma durumunun ampul parlaklığına etkisine yönelik deney yapabilme",
-  "kopru": {
-   "Bilişim Teknolojileri ve Yazılım": [
-    {
-     "a": "Öğrencilerin konuyla ilgili dijital ortamlardan yararlanmaları bilişim teknolojileri dersleri ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.6.1.4": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "6",
-  "tema": "Elektriğin Yolculuğu",
-  "statement": "Bir devre elemanının uçları arasındaki gerilim ile üzerinden geçen akım ilişkisine yönelik tümevarımsal akıl yürütebilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "Dijital ortamlardan yararlanırken bilişim teknolojileri, matematiksel modelleme yaparken ise matematik dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ],
-   "Bilişim Teknolojileri ve Yazılım": [
-    {
-     "a": "Dijital ortamlardan yararlanırken bilişim teknolojileri, matematiksel modelleme yaparken ise matematik dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.6.1.5": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "6",
-  "tema": "Elektriğin Yolculuğu",
-  "statement": "Özgün bir aydınlatma aracı modeli oluşturabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Model tasarım süreci görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.6.2.2": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "6",
-  "tema": "Elektriğin Yolculuğu",
-  "statement": "Elektrik enerjisinin ısı, ışık, ses veya hareket enerjisine dönüşümüne yönelik bir model oluşturabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Model tasarım süreci görsel sanatlar dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1094,7 +699,37 @@
    "Türkçe": [
     {
      "a": "Tartışma sırasında Türkçe dersindeki dil becerilerinden yararlanılabilir.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "FB.8.6.1.1": {
+  "ders": "Fen Bilimleri",
+  "sinif": "8",
+  "temaNo": "6",
+  "tema": "Elektriğin Yolculuğu",
+  "statement": "Ampullerin bağlanma durumunun ampul parlaklığına etkisine yönelik deney yapabilme",
+  "kopru": {
+   "Bilişim Teknolojileri ve Yazılım": [
+    {
+     "a": "Öğrencilerin konuyla ilgili dijital ortamlardan yararlanmaları bilişim teknolojileri dersleri ile ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "FB.8.6.1.5": {
+  "ders": "Fen Bilimleri",
+  "sinif": "8",
+  "temaNo": "6",
+  "tema": "Elektriğin Yolculuğu",
+  "statement": "Özgün bir aydınlatma aracı modeli oluşturabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Model tasarım süreci görsel sanatlar dersi ile ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1109,52 +744,7 @@
    "Türkçe": [
     {
      "a": "Tartışma sırasında Türkçe dersinde yer alan iletişim becerilerinden faydalanılabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "FB.8.7.2.4": {
-  "ders": "Fen Bilimleri",
-  "sinif": "8",
-  "temaNo": "7",
-  "tema": "Sürdürülebilir Yaşam ve Madde Döngüleri",
-  "statement": "Ülkemizdeki küresel iklim değişikliğinin sebep olduğu bir probleme yönelik çözüm önerisi sunabilme",
-  "kopru": {
-   "Türkçe": [
-    {
-     "a": "Bu süreçte Türkçe dersi, çevre eğitimi ve iklim değişikliği dersi ile ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "SB.4.1.1": {
-  "ders": "Sosyal Bilgiler",
-  "sinif": "4",
-  "temaNo": "1",
-  "tema": "Birlikte Yaşamak",
-  "statement": "Sosyal bilgiler dersinin hayatına sunacağı katkıları yorumlayabilme",
-  "kopru": {
-   "Hayat Bilgisi": [
-    {
-     "a": "Öğrencilere hayat bilgisi dersinde neler öğrendikleri sorularak bu derste öğrendiklerine ilişkin sınıfça zihin haritası oluşturulur.",
-     "o": "Ön Değerlendirme Süreci"
-    }
-   ]
-  }
- },
- "SB.4.1.3": {
-  "ders": "Sosyal Bilgiler",
-  "sinif": "4",
-  "temaNo": "1",
-  "tema": "Birlikte Yaşamak",
-  "statement": "Toplumsal birliği sürdürmeye yönelik fikir üretebilme",
-  "kopru": {
-   "Hayat Bilgisi": [
-    {
-     "a": "Ön Değerlendirme Süreci Öğrencilere hayat bilgisi dersinde neler öğrendikleri sorularak bu derste öğrendiklerine ilişkin sınıfça zihin haritası oluşturulur.",
-     "o": "Ön Değerlendirme Süreci"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1174,21 +764,6 @@
    ]
   }
  },
- "DKAB.4.3.5": {
-  "ders": "Din Kültürü ve Ahlak Bilgisi",
-  "sinif": "4",
-  "temaNo": "3",
-  "tema": "Peygamberlerin Sevgisi",
-  "statement": "Salli ve Barik dualarını ve bu duaların anlamlarını okuyarak yorumlayabilme",
-  "kopru": {
-   "Hayat Bilgisi": [
-    {
-     "a": "Köprü Kurma Peygamberlerin çocuklara, topluma ve çevreye verdikleri değer ile öğrencilerin hayat bilgisi dersinde öğrendikleri arasında bağlantı kurulur.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
  "DKAB.4.3.3": {
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "4",
@@ -1200,51 +775,6 @@
     {
      "a": "Böylece öğrencilerin fen bilimleri dersinden öğrendikleriyle konu ilişkilendirilebilir.",
      "o": "Öğrenme-Öğretme Uygulamaları"
-    }
-   ]
-  }
- },
- "DKAB.4.5.5": {
-  "ders": "Din Kültürü ve Ahlak Bilgisi",
-  "sinif": "4",
-  "temaNo": "5",
-  "tema": "Haklar ve Sorumluluklar",
-  "statement": "Rabbena dualarını ve bu duaların anlamlarını okuyarak yorumlayabilme",
-  "kopru": {
-   "Hayat Bilgisi": [
-    {
-     "a": "Köprü Kurma Öğrencilere, sahip olduğu haklar ve sorumluluklar hakkında bilgi verilerek hayat bilgisi dersi ile ilişki kurulur.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "DKAB.5.1.4": {
-  "ders": "Din Kültürü ve Ahlak Bilgisi",
-  "sinif": "5",
-  "temaNo": "1",
-  "tema": "Allah İnancı",
-  "statement": "İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Köprü Kurma Öğrencilerin fen bilimleri dersinde öğrendiği tabiat olaylarıyla ilgili (Dünya’nın hem kendi hem de Güneş etrafında dönüşü, mevsimlerin oluşumu, su döngüsü vb.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "DKAB.5.5.3": {
-  "ders": "Din Kültürü ve Ahlak Bilgisi",
-  "sinif": "5",
-  "temaNo": "5",
-  "tema": "Mimarimizde Dinî Motifler",
-  "statement": "Kültürümüzde yer alan cami örneklerini karşılaştırabilme",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Görsel sanatlar dersinde öğrendikleri bilgiler kullanılarak öğrencilere farklı cami tasarımları yaptırılabilir.",
-     "o": "Farklılaştırma · Zenginleştirme"
     }
    ]
   }
@@ -1312,51 +842,6 @@
    ]
   }
  },
- "BTY.5.1.6": {
-  "ders": "Bilişim Teknolojileri ve Yazılım",
-  "sinif": "5",
-  "temaNo": "1",
-  "tema": "Bılışım Teknolojılerının Hayatımızdakı Yerı",
-  "statement": "Öğretmen çok fazla dosya olması nedeniyle karışık görünen bir bilgisayar masaüstü resmini açar. “Bu masaüstünde aranılan bir belgenin bulunması zor olur mu? Sizce zamanla çoğalacak bu dosyaları düzenlemek için ne yapılmalıdır?” sorularını sorarak öğrencilerin görüşlerini alır (E3.5, SDB2.1). Ardından \"bir araya toplamak”, \"gruplandırmak” ve dosyaları anlamlı ve tarih bilgisi içerecek şekilde “adlandırmak” gibi yöntemleri öğrencilerle paylaşır. Temel dosya ve klasör kavramları, dosya türleri (metin, görüntü, ses vb.), klasör yapısının önemi ve düzenli bir dosya yönetiminin sağladığı avantajlar ",
-  "kopru": {
-   "Müzik": [
-    {
-     "a": "Öğrencilerin günlük hayatta karşılaştıkları yapay zekâ uygulamaları (örneğin sesli asistanlar, çevrim içi film veya müzik öneri sistemleri, yüz tanıma uygulamaları) ile derste işlenecek kavramlar arasında köprü kurulabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "BTY.5.2.7": {
-  "ders": "Bilişim Teknolojileri ve Yazılım",
-  "sinif": "5",
-  "temaNo": "2",
-  "tema": "Dijital Ürün Tasarımı ve Geliştirme",
-  "statement": "Öğrencilerin tercih ettiği sunum programı açılır. Sunum programının arayüz bileşenleri (slayt ekleme, şablon seçme, yazı tipi ve boyutu değiştirme, renk ve hizalama ayarları, animasyon ve geçiş ekleme vb.) ve temel özellikleri hatırlatılır. Öğrenciler, öğretmen rehberliğinde kullandıkları aracın özelliklerini keşfeder. Dijital bağımlılık, siber zorbalık, çevre bilinci, küresel ısınma, bilişim alanında çalışmalar yapan bilim insanları, teknoloji tarihi ve gelişimi, dijital güvenlik gibi konulardan biriyle ilgili etkinlik hazırlanır. Etkinlik, bilişim sınıfında uygulanıyorsa dijital/basılı biçim",
-  "kopru": {
-   "Görsel Sanatlar": [
-    {
-     "a": "Köprü Kurma Görsel düzenleme programlarının arayüzünde yer alan ögeler görsel sanatlar dersinde kullanılan tekniklerle ilişkilendirilebilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "BTY.5.6.4": {
-  "ders": "Bilişim Teknolojileri ve Yazılım",
-  "sinif": "5",
-  "temaNo": "6",
-  "tema": "Yazılım Tasarımı ve Programlama",
-  "statement": "Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar. b) Blok tabanlı ortamda yazılımı tasarlar. c) Blok tabanlı ortamda yazılımı oluşturur.",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "İÇERİK ÇERÇEVESİ Problem Belirleme ve Algoritma Oluşturma Algoritma Test Etme ve Geri Bildirim Alma Yazılımda Kullanılan Bileşenler Blok Tabanlı Ortamda Yazılım Geliştirme Anahtar Kavramlar algoritma, analitik düşünme, bilgi işlemsel düşünme, değişken, doğrusal mantık, döngü, hata ayıklama, karar, mantıksal operatörler, matemati",
-     "o": "İçerik Çerçevesi"
-    }
-   ]
-  }
- },
  "BTY.6.1.2": {
   "ders": "Bilişim Teknolojileri ve Yazılım",
   "sinif": "6",
@@ -1387,98 +872,23 @@
   "kopru": {
    "Müzik": [
     {
-     "a": "Bu noktada öğrencilerin ses üretiminde dikkat etmeleri gereken etik ilkeler açıkça vurgulanır: başkalarının sesini kullanacaklarsa önceden izin almaları gerektiği, internetten kullanılan müzik BİLİŞİM TEKNOLOJİLERİ VE YAZILIM DERSİ ÖĞRETİM PROGRAMI veya seslerin telif haklarına tabi olup olmadığını sorgulamaları, eğer içerik baş",
-     "o": "Köprü Kurma"
+     "a": "…in ses üretiminde dikkat etmeleri gereken etik ilkeler açıkça vurgulanır: başkalarının sesini kullanacaklarsa önceden izin almaları gerektiği, internetten kullanılan müzik BİLİŞİM TEKNOLOJİLERİ VE YAZILIM DERSİ ÖĞRETİM PROGRAMI veya seslerin telif haklarına tabi olup olmadığını sorgulamaları, eğer içerik başka bir kaynaktan alın…",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
  },
- "TT.7.8.4": {
-  "ders": "Teknoloji ve Tasarım",
-  "sinif": "7",
-  "temaNo": "8",
-  "tema": "Bütünleşik Öğrenme: Steam",
-  "statement": "STEAM yaklaşımına göre problem çözebilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "İÇERİK ÇERÇEVESİ Holistik Düşünme Proje Odaklı Düşünme Disiplinler Arası Düşünme Bilim, Teknoloji, Mühendislik, Sanat ve Matematik Arasındaki İlişkinin Önemi STEAM Yaklaşımına Göre Bir Tasarım Problemi Belirleyerek Çözüm Önerisi Geliştirilmesi Anahtar Kavramlar biyomimikri, bütünleşik, eleştirel düşünme, inovasyon, odaklı düşünm",
-     "o": "İçerik Çerçevesi"
-    }
-   ]
-  }
- },
- "TT.7.8.1": {
-  "ders": "Teknoloji ve Tasarım",
-  "sinif": "7",
-  "temaNo": "8",
-  "tema": "Bütünleşik Öğrenme: Steam",
-  "statement": "STEAM’i oluşturan disiplinler ile alt bileşenlerinin ne olduğunu sorgulayabilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "Daha sonra bu filmin bilim, teknoloji, mühendislik, sanat ve matematik disiplinlerinden hangisi veya hangilerinden yararlanılarak oluşturulmuş olabileceği ile ilgili öğrencilerin sorgulama yapmaları sağlanır (E1.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "TT.7.8.2": {
-  "ders": "Teknoloji ve Tasarım",
-  "sinif": "7",
-  "temaNo": "8",
-  "tema": "Bütünleşik Öğrenme: Steam",
-  "statement": "STEAM disiplinlerinin arasındaki ilişkiyi gözlemleyebilme",
-  "kopru": {
-   "Matematik": [
-    {
-     "a": "Öğrencilerin STEAM bileşenini oluşturan bilim, teknoloji, mühendislik, sanat ve matematik disiplinlerinin bir arada kullanılmasının günümüzde ne kadar önemli olduğunu sorgulamaları sağlanır (E1.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "BES.5.4.3": {
-  "ders": "Beden Eğitimi ve Spor",
-  "sinif": "5",
+ "BTY.6.4.1": {
+  "ders": "Bilişim Teknolojileri ve Yazılım",
+  "sinif": "6",
   "temaNo": "4",
-  "tema": "Hareketin Estetiği ve Ritmi",
-  "statement": "Seçilen bir müzik eşliğinde öğrencilerin özgürce dans etmeleri istenir (E1.2). Müzik durduğunda öğrencilerin hareketsiz kalmaları, müzik devam ettiğinde ise yeniden dans etmeleri istenerek öğrencilerin harekete ve müziğe ilişkin ritmi algılamaları sağlanır. Öğrencilerin müziğin temposuna uyum sağlaması beklenir. Müziğin ritmi hızlandırılarak ya da yavaşlatılarak dansın zorluk seviyesi değiştirilebilir. Öğrencilere “Dans etmek size ne hissettirdi?” gibi sorular yöneltilerek uygulamalar esnasında duygularına ilişkin farkındalıkları artırılır (SDB1.1). Öğrencilerle çeşitli adımlamaları içeren bir",
+  "tema": "Bilişim Etiği ve Siber Güvenlik",
+  "statement": "Bilişim etiği kapsamında güvenlik önlemlerini yönetebilme a) Bilişim etiği kapsamındaki güvenlik risklerini belirler. b) Bilişim etiği kapsamındaki güvenlik risklerine karşı alınabilecek önlemleri belirler. c) Bilişim suçların türlerini bilişim etiği kapsamında ayırt eder.",
   "kopru": {
    "Müzik": [
     {
-     "a": "Öğrencilerin farklı ritim türleri (örneğin 3/4 ya da 4/4 tempo) ile uyumlu bir şekilde jimnastik hareketlerini uygulayarak müzik ile hareket becerileri arasında bağ kurmaları sağlanabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "BES.6.1.4": {
-  "ders": "Beden Eğitimi ve Spor",
-  "sinif": "6",
-  "temaNo": "1",
-  "tema": "Sağlıkla İlgili Fiziksel Uygunluk",
-  "statement": "Fiziksel aktiviteye katılımı destekleyen teknolojik araçlardan bazıları (akıllı saat, adımsayar, mobil uygulamalar, web 2.0 araçları, giyilebilir teknolojiler, yapay zekâ vb.) öğrencilere gösterilerek bu araçların fiziksel aktiviteyi nasıl desteklediği ve nasıl etkili kullanabilecekleri ile ilgili sorularla öğrencilerin düşüncelerini ifade etmeleri sağlanır (SDB2.1). Fiziksel aktiviteye katılımı destekleyen bu araçları deneyimleyebilmelerine olanak sağlayacak istasyonlar (mobil uygulamalar ile oyun ya da ölçüm, akıllı saat kullanımı, teknoloji destekli etkileşimli egzersiz vb.) hazırlanır (E2.",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Fen bilimleri dersi ile ilişki kurularak vücut sistemleri konusu ve fiziksel uygunluk ilişkisi örnek durumlar üzerinden tartışılabilir.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "BES.8.1.2": {
-  "ders": "Beden Eğitimi ve Spor",
-  "sinif": "8",
-  "temaNo": "1",
-  "tema": "Egzersıze Katılım",
-  "statement": "Daha önce yapılmış bazı fiziksel uygunluk testlerinin (şınav, mekik, otur, uzan, bükülü kol asılma, durarak uzun atlama, el kavrama kuvveti vb.) sonuçları öğrencilere gösterilir ve öğrencilerden bu sonuçların ne anlama geldiğini açıklamaları istenir. Bu testlerden bazıları bir grup üzerinde uygulanır ve öğrencilerin ölçüm sonuçları kaydedilir. Farklı ölçümlerin yapılacağı alanlar öğrencilerle hazırlanır ve ölçüm öncesinde öğrencilere testlerle ilgili bilgilendirmeler yapılır. Test öncesi hazırlıklar tamamlandıktan sonra (ısınma, sağlık kontrolü, uygun kıyafet, alan kontrolü vb.) öğrencilerin t",
-  "kopru": {
-   "Fen Bilimleri": [
-    {
-     "a": "Fen bilimleri dersiyle bağlantı kurularak egzersiz sırasında gerçekleşen değişimler üzerinden vücut sistemleri konusu tartışmaya açılabilir.",
-     "o": "Köprü Kurma"
+     "a": "Etkinlik sürecinde, özellikle (2. temada) derste öğrencilerin video ve ses düzenleme etkinliklerinde kullandıkları görsel ve müzik içeriklerinin lisans durumları ele alınarak öğrencilerin bu içerikleri etik ve yasal çerçevede kullanmalarının önemi vurgulanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1549,6 +959,21 @@
    ]
   }
  },
+ "GKN.1.2.2": {
+  "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Erdemli İnsandan Huzurlu Aileye",
+  "statement": "Aile içi davranış kültürünü yorumlayabilme a. Aile içi davranış kültürünü inceler. b. Aile içi davranış kültürüne ilişkin örnekleri bağlamdan kopmadan dönüştürür. c. Kendi ifadeleriyle aile içi davranış kültürünü yeniden ifade eder.",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "6. sınıf sosyal bilgiler dersi ile bağlantı kurularak bireyin dâhil olduğu ilk grup olan ailedeki rolleri ve bu rollerin zamanla değişimi (çocuk, kardeş, abi/abla vb.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
  "GKN.1.2.1": {
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
@@ -1559,37 +984,7 @@
    "Din Kültürü ve Ahlak Bilgisi": [
     {
      "a": "Muhammed’in (sav) günlük hayatta temizlik ve öz bakıma verdiği önemi yansıtan örnek olaylara yer verilerek din kültürü ve ahlak bilgisi dersi ile ilişki kurulur.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "GKN.1.2.2": {
-  "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
-  "sinif": "Düzey 1",
-  "temaNo": "2",
-  "tema": "Erdemli İnsandan Huzurlu Aileye",
-  "statement": "Aile içi davranış kültürünü yorumlayabilme a. Aile içi davranış kültürünü inceler. b. Aile içi davranış kültürüne ilişkin örnekleri bağlamdan kopmadan dönüştürür. c. Kendi ifadeleriyle aile içi davranış kültürünü yeniden ifade eder.",
-  "kopru": {
-   "Sosyal Bilgiler": [
-    {
-     "a": "sınıf sosyal bilgiler dersi ile bağlantı kurularak bireyin dâhil olduğu ilk grup olan ailedeki rolleri ve bu rollerin zamanla değişimi (çocuk, kardeş, abi/abla vb.",
-     "o": "Köprü Kurma"
-    }
-   ]
-  }
- },
- "GKN.1.3.1": {
-  "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
-  "sinif": "Düzey 1",
-  "temaNo": "3",
-  "tema": "Dijital Dünyada Görgü Kuralları ve Nezaket",
-  "statement": "Okul içi iletişimde gösterilen tutum ve davranışlara ilişkin çıkarım SÜREÇ BİLEŞENLERİ yapabilme a. Okul içi iletişimde gösterilen tutum ve davranışlara ilişkin varsayımda bulunur. b. Okul içi iletişimde gösterilen tutum ve davranış örüntülerini listeler. c. Okul içi iletişimde gösterilen tutum ve davranışları; nezaket kurallarına uygunluk, taraflar üzerindeki duygusal etkiler, okul iklimine katkısı ve iletişim sürecini kolaylaştırma/zorlaştırma durumları bakımından karşılaştırır. ç. Okul içi iletişimde gösterilen tutum ve davranışlara dair önerme sunar. d. Okul içi iletişimde gösterilen tutum",
-  "kopru": {
-   "Sosyal Bilgiler": [
-    {
-     "a": "Toplum içindeki rollerimizin neler olduğuna dair bir tartışma başlatılarak sosyal bilgiler dersi ile ilişki kurulur.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1604,19 +999,34 @@
    "Fen Bilimleri": [
     {
      "a": "Fen bilimleri dersi yakın çevresinde atık yönetiminin uygulanabilirliği konusu ile bağlantı kurulur.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Din Kültürü ve Ahlak Bilgisi": [
     {
      "a": "Okul kaynaklarını verimli kullanma, temizlik ve tasarruf kültürü ele alınırken; Kur’an-ı Kerim’de israfın yasaklanması ve emanet bilinci gibi ilkeleri vurgulayan ayetlere yer verilerek din kültürü ve ahlak bilgisi dersi ile ilişki kurulur (D17.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Görsel Sanatlar": [
     {
      "a": "Bu önerileri basın bülteni, reklam metni, broşür veya poster yolu ile sınıf ortamında sunmaları istenerek görsel sanatlar dersi ile ilişki kurulur (E3.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "GKN.1.3.1": {
+  "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "3",
+  "tema": "Dijital Dünyada Görgü Kuralları ve Nezaket",
+  "statement": "Okul içi iletişimde gösterilen tutum ve davranışlara ilişkin çıkarım SÜREÇ BİLEŞENLERİ yapabilme a. Okul içi iletişimde gösterilen tutum ve davranışlara ilişkin varsayımda bulunur. b. Okul içi iletişimde gösterilen tutum ve davranış örüntülerini listeler. c. Okul içi iletişimde gösterilen tutum ve davranışları; nezaket kurallarına uygunluk, taraflar üzerindeki duygusal etkiler, okul iklimine katkısı ve iletişim sürecini kolaylaştırma/zorlaştırma durumları bakımından karşılaştırır. ç. Okul içi iletişimde gösterilen tutum ve davranışlara dair önerme sunar. d. Okul içi iletişimde gösterilen tutum",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "Toplum içindeki rollerimizin neler olduğuna dair bir tartışma başlatılarak sosyal bilgiler dersi ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1724,13 +1134,13 @@
    "Sosyal Bilgiler": [
     {
      "a": "Sosyal bilgiler dersi kültürel özelliklere saygı duymanın birlikte yaşamaya etkisi konusu ile bağlantı kurulur.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ],
    "Görsel Sanatlar": [
     {
      "a": "Öğrencilerin araştırma sonucunu görsel/afiş/poster olarak sunmaları sağlanarak görsel sanatlar dersi ile ilişki kurulur (E3.",
-     "o": "Köprü Kurma"
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }
@@ -1744,8 +1154,8 @@
   "kopru": {
    "Türkçe": [
     {
-     "a": "2 Yazma konusuna uygun olarak Türkçe dersindeki ön bilgilerinden yararlanıp metnin türünü belirlemesi ve türe uygun özgün bir içerik oluşturarak metin yazması istenir.",
-     "o": "Köprü Kurma"
+     "a": "Yazma konusuna uygun olarak Türkçe dersindeki ön bilgilerinden yararlanıp metnin türünü belirlemesi ve türe uygun özgün bir içerik oluşturarak metin yazması istenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
   }

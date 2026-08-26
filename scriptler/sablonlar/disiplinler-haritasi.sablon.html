@@ -99,6 +99,11 @@
   .ck-rozet { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; background: var(--ochre-soft);
               color: var(--ochre); border-radius: 99px; padding: 0.05em 0.45em; margin-left: 0.3rem;
               white-space: nowrap; display: inline-block; }
+  .ck-blok.tk { border-left-color: var(--ink-faint); }
+  .tk-et { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; letter-spacing: 0.06em;
+           text-transform: uppercase; color: var(--ink-faint); border: 1px solid var(--line);
+           border-radius: 4px; padding: 0.05em 0.35em; }
+  .ck-rozet.tk { background: none; color: var(--ink-faint); border: 1px solid var(--line); }
   .dokum { margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.7rem; }
   .dokum h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.4rem; }
   .dokum-tema { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem; margin: 0.35rem 0; font-size: 0.84rem; }
@@ -138,7 +143,7 @@
   <header>
     <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
     <h1>Disiplinler Arası Harita</h1>
-    <p class="sub">Öğretim programlarının kendi "Disiplinler Arası İlişkiler" bölümlerinden çıkarılan bağlantı ağı. Bir <b>derse</b> tıklayın: verdiği/aldığı köprüler ve tema tema dökümü açılır. Bir <b>çizgiye</b> tıklayın: o köprüyü kuran temaların tam listesi gelir. Temaların altında <b>köprüyü doğuran öğrenme çıktısı</b>, programdan alıntılanan cümlesi ve köprünün doğduğu plan ögesiyle birlikte görünür.</p>
+    <p class="sub">Öğretim programlarının kendi "Disiplinler Arası İlişkiler" bölümlerinden çıkarılan bağlantı ağı. Bir <b>derse</b> tıklayın: verdiği/aldığı köprüler ve tema tema dökümü açılır. Bir <b>çizgiye</b> tıklayın: o köprüyü kuran temaların tam listesi gelir. Temaların altında <b>köprüyü doğuran öğrenme çıktısı</b> ve programdan alıntılanan cümlesi görünür; belirli bir çıktıya bağlanamayan ifadeler "tema geneli" olarak ayrı işaretlenir.</p>
   </header>
 
   <div class="cips" id="sinif-filtre" role="group" aria-label="Sınıf filtresi"></div>
@@ -151,7 +156,7 @@
     </div>
     <div class="panel" id="panel">
       <h2 id="p-baslik">Bir ders ya da bağlantı seçin</h2>
-      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir; 105 öğrenme çıktısında ise köprünün metindeki gerekçesi de bulundu ve ilgili temanın altında alıntılanır. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
+      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir. Ayrıca 69 öğrenme çıktısının kendi uygulama metninde 90 köprü gerekçesi bulundu; 23 gerekçe ise temanın geneline ait bölümlerde (Köprü Kurma, Ön Değerlendirme vb.) geçtiği için belirli bir çıktıya bağlanmadı, "tema geneli" olarak işaretlendi. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
       <div id="p-icerik"></div>
     </div>
   </div>
@@ -168,13 +173,13 @@
   <div class="tablo-kap" id="tablo-kap" hidden></div>
 
   <footer>
-    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Ağustos 2026). Çıktı düzeyi köprüler, her öğrenme çıktısının kendi metin bölgesinde geçen ders atıflarından çıkarılmış ve kaynak cümlesiyle birlikte saklanmıştır (105 çıktı, 133 bağ). "Benzer temalar", temaların beceri-değer kodu kesişimlerinden (Jaccard) hesaplanır. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a>. Bu sayfa resmî bir MEB ürünü değildir.
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Ağustos 2026). Çıktı düzeyi köprüler, bir dersin adının anıldığı cümlenin hangi bölgede geçtiğine bakılarak sınıflandırılır: cümle bir öğrenme çıktısının kendi uygulama metnindeyse o çıktıya bağlanır (69 çıktı, 90 bağ), temanın geneline ait bir bölümdeyse hiçbir çıktıya bağlanmaz (23 bağ). Bu ayrım olmadan tema geneli ifadeler listedeki son çıktıya yapışıp olmayan bir bağ üretiyordu. "Benzer temalar", temaların beceri-değer kodu kesişimlerinden (Jaccard) hesaplanır. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a>. Bu sayfa resmî bir MEB ürünü değildir.
   </footer>
 </div>
 
 <script>
 const VERI = {/*DATA*/};
-const TEMALAR = VERI.temalar, KOD = VERI.kodlar, CK = VERI.ciktiKopru || {};
+const TEMALAR = VERI.temalar, KOD = VERI.kodlar, CK = VERI.ciktiKopru || {}, TK = VERI.temaKopru || {};
 const $ = id => document.getElementById(id);
 const esc = s => { const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; };
 const KISA = {'T.C. İnkılap Tarihi ve Atatürkçülük':'İnkılap Tarihi','Din Kültürü ve Ahlak Bilgisi':'Din Kültürü',
@@ -325,6 +330,22 @@ function ckBul(t, hedef){
   }
   return cikti;
 }
+function tkBul(t, hedef){
+  const kopru = TK[`${t.ders}|${t.sinif}|${t.temaNo}`] || {};
+  const cikti = [];
+  for(const [h, kanitlar] of Object.entries(kopru)){
+    if(hedef && h!==hedef) continue;
+    cikti.push({hedef: h, kanit: kanitlar[0]});
+  }
+  return cikti;
+}
+function tkHTML(liste, hedefGoster){
+  if(!liste.length) return '';
+  return `<div class="ck-blok tk">` + liste.map(x=>`
+    <div class="ck-satir"><span class="tk-et">tema geneli</span>${hedefGoster?` <span class="ck-rozet">→ ${esc(kisa(x.hedef))}</span>`:''}
+    <span class="ck-alinti">"${esc(x.kanit.a)}"</span>
+    ${x.kanit.o?`<span class="ck-oge">${esc(x.kanit.o)}</span>`:''}</div>`).join('') + `</div>`;
+}
 function ckHTML(liste, hedefGoster){
   if(!liste.length) return '';
   return `<div class="ck-blok">` + liste.map(x=>`
@@ -334,9 +355,10 @@ function ckHTML(liste, hedefGoster){
 }
 
 function temaSatir(t, hedef){
-  const ck = ckBul(t, hedef);
-  const rozet = ck.length ? `<span class="ck-rozet">${ck.length} çıktı kanıtı</span>` : '';
-  return `<li><b>${esc(trBaslik(t.tema))}</b> <span class="dt-sinif">(${esc(sinifEt(String(t.sinif)))}${t.cikti?` · ${t.cikti} çıktı`:''})</span>${rozet}${ckHTML(ck, false)}</li>`;
+  const ck = ckBul(t, hedef), tk = tkBul(t, hedef);
+  const r1 = ck.length ? `<span class="ck-rozet">${ck.length} çıktı kanıtı</span>` : '';
+  const r2 = tk.length ? `<span class="ck-rozet tk">${tk.length} tema geneli kanıt</span>` : '';
+  return `<li><b>${esc(trBaslik(t.tema))}</b> <span class="dt-sinif">(${esc(sinifEt(String(t.sinif)))}${t.cikti?` · ${t.cikti} çıktı`:''})</span>${r1}${r2}${ckHTML(ck, false)}${tkHTML(tk, false)}</li>`;
 }
 
 function bagDetay(liste, yonCls){
@@ -371,7 +393,8 @@ function cizPanel(){
       cips += ckHedef.map(x=>`<button class="mini-cip ck" data-git="${esc(x)}" title="yalnız öğrenme çıktısı metninde belgelenmiş">${esc(kisa(x))}</button>`).join('');
       if(!cips) cips = `<span class="dt-yok">köprü belirtilmemiş</span>`;
       h+=`<div class="dokum-tema"><span class="dt-sinif">${esc(sinifEt(String(t.sinif)))} · T${esc(t.temaNo)}</span><span class="dt-ad">${esc(trBaslik(t.tema))}</span> → ${cips}</div>`;
-      if(ck.length) h+=`<details class="bag"><summary style="font-size:0.78rem;color:var(--ochre);margin-left:0.4rem">${ck.length} çıktı kanıtı</summary>${ckHTML(ck, true)}</details>`;
+      const tk = tkBul(t, null);
+      if(ck.length || tk.length) h+=`<details class="bag"><summary style="font-size:0.78rem;color:var(--ochre);margin-left:0.4rem">${ck.length? ck.length+' çıktı kanıtı':''}${ck.length&&tk.length?' · ':''}${tk.length? tk.length+' tema geneli':''}</summary>${ckHTML(ck, true)}${tkHTML(tk, true)}</details>`;
     }
     h+=`</div>`;
   }
@@ -442,9 +465,12 @@ function cizTema(){
   h+= (t.hedefler&&t.hedefler.length) ? t.hedefler.map(x=>`<span class="hedef-cip">${esc(kisa(x))}</span>`).join('')
                         : '<span class="etiket">bu temada belirtilmemiş / ayrıştırılamadı</span>';
   h+=`</div>`;
-  const ckHepsi = ckBul(t, null);
+  const ckHepsi = ckBul(t, null), tkHepsi = tkBul(t, null);
   if(ckHepsi.length){
     h+=`<span class="etiket">Köprüyü doğuran öğrenme çıktıları (${ckHepsi.length})</span>${ckHTML(ckHepsi, true)}`;
+  }
+  if(tkHepsi.length){
+    h+=`<span class="etiket">Temanın geneline ait köprü ifadeleri (${tkHepsi.length}) — belirli bir çıktıya bağlı değil</span>${tkHTML(tkHepsi, true)}`;
   }
   if(t.kod && t.kod.length){
     const adaylar = TEMALAR.filter(x=>x.ders!==t.ders && x.kod && x.kod.length)
@@ -452,7 +478,7 @@ function cizTema(){
       .filter(o=>o.j.kes.length>=3)
       .sort((a,b)=>b.j.oran-a.j.oran).slice(0,5);
     if(adaylar.length){
-      h+=`<span class="etiket">Beceri-değer dokusu en çok örtüşen temalar</span>`;
+      h+=`<span class="etiket">Beceri-değer dokusu en çok örtüşen temalar</span><p style="font-size:0.78rem;color:var(--ink-faint);margin:0.2rem 0 0.4rem">Bu liste resmî bir ilişki değildir: temaların beceri-değer kod setlerinin kesişiminden hesaplanır. Kodlar programlarda kimi yerde grup (OB1), kimi yerde alt düzeyde (OB1.2) yazıldığı için akraba temalar eşleşmeyebilir.</p>`;
       for(const {x, j} of adaylar){
         h+=`<div class="benzer"><div class="bb"><b>${esc(kisa(x.ders))}</b> · ${esc(trBaslik(x.tema))} <span style="color:var(--ink-faint)">(${esc(sinifEt(String(x.sinif)))} · %${Math.round(j.oran*100)} örtüşme)</span></div>
         <div class="ortak">${j.kes.slice(0,10).map(k=>{const bb=KOD[k];return `<span class="kod-cip" title="${esc(bb? bb.n+(bb.d?' — '+bb.d:'') : '')}">${esc(k)}</span>`;}).join('')}</div></div>`;

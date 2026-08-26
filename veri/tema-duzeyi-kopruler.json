@@ -1,0 +1,296 @@
+{
+ "Matematik|5|6": {
+  "ders": "Matematik",
+  "sinif": "5",
+  "temaNo": "6",
+  "tema": "Veriden Olasılığa",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "Köprü Kurma Sosyal bilgiler gibi derslerden seçilen çeşitli örnek olaylar (yarın yağmur yağması, sınıfa kedi girmesi gibi) üzerinden sınıfta bir tartışma ortamı oluşturulur.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Matematik|6|5": {
+  "ders": "Matematik",
+  "sinif": "6",
+  "temaNo": "5",
+  "tema": "İstatistiksel Araştırma Süreci",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Sonuç değerlendirmede öğrencilere ders dışında fen bilimleri ile ilgili konularda istatistiksel araştırma sürecini deneyimleyebilecekleri bir performans görevi verilerek araştırma sonuçlarına yönelik bir ürün (poster, afiş, broşür gibi) oluşturmaları ve sınıf içinde sunum yapmaları istenebilir.",
+     "o": "Öğrenme Kanıtları"
+    }
+   ]
+  }
+ },
+ "Matematik|7|1": {
+  "ders": "Matematik",
+  "sinif": "7",
+  "temaNo": "1",
+  "tema": "Sayılar ve Nicelikler",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Sosyal bilgiler dersi bağlamında tarihî olayların zaman çizelgesine yerleştirilmesi veya fen bilimlerinde sıcaklık ölçme aracı olarak kullanılan termometrenin yapısının incelenmesi gibi durumlar üzerinden 0 (sıfır) tartışılır.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Matematik|7|3": {
+  "ders": "Matematik",
+  "sinif": "7",
+  "temaNo": "3",
+  "tema": "Dönüşüm",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Fen bilimleri disiplini ile bağlantı kurularak bir cismin aynadaki görüntüsünün cismin aynaya olan uzaklığı ile ilgili ilişkisi sorgulanır.",
+     "o": "Köprü Kurma"
+    }
+   ],
+   "Sosyal Bilgiler": [
+    {
+     "a": "Bu çalışmalar aracılığıyla görsel sanatlar, sosyal bilgiler ve matematik disiplinleri arasında ilişki kurulabilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ],
+   "Görsel Sanatlar": [
+    {
+     "a": "Bu çalışmalar aracılığıyla görsel sanatlar, sosyal bilgiler ve matematik disiplinleri arasında ilişki kurulabilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Fen Bilimleri|8|4": {
+  "ders": "Fen Bilimleri",
+  "sinif": "8",
+  "temaNo": "4",
+  "tema": "Sesin Dünyası",
+  "kopru": {
+   "Müzik": [
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin doğal ve yapay ses kaynaklarını müzik dersinden bildikleri ve çevrelerindeki ses kaynakları ile ilgili gözlemleri olduğu kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Fen Bilimleri|8|6": {
+  "ders": "Fen Bilimleri",
+  "sinif": "8",
+  "temaNo": "6",
+  "tema": "Elektriğin Yolculuğu",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Matematik dersinde doğrunun eğimini öğrendiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Sosyal Bilgiler|4|1": {
+  "ders": "Sosyal Bilgiler",
+  "sinif": "4",
+  "temaNo": "1",
+  "tema": "Birlikte Yaşamak",
+  "kopru": {
+   "Hayat Bilgisi": [
+    {
+     "a": "Öğrencilere hayat bilgisi dersinde neler öğrendikleri sorularak bu derste öğrendiklerine ilişkin sınıfça zihin haritası oluşturulur.",
+     "o": "Ön Değerlendirme Süreci"
+    },
+    {
+     "a": "Ön Değerlendirme Süreci Öğrencilere hayat bilgisi dersinde neler öğrendikleri sorularak bu derste öğrendiklerine ilişkin sınıfça zihin haritası oluşturulur.",
+     "o": "Ön Değerlendirme Süreci"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|4|3": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "4",
+  "temaNo": "3",
+  "tema": "Peygamberlerin Sevgisi",
+  "kopru": {
+   "Hayat Bilgisi": [
+    {
+     "a": "Köprü Kurma Peygamberlerin çocuklara, topluma ve çevreye verdikleri değer ile öğrencilerin hayat bilgisi dersinde öğrendikleri arasında bağlantı kurulur.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|4|5": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "4",
+  "temaNo": "5",
+  "tema": "Haklar ve Sorumluluklar",
+  "kopru": {
+   "Hayat Bilgisi": [
+    {
+     "a": "Köprü Kurma Öğrencilere, sahip olduğu haklar ve sorumluluklar hakkında bilgi verilerek hayat bilgisi dersi ile ilişki kurulur.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|5|1": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "5",
+  "temaNo": "1",
+  "tema": "Allah İnancı",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Köprü Kurma Öğrencilerin fen bilimleri dersinde öğrendiği tabiat olaylarıyla ilgili (Dünya’nın hem kendi hem de Güneş etrafında dönüşü, mevsimlerin oluşumu, su döngüsü vb.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|5|5": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "5",
+  "temaNo": "5",
+  "tema": "Mimarimizde Dinî Motifler",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Görsel sanatlar dersinde öğrendikleri bilgiler kullanılarak öğrencilere farklı cami tasarımları yaptırılabilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Bilişim Teknolojileri ve Yazılım|5|1": {
+  "ders": "Bilişim Teknolojileri ve Yazılım",
+  "sinif": "5",
+  "temaNo": "1",
+  "tema": "Bılışım Teknolojılerının Hayatımızdakı Yerı",
+  "kopru": {
+   "Müzik": [
+    {
+     "a": "Öğrencilerin günlük hayatta karşılaştıkları yapay zekâ uygulamaları (örneğin sesli asistanlar, çevrim içi film veya müzik öneri sistemleri, yüz tanıma uygulamaları) ile derste işlenecek kavramlar arasında köprü kurulabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Bilişim Teknolojileri ve Yazılım|5|2": {
+  "ders": "Bilişim Teknolojileri ve Yazılım",
+  "sinif": "5",
+  "temaNo": "2",
+  "tema": "Dijital Ürün Tasarımı ve Geliştirme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Köprü Kurma Görsel düzenleme programlarının arayüzünde yer alan ögeler görsel sanatlar dersinde kullanılan tekniklerle ilişkilendirilebilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Bilişim Teknolojileri ve Yazılım|5|6": {
+  "ders": "Bilişim Teknolojileri ve Yazılım",
+  "sinif": "5",
+  "temaNo": "6",
+  "tema": "Yazılım Tasarımı ve Programlama",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "…ılım Geliştirme Anahtar Kavramlar algoritma, analitik düşünme, bilgi işlemsel düşünme, değişken, doğrusal mantık, döngü, hata ayıklama, karar, mantıksal operatörler, matematiksel operatörler, operatör, sabit, test etme BİLİŞİM TEKNOLOJİLERİ VE YAZILIM DERSİ ÖĞRETİM PROGRAMI ÖĞRENME KANITLARI Bu temadaki öğrenme çıktıları; rubrik…",
+     "o": "İçerik Çerçevesi"
+    }
+   ]
+  }
+ },
+ "Bilişim Teknolojileri ve Yazılım|6|5": {
+  "ders": "Bilişim Teknolojileri ve Yazılım",
+  "sinif": "6",
+  "temaNo": "5",
+  "tema": "Yapay Zekâ",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "FARKLILAŞTIRMA Zenginleştirme Öğrencilerden yapay zekânın fen bilimlerinde çevresel sorunların çözümündeki rolünü, matematikte veri analizi süreçlerini, sosyal bilgilerde toplumsal etkilerini, Türkçede dil işleme ve hikâye üretimi alanındaki kullanımını ya da görsel sanatlarda yaratıcı üretim süreçlerine katkısını inceleyip, yap…",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ],
+   "Beden Eğitimi ve Spor": [
+    {
+     "a": "Öğrenciler küçük gruplara ayrılır ve her gruba farklı bir disiplinle ilişkilendirilebilecek bir konu verilir (Örneğin sağlık/fen bilimleri, spor/beden eğitimi, eğitim ve sosyal bilgiler, çevre/fen ve teknoloji, medya/Türkçe vb.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ],
+   "Görsel Sanatlar": [
+    {
+     "a": "…çözümündeki rolünü, matematikte veri analizi süreçlerini, sosyal bilgilerde toplumsal etkilerini, Türkçede dil işleme ve hikâye üretimi alanındaki kullanımını ya da görsel sanatlarda yaratıcı üretim süreçlerine katkısını inceleyip, yapay zekâ kavramını farklı disiplinlerle ilişkilendirerek ve yapay zekâ uygulamalarıyla ilgili d…",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Teknoloji ve Tasarım|7|8": {
+  "ders": "Teknoloji ve Tasarım",
+  "sinif": "7",
+  "temaNo": "8",
+  "tema": "Bütünleşik Öğrenme: Steam",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "İÇERİK ÇERÇEVESİ Holistik Düşünme Proje Odaklı Düşünme Disiplinler Arası Düşünme Bilim, Teknoloji, Mühendislik, Sanat ve Matematik Arasındaki İlişkinin Önemi STEAM Yaklaşımına Göre Bir Tasarım Problemi Belirleyerek Çözüm Önerisi Geliştirilmesi Anahtar Kavramlar biyomimikri, bütünleşik, eleştirel düşünme, inovasyon, odaklı düşünm…",
+     "o": "İçerik Çerçevesi"
+    }
+   ]
+  }
+ },
+ "Beden Eğitimi ve Spor|5|4": {
+  "ders": "Beden Eğitimi ve Spor",
+  "sinif": "5",
+  "temaNo": "4",
+  "tema": "Hareketin Estetiği ve Ritmi",
+  "kopru": {
+   "Müzik": [
+    {
+     "a": "Öğrencilerin farklı ritim türleri (örneğin 3/4 ya da 4/4 tempo) ile uyumlu bir şekilde jimnastik hareketlerini uygulayarak müzik ile hareket becerileri arasında bağ kurmaları sağlanabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Beden Eğitimi ve Spor|6|1": {
+  "ders": "Beden Eğitimi ve Spor",
+  "sinif": "6",
+  "temaNo": "1",
+  "tema": "Sağlıkla İlgili Fiziksel Uygunluk",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Fen bilimleri dersi ile ilişki kurularak vücut sistemleri konusu ve fiziksel uygunluk ilişkisi örnek durumlar üzerinden tartışılabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Beden Eğitimi ve Spor|8|1": {
+  "ders": "Beden Eğitimi ve Spor",
+  "sinif": "8",
+  "temaNo": "1",
+  "tema": "Egzersıze Katılım",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Fen bilimleri dersiyle bağlantı kurularak egzersiz sırasında gerçekleşen değişimler üzerinden vücut sistemleri konusu tartışmaya açılabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ }
+}
