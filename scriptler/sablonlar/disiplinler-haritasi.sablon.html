@@ -64,6 +64,36 @@
   .dugum text { font-family: "IBM Plex Sans", sans-serif; font-size: 11.5px; fill: var(--ink); cursor: pointer; }
   .dugum.sonuk { opacity: 0.3; }
   .dugum:focus-visible { outline: 2px solid var(--focus); }
+
+  /* --- fare ile keşif --- */
+  #graf-kap { position: relative; }
+  #graf { display: block; touch-action: pan-y; cursor: grab; }   /* dokunmatikte dikey kaydırma tarayıcıda kalsın */
+  #graf.kaydirilirken { cursor: grabbing; }
+  #graf.suruklenirken { cursor: grabbing; }
+  #graf .dugum { cursor: grab; }
+  #graf.suruklenirken .dugum { cursor: grabbing; }
+  .graf-sifirla {
+    position: absolute; right: 0.4rem; top: 0.4rem; z-index: 2;
+    font: inherit; font-size: 0.74rem; color: var(--ink-soft); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 99px; padding: 0.2rem 0.65rem; cursor: pointer;
+  }
+  .graf-sifirla:hover { border-color: var(--petrol); color: var(--petrol); }
+  /* hover katmanı tıklama durumunun üstüne biner; gezinme bitince eski hâl geri gelir */
+  #graf.hover-var .kenar.h-sonuk { opacity: 0.03; }
+  #graf.hover-var .kenar.h-giden { stroke: var(--giden); opacity: 0.9; }
+  #graf.hover-var .kenar.h-gelen { stroke: var(--gelen); opacity: 0.9; }
+  #graf .kenar.h-tekil { stroke: var(--ochre); opacity: 1; }
+  #graf.hover-var .dugum.h-sonuk { opacity: 0.25; }
+  #graf.hover-var .dugum.h-vurgu circle { stroke-width: 2.5; }
+  #graf.hover-var .dugum.h-vurgu text { font-weight: 600; }
+
+  .oynat-etiket { font-size: 0.78rem; color: var(--petrol); font-weight: 600; min-width: 5.5em; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .kenar { animation: kenar-belir 0.45s ease; }   /* fill-mode yok: hover sınıfları animasyona takılmasın */
+    .dugum circle { transition: r 0.35s ease, fill 0.2s, stroke-width 0.2s; }
+    @keyframes kenar-belir { from { opacity: 0; } }
+  }
   [hidden] { display: none !important; }   /* .lejant gibi display:flex kuralları hidden'ı ezmesin */
   .lejant { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.5rem 0.3rem 0; font-size: 0.78rem; color: var(--ink-soft); }
   .lejant span::before { content: ''; display: inline-block; width: 16px; height: 3px; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
@@ -71,6 +101,8 @@
   .lejant .l-gelen::before { background: var(--gelen); }
   .lejant .l-tum::before { background: var(--edge); opacity: 0.25; }
   .lejant .l-ck::before { background: repeating-linear-gradient(90deg, var(--ochre) 0 5px, transparent 5px 9px); }
+  .lejant .l-nasil { flex-basis: 100%; color: var(--ink-faint); font-size: 0.76rem; }
+  .lejant .l-nasil::before { display: none; }
 
   #matris-lejant span::before { display: none; }
   #matris-lejant .l-ck::before { display: inline-block; background: none; border: 1px solid var(--ochre); height: 12px; border-radius: 3px; }
@@ -236,6 +268,54 @@
   .bag ul li { margin: 0.1rem 0; }
 
   .ck-blok { margin: 0.35rem 0 0.5rem 0.2rem; border-left: 2px solid var(--ochre); padding-left: 0.7rem; }
+  /* --- tema içindeki çıktı listesi --- */
+  .tema-ciktilar { margin: 0.35rem 0 0.2rem; }
+  .tema-ciktilar > summary {
+    cursor: pointer; font-size: 0.76rem; color: var(--petrol);
+    list-style: none; padding: 0.1rem 0; user-select: none;
+  }
+  .tema-ciktilar > summary::-webkit-details-marker { display: none; }
+  .tema-ciktilar > summary::before { content: '▸ '; }
+  .tema-ciktilar[open] > summary::before { content: '▾ '; }
+  .tema-ciktilar > summary:hover { text-decoration: underline; }
+  .tc-liste { list-style: none; margin: 0.3rem 0 0; padding: 0; }
+  .tc-liste li {
+    display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.45rem;
+    font-size: 0.78rem; line-height: 1.5; color: var(--ink-soft);
+    padding: 0.22rem 0 0.22rem 0.45rem; border-left: 2px solid var(--line-soft); margin-bottom: 0.15rem;
+  }
+  .tc-liste li.kanitli { border-left-color: var(--ochre); background: var(--ochre-soft); border-radius: 0 4px 4px 0; }
+  .tc-kod { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 600; color: var(--petrol); white-space: nowrap; }
+  .tc-liste li.kanitli .tc-kod { color: var(--ochre); }
+  .tc-rozet {
+    grid-column: 2; font-size: 0.66rem; color: var(--ochre); font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .tc-sb { grid-column: 2; margin-top: 0.15rem; }
+  .tc-sb > summary {
+    cursor: pointer; font-size: 0.71rem; color: var(--ink-faint);
+    list-style: none; user-select: none;
+  }
+  .tc-sb > summary::-webkit-details-marker { display: none; }
+  .tc-sb > summary::before { content: '▸ '; }
+  .tc-sb[open] > summary::before { content: '▾ '; }
+  .tc-sb > summary:hover { color: var(--petrol); }
+  .tc-sb ul { list-style: none; margin: 0.2rem 0 0.1rem; padding: 0; }
+  .tc-sb li {
+    display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.25rem;
+    font-size: 0.73rem; line-height: 1.45; color: var(--ink-faint);
+    margin-bottom: 0.12rem; padding: 0; border: 0;
+  }
+  .tc-harf { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; }
+
+  .tc-not { font-size: 0.74rem; color: var(--ink-faint); line-height: 1.5; margin: 0.45rem 0 0.3rem; }
+  .tc-bag { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tc-bag a {
+    font-size: 0.72rem; color: var(--petrol); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 99px; padding: 0.1rem 0.5rem;
+  }
+  .tc-bag a:hover { border-color: var(--petrol); }
+
   .ck-satir { margin: 0.35rem 0; font-size: 0.8rem; }
   .ck-kod { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: var(--ochre); }
   .ck-st { color: var(--ink); }
@@ -364,19 +444,25 @@
     <button class="sekme" id="sekme-rapor" role="tab" aria-selected="false" aria-controls="gorunum-rapor">Ara ve raporla</button>
   </div>
 
-  <section id="gorunum-ag" role="tabpanel" aria-labelledby="sekme-ag" hidden>
+  <section id="gorunum-ag" role="tabpanel" aria-labelledby="sekme-ag">
   <div class="cips" id="sinif-filtre" role="group" aria-label="Sınıf filtresi"></div>
   <div class="cips"><span class="et">Katman:</span><button class="cip acik" id="ck-toggle" aria-pressed="true">Çıktı düzeyi köprüler ağda</button></div>
   <div class="cips"><span class="et">Görünüm:</span>
     <button class="cip acik" id="gv-ag" aria-pressed="true">Ağ</button>
     <button class="cip" id="gv-matris" aria-pressed="false">Matris</button>
+    <button class="cip" id="oynat" aria-pressed="false" title="Sınıf düzeylerini sırayla gösterir">▶ Sınıfları oynat</button>
+    <span class="oynat-etiket" id="oynat-etiket"></span>
   </div>
 
   <div class="duzen">
     <div class="graf-kutu">
-      <div id="graf-kap"><svg id="graf" viewBox="0 0 720 640" role="img" aria-label="Dersler arası bağlantı grafiği"></svg></div>
+      <div id="graf-kap">
+        <svg id="graf" viewBox="0 0 720 640" role="img" aria-label="Dersler arası bağlantı grafiği"></svg>
+        <button class="graf-sifirla" id="graf-sifirla" hidden>Yerleşimi sıfırla</button>
+      </div>
       <div class="matris-kap" id="matris-kap" hidden></div>
-      <div class="lejant" id="graf-lejant"><span class="l-giden">seçili dersin temalarından giden</span><span class="l-gelen">seçili derse gelen</span><span class="l-tum">tüm bağlantılar (kalınlık = tema sayısı)</span><span class="l-ck">kesikli: yalnız öğrenme çıktısı metninde belgelenmiş</span></div>
+      <div class="lejant" id="graf-lejant"><span class="l-giden">seçili dersin temalarından giden</span><span class="l-gelen">seçili derse gelen</span><span class="l-tum">tüm bağlantılar (kalınlık = tema sayısı)</span><span class="l-ck">kesikli: yalnız öğrenme çıktısı metninde belgelenmiş</span>
+      <span class="l-nasil">üstüne gelin: o dersin bağları öne çıkar · sürükleyin: düğümü taşıyın · tekerlek: yakınlaştırın</span></div>
       <div class="lejant" id="matris-lejant" hidden><span>Satır: köprüyü <b>kuran</b> ders · Sütun: <b>atıf alan</b> ders · Sayı: kaç temada</span><span class="l-ck">kenarlıklı hücre: yalnız öğrenme çıktısı metninde belgelenmiş</span><span>boş hücre: o yönde bağ yok</span></div>
     </div>
     <div class="panel" id="panel">
@@ -417,7 +503,7 @@
     <div id="ob-sonuc"></div>
   </section>
 
-  <section id="gorunum-takvim" role="tabpanel" aria-labelledby="sekme-takvim">
+  <section id="gorunum-takvim" role="tabpanel" aria-labelledby="sekme-takvim" hidden>
     <p class="sub">Bir sınıf seçin: o seviyedeki bütün derslerin temaları, programdaki ders saatlerine göre yıl boyunca nereye düştüğüyle birlikte dizilir. Bir temaya tıklayın; <b>siz onu işlerken diğer derslerde ne işleniyor</b> ve program hangi dersle köprü kurmanızı istiyor, tek brifingte görün.</p>
     <div class="cips" id="takvim-sinif" role="group" aria-label="Sınıf seçimi"></div>
     <div class="takvim"><div class="tk-izgara" id="tk-izgara"></div></div>
@@ -525,13 +611,28 @@ function hesaplaDugumler(edges){
 
 let EDGES = [], NODES = [], pos = {};
 const CX=360, CY=320, R=225;
+
+/* Konumlar filtreden bağımsız, bir kez hesaplanır. Eskiden her filtre değişiminde
+   daire yeniden diziliyordu; ders yer değiştirince göz izini kaybediyordu. Sabit
+   konum, sınıf canlandırmasını da okunur kılar: yalnız bağlar belirip söner. */
+function yerlesSabit(){
+  const tumEdges = (function(){
+    const eski = filtre; filtre = FILTRELER[0];
+    const e = hesaplaKenarlar(); filtre = eski; return e;
+  })();
+  const tum = hesaplaDugumler(tumEdges);
+  tum.forEach((n,i)=>{
+    const a = -Math.PI/2 + i*2*Math.PI/tum.length;
+    pos[n.ders] = {x: CX+R*Math.cos(a), y: CY+R*Math.sin(a)};
+  });
+  ILK_POS = JSON.parse(JSON.stringify(pos));
+}
+let ILK_POS = {};
+
 function yerles(){
   EDGES = hesaplaKenarlar();
   NODES = hesaplaDugumler(EDGES);
-  NODES.forEach((n,i)=>{
-    const a = -Math.PI/2 + i*2*Math.PI/NODES.length;
-    pos[n.ders] = {x: CX+R*Math.cos(a), y: CY+R*Math.sin(a)};
-  });
+  for(const n of NODES) if(!pos[n.ders]) pos[n.ders] = {x: CX, y: CY};
 }
 
 function yol(a, b){
@@ -558,7 +659,7 @@ function cizGraf(){
     const ckOnly = e.temaDuzeyi === 0;
     const dash = ckOnly ? ' stroke-dasharray="5 4"' : '';
     const not = ckOnly ? ' · yalnız çıktı düzeyinde belgelenmiş' : (e.ckSayi ? ` · ${e.ckSayi} çıktı kanıtı` : '');
-    h += `<path class="${cls}" data-i="${i}"${dash} d="${yol(e.kaynak,e.hedef)}" stroke-width="${w.toFixed(1)}"><title>${esc(e.kaynak)} → ${esc(e.hedef)} · ${e.w} tema${not} (tıkla: liste)</title></path>`;
+    h += `<path class="${cls}" data-i="${i}" data-a="${esc(e.kaynak)}" data-b="${esc(e.hedef)}"${dash} d="${yol(e.kaynak,e.hedef)}" stroke-width="${w.toFixed(1)}"><title>${esc(e.kaynak)} → ${esc(e.hedef)} · ${e.w} tema${not} (tıkla: liste)</title></path>`;
   });
   h += '</g><g>';
   for(const n of NODES){
@@ -579,16 +680,24 @@ function cizGraf(){
   svg.querySelectorAll('.dugum').forEach(g=>{
     const d = g.dataset.ders;
     const sec = () => { seciliKenar=null; secili = (secili===d? null : d); cizGraf(); cizPanel(); durumYaz(); };
-    g.addEventListener('click', sec);
+    // sürükleme tıklamayı yutmasın: taşınmadıysa tık sayılır
+    g.addEventListener('click', ()=>{ if(performance.now() - sonTasima > 200) sec(); });
     g.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sec(); } });
+    g.addEventListener('pointerenter', ()=>{ if(!surukle && !kaydir) hoverUygula(d); });
+    g.addEventListener('focus', ()=>hoverUygula(d));
+    g.addEventListener('blur', ()=>hoverUygula(null));
+    g.addEventListener('pointerdown', ev=>surukleBasla(ev, d));
   });
   svg.querySelectorAll('.kenar').forEach(p=>{
     p.addEventListener('click', ()=>{
       const e = EDGES[+p.dataset.i];
       secili=null; seciliKenar = {a: e.kaynak, b: e.hedef};
-      cizGraf(); cizKenarPanel();
+      cizGraf(); cizKenarPanel(); durumYaz();
     });
+    p.addEventListener('pointerenter', ()=>{ if(!surukle && !kaydir) p.classList.add('h-tekil'); });
+    p.addEventListener('pointerleave', ()=>p.classList.remove('h-tekil'));
   });
+  if(hoverDers && NODES.some(n=>n.ders===hoverDers)) hoverUygula(hoverDers); else hoverDers = null;
 }
 
 function ckBul(t, hedef){
@@ -626,11 +735,49 @@ function ckHTML(liste, hedefGoster){
     ${x.kanit.o?`<span class="ck-oge">${esc(x.kanit.o)}</span>`:''}</div>`).join('') + `</div>`;
 }
 
+/* Köprüyü gören öğretmenin bir sonraki sorusu hep aynı: "peki hangi çıktıda?"
+   Programın kendisi bunu her zaman söylemiyor; söylediğinde çıktı kodu kanıt
+   cümlesiyle birlikte geliyor, söylemediğinde bağ temanın geneline yazılmış
+   oluyor. İkisini birbirine karıştırmadan, ama temanın bütün çıktılarını da
+   göstererek veriyoruz: belgelenmiş olan işaretli, gerisi öğretmenin kararı. */
+function ciktiListesi(t, ck){
+  const kanitli = new Set(ck.map(x => x.kod));
+  // tema adıyla değil numarasıyla bağlan: harita başlıkları büyük harfli (PDF'ten),
+  // çıktı listesindekiler değil; ad eşleşmeyince gezgin bütün sınıfı gösteriyordu
+  const gez = URLD.bag('kazanim-gezgini.html', { ders: t.ders, sinif: t.sinif, tema: t.temaNo });
+  const plan = URLD.bag('ders-plani.html', { ders: t.ders, sinif: t.sinif, tema: t.temaNo });
+  const baglar = `<div class="tc-bag"><a href="${gez}">Kazanım Gezgini'nde aç</a><a href="${plan}">Ders planı</a></div>`;
+
+  if(!(t.ciktilar && t.ciktilar.length))
+    return `<details class="tema-ciktilar"><summary>Bu temanın öğrenme çıktıları</summary>
+      <p class="tc-not">Bu programda öğrenme çıktıları temalara değil, beceri alanlarına (okuma, dinleme, konuşma, yazma) bağlanmış. Temaya ait ayrı bir çıktı listesi yok.</p>
+      ${baglar}</details>`;
+
+  const HARF = 'abcçdefgğhıijklm';
+  const satirlar = t.ciktilar.map(c => {
+    const k = kanitli.has(c.c);
+    const bilesen = (c.b && c.b.length)
+      ? `<details class="tc-sb"><summary>${c.b.length} süreç bileşeni</summary><ul>${
+          c.b.map((x, i) => `<li><span class="tc-harf">${HARF[i] || '•'})</span>${esc(x)}</li>`).join('')
+        }</ul></details>`
+      : '';
+    return `<li class="${k ? 'kanitli' : ''}"><span class="tc-kod">${esc(c.c)}</span><span class="tc-st">${esc(c.s)}</span>${k ? '<span class="tc-rozet">köprü burada belgeleniyor</span>' : ''}${bilesen}</li>`;
+  }).join('');
+
+  const not = kanitli.size
+    ? `Program bu köprüyü işaretli çıktının uygulama metninde belgeliyor. Diğerleri aynı temanın çıktıları; köprüyü onlarda da kurabilirsiniz, orası sizin kararınız.`
+    : `Program bu bağı temanın geneline yazmış, belirli bir çıktıya bağlamamış. Aşağıdakiler temanın bütün çıktıları; köprüyü hangisinde kuracağınız size kalmış.`;
+
+  return `<details class="tema-ciktilar"><summary>Bu temanın ${t.ciktilar.length} öğrenme çıktısı</summary>
+    <ul class="tc-liste">${satirlar}</ul>
+    <p class="tc-not">${not}</p>${baglar}</details>`;
+}
+
 function temaSatir(t, hedef){
   const ck = ckBul(t, hedef), tk = tkBul(t, hedef);
   const r1 = ck.length ? `<span class="ck-rozet">${ck.length} çıktı kanıtı</span>` : '';
   const r2 = tk.length ? `<span class="ck-rozet tk">${tk.length} tema geneli kanıt</span>` : '';
-  return `<li><b>${esc(trBaslik(t.tema))}</b> <span class="dt-sinif">(${esc(sinifEt(String(t.sinif)))}${t.cikti?` · ${t.cikti} çıktı`:''})</span>${r1}${r2}${ckHTML(ck, false)}${tkHTML(tk, false)}</li>`;
+  return `<li><b>${esc(trBaslik(t.tema))}</b> <span class="dt-sinif">(${esc(sinifEt(String(t.sinif)))}${t.cikti?` · ${t.cikti} çıktı`:''})</span>${r1}${r2}${ckHTML(ck, false)}${tkHTML(tk, false)}${ciktiListesi(t, ck)}</li>`;
 }
 
 function bagDetay(liste, yonCls){
@@ -698,7 +845,7 @@ function cizFiltre(){
     b.className='cip'+(filtre.id===f.id?' acik':'');
     b.textContent=f.ad;
     b.setAttribute('aria-pressed', filtre.id===f.id);
-    b.onclick=()=>{ filtre=f; yerles(); cizFiltre(); if(gorunum==='matris') cizMatris(); else cizGraf(); if(seciliKenar) cizKenarPanel(); else cizPanel(); cizTablo(); cizRoller(); durumYaz(); };
+    b.onclick=()=>{ if(oynatZaman) oynatDurdur(); $('oynat-etiket').textContent=''; filtre=f; yerles(); cizFiltre(); if(gorunum==='matris') cizMatris(); else cizGraf(); if(seciliKenar) cizKenarPanel(); else cizPanel(); cizTablo(); cizRoller(); durumYaz(); };
     kap.appendChild(b);
   }
 }
@@ -764,6 +911,172 @@ function cizTablo(){
   let h='<table><thead><tr><th>Kaynak ders</th><th>Hedef ders</th><th>Tema</th><th>Çıktı kanıtı</th><th>Temalar</th></tr></thead><tbody>';
   for(const e of EDGES) h+=`<tr><td>${esc(e.kaynak)}</td><td>${esc(e.hedef)}</td><td>${e.w}</td><td>${e.ckSayi||'—'}</td><td>${e.temalar.map(t=>`${esc(sinifEt(String(t.sinif)))}: ${esc(trBaslik(t.tema))}`).join(' · ')}</td></tr>`;
   $('tablo-kap').innerHTML=h+'</tbody></table>';
+}
+
+// ============ AĞDA FARE İLE KEŞİF ============
+/* Tıklamak bir karar; üstüne gelmek değil. Gezinirken bağların anında öne çıkması,
+   ağı "okumak" ile "sorgulamak" arasındaki farkı kapatıyor. Aşağısı innerHTML'i
+   yeniden kurmaz, yalnız sınıf ve öznitelik değiştirir — sürükleme ve yakınlaştırma
+   sırasında da akıcı kalsın diye. */
+let hoverDers = null, surukle = null, sonTasima = 0;
+const KUCUK_HAREKET = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function komsuMu(a, b){
+  return a === b || EDGES.some(e => (e.kaynak === a && e.hedef === b) || (e.hedef === a && e.kaynak === b));
+}
+
+function hoverUygula(ders){
+  hoverDers = ders || null;
+  const svg = $('graf');
+  svg.classList.toggle('hover-var', !!hoverDers);
+  svg.querySelectorAll('.kenar').forEach(p => {
+    const a = p.dataset.a, b = p.dataset.b;
+    p.classList.toggle('h-giden', !!hoverDers && a === hoverDers);
+    p.classList.toggle('h-gelen', !!hoverDers && b === hoverDers);
+    p.classList.toggle('h-sonuk', !!hoverDers && a !== hoverDers && b !== hoverDers);
+  });
+  svg.querySelectorAll('.dugum').forEach(g => {
+    const bagli = hoverDers && komsuMu(hoverDers, g.dataset.ders);
+    g.classList.toggle('h-vurgu', !!bagli);
+    g.classList.toggle('h-sonuk', !!hoverDers && !bagli);
+  });
+}
+
+// --- sürükleme
+function svgNokta(ev){
+  const svg = $('graf'), pt = svg.createSVGPoint();
+  pt.x = ev.clientX; pt.y = ev.clientY;
+  const m = svg.getScreenCTM();
+  return m ? pt.matrixTransform(m.inverse()) : { x: 0, y: 0 };
+}
+
+function konumYaz(ders){
+  const svg = $('graf');
+  const g = svg.querySelector(`.dugum[data-ders="${CSS.escape(ders)}"]`);
+  if(g){
+    const p = pos[ders], c = g.querySelector('circle'), t = g.querySelector('text');
+    const r = parseFloat(c.getAttribute('r')), sag = p.x >= CX;
+    c.setAttribute('cx', p.x.toFixed(1)); c.setAttribute('cy', p.y.toFixed(1));
+    t.setAttribute('x', (p.x + (sag ? r + 7 : -(r + 7))).toFixed(1));
+    t.setAttribute('y', (p.y + 4).toFixed(1));
+    t.setAttribute('text-anchor', sag ? 'start' : 'end');
+  }
+  svg.querySelectorAll('.kenar').forEach(el => {
+    if(el.dataset.a === ders || el.dataset.b === ders)
+      el.setAttribute('d', yol(el.dataset.a, el.dataset.b));
+  });
+}
+
+function surukleBasla(ev, ders){
+  if(ev.button !== undefined && ev.button !== 0) return;
+  const n = svgNokta(ev);
+  surukle = { ders, dx: pos[ders].x - n.x, dy: pos[ders].y - n.y, tasindi: false };
+  $('graf').classList.add('suruklenirken');
+  ev.target.setPointerCapture && ev.target.setPointerCapture(ev.pointerId);
+  ev.preventDefault();
+}
+
+// --- yakınlaştırma ve kaydırma
+let kutu = { x: 0, y: 0, w: 720, h: 640 };
+const KUTU0 = { x: 0, y: 0, w: 720, h: 640 };
+let kaydir = null;
+
+function kutuYaz(){
+  $('graf').setAttribute('viewBox', `${kutu.x.toFixed(1)} ${kutu.y.toFixed(1)} ${kutu.w.toFixed(1)} ${kutu.h.toFixed(1)}`);
+  $('graf-sifirla').hidden = (kutu.w === KUTU0.w && kutu.x === KUTU0.x && kutu.y === KUTU0.y
+                              && JSON.stringify(pos) === JSON.stringify(ILK_POS));
+}
+
+function grafOlaylari(){
+  const svg = $('graf');
+
+  svg.addEventListener('wheel', ev => {
+    ev.preventDefault();
+    const n = svgNokta(ev);
+    const k = Math.exp(ev.deltaY * 0.0015);
+    const yeniW = Math.min(KUTU0.w * 2.5, Math.max(KUTU0.w * 0.25, kutu.w * k));
+    const oran = yeniW / kutu.w;
+    kutu = { x: n.x - (n.x - kutu.x) * oran, y: n.y - (n.y - kutu.y) * oran,
+             w: yeniW, h: kutu.h * oran };
+    kutuYaz();
+  }, { passive: false });
+
+  svg.addEventListener('pointerdown', ev => {
+    if(ev.target.closest('.dugum') || ev.target.closest('.kenar')) return;
+    const n = svgNokta(ev);
+    kaydir = { x: n.x, y: n.y };
+    svg.classList.add('kaydirilirken');
+    svg.setPointerCapture(ev.pointerId);
+  });
+
+  svg.addEventListener('pointermove', ev => {
+    if(surukle){
+      const n = svgNokta(ev);
+      pos[surukle.ders] = { x: n.x + surukle.dx, y: n.y + surukle.dy };
+      surukle.tasindi = true;
+      konumYaz(surukle.ders);
+      kutuYaz();
+      return;
+    }
+    if(kaydir){
+      const n = svgNokta(ev);
+      kutu.x -= n.x - kaydir.x; kutu.y -= n.y - kaydir.y;
+      kutuYaz();
+    }
+  });
+
+  const bitir = () => {
+    if(surukle && surukle.tasindi) sonTasima = performance.now();
+    if(surukle) $('graf').classList.remove('suruklenirken');
+    if(kaydir) $('graf').classList.remove('kaydirilirken');
+    surukle = null; kaydir = null;
+  };
+  svg.addEventListener('pointerup', bitir);
+  svg.addEventListener('pointercancel', bitir);
+  svg.addEventListener('pointerleave', () => { if(!surukle && !kaydir) hoverUygula(null); });
+
+  $('graf-sifirla').addEventListener('click', () => {
+    pos = JSON.parse(JSON.stringify(ILK_POS));
+    kutu = { ...KUTU0 };
+    cizGraf(); kutuYaz();
+  });
+}
+
+// ============ SINIFLARI OYNAT ============
+/* Ağın tamamı tek karede durunca "hangi bağ hangi yaşta kuruluyor" görünmüyor.
+   Oynat, sınıf filtresini sırayla değiştirir; düğümler yerinde kaldığı için
+   yalnız bağlar belirip söner — değişimin kendisi izlenebilir hâle gelir. */
+const OYNAT_SIRA = ['5', '6', '7', '8'];
+let oynatZaman = null, oynatIdx = 0;
+
+function oynatDurdur(){
+  clearInterval(oynatZaman); oynatZaman = null;
+  const b = $('oynat');
+  b.textContent = '▶ Sınıfları oynat';
+  b.classList.remove('acik');
+  b.setAttribute('aria-pressed', 'false');
+}
+
+function oynatAdim(){
+  const f = FILTRELER.find(x => x.id === OYNAT_SIRA[oynatIdx % OYNAT_SIRA.length]);
+  oynatIdx++;
+  if(!f) return;
+  filtre = f;
+  yerles(); cizFiltre(); cizTablo(); cizRoller();
+  if(gorunum === 'matris') cizMatris(); else cizGraf();
+  if(seciliKenar) cizKenarPanel(); else cizPanel();
+  $('oynat-etiket').textContent = f.ad;
+}
+
+function oynatBasla(){
+  if(oynatZaman){ oynatDurdur(); return; }
+  const b = $('oynat');
+  b.textContent = '⏸ Durdur';
+  b.classList.add('acik');
+  b.setAttribute('aria-pressed', 'true');
+  oynatIdx = Math.max(0, OYNAT_SIRA.indexOf(filtre.id));
+  oynatAdim();
+  oynatZaman = setInterval(oynatAdim, KUCUK_HAREKET ? 2600 : 1800);
 }
 
 // ============ MATRİS GÖRÜNÜMÜ ============
@@ -912,7 +1225,9 @@ function cizRoller(){
   }));
 }
 
-yerles(); cizFiltre(); cizGraf(); cizPanel(); doldur(); cizTablo(); cizRoller();
+yerlesSabit(); yerles(); cizFiltre(); cizGraf(); cizPanel(); doldur(); cizTablo(); cizRoller();
+grafOlaylari();
+$('oynat').addEventListener('click', oynatBasla);
 $('gv-ag').addEventListener('click', ()=>gorunumGec('ag'));
 $('gv-matris').addEventListener('click', ()=>gorunumGec('matris'));
 $('ders').addEventListener('change',e=>{ dersSec=e.target.value; sinifSec=''; doldurSinif(); doldurTema(); cizTema(); });
@@ -1355,6 +1670,7 @@ function cizZumre(){
 const SEKMELER = ['ag', 'ortak', 'takvim', 'rapor'];
 function sekmeGec(hedef){
   if(!SEKMELER.includes(hedef)) hedef = 'ag';
+  if(hedef !== 'ag' && typeof oynatZaman !== 'undefined' && oynatZaman) oynatDurdur();
   for(const k of SEKMELER){
     $('gorunum-' + k).hidden = k !== hedef;
     $('sekme-' + k).setAttribute('aria-selected', String(k === hedef));

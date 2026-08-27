@@ -246,10 +246,19 @@ temalar = json.load(open(os.path.join(VERI, 'temalar.json'), encoding='utf-8'))
 beceriler = json.load(open(os.path.join(VERI, 'beceriler.json'), encoding='utf-8'))
 ciktilar = json.load(open(os.path.join(VERI, 'ogrenme-ciktilari.json'), encoding='utf-8'))
 
+# Haritada bir köprüye tıklayan öğretmen temayı görüyor ama o temanın çıktılarını
+# görmüyordu; "hangi çıktıda?" sorusu için araç değiştirmek gerekiyordu. Çıktı
+# listesini temanın yanına koyuyoruz. (Türkçe'de çıktılar temaya değil beceri
+# alanına bağlı olduğu için o temalar boş kalır; arayüz bunu ayrıca söyler.)
 adet = {}
+tema_ciktilari = {}
 for c in ciktilar:
     k = (c['ders'], c['sinif'], c['temaNo'])
     adet[k] = adet.get(k, 0) + 1
+    kayit = {'c': c['code'], 's': c['statement']}
+    if c.get('sb'):
+        kayit['b'] = c['sb']      # süreç bileşenleri: öğretmenin sorduğu "alt başlık"
+    tema_ciktilari.setdefault(k, []).append(kayit)
 
 h_temalar = []
 for t in temalar:
@@ -258,7 +267,8 @@ for t in temalar:
         str(t.get(k, '')) for k in ['egilimler', 'sdb', 'degerler', 'okuryazarlik', 'kavramsal']))))
     h_temalar.append({'ders': t['ders'], 'sinif': t['sinif'], 'temaNo': t['temaNo'], 'tema': t['tema'],
                       'saat': t.get('saat', ''), 'hedefler': hs, 'kod': kodset,
-                      'cikti': adet.get((t['ders'], t['sinif'], t['temaNo']), 0)})
+                      'cikti': adet.get((t['ders'], t['sinif'], t['temaNo']), 0),
+                      'ciktilar': tema_ciktilari.get((t['ders'], t['sinif'], t['temaNo']), [])})
 
 ck_idx = {}
 for kod, v in out.items():
@@ -280,5 +290,6 @@ harita = {
 }
 json.dump(harita, open(os.path.join(VERI, 'harita.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 print('harita.json →', len(h_temalar), 'tema,',
+      sum(1 for x in h_temalar if x['ciktilar']), 'tanesi çıktı listeli,',
       sum(1 for x in h_temalar if x['hedefler']), 'bağlantılı,', len(ck_idx), 'çıktı kanıtlı tema,',
       len(tk_idx), 'tema geneli kanıtlı tema')

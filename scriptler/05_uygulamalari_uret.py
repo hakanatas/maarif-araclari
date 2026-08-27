@@ -56,15 +56,15 @@ def veri_hazirla():
     }
 
 
-def nav(aktif):
+def nav(aktif, kok='../', arac_yolu='./'):
     ogeler = []
     for slug, ad, ikon, _ in ARACLAR:
         if slug == aktif:
             ogeler.append(f'<span class="nav-oge etkin" aria-current="page">{ikon} {ad}</span>')
         else:
-            ogeler.append(f'<a class="nav-oge" href="./{slug}.html">{ikon} {ad}</a>')
+            ogeler.append(f'<a class="nav-oge" href="{arac_yolu}{slug}.html">{ikon} {ad}</a>')
     return ('<nav class="site-nav" aria-label="Araçlar">'
-            '<a class="nav-oge nav-ev" href="../index.html">← Maarif Araç Kutusu</a>'
+            f'<a class="nav-oge nav-ev" href="{kok}index.html">← Maarif Araç Kutusu</a>'
             + ''.join(ogeler) + '</nav>')
 
 
@@ -215,6 +215,67 @@ def uret(slug, ad, ikon, aciklama, veri):
     return hedef, len(html)
 
 
+# veri gömülmeyen, elle yazılmış sayfalar: şablon aynen alınır, yalnız iskelet eklenir
+STATIK = [('kullanim', 'Rehber', '🧰', 'Maarif Araç Kutusu\'nun beş aracı bir temaya hazırlanırken nasıl kullanılır')]
+
+
+def statik_uret(slug, ad, ikon, aciklama):
+    yol = os.path.join(SABLON, slug + '.sablon.html')
+    with open(yol, encoding='utf-8') as f:
+        govde = f.read()
+    # yazı tipleri sayfaya gömülü: sayfa çevrimdışı da doğru dizilsin,
+    # PDF'e basarken tarayıcı yedek yüze düşmesin
+    if '{/*YAZITIPI*/}' in govde:
+        yt = os.path.join(SABLON, 'yazitipleri.css')
+        if not os.path.exists(yt):
+            sys.exit('HATA: yazitipleri.css yok → önce 07_yazitipi_gom.py')
+        with open(yt, encoding='utf-8') as f:
+            govde = govde.replace('{/*YAZITIPI*/}', f.read())
+
+    # ekran görüntüleri data URI olarak gömülür: sayfa da PDF de tek dosya kalsın
+    import base64
+    for yer in re.findall(r'\{/\*IMG:([a-z]+)\*/\}', govde):
+        gyol = os.path.join(SABLON, 'gorseller', yer + '.png')
+        if not os.path.exists(gyol):
+            sys.exit('HATA: görsel yok → ' + gyol)
+        with open(gyol, 'rb') as g:
+            b64 = base64.b64encode(g.read()).decode('ascii')
+        govde = govde.replace('{/*IMG:%s*/}' % yer, 'data:image/png;base64,' + b64)
+
+    kesim = govde.find('</style>')
+    if kesim < 0:
+        sys.exit('HATA: </style> bulunamadı → ' + yol)
+    kesim += len('</style>')
+    bas, kalan = govde[:kesim], govde[kesim:]
+    bas = bas[:bas.rfind('</style>')] + NAV_CSS + DAMGA_CSS + '</style>'
+
+    damga = damga_html()
+    if damga:
+        kes = kalan.rfind('</footer>')
+        if kes >= 0:
+            kalan = kalan[:kes] + damga + kalan[kes:]
+
+    html = f"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{aciklama}">
+<link rel="icon" href="{favicon(ikon)}">
+{bas}
+</head>
+<body>
+{nav(None, kok='./', arac_yolu='./araclar/')}
+{kalan.strip()}
+</body>
+</html>
+"""
+    hedef = os.path.join(KOK, slug + '.html')
+    with open(hedef, 'w', encoding='utf-8') as f:
+        f.write(html)
+    return hedef, len(html)
+
+
 def index_damgala():
     """Açılış sayfası elle yazılıyor; damgası her derlemede yer tutucuya basılır."""
     yol = os.path.join(KOK, 'index.html')
@@ -240,6 +301,9 @@ def main():
     veriler = veri_hazirla()
     for slug, ad, ikon, aciklama in ARACLAR:
         hedef, n = uret(slug, ad, ikon, aciklama, veriler[slug])
+        print(f'{ad:26} → {os.path.relpath(hedef, KOK):38} {n/1024:8.0f} KB')
+    for slug, ad, ikon, aciklama in STATIK:
+        hedef, n = statik_uret(slug, ad, ikon, aciklama)
         print(f'{ad:26} → {os.path.relpath(hedef, KOK):38} {n/1024:8.0f} KB')
     index_damgala()
 

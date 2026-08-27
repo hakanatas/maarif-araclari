@@ -1,0 +1,208 @@
+<title>Maarif Araç Kutusu Rehberi</title>
+<style>
+{/*YAZITIPI*/}
+  :root {
+    --paper: #F6F4EE; --surface: #FFFFFF; --ink: #1F2B33; --ink-soft: #4A5860;
+    --ink-faint: #7A868D; --line: #DDD8CC; --line-soft: #E9E5DA;
+    --petrol: #166069; --petrol-soft: #E3EDEE;
+    --ochre: #8F6A22; --ochre-soft: #F2EBDB;
+    --focus: #166069;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+      --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+      --petrol: #6FC2CB; --petrol-soft: #1C3237;
+      --ochre: #D9B26A; --ochre-soft: #332915;
+      --focus: #6FC2CB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131B1F; --surface: #1B252B; --ink: #E8E6DF; --ink-soft: #B4BCC0;
+    --ink-faint: #7E8A90; --line: #2E3A41; --line-soft: #263138;
+    --petrol: #6FC2CB; --petrol-soft: #1C3237;
+    --ochre: #D9B26A; --ochre-soft: #332915;
+    --focus: #6FC2CB;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px; line-height: 1.72; -webkit-font-smoothing: antialiased;
+  }
+  .sayfa { max-width: 44rem; margin: 0 auto; padding: 3.2rem 1.5rem 4rem; }
+  @media (max-width: 640px) { .sayfa { padding: 2rem 1.15rem 3rem; } body { font-size: 16px; } }
+
+  .kunye { border-bottom: 2px solid var(--ink); padding-bottom: 0.8rem; margin-bottom: 1.6rem; }
+  h1 {
+    font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif;
+    font-size: clamp(2rem, 5.5vw, 2.7rem); font-weight: 600; line-height: 1.1;
+    letter-spacing: -0.02em; margin: 0 0 0.35rem; text-wrap: balance;
+  }
+  .imza { margin: 0; font-size: 0.92rem; color: var(--ink-faint); }
+
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.12rem; line-height: 1.6; color: var(--ink-soft); }
+
+  h2 {
+    font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif;
+    font-size: 1.38rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25;
+    margin: 2.4rem 0 0.15rem; text-wrap: balance;
+  }
+  .hangi { font-size: 0.88rem; color: var(--petrol); margin: 0 0 0.9rem; }
+
+  figure { margin: 1.4rem 0 1.5rem; }
+  figure img {
+    display: block; width: 100%; height: auto;
+    border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+  }
+  figcaption { font-size: 0.86rem; line-height: 1.55; color: var(--ink-faint); margin-top: 0.5rem; }
+
+  strong, b { font-weight: 600; }
+  a { color: var(--petrol); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+  .not {
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--ochre);
+    border-radius: 0 8px 8px 0; padding: 0.85rem 1.1rem;
+    margin: 1.2rem 0 1.4rem; font-size: 0.94rem; line-height: 1.62; color: var(--ink-soft);
+  }
+  .not b { color: var(--ochre); }
+  .not p { margin: 0; }
+
+  .kapanis { margin-top: 1.4rem; }
+  .kapanis:first-of-type { padding-top: 1.3rem; border-top: 1px solid var(--line); }
+
+  footer {
+    margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    font-size: 0.82rem; line-height: 1.6; color: var(--ink-faint);
+  }
+  footer a { color: var(--petrol); }
+
+  /* --- baskı / PDF ---
+     Kâğıtta koyu tema kartuş yakar; baskıda paleti açık hâle sabitliyoruz. */
+  @page { size: A4; margin: 18mm 16mm 16mm; }
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --paper: #FFFFFF; --surface: #FFFFFF; --ink: #1A252C; --ink-soft: #3E4C55;
+      --ink-faint: #6B7880; --line: #D6D1C4; --line-soft: #E9E5DA;
+      --petrol: #12545C; --petrol-soft: #EAF1F2;
+      --ochre: #7A5A1B; --ochre-soft: #F5EFE0;
+    }
+    body { background: #fff; font-size: 9.9pt; line-height: 1.5; }
+    .sayfa { max-width: none; padding: 0; }
+    .site-nav { display: none !important; }
+    h1 { font-size: 22pt; }
+    .lede { font-size: 11pt; }
+    h2 { font-size: 12.6pt; margin-top: 1.15rem; break-after: avoid; }
+    .hangi { break-after: avoid; break-before: avoid; }
+    figure { break-inside: avoid; margin: 0.65rem 0 0.75rem; }
+    figure img { width: 78%; }
+    p { margin-bottom: 0.75rem; }
+    /* damga altbilgiyle birlikte kalsın, tek başına yeni sayfaya taşmasın */
+    footer { break-inside: avoid; }
+    .not, .kapanis { break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    a { text-decoration: none; }
+    footer { margin-top: 1.5rem; font-size: 8.4pt; }
+    .veri-damgasi { font-size: 8pt; }
+  }
+</style>
+
+<div class="sayfa">
+
+  <header class="kunye">
+    <h1>Araç kutusunu nasıl kullanırım?</h1>
+    <p class="imza">Hakan Ataş · Ağustos 2026</p>
+  </header>
+
+  <p class="lede">Bu yazıyı, araçları ilk kez açan bir meslektaşımın yanına oturup anlatır gibi yazdım. Uzun bir kılavuz değil; birlikte bir kahve içimlik.</p>
+
+  <p>Elinizdeki beş araç, resmî öğretim programlarının içinden çıktı. PDF'lerin sayfalarına dağılmış olan öğrenme çıktılarını, temaları, süreç bileşenlerini ve derslerin birbirine attığı köprüleri toplayıp aranabilir hâle getiriyorlar. Kurulum yok, üyelik yok, hatta internet bile gerekmiyor. Şunu da baştan söyleyeyim: yazdığınız hiçbir şey bir sunucuya gitmiyor. Ne öğrenci adı, ne notunuz, ne planınız. Hepsi kendi tarayıcınızda kalıyor.</p>
+
+  <h2>1. Yeni tema geldi, önce onu tanıyalım</h2>
+  <p class="hangi">Kazanım Gezgini, Kod Pusulası</p>
+
+  <p>Bir temaya başlarken hepimizin aklından geçen ilk soru aynı: burada tam olarak neyi kazandırmam bekleniyor? Kazanım Gezgini'nde dersinizi, sınıfınızı ve temayı seçin; o temanın bütün öğrenme çıktıları süreç bileşenleriyle birlikte önünüze gelsin. PDF'i baştan sona taramanıza gerek kalmıyor.</p>
+
+  <figure>
+    <img src="{/*IMG:gezgin*/}" alt="Kazanım Gezgini ekranı: Matematik 5. sınıf birinci temanın dört öğrenme çıktısı, her birinin süreç bileşeni sayısıyla birlikte listelenmiş.">
+    <figcaption>Matematik 5. sınıfın ilk teması. Dört öğrenme çıktısı; ilkinin üç süreç bileşeni açılmış hâlde. Sağdaki rozet çıktının sınıf düzeyi.</figcaption>
+  </figure>
+
+  <p>Programlar SDB2.2, KB2.14, D14.1 gibi kodlarla dolu. Bunlar beceri, değer ve eğilim kodları; gözünüzü korkutmasın. Nerede karşınıza çıkacakları derse göre değişiyor, çünkü programlar aynı biçimde yazılmamış. Matematik'te kodlar tek tek çıktılara değil, temanın başına topluca yazılmış; onları Ders Planı Atölyesi'nin en üstündeki beceri tablosunda bir arada görürsünüz. Türkçe, Beden Eğitimi ve Bilişim Teknolojileri gibi programlarda ise kodlar çıktının kendisine iliştirilmiş. Kazanım Gezgini o çıktıların altına bir "Beceri etiketleri" satırı koyuyor.</p>
+
+  <figure>
+    <img src="{/*IMG:etiket*/}" alt="Kazanım Gezgini ekranı: Türkçe 5. sınıf bir okuma çıktısının altında KB2.11, KB2.13, KB2.4 beceri etiketleri; KB2.4'e basılınca Çözümleme Becerisi tanımı kartın içinde açılmış.">
+    <figcaption>Türkçe 5. sınıf, Okuma teması. Burada kodlar çıktılara tek tek iliştirilmiş. KB2.4 etiketine basınca tanımı kartın içinde açılıyor; yanındaki bağlantı Kod Pusulası'na götürüyor.</figcaption>
+  </figure>
+
+  <p>Bir kodun bütün hikâyesini merak ederseniz Kod Pusulası'na uğrayın: tanımı, göstergeleri ve o kodun hangi derste kaç kez geçtiği orada duruyor. Bazı kodların on beş dersin hepsinde, bazılarının yalnız birinde geçtiğini görmek başlı başına öğretici.</p>
+
+  <h2>2. Planı kendinize göre kurun</h2>
+  <p class="hangi">Ders Planı Atölyesi</p>
+
+  <p>Ders Planı Atölyesi'nde aynı temayı seçtiğinizde plan, programın kendi cümleleriyle kendiliğinden doluyor: içerik çerçevesi, temel kabuller, ön değerlendirme, köprü kurma, öğrenme-öğretme uygulamaları, öğrenme kanıtları, farklılaştırma. En üstte de temanın beceri, değer ve eğilim kodları tek tabloda duruyor; üzerlerine gelince tanımları beliriyor. Yalnız "Öğretmen Notları" bölümü boş geliyor, orası zaten size ait. Yani boş sayfayla baş başa kalmıyorsunuz.</p>
+
+  <figure>
+    <img src="{/*IMG:plan*/}" alt="Ders Planı Atölyesi ekranı: Temel Kabuller, Ön Değerlendirme Süreci ve Köprü Kurma bölümleri programdaki resmî metinle dolmuş hâlde.">
+    <figcaption>Plan, programın kendi cümleleriyle dolu geliyor. Her bölüm düzenlenebilir; kesikli çerçeveli alanlar üzerine tıklayıp yazabildiğiniz yerler.</figcaption>
+  </figure>
+
+  <p>Buradan sonrası tamamen sizin. Her bölümü sınıfınıza göre değiştirin, bu dönem işlemeyeceğiniz çıktıların işaretini kaldırın, sonra tertemiz bir A4 planı yazdırın. Yaptığınız değişiklikler taslak olarak saklanıyor; beğenmezseniz "Resmî metne dön" ile her an programdaki hâline geri dönebilirsiniz. Bozulacak bir şey yok, rahatça deneyin.</p>
+
+  <p>Planın en altında bir de yapay zekâ istemleri var. Site kendisi metin üretmiyor; üretecek olana verilecek istemi sizin yerinize hazırlıyor. Yedi tür arasından seçiyorsunuz: ölçme aracı, analitik rubrik, destekleme, zenginleştirme, ön değerlendirme, köprü etkinliği, veli bilgilendirme. Bir tür seçin, kopyalayın, kullandığınız yapay zekâ sohbetine yapıştırın. İstem sizin düzenlediğiniz plandan besleniyor, o yüzden ne kadar çok dokunursanız o kadar size ait oluyor.</p>
+
+  <div class="not"><b>Küçük bir hatırlatma.</b> Yapay zekânın döndürdüğü metin resmî değildir. Sınıfa girmeden önce çıktı kodlarıyla bir karşılaştırın. Beş dakikanızı alır, çok şey kazandırır.</div>
+
+  <h2>3. Yalnız çalışmayın</h2>
+  <p class="hangi">Disiplinler Arası Harita</p>
+
+  <p>Ders ağı bütün resmi gösteriyor. Bir dersin üzerine gelin, tıklamanıza bile gerek yok: o dersin kurduğu köprüler ve ona yapılan atıflar öne çıkıyor, gerisi soluyor. Düğümleri sürükleyip kendi düzeninizi kurabilir, tekerlekle yakınlaşabilirsiniz. "Sınıfları oynat" düğmesi ise 5'ten 8'e doğru ilerleyerek ağın yaşa göre nasıl değiştiğini canlandırıyor; bağların üst sınıflara doğru seyreldiğini göreceksiniz.</p>
+
+  <figure>
+    <img src="{/*IMG:harita*/}" alt="Disiplinler Arası Harita ekranı: Türkçe düğümünün üzerine gelinmiş, ondan çıkan köprüler mavi, ona gelen atıflar kırmızı çizilmiş, kalan ağ solmuş.">
+    <figcaption>Türkçe'nin üzerine gelindiğinde. Maviler Türkçe'nin kurduğu köprüler, kırmızılar Türkçe'yi anan dersler.</figcaption>
+  </figure>
+
+  <p>Ağ kalabalık geldiyse Matris'e geçin. Satır köprüyü kuran ders, sütun atıf alan ders, sayı da kaç temada olduğu. Boş bir hücre de bilgi: o yönde hiç bağ yok demek.</p>
+
+  <p>Ortak beceriler sekmesi zümre işbirliği için en verimli yer. İki ders seçin; paylaştıkları beceri ve değer kodları nadirliğe göre sıralansın. Mantığı basit: on iki derste geçen bir kod ortak çalışma için zayıf bir gerekçedir, iki derste geçen güçlü. Her kodun altında onu taşıyan temalar iki yanda duruyor. Konuşmaya oradan başlayın.</p>
+
+  <p>Yıl takvimi günlük iş için: kendi temanızı bulun, aynı haftalarda diğer derslerde ne işlendiğini görün. Ara ve raporla sekmesinden ise tema başlıklarında, kodlarda ve program cümlelerinde arama yapabilir; zümre toplantısına götürmek üzere dersinizin bütün köprülerini, gideni ve geleni ayrı ayrı, tek sayfa hâlinde yazdırabilirsiniz. Toplantıya elinizde bununla girmek iyi hissettiriyor.</p>
+
+  <h2>4. Ders başladıktan sonra</h2>
+  <p class="hangi">Beceri Gelişim Panosu</p>
+
+  <p>Model, gelişimi çıktı düzeyinde değil süreç bileşeni düzeyinde izlememizi istiyor. Kulağa zahmetli geliyor, ama Beceri Gelişim Panosu o matrisi sizin için kuruyor: sınıf listenizi girin, temayı seçin, derste gözlemledikçe hücreye dokunun. Dört durum arasında geçiyor: boş, başlıyor, gelişiyor, kazandı. Bir defterde tutacağınızdan daha hızlı.</p>
+
+  <figure>
+    <img src="{/*IMG:pano*/}" alt="Beceri Gelişim Panosu ekranı: beş öğrenci numarası için Matematik 5. sınıf birinci temanın yirmi dört süreç bileşeni, koyudan açığa dört durum rengiyle işaretlenmiş.">
+    <figcaption>Beş öğrenci, yirmi dört süreç bileşeni. Koyu hücreler kazanıldı, açıklar henüz gözlemlenmedi; sağdaki yüzde her öğrencinin genel durumu.</figcaption>
+  </figure>
+
+  <p>Altındaki özet, sınıfın hangi bileşende takıldığını ve kimin desteğe ihtiyacı olduğunu kendiliğinden söylüyor. Oradan bir destekleme istemi de üretebilirsiniz; içine yalnız zayıf bileşenler ve kaç öğrencinin geride olduğu giriyor, öğrenci adları girmiyor.</p>
+
+  <div class="not"><b>Bunu atlamayın.</b> Panonun verisi yalnız o tarayıcıda duruyor. Okuldaki bilgisayarda girdiğiniz evde görünmez, tarayıcı verisi silinirse kaybolur. Ad yerine öğrenci numarası kullanmanızı, dönem sonunda da "Yedek al" ile bir dosyaya kaydetmenizi öneririm.</p></div>
+
+  <h2>Neye güvenebilirsiniz, neye ihtiyatla bakın</h2>
+
+  <p><b>Resmî olan.</b> Öğrenme çıktıları, temalar, süreç bileşenleri, ders saatleri ve köprüleri gerekçelendiren cümleler doğrudan resmî program PDF'lerinden alındı. Alıntıların hepsini kaynakta bulabilirsiniz.</p>
+
+  <p><b>Türetilmiş olan.</b> "Ortak beceriler" ve "benzer temalar" resmî bir ilişki değil. Programda "şu ders şu derse bağlanır" diye yazmıyor; bu listeler kod kesişiminden hesaplanıyor ve size bir aday gösteriyor. Ekranda da sarı kutuyla belirtiliyor.</p>
+
+  <p><b>Bizim göremediğimiz.</b> Haritada "veri boşluğu" rozetli satırlar, ilişkinin olmadığını değil, o programda ilgili satırı ayrıştıramadığımızı anlatır. Fen Bilimleri ve Teknoloji-Tasarım'da böyle bir eksik var; sayılar bu yüzden bir alt sınır.</p>
+
+  <p><b>Tazelik.</b> Her sayfanın altında verinin hangi tarihte, kaç belgeden üretildiğini söyleyen bir damga var. Bakanlık belgeleri güncellerse o damga eskir; bağlayıcı olan her zaman kaynaktaki son sürümdür.</p>
+
+  <p class="kapanis">Son bir söz: bu araçlar programın yerine geçmiyor, ona ulaşmayı kolaylaştırıyor. Bir şey tuhaf göründüğünde ya da bir alıntı eksik geldiğinde resmî PDF'e bakın. Orası hâlâ tek doğru adres.</p>
+
+  <p class="kapanis">Kolay gelsin.</p>
+
+  <footer>
+    <b>Maarif Araç Kutusu</b> — araçlar: <a href="https://hakanatas.github.io/maarif-araclari/">hakanatas.github.io/maarif-araclari</a><br>
+    Türkiye Yüzyılı Maarif Modeli ortaokul programlarından otomatik ayrıştırmayla üretilmiştir. Resmî bir MEB ürünü değildir; bağlayıcı olan <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> üzerindeki belgelerdir. Araçların kodu MIT lisansıyla açıktır.
+  </footer>
+
+</div>
