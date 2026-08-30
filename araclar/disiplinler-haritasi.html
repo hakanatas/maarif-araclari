@@ -552,6 +552,7 @@ window.URLD = {
       <select id="ob-b" aria-label="İkinci ders"></select>
     </div>
     <div class="cips" id="ob-sinif" role="group" aria-label="Sınıf düzeyi"></div>
+    <div class="cips" id="ob-tur" role="group" aria-label="Kod türü"></div>
     <div id="ob-sonuc"></div>
   </section>
 
@@ -1455,6 +1456,23 @@ let obA = '', obB = '', obSinif = '*';
 
 const OB_SINIF = [['*', 'Tüm sınıflar'], ['5', '5. sınıf'], ['6', '6. sınıf'], ['7', '7. sınıf'], ['8', '8. sınıf']];
 
+/* Beş kod türü tek listede karışınca kesişim yorumlanamıyor: değer ve eğilim
+   kodları neredeyse her derste var, asıl ayırt edici olan çoğu zaman kavramsal
+   beceri. Tür seçilebilir; varsayılan hepsi açık. */
+const OB_TUR = [
+  ['KB',  'Kavramsal beceriler', 'kavramsal beceri'],
+  ['SDB', 'Sosyal-duygusal',     'sosyal-duygusal beceri'],
+  ['OB',  'Okuryazarlık',        'okuryazarlık'],
+  ['D',   'Değerler',            'değer'],
+  ['E',   'Eğilimler',           'eğilim'],
+];
+let obTur = new Set(OB_TUR.map(x => x[0]));
+function kodTuru(k){
+  // önek uzunluğuna göre: SDB, OB, KB önce; D ve E tek harf
+  for(const on of ['SDB', 'OB', 'KB', 'D', 'E']) if(k.startsWith(on)) return on;
+  return '';
+}
+
 function kodYayginlik(){
   const m = new Map();
   for(const t of TEMALAR) for(const k of (t.kod || [])){
@@ -1474,7 +1492,7 @@ function obHesapla(a, b){
   const kodA = new Map(), kodB = new Map();
   const topla = (liste, hedef) => { for(const t of liste) for(const k of (t.kod || [])) (hedef.get(k) || hedef.set(k, []).get(k)).push(t); };
   topla(ta, kodA); topla(tb, kodB);
-  const ortak = [...kodA.keys()].filter(k => kodB.has(k));
+  const ortak = [...kodA.keys()].filter(k => kodB.has(k) && obTur.has(kodTuru(k)));
   return ortak.map(k => ({
     kod: k,
     yaygin: (YAYGIN.get(k) || new Set()).size,
@@ -1518,16 +1536,18 @@ function cizOrtak(){
   const r = obHesapla(obA, obB);
   const nadir = r.filter(x => x.yaygin <= 5);
   const goster = (nadir.length ? nadir : r).slice(0, 25);
-  const toplamKod = YAYGIN.size;
+  const toplamKod = [...YAYGIN.keys()].filter(k => obTur.has(kodTuru(k))).length;
+  const turAd = obTur.size === OB_TUR.length ? 'kod'
+    : OB_TUR.filter(([id]) => obTur.has(id)).map(x => x[2]).join(' + ') + ' kodu';
 
   let h = `<p class="ob-ozet"><b>${esc(kisa(obA))}</b> ile <b>${esc(kisa(obB))}</b>
-      ${obSinif === '*' ? '' : esc(obSinif) + '. sınıfta '}<b>${r.length}</b> kod paylaşıyor
-      (programlarda dolaşan ${toplamKod} kodun ${Math.round(r.length / toplamKod * 100)}%'i).
+      ${obSinif === '*' ? '' : esc(obSinif) + '. sınıfta '}<b>${r.length}</b> ${esc(turAd)} paylaşıyor
+      (bu türlerde dolaşan ${toplamKod} kodun ${toplamKod ? Math.round(r.length / toplamKod * 100) : 0}%'i).
       Aşağıda ${goster.length} tanesi var; sıralama <b>nadirlikten</b> yoğuna:
       az derste geçen bir kod, ortak çalışma için daha ayırt edici bir gerekçedir.</p>`;
 
   if(!goster.length){
-    h += '<p class="ipucu">Bu iki ders bu sınıf düzeyinde hiç kod paylaşmıyor.</p>';
+    h += `<p class="ipucu">Bu iki ders ${obTur.size === OB_TUR.length ? 'bu sınıf düzeyinde hiç kod' : 'seçili türlerde hiç kod'} paylaşmıyor.</p>`;
   } else {
     h += '<div class="ob-liste">';
     for(const x of goster){
@@ -1549,6 +1569,24 @@ function cizOrtak(){
       h += `<p class="ipucu">${r.length - goster.length} kod daha paylaşılıyor; hepsi ${goster[goster.length-1].yaygin} ya da daha çok derste geçtiği için ayırt edici sayılmadı.</p>`;
   }
   $('ob-sonuc').innerHTML = h;
+}
+
+function cizObTur(){
+  const kap = $('ob-tur'); kap.innerHTML = '<span class="et">Tür:</span>';
+  for(const [id, ad] of OB_TUR){
+    const b = document.createElement('button');
+    b.className = 'cip' + (obTur.has(id) ? ' acik' : '');
+    b.textContent = ad;
+    b.setAttribute('aria-pressed', String(obTur.has(id)));
+    b.onclick = () => {
+      if(obTur.has(id)){
+        if(obTur.size === 1) return;            // hepsi kapanmasın: boş kesişim anlamsız
+        obTur.delete(id);
+      } else obTur.add(id);
+      cizObTur(); cizOrtak(); durumYaz();
+    };
+    kap.appendChild(b);
+  }
 }
 
 function cizObSinif(){
@@ -1747,7 +1785,8 @@ function durumYaz(){
     return;
   }
   if(!$('gorunum-ortak').hidden){
-    URLD.yaz({ g: 'ortak', a: obA, b: obB, s: obSinif !== '*' ? obSinif : '' });
+    URLD.yaz({ g: 'ortak', a: obA, b: obB, s: obSinif !== '*' ? obSinif : '',
+               t: obTur.size !== OB_TUR.length ? [...obTur].join('.') : '' });
     return;
   }
   const takvimMi = !$('gorunum-takvim').hidden;
@@ -1779,7 +1818,11 @@ function durumOku(){
     if (d.a && var_(d.a)) obA = d.a;
     if (d.b && var_(d.b)) obB = d.b;
     if (d.s && ['5','6','7','8'].includes(d.s)) obSinif = d.s;
-    cizObSinif(); cizOrtak(); sekmeGec('ortak');
+    if (d.t) {
+      const sec = d.t.split('.').filter(x => OB_TUR.some(([id]) => id === x));
+      if (sec.length) obTur = new Set(sec);
+    }
+    cizObSinif(); cizObTur(); cizOrtak(); sekmeGec('ortak');
     return;
   }
   const f = FILTRELER.find(x=>x.id===d.f);
@@ -1797,7 +1840,7 @@ function durumOku(){
 
 // varsayılan ders çifti: en çok "nadir" kod paylaşan çift — boş ekranla açılmasın
 (function(){ const c = obEnIyiCift(); if(c){ obA = c.a; obB = c.b; } })();
-cizObSinif();
+cizObSinif(); cizObTur();
 cizTakvimSinif(); cizTakvim(); durumOku();
 
 </script>
