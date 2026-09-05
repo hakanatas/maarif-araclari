@@ -433,7 +433,7 @@
 
 <div class="wrap">
   <header>
-    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Temel Eğitim</p>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · 1-12. Sınıflar</p>
     <h1>Disiplinler Arası Harita</h1>
     <p class="sub">Üç görünüm. <b>Ders ağı</b> bütünü gösterir — hangi ders hangi dersle kaç temada ilişkilendiriliyor, köprüyü doğuran öğrenme çıktısı ve programdan alıntılanan cümle nedir; ağ olarak ya da matris olarak okunur. <b>Ortak beceriler</b> resmî köprünün ötesine geçer: iki programın aynı beceri, değer ya da eğilim kodunu nerede çalıştığını gösterir. <b>Yıl takvimi</b> ise günlük iş içindir: kendi temanızı bulun, aynı haftalarda diğer derslerde ne işlendiğini ve programın hangi dersle köprü kurmanızı istediğini görün.</p>
   </header>
@@ -468,7 +468,7 @@
     </div>
     <div class="panel" id="panel">
       <h2 id="p-baslik">Bir ders ya da bağlantı seçin</h2>
-      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir. Ayrıca 109 öğrenme çıktısının kendi uygulama metninde 134 köprü gerekçesi bulundu; 48 gerekçe ise temanın geneline ait bölümlerde (Köprü Kurma, Ön Değerlendirme vb.) geçtiği için belirli bir çıktıya bağlanmadı, "tema geneli" olarak işaretlendi. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
+      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir. Ayrıca 151 öğrenme çıktısının kendi uygulama metninde 190 köprü gerekçesi bulundu; 100 gerekçe ise temanın geneline ait bölümlerde (Köprü Kurma, Ön Değerlendirme vb.) geçtiği için belirli bir çıktıya bağlanmadı, "tema geneli" olarak işaretlendi. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
       <div id="p-icerik"></div>
     </div>
   </div>
@@ -555,7 +555,8 @@ const KISA = {'T.C. İnkılap Tarihi ve Atatürkçülük':'İnkılap Tarihi','Di
  'Oyun ve Oyun Etkinlikleri: Satranç (Seçmeli)':'Satranç (S)','Oyun ve Oyun Etkinlikleri: Geleneksel Oyunlar (Seçmeli)':'Gel. Oyunlar (S)',
  'Robotik Kodlama (Seçmeli)':'Robotik Kod. (S)','Yapay Zekâ Uygulamaları (Seçmeli)':'Yapay Zekâ (S)',
  'Proje Tasarımı ve Uygulamaları (Seçmeli)':'Proje Tasarımı (S)','Spor ve Fiziki Etkinlikler (Seçmeli)':'Spor-Fiziki Etk. (S)',
- 'Halk Oyunları (Seçmeli)':'Halk Oyunları (S)','İnsan Hakları, Vatandaşlık ve Demokrasi':'İnsan Hak. ve Demokrasi'};
+ 'Halk Oyunları (Seçmeli)':'Halk Oyunları (S)','İnsan Hakları, Vatandaşlık ve Demokrasi':'İnsan Hak. ve Demokrasi',
+ 'Matematik Uygulamaları (Seçmeli)':'Mat. Uygulamaları (S)'};
 const kisa = d => KISA[d] || d;
 // matris sütun başlıkları dikey; parantezli ek kısaltılmazsa taşıyor
 const kisaBaslik = d => kisa(d).replace('(İlkokul)', '(İlk.)');
@@ -575,7 +576,7 @@ function trBaslik(s){
 // --- sınıf filtresi
 const FILTRELER = [
   {id:'*', ad:'Tümü', test: s=>true},
-  ...['1','2','3','4','5','6','7','8'].map(n=>({id:n, ad:n+'. sınıf', test: s=>s===n})),
+  ...['1','2','3','4','5','6','7','8','9','10','11','12'].map(n=>({id:n, ad:n+'. sınıf', test: s=>s===n})),
   {id:'sec', ad:'Seçmeli düzeyleri', test: s=>String(s).startsWith('Düzey')||s==='—'},
 ];
 let filtre = FILTRELER[0];
@@ -1055,7 +1056,7 @@ function grafOlaylari(){
 /* Ağın tamamı tek karede durunca "hangi bağ hangi yaşta kuruluyor" görünmüyor.
    Oynat, sınıf filtresini sırayla değiştirir; düğümler yerinde kaldığı için
    yalnız bağlar belirip söner — değişimin kendisi izlenebilir hâle gelir. */
-const OYNAT_SIRA = ['1', '2', '3', '4', '5', '6', '7', '8'];
+const OYNAT_SIRA = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 let oynatZaman = null, oynatIdx = 0;
 
 function oynatDurdur(){
@@ -1089,7 +1090,7 @@ function oynatBasla(){
 }
 
 // ============ MATRİS GÖRÜNÜMÜ ============
-/* 36 ders ve yüzlerce yönlü kenar dairesel bir grafikte saç yumağına dönüyor: kenarlar
+/* 44 ders ve yüzlerce yönlü kenar dairesel bir grafikte saç yumağına dönüyor: kenarlar
    ortadan geçtiği için ne yön ne ağırlık okunabiliyor. Aynı veri matris olarak
    çizildiğinde her ders çifti kendi hücresinde durur; satır köprüyü kuran, sütun
    atıf alan derstir. Boş hücre de bilgidir: o yönde hiç bağ yok demektir. */
@@ -1294,7 +1295,7 @@ function blokBul(sinif, ders, temaNo){
 
 function cizTakvimSinif(){
   const kap = $('takvim-sinif'); kap.innerHTML = '<span class="et">Sınıf:</span>';
-  for(const s of ['1','2','3','4','5','6','7','8']){
+  for(const s of ['1','2','3','4','5','6','7','8','9','10','11','12']){
     const b = document.createElement('button');
     b.className = 'cip' + (tkSinif===s ? ' acik' : '');
     b.textContent = s + '. sınıf';
@@ -1411,7 +1412,7 @@ function cizBrifing(){
 let obA = '', obB = '', obSinif = '*';
 
 const OB_SINIF = [['*', 'Tüm sınıflar'],
-  ...['1','2','3','4','5','6','7','8'].map(n => [n, n + '. sınıf'])];
+  ...['1','2','3','4','5','6','7','8','9','10','11','12'].map(n => [n, n + '. sınıf'])];
 
 /* Beş kod türü tek listede karışınca kesişim yorumlanamıyor: değer ve eğilim
    kodları neredeyse her derste var, asıl ayırt edici olan çoğu zaman kavramsal
@@ -1425,8 +1426,8 @@ const OB_TUR = [
 ];
 let obTur = new Set(OB_TUR.map(x => x[0]));
 
-/* İki düzey var ve ikisi farklı veriden gelir. Tema düzeyi: kodlar 36 dersin
-   hepsinde tema başlığına yazılı. Çıktı düzeyi: yalnız 265 çıktının yanında
+/* İki düzey var ve ikisi farklı veriden gelir. Tema düzeyi: kodlar 44 dersin
+   hepsinde tema başlığına yazılı. Çıktı düzeyi: yalnız 279 çıktının yanında
    etiket var (204'ü Türkçe'de) — kapsamı dar ama adresi kesin. Boş sonucun
    "ilişki yok" değil "bu derste etiket yok" demek olduğunu arayüz söyler. */
 let obDuzey = 'tema';
@@ -1638,7 +1639,7 @@ function cizObSinif(){
 
 
 // ============ ARAMA + ZÜMRE RAPORU ============
-/* Haritada 539 tema ve yüzlerce program alıntısı var; hepsini gezerek aramak
+/* Haritada 759 tema ve yüzlerce program alıntısı var; hepsini gezerek aramak
    mümkün değil. Burası tek bir metin kutusundan bütün katmanlara bakar: tema adı,
    beceri kodu ve adı, bir de köprüyü gerekçelendiren program cümleleri.
    Zümre raporu ise toplantıya götürülecek çıktıdır: bir dersin bütün köprüleri,
@@ -1834,7 +1835,7 @@ function durumYaz(){
 function durumOku(){
   const d = URLD.oku();
   if (d.g === 'takvim') {
-    if (d.sinif && ['1','2','3','4','5','6','7','8'].includes(d.sinif)) tkSinif = d.sinif;
+    if (d.sinif && ['1','2','3','4','5','6','7','8','9','10','11','12'].includes(d.sinif)) tkSinif = d.sinif;
     cizTakvimSinif(); cizTakvim();
     if (d.ders && d.tema) {
       tkSecili = TEMALAR.find(t=>t.ders===d.ders && String(t.sinif)===String(tkSinif) && t.temaNo===d.tema) || null;
@@ -1853,7 +1854,7 @@ function durumOku(){
     const var_ = ad => TEMALAR.some(t => t.ders === ad);
     if (d.a && var_(d.a)) obA = d.a;
     if (d.b && var_(d.b)) obB = d.b;
-    if (d.s && ['1','2','3','4','5','6','7','8'].includes(d.s)) obSinif = d.s;
+    if (d.s && ['1','2','3','4','5','6','7','8','9','10','11','12'].includes(d.s)) obSinif = d.s;
     if (d.t) {
       const sec = d.t.split('.').filter(x => OB_TUR.some(([id]) => id === x));
       if (sec.length) obTur = new Set(sec);

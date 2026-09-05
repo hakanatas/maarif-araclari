@@ -282,6 +282,24 @@ DERSLER = {
  'Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi': 'Proje Tasarımı (S)',
  'Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi': 'Spor ve Fiziki Etk. (S)',
  'Secmeli_Halk_Oyunlari_Ogretim_Programi': 'Halk Oyunları (S)',
+ # --- lise (Eylül 2026)
+ 'Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi': 'Beden Eğitimi',
+ 'Lise_Biyoloji_Ogretim_Programi': 'Biyoloji',
+ 'Lise_Cografya_Ogretim_Programi': 'Coğrafya',
+ 'Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi': 'Din Kültürü',
+ 'Lise_Felsefe_Ogretim_Programi': 'Felsefe',
+ 'Lise_Fizik_Ogretim_Programi': 'Fizik',
+ 'Lise_Gorsel_Sanatlar_Ogretim_Programi': 'Görsel Sanatlar',
+ 'Lise_Kimya_Ogretim_Programi': 'Kimya',
+ 'Lise_Kurani_Kerim_Ogretim_Programi': "Kur'an-ı Kerim (S)",
+ 'Lise_Matematik_Ogretim_Programi': 'Matematik',
+ 'Lise_Matematik_Uygulamalari_Ogretim_Programi': 'Matematik Uyg. (S)',
+ 'Lise_Muzik_Ogretim_Programi': 'Müzik',
+ 'Lise_Peygamberimizin_Hayati_Ogretim_Programi': 'Peygamberimizin Hayatı (S)',
+ 'Lise_TC_Inkilap_Tarihi_Ogretim_Programi': 'İnkılap Tarihi',
+ 'Lise_Tarih_Ogretim_Programi': 'Tarih',
+ 'Lise_Temel_Matematik_Ogretim_Programi': 'Temel Matematik',
+ 'Lise_Turk_Dili_ve_Edebiyati_Ogretim_Programi': 'Türk Dili ve Edebiyatı',
 }
 # İngilizce programları kodları İngilizce adlarıyla kullanır
 ENG_MAP = {'KB': 'CS', 'SDB': 'SELS', 'D': 'V', 'E': 'D'}
@@ -291,27 +309,47 @@ def _oku(stem):
     p = os.path.join(METIN, stem + '.txt')
     return open(p, encoding='utf-8').read() if os.path.exists(p) else ''
 
-def _say(kod, metin):
-    pat = re.compile(r'(?<![A-Za-z0-9.])' + re.escape(kod) + r'(?![0-9])(?!\.[0-9])(?!\.?SB)(?!\.?G\d)')
-    return len(pat.findall(metin))
+# Metin hacmi liseyle birlikte ~15 MB'a çıktı; kod başına ayrı tarama
+# (444 × metin) saatler sürer. Tek geçişte bütün kod görünümlerini sayıp
+# sözlükten okuyoruz. Dışlama kuralları eski desenle birebir: kodun ardından
+# rakam / .rakam / (.)SB / (.)G+rakam geliyorsa sayılmaz.
+_TOKEN = re.compile(r'(?<![A-Za-z0-9.])([A-ZÇĞİÖŞÜ]+\d[\d.]*)')
+def _sayim_cikar(metin):
+    sayim = {}
+    for m in _TOKEN.finditer(metin):
+        tok = m.group(1).rstrip('.')
+        kuyruk = metin[m.end():m.end() + 3]
+        if kuyruk[:1].isdigit():
+            continue
+        if kuyruk[:1] == '.' and kuyruk[1:2].isdigit():
+            continue
+        if re.match(r'\.?SB', kuyruk) or re.match(r'\.?G\d', kuyruk):
+            continue
+        sayim[tok] = sayim.get(tok, 0) + 1
+    return sayim
+
+def _say(kod, sayim):
+    return sayim.get(kod, 0)
 
 # aynı ders adına birden çok belge düşebilir (Türkçe 1-4 + 5-8): metinleri birleştir
 metinler = {}
 for stem, ad in DERSLER.items():
     metinler[ad] = metinler.get(ad, '') + '\n' + _oku(stem)
+metin_sayimlari = {ad: _sayim_cikar(t) for ad, t in metinler.items()}
 eng = ''.join(_oku(s) for s in ENG_DOSYA)
+eng_sayim = _sayim_cikar(eng)
 
 kullanim = {}
 for e in uniq:
     if e['fw'] == 'FB':
         continue
     per = {}
-    for ad, t in metinler.items():
-        n = _say(e['code'], t)
+    for ad, sayim in metin_sayimlari.items():
+        n = _say(e['code'], sayim)
         if n: per[ad] = n
-    if e['fw'] in ENG_MAP and eng:
+    if e['fw'] in ENG_MAP and eng_sayim:
         ecode = ENG_MAP[e['fw']] + e['code'][len(e['fw']):]
-        n = _say(ecode, eng)
+        n = _say(ecode, eng_sayim)
         if n: per['İngilizce'] = n
     if per:
         kullanim[e['code']] = per

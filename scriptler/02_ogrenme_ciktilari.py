@@ -55,10 +55,38 @@ PROGRAMLAR = [
  ('Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi', 'Proje Tasarımı ve Uygulamaları (Seçmeli)', 'PTU', 'tn'),
  ('Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi', 'Spor ve Fiziki Etkinlikler (Seçmeli)', 'SFE', 'tn'),
  ('Secmeli_Halk_Oyunlari_Ogretim_Programi', 'Halk Oyunları (Seçmeli)', 'HO', 'tn'),
+ # --- lise (Eylül 2026 genişlemesi). Aynı kod dizisini süren dersler temel
+ # eğitimdeki adla birleşir (BES 5-12, DKAB 4-12, GS 1-12, MAT 1-12, MÜZ 1-12,
+ # KK 5-12, PH 5-12, İnkılap 8+12). TDE ve İngilizce yapıları farklı, dışarıda.
+ ('Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi', 'Beden Eğitimi ve Spor', 'BES', 'gtn'),
+ ('Lise_Biyoloji_Ogretim_Programi', 'Biyoloji', 'BİY', 'gtn'),
+ ('Lise_Cografya_Ogretim_Programi', 'Coğrafya', 'COĞ', 'gtn'),
+ ('Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi', 'Din Kültürü ve Ahlak Bilgisi', 'DKAB', 'gtn'),
+ ('Lise_Felsefe_Ogretim_Programi', 'Felsefe', 'FEL', 'gtn'),
+ ('Lise_Fizik_Ogretim_Programi', 'Fizik', 'FİZ', 'gtn'),
+ ('Lise_Gorsel_Sanatlar_Ogretim_Programi', 'Görsel Sanatlar', 'GS', 'gtn'),
+ ('Lise_Kimya_Ogretim_Programi', 'Kimya', 'KİM', 'gtn'),
+ ('Lise_Kurani_Kerim_Ogretim_Programi', "Kur'an-ı Kerim (Seçmeli)", 'KK', 'gtn'),
+ ('Lise_Matematik_Ogretim_Programi', 'Matematik', 'MAT', 'gtn'),
+ ('Lise_Matematik_Uygulamalari_Ogretim_Programi', 'Matematik Uygulamaları (Seçmeli)', 'U', 'dtn'),
+ ('Lise_Muzik_Ogretim_Programi', 'Müzik', 'MÜZ', 'gtn'),
+ ('Lise_Peygamberimizin_Hayati_Ogretim_Programi', 'Peygamberimizin Hayatı (Seçmeli)', 'PH', 'gtn'),
+ ('Lise_TC_Inkilap_Tarihi_Ogretim_Programi', 'T.C. İnkılap Tarihi ve Atatürkçülük', 'İTA', 'gtn'),
+ ('Lise_Tarih_Ogretim_Programi', 'Tarih', 'TAR', 'gtn'),
+ ('Lise_Temel_Matematik_Ogretim_Programi', 'Temel Matematik', 'T', 'gtn'),
 ]
 
 TR_ALAN = {'D': 'Dinleme/İzleme', 'O': 'Okuma', 'K': 'Konuşma', 'Y': 'Yazma'}
 SB_MARK = re.compile(r'^\s*([a-zçğıöşü])\)\s+')
+def _cift_katman(st):
+    """Çift basılmış metin katmanı sezgisi: art arda aynı sözcük en az üç kez
+    farklı yerde yineleniyorsa ya da 15+ karakterlik bir parça bitişik tekrar
+    ediyorsa bozuk say."""
+    sozcukler = st.split()
+    ardisik = sum(1 for a, b in zip(sozcukler, sozcukler[1:]) if a == b and len(a) >= 4)
+    if ardisik >= 3: return True
+    return bool(re.search(r'(.{15,})\1', st.replace(' ', '')))
+
 REF_RE = re.compile(r'\b(KB\d[\d.]*|SDB\d[\d.]*|OB\d[\d.]*|E\d\.\d+|D\d+(?:\.\d+)?|MAB\d?[\d.]*|TAB\d[\d.]*|FBAB\d[\d.]*|SBAB\d[\d.]*|SAB\d[\d.]*|BEOSAB\d[\d.]*|BTYAB\d[\d.]*|TSRMAB\d[\d.]*|DAB\d[\d.]*|YDAB\d[\d.]*|YDDB\d[\d.]*)\b')
 
 def header_gibi(line):
@@ -103,21 +131,21 @@ def parse_program(stem, ders, onek, bicim):
     elif bicim == 'gttn':
         # Fen 3-4. sınıfta dört parçalı kod kullanır (FB.3.1.1), 5-8'de beş parçalı
         # (FB.5.1.1.1). Yalnız beş parçayı arayan eski desen 3-4'ü sessizce düşürüyordu.
-        code_re = re.compile(r'\b(' + onek + r'\.\d\.\d{1,2}\.\d{1,2}(?:\.\d{1,2})?)\.(?!\d)')
+        code_re = re.compile(r'\b(' + onek + r'\.\d{1,2}\.\d{1,2}\.\d{1,2}(?:\.\d{1,2})?)\.(?!\d)')
     elif bicim == 'tn':
         code_re = re.compile(r'\b(' + onek + r'\.\d{1,2}\.\d{1,2})\.(?!\d)')
     elif bicim == 'dtn0':
         # Robotik Kodlama ve Yapay Zekâ belgeleri kodu önekten sonra noktasız yazar
         # (RK1.1.1, YZU2.3.2); ara sıra noktalı biçim de geçer.
-        code_re = re.compile(r'\b(' + onek + r'\.?\d\.\d{1,2}\.\d{1,2})\.?(?!\d)')
+        code_re = re.compile(r'\b(' + onek + r'\.?\d{1,2}\.\d{1,2}\.\d{1,2})\.?(?!\d)')
     else:
-        code_re = re.compile(r'\b(' + onek + r'\.\d\.\d{1,2}\.\d{1,2})\.(?!\d)')
+        code_re = re.compile(r'\b(' + onek + r'\.\d{1,2}\.\d{1,2}\.\d{1,2})\.(?!\d)')
 
     # tema adları: sınıf bağlamı + "1.TEMA: AD"
     tema_ad = {}
     sinif_ctx = None
     for ln in lines:
-        m = re.match(r'^\s*(\d)\.\s*SINIF\b', ln)
+        m = re.match(r'^\s*(\d{1,2})\.\s*SINIF\b', ln)
         if m: sinif_ctx = m.group(1)
         m = re.match(r'^\s*DÜZEY[ -]*(I{1,3})\b', ln)
         if m: sinif_ctx = str(len(m.group(1)))
@@ -125,7 +153,7 @@ def parse_program(stem, ders, onek, bicim):
         if m: sinif_ctx = str(len(m.group(1)))
         m = re.match(r'^\s*(\d{1,2})\.\s*(?:TEMA|ÜNİTE|ÖĞRENME ALANI):?\s*(.{3,80})$', ln)
         if m:
-            ad = temiz(m.group(2))
+            ad = temiz(m.group(2)).lstrip(':').strip()
             ad = re.sub(r'\s*\(\d+\)\s*$', '', ad)
             ad = tr_baslik(ad) if ad == ad.upper() else ad
             if sinif_ctx: tema_ad[(sinif_ctx, m.group(1))] = ad
@@ -143,17 +171,24 @@ def parse_program(stem, ders, onek, bicim):
         cur['sb'] = [temiz(x)[:600] for x in cur['sb'] if temiz(x)]
         eski = adaylar.get(code)
         # bazı PDF sayfalarında metin katmanı çift basılmış: "Trafik Trafikile ile…".
-        # bitişik yinelenen parçalar bozukluk sayılır; temiz aday her zaman önce gelir.
-        duz = cur['statement'].replace(' ', '')
-        bozuk = 1 if re.search(r'(.{4,})\1', duz) else 0
+        # bozukluğun imzası, art arda yinelenen sözcüklerin metne yayılmış olması;
+        # tek tük doğal yineleme ("kahramanlar, kahramanlıklar…") bozuk sayılmaz.
+        # Türkçe'de ad satırının ardından açıklama adın tekrarıyla başlar
+        # ("…yönetebilme ¶ … yönetebilme becerisi…"); bu doğal tekrar bozuk değildir,
+        # ölçüt orada da kapalı (adı ve açıklamayı aşağıda 'genis' bloğu ayırır).
+        bozuk = 0 if bicim == 'turkce' else (1 if _cift_katman(cur['statement']) else 0)
         # TYMM çıktı ifadeleri hemen her zaman "-abilme/-ebilme" ile biter; iki sütunlu
         # sayfadan yan sütun metni karışan adaylar bu yüzden sondan tanınır.
-        bitis = 1 if re.search(r'bilme(?:si|leri)?\s*$', cur['statement'].rstrip('. ')) else 0
+        # Türkçe'de ise adın ardından gelen açıklama paragrafı programın parçasıdır
+        # (aşağıda 'genis' bloğu adı ve açıklamayı ayırır); orada bu ölçüt kapalı.
+        def _bitis(st):
+            if bicim == 'turkce': return 0
+            return 1 if re.search(r'bilme(?:si|leri)?\s*$', st.rstrip('. ')) else 0
+        bitis = _bitis(cur['statement'])
         puan = (1 - bozuk, bitis, len(cur['sb']), len(cur['statement']))
         if eski:
-            eski_duz = eski['statement'].replace(' ', '')
-            eski_puan = (1 - (1 if re.search(r'(.{4,})\1', eski_duz) else 0),
-                         1 if re.search(r'bilme(?:si|leri)?\s*$', eski['statement'].rstrip('. ')) else 0,
+            eski_puan = (1 - (0 if bicim == 'turkce' else (1 if _cift_katman(eski['statement']) else 0)),
+                         _bitis(eski['statement']),
                          len(eski['sb']), len(eski['statement']))
         # iki aday birbirini tamamlayabilir: temiz ifadeli ama bileşensiz aday kazandığında
         # yenilen adayın süreç bileşenlerini yanına al (ifade ayrı sayfada tekrar basılıyor)
@@ -205,11 +240,14 @@ def parse_program(stem, ders, onek, bicim):
         genis = {}
         for code, k in adaylar.items():
             st = k['statement']
+            # açıklama çoğu kez adın tekrarıyla başlar ("Yaratıcı konuşma yapabilme
+            # Yaratıcı konuşma yapabilme becerisi…"); baştaki çift adı teke indir
+            st = re.sub(r'^(.{6,}?bilme(?:/kendini uyarlayabilme|/kendine uyarlayabilme)?)\s+\1(?=\s|$)', r'\1', st)
             ad, acik = st, ''
-            # ad "…bilme/…uyarlayabilme" ile biter; ilk 220 karakterdeki son 'bilme' sınırını al
-            eslesme = None
-            for mm in re.finditer(r'bilme(?:/kendini uyarlayabilme|/kendine uyarlayabilme)?\b', st[:220]):
-                eslesme = mm
+            # ad "…bilme/…uyarlayabilme" ile biter; hiçbir çıktı adında ara konumda
+            # 'bilme' geçmediği için İLK sınır doğru sınırdır (açıklama "…bilme
+            # becerisi hem…" diye devam eder, son sınırı almak açıklamayı ada katar)
+            eslesme = re.search(r'bilme(?:/kendini uyarlayabilme|/kendine uyarlayabilme)?\b', st[:220])
             if eslesme:
                 ad, acik = st[:eslesme.end()].strip(), st[eslesme.end():].strip()
             for c in k.get('chain', [code]):
@@ -229,7 +267,9 @@ def parse_program(stem, ders, onek, bicim):
                     adlik[c] = adtxt
         for c, k in adaylar.items():
             st = k['statement']
-            if (not st or not re.match(r'^[A-ZÇĞİÖŞÜ“"\']', st) or 'bilme' not in st[:220]) and c in adlik:
+            if (not st or not re.match(r'^[A-ZÇĞİÖŞÜ“"\']', st)
+                    or not re.search(r'bilme(?:si|leri)?\b', st[:220])
+                    or len(st) > 120) and c in adlik:
                 k['statement'] = adlik[c]
                 if not k.get('aciklama'): k['aciklama'] = ''
 
@@ -289,6 +329,37 @@ def anahtar(c):
         try: return int(re.sub(r'\D', '', x) or 0)
         except: return 0
     return (c['ders'], num(c['sinif']), num(c['temaNo']), num(c['code'].split('.')[-1]))
+# Aynı derse birden çok belge düşünce (Matematik 1-4 + 5-8 + 9-12; lise belgesi
+# TOC'unda alt kademe kodları da anabilir) aynı (ders, kod) iki kayıt üretebilir.
+# Belge içi puanlamanın aynısıyla en iyi kayıt tutulur.
+def kayit_puani(k):
+    st = k['statement']
+    duz = st.replace(' ', '')
+    bozuk = 1 if re.search(r'(.{4,})\1', duz) else 0
+    bitis = 1 if re.search(r'bilme(?:si|leri)?\s*$', st.rstrip('. ')) else 0
+    return (1 - bozuk, bitis, len(k['sb']), len(st))
+
+tekil = {}
+for k in hepsi:
+    a = (k['ders'], k['code'])
+    if a not in tekil:
+        tekil[a] = k
+        continue
+    mevcut = tekil[a]
+    kazanan, kaybeden = (k, mevcut) if kayit_puani(k) > kayit_puani(mevcut) else (mevcut, k)
+    # aynı kodun öbür yakalanışındaki açıklama ve kod atıfları kaybolmasın:
+    # kazanan ifadeyi verir, açıklama yoksa kaybedenden alınır, refs birleşir
+    if not kazanan.get('aciklama') and kaybeden.get('aciklama'):
+        kazanan['aciklama'] = kaybeden['aciklama']
+    if kaybeden.get('refs'):
+        kazanan['refs'] = sorted(set(kazanan.get('refs', [])) | set(kaybeden['refs']))
+    if not kazanan['sb'] and kaybeden['sb']:
+        kazanan['sb'] = kaybeden['sb']
+    tekil[a] = kazanan
+if len(tekil) != len(hepsi):
+    print('ders+kod tekilleştirme:', len(hepsi), '→', len(tekil))
+hepsi = list(tekil.values())
+
 hepsi.sort(key=anahtar)
 for k in hepsi:
     k['statement'] = ikileme_coz(k['statement'])

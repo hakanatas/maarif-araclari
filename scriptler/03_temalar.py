@@ -52,6 +52,23 @@ PROGRAMLAR = [
  ('Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi', 'Proje Tasarımı ve Uygulamaları (Seçmeli)', r'PTU\.(\d{1,2})\.\d{1,2}', 'tek'),
  ('Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi', 'Spor ve Fiziki Etkinlikler (Seçmeli)', r'SFE\.(\d{1,2})\.\d{1,2}', 'tek'),
  ('Secmeli_Halk_Oyunlari_Ogretim_Programi', 'Halk Oyunları (Seçmeli)', r'HO\.(\d{1,2})\.\d{1,2}', 'tek'),
+ # --- lise (Eylül 2026)
+ ('Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi', 'Beden Eğitimi ve Spor', r'BES\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Biyoloji_Ogretim_Programi', 'Biyoloji', r'BİY\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Cografya_Ogretim_Programi', 'Coğrafya', r'COĞ\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi', 'Din Kültürü ve Ahlak Bilgisi', r'DKAB\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Felsefe_Ogretim_Programi', 'Felsefe', r'FEL\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Fizik_Ogretim_Programi', 'Fizik', r'FİZ\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Gorsel_Sanatlar_Ogretim_Programi', 'Görsel Sanatlar', r'GS\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Kimya_Ogretim_Programi', 'Kimya', r'KİM\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Kurani_Kerim_Ogretim_Programi', "Kur'an-ı Kerim (Seçmeli)", r'KK\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Matematik_Ogretim_Programi', 'Matematik', r'MAT\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Matematik_Uygulamalari_Ogretim_Programi', 'Matematik Uygulamaları (Seçmeli)', r'U\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Lise_Muzik_Ogretim_Programi', 'Müzik', r'MÜZ\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Peygamberimizin_Hayati_Ogretim_Programi', 'Peygamberimizin Hayatı (Seçmeli)', r'PH\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_TC_Inkilap_Tarihi_Ogretim_Programi', 'T.C. İnkılap Tarihi ve Atatürkçülük', r'İTA\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Tarih_Ogretim_Programi', 'Tarih', r'TAR\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Lise_Temel_Matematik_Ogretim_Programi', 'Temel Matematik', r'T\.(\d{1,2})\.(\d{1,2})\.\d{1,2}', 'kod'),
 ]
 
 ETIKETLER = [

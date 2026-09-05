@@ -82,6 +82,27 @@ PROGRAMLAR = {
     'Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi': '/assets/pdf/proje-tasarimi-ve-uygulamalari-dersi_20260819_074038_150.pdf',
     'Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi': '/assets/pdf/spor-ve-fiziki-etkinlikler-dersi_20260819_075451_091.pdf',
     'Secmeli_Halk_Oyunlari_Ogretim_Programi': '/assets/pdf/halk-oyunlari-dersi_20260819_071852_879.pdf',
+    # --- lise (Eylül 2026 genişlemesi). TDE ve İngilizce yapıları farklı;
+    # İngilizce ailesi yalnız kod sayımı için, TDE şimdilik ayrıştırma dışı.
+    'Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi': '/assets/pdf/beden-egitimi-ve-spor-ogretim-programi.pdf',
+    'Lise_Biyoloji_Ogretim_Programi': '/assets/pdf/biyoloji-dersi_20260819_142444_074.pdf',
+    'Lise_Cografya_Ogretim_Programi': '/assets/pdf/cografya-dersi_20260819_142604_415.pdf',
+    'Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi': '/assets/pdf/din-kulturu-ve-ahlak-bilgisi-dersi_20260819_142709_568.pdf',
+    'Lise_Felsefe_Ogretim_Programi': '/assets/pdf/felsefe-dersi_20260819_142831_736.pdf',
+    'Lise_Fizik_Ogretim_Programi': '/assets/pdf/fizik-dersi_20260819_142915_270.pdf',
+    'Lise_Gorsel_Sanatlar_Ogretim_Programi': '/assets/pdf/gorsel-sanatlar-ogretim-programi.pdf',
+    'Lise_Kimya_Ogretim_Programi': '/assets/pdf/kimya-dersi_20260819_143012_862.pdf',
+    'Lise_Kurani_Kerim_Ogretim_Programi': '/assets/pdf/kuran-i-kerim-dersi_20260902_112620_128.pdf',
+    'Lise_Matematik_Ogretim_Programi': '/assets/pdf/matematik-dersi_20260819_143102_154.pdf',
+    'Lise_Matematik_Uygulamalari_Ogretim_Programi': '/assets/pdf/matematik-uygulamalari-dersi_20260901_151823_207.pdf',
+    'Lise_Muzik_Ogretim_Programi': '/assets/pdf/muzik-dersi-ogretim-programi.pdf',
+    'Lise_Peygamberimizin_Hayati_Ogretim_Programi': '/assets/pdf/peygamberimizin-hayati-dersi_20260902_113159_431.pdf',
+    'Lise_TC_Inkilap_Tarihi_Ogretim_Programi': '/assets/pdf/tc-inkilap-tarihi-ve-ataturkculuk-dersi_20260819_143332_827.pdf',
+    'Lise_Tarih_Ogretim_Programi': '/assets/pdf/tarih-dersi_20260819_143303_057.pdf',
+    'Lise_Temel_Matematik_Ogretim_Programi': '/assets/pdf/temel-matematik-dersi_20260901_152050_706.pdf',
+    'Lise_Turk_Dili_ve_Edebiyati_Ogretim_Programi': '/assets/pdf/turk-dili-ve-edebiyati-dersi_20260819_143230_512.pdf',
+    'Lise_Ingilizce_9-12_Ogretim_Programi': '/assets/pdf/ingilizce_9_12_ogretim_programi.pdf',
+    'Lise_Ingilizce_Hazirlik-12_Ogretim_Programi': '/assets/pdf/ingilizce_hazirlik_9_12_ogretim_programi.pdf',
 }
 
 

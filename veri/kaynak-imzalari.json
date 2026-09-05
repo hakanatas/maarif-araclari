@@ -79,6 +79,120 @@
    "ozet": "ca31a7963f5090f7",
    "boyut": 96144
   },
+  "Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/beden-egitimi-ve-spor-ogretim-programi.pdf",
+   "ozet": "fd61e8363ac245b1",
+   "boyut": 214847
+  },
+  "Lise_Biyoloji_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Biyoloji_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/biyoloji-dersi_20260819_142444_074.pdf",
+   "ozet": "0726ec056f5982c1",
+   "boyut": 386730
+  },
+  "Lise_Cografya_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Cografya_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/cografya-dersi_20260819_142604_415.pdf",
+   "ozet": "21a5c1ad187afdde",
+   "boyut": 458984
+  },
+  "Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/din-kulturu-ve-ahlak-bilgisi-dersi_20260819_142709_568.pdf",
+   "ozet": "3df7f53e956889a5",
+   "boyut": 488208
+  },
+  "Lise_Felsefe_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Felsefe_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/felsefe-dersi_20260819_142831_736.pdf",
+   "ozet": "9fbafa0600c114dd",
+   "boyut": 253239
+  },
+  "Lise_Fizik_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Fizik_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/fizik-dersi_20260819_142915_270.pdf",
+   "ozet": "7064d1e3b39c49fd",
+   "boyut": 445631
+  },
+  "Lise_Gorsel_Sanatlar_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Gorsel_Sanatlar_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/gorsel-sanatlar-ogretim-programi.pdf",
+   "ozet": "f5d09033716b2d6f",
+   "boyut": 493444
+  },
+  "Lise_Ingilizce_9-12_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Ingilizce_9-12_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/ingilizce_9_12_ogretim_programi.pdf",
+   "ozet": "2126c0b94003c85d",
+   "boyut": 3238792
+  },
+  "Lise_Ingilizce_Hazirlik-12_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Ingilizce_Hazirlik-12_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/ingilizce_hazirlik_9_12_ogretim_programi.pdf",
+   "ozet": "abc4e1054b2708bb",
+   "boyut": 5180491
+  },
+  "Lise_Kimya_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Kimya_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/kimya-dersi_20260819_143012_862.pdf",
+   "ozet": "15a341bbb67e604b",
+   "boyut": 528934
+  },
+  "Lise_Kurani_Kerim_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Kurani_Kerim_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/kuran-i-kerim-dersi_20260902_112620_128.pdf",
+   "ozet": "87ae7fe0dac2f261",
+   "boyut": 331854
+  },
+  "Lise_Matematik_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Matematik_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/matematik-dersi_20260819_143102_154.pdf",
+   "ozet": "a52983779d6720c4",
+   "boyut": 935464
+  },
+  "Lise_Matematik_Uygulamalari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Matematik_Uygulamalari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/matematik-uygulamalari-dersi_20260901_151823_207.pdf",
+   "ozet": "2ab530fddbbe65db",
+   "boyut": 220226
+  },
+  "Lise_Muzik_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Muzik_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/muzik-dersi-ogretim-programi.pdf",
+   "ozet": "0413c0e3db37e8b8",
+   "boyut": 256510
+  },
+  "Lise_Peygamberimizin_Hayati_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Peygamberimizin_Hayati_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/peygamberimizin-hayati-dersi_20260902_113159_431.pdf",
+   "ozet": "a914278794780185",
+   "boyut": 335100
+  },
+  "Lise_TC_Inkilap_Tarihi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_TC_Inkilap_Tarihi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/tc-inkilap-tarihi-ve-ataturkculuk-dersi_20260819_143332_827.pdf",
+   "ozet": "1cfa50abd3ec5e3b",
+   "boyut": 161339
+  },
+  "Lise_Tarih_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Tarih_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/tarih-dersi_20260819_143303_057.pdf",
+   "ozet": "0c28c6a32d71730c",
+   "boyut": 292457
+  },
+  "Lise_Temel_Matematik_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Temel_Matematik_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/temel-matematik-dersi_20260901_152050_706.pdf",
+   "ozet": "0c096552bb11fcd5",
+   "boyut": 176809
+  },
+  "Lise_Turk_Dili_ve_Edebiyati_Ogretim_Programi": {
+   "yol": "kaynak/metin/Lise_Turk_Dili_ve_Edebiyati_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/turk-dili-ve-edebiyati-dersi_20260819_143230_512.pdf",
+   "ozet": "45a02b927c558b45",
+   "boyut": 929615
+  },
   "Matematik_5-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Matematik_5-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programmat5678Onayli.pdf",

@@ -13,6 +13,20 @@
    ]
   }
  },
+ "Matematik|6|2": {
+  "ders": "Matematik",
+  "sinif": "6",
+  "temaNo": "2",
+  "tema": "İşlemlerle Cebirsel Düşünme ve Değişimler",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Öğrencilerin sembollerin anlamları hakkında yeni bilgiler edinmelerini sağlamak amacıyla matematikte ve diğer disiplinlerde (fizik gibi) kullanılan farklı sembollerle [örneğin fi sayısı (φ), Euler (Öyler) sabiti (e), ışık hızı (c), i sayısı] ilgili araştırma yapmalarına yönelik bir görev verilerek poster şeklinde sunmaları isten…",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
  "Matematik|6|5": {
   "ders": "Matematik",
   "sinif": "6",
@@ -37,6 +51,12 @@
     {
      "a": "Sosyal bilgiler dersi bağlamında tarihî olayların zaman çizelgesine yerleştirilmesi veya fen bilimlerinde sıcaklık ölçme aracı olarak kullanılan termometrenin yapısının incelenmesi gibi durumlar üzerinden 0 (sıfır) tartışılır.",
      "o": "Köprü Kurma"
+    }
+   ],
+   "Biyoloji": [
+    {
+     "a": "Oran ve orantının biyoloji, mühendislik, teknoloji, mimari gibi farklı disiplinlerdeki kullanımına yönelik çalışmalara yer verilebilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
     }
    ]
   }
@@ -352,6 +372,12 @@
      "a": "Çalışmalar oluşturulurken yapay zekâ uygulamalarından da faydalanılabilir.",
      "o": "Farklılaştırma · Zenginleştirme"
     }
+   ],
+   "Fizik": [
+    {
+     "a": "Destekleme Sanat ve tasarım müzeleri fiziki veya çevrim içi gezilebilir.",
+     "o": "Farklılaştırma · Destekleme"
+    }
    ]
   }
  },
@@ -623,6 +649,588 @@
     {
      "a": "TEMA: MESLEKLER VE MATEMATİK Bu temada öğrencilerin oran-orantının meslek gruplarındaki kullanımlarını yorumlamaları, geometrik şekil ve cisimlerin meslek gruplarındaki kullanım alanları ile ilgili bilgi toplamaları; veri toplama, analiz ve sonuç çıkarma ile uğraşan meslek gru",
      "o": "Farklılaştırma · Destekleme"
+    }
+   ]
+  }
+ },
+ "Biyoloji|9|1": {
+  "ders": "Biyoloji",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Yaşam",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Temel Kabuller Öğrencilerin bilimsel araştırmaların genel basamaklarını, canlıların ortak özelliklerini, inorganik ve organik bileşiklerin çeşitlerini fen bilimleri dersinden bildikleri kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Öğrencilerin fen bilimleri dersi kapsamında öğrendikleri “bilimin doğasının özellikleri” konusu hatırlatılarak biyoloji disiplininin fizik ve kimya disiplinlerinde olduğu gibi doğal dünyayı anlamak için deney ve gözlemlerden yararlandığı vurgulanabilir.",
+     "o": "Köprü Kurma"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Öğrencilerin fen bilimleri dersi kapsamında öğrendikleri “bilimin doğasının özellikleri” konusu hatırlatılarak biyoloji disiplininin fizik ve kimya disiplinlerinde olduğu gibi doğal dünyayı anlamak için deney ve gözlemlerden yararlandığı vurgulanabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Biyoloji|10|1": {
+  "ders": "Biyoloji",
+  "sinif": "10",
+  "temaNo": "1",
+  "tema": "Enerji",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "…anılan ve üretilen maddeleri, fotosentezi etkileyen faktörleri, sindirim sistemini oluşturan yapı ve organların görevlerini, hücresel solunumun canlılar için önemini fen bilimleri dersinden bildikleri ; mitokondri ve kloroplastın yapı ve görevlerini ise biyoloji dersi ön bilgilerinden edindikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Biyoloji|10|2": {
+  "ders": "Biyoloji",
+  "sinif": "10",
+  "temaNo": "2",
+  "tema": "Ekoloji",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "…rını, yerel ve küresel çevre sorunlarını, besin zinciri, besin ağı, su ayak izi ve karbon ayak izi, üretici, tüketici, ayrıştırıcı, sürdürülebilir yaşam kavramlarını fen bilimleri ve biyoloji derslerinden öğrendikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Termodinamik yasalarına değinilerek fizik dersi ile ilişkilendirme yapılabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Biyoloji|11|1": {
+  "ders": "Biyoloji",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "Tepki",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "…ezî ve çevresel sinir sistemi olarak sınıflandırıldığını, insanda sinir sistemini oluşturan yapıları, refleksin temel sürecini, destek ve hareket sisteminin yapısını fen bilimleri dersinde öğrendikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Biyoloji|11|2": {
+  "ders": "Biyoloji",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Homeostazi",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Temel Kabuller Öğrencilerin boşaltım sistemini oluşturan yapı ve organların görevlerini, endokrin bezlerini ve bu bezlerden salgılanan hormonların etkilerini, dolaşım ve solunum sistemini oluşturan yapı ve organların görevlerini fen bilimleri dersinde öğrendikleri kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Biyoloji|12|2": {
+  "ders": "Biyoloji",
+  "sinif": "12",
+  "temaNo": "2",
+  "tema": "Gen",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Temel Kabuller Öğrencilerin gen, genetik kod, genotip, fenotip, mutasyon kavramları ile genetik testler ve genetik danışmanlığın önemi hakkındaki temel bilgileri fen bilimleri dersinde öğrendikleri kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Coğrafya": [
+    {
+     "a": "Öğrencilere facianın gerçekleştiği yer ile Türkiye’de sağlık problemlerinin artış gösterdiği bölge arasında ilişki kurabilmeleri için coğrafya disiplininden, radyoaktivite konusunda ise kimya ve fizik disiplinlerinden yararlanmaları gerektiği hatırlatılır.",
+     "o": "Köprü Kurma"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Öğrencilere facianın gerçekleştiği yer ile Türkiye’de sağlık problemlerinin artış gösterdiği bölge arasında ilişki kurabilmeleri için coğrafya disiplininden, radyoaktivite konusunda ise kimya ve fizik disiplinlerinden yararlanmaları gerektiği hatırlatılır.",
+     "o": "Köprü Kurma"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Öğrencilere facianın gerçekleştiği yer ile Türkiye’de sağlık problemlerinin artış gösterdiği bölge arasında ilişki kurabilmeleri için coğrafya disiplininden, radyoaktivite konusunda ise kimya ve fizik disiplinlerinden yararlanmaları gerektiği hatırlatılır.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|11|1": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "Kader, İrade ve Sorumluluk",
+  "kopru": {
+   "Felsefe": [
+    {
+     "a": "ÜNİTE: DİN, FELSEFE, BİLİM VE SANAT Bu ünitenin odak noktasını dinin felsefe, bilim ve sanatla olan ilişkisi oluşturmaktadır.",
+     "o": "Öğretmen Yansıtmaları"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|11|2": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Din, Felsefe, Bilim ve Sanat",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "ÜNİTE: İSLAM MEDENİYETİ VE GÖNÜL COĞRAFYAMIZ Bu ünitenin odak noktasını İslam medeniyeti ve gönül coğrafyamız oluşturmaktadır.",
+     "o": "Öğretmen Yansıtmaları"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|11|4": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "11",
+  "temaNo": "4",
+  "tema": "İnançla İlgili Meseleler",
+  "kopru": {
+   "Felsefe": [
+    {
+     "a": "Köprü Kurma Öğrencilerin felsefe dersinde öğrenmiş olduğu tanrının varlığına ilişkin görüşlerden hareketle teizm, deizm, ateizm, nihilizm, agnostisizm, materyalizm, pozitivizm, sekülarizm gibi inanç ve felsefi yaklaşımlar arasında köprü kurulabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|11|5": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "11",
+  "temaNo": "5",
+  "tema": "Yahudilik ve Hristiyanlık",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "le öğrencilerin tarih ve coğrafya dersinde öğrendikleriyle köprü kurması sağlanabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|12|5": {
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "12",
+  "temaNo": "5",
+  "tema": "Hint ve Çin Dinleri",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Böylelikle öğrencilerin tarih ve coğrafya dersinde öğrendikleriyle köprü kurması sağlanabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Fizik|9|2": {
+  "ders": "Fizik",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Kuvvet ve Hareket",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Temel Kabuller Öğrencilerin fen bilimleri ve matematik derslerinde geçen kuvvet, hareket, sürat, hız ve alınan Önceki öğrenme-öğretme süreçlerinden getirildiği yol kavramlarını ve birimlerini bildiği kabul edilkabul edilen bilgi ve mektedir.",
+     "o": "Temel Kabuller"
+    },
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin fen bilimleri ve matematik derslerinde geçen kuvvet, hareket, sürat, hız ve alınan yol kavramlarını ve birimlerini bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Fen Bilimleri": [
+    {
+     "a": "Temel Kabuller Öğrencilerin fen bilimleri ve matematik derslerinde geçen kuvvet, hareket, sürat, hız ve alınan Önceki öğrenme-öğretme süreçlerinden getirildiği yol kavramlarını ve birimlerini bildiği kabul edilkabul edilen bilgi ve mektedir.",
+     "o": "Temel Kabuller"
+    },
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin fen bilimleri ve matematik derslerinde geçen kuvvet, hareket, sürat, hız ve alınan yol kavramlarını ve birimlerini bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Biyoloji": [
+    {
+     "a": "limleri, kimya, biyoloji ve matematik derslerinde bağlantı oluşturma kullanılan fiziksel nicelikler ve birimleri soru cesürecinin yanı sıra vap etkinliği ile hatırlatılabilir.",
+     "o": "Köprü Kurma"
+    },
+    {
+     "a": "Köprü Kurma Öğrencilere ön öğrenmelerinde yer alan fen bilimleri, kimya, biyoloji ve matematik derslerinde kullanılan fiziksel nicelikler ve birimleri soru cevap etkinliği ile hatırlatılabilir.",
+     "o": "Köprü Kurma"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "limleri, kimya, biyoloji ve matematik derslerinde bağlantı oluşturma kullanılan fiziksel nicelikler ve birimleri soru cesürecinin yanı sıra vap etkinliği ile hatırlatılabilir.",
+     "o": "Köprü Kurma"
+    },
+    {
+     "a": "Köprü Kurma Öğrencilere ön öğrenmelerinde yer alan fen bilimleri, kimya, biyoloji ve matematik derslerinde kullanılan fiziksel nicelikler ve birimleri soru cevap etkinliği ile hatırlatılabilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Fizik|9|1": {
+  "ders": "Fizik",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Fizik Bilimi ve Kariyer Keşfi",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin fen bilimleri dersinde yer alan fizik, kimya ve biyoloji gibi farklı disiplinlerin varlığını ve ayrımlarını bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Biyoloji": [
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin fen bilimleri dersinde yer alan fizik, kimya ve biyoloji gibi farklı disiplinlerin varlığını ve ayrımlarını bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "ÖĞRENME-ÖĞRETME YAŞANTILARI Temel Kabuller Öğrencilerin fen bilimleri dersinde yer alan fizik, kimya ve biyoloji gibi farklı disiplinlerin varlığını ve ayrımlarını bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Fizik|11|1": {
+  "ders": "Fizik",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "Kuvvet ve Hareket",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Destekleme Serbest düşme gibi konular için basit veri toplama etkinlikleri ve bu verileri kullanarak temel matematiksel modellere ulaşmaları için basılı öğretim materyalleri sağlanabilir.",
+     "o": "Farklılaştırma · Destekleme"
+    }
+   ]
+  }
+ },
+ "Fizik|11|2": {
+  "ders": "Fizik",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Elektrik ve Manyetizma",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Köprü Kurma Öğrencilerin fen bilimleri dersinde öğrendikleri elektrostatikle ilgili bilgileri elektriksel kuvvet ve elektriksel alan ile ilişkilendirilebilir.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Fizik|11|3": {
+  "ders": "Fizik",
+  "sinif": "11",
+  "temaNo": "3",
+  "tema": "Optik",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Temel Kabuller Öğrencilerin fen bilimleri dersinde geçen ışın, ışık ve aydınlanma kavramlarını bildiği, düzlem ayna, küresel ayna ve mercekleri temel özelliklerine göre sınıflandırabildiği ve yansıma, kırılma ve odak noktası kavramlarını bildiği kabul edilmektedir.",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Fizik|12|2": {
+  "ders": "Fizik",
+  "sinif": "12",
+  "temaNo": "2",
+  "tema": "Enerji",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Matematiksel hesaplamalar için açık uçlu maddelerden oluşan test FİZİK DERSİ ÖĞRETİM PROGRAMI kullanılabilir.",
+     "o": "Öğrenme Kanıtları"
+    }
+   ]
+  }
+ },
+ "Görsel Sanatlar|9|4": {
+  "ders": "Görsel Sanatlar",
+  "sinif": "9",
+  "temaNo": "4",
+  "tema": "Sanat ve Teknoloji Evreni",
+  "kopru": {
+   "Kimya": [
+    {
+     "a": "Anahtar Kavramlar airbrush (eyır bıraş), font, illüstrasyon, kolografi, sanatsal yerleştirme (enstalasyon), tipografi, yeşil kimya GÖRSEL SANATLAR DERSİ ÖĞRETİM PROGRAMI ÖĞRENME KANITLARI Öğrenme çıktıları; akran değerlendirme formu, kontrol listesi, dereceli puanlama anah- (Ölçme ve tarı, dereceleme ölçeği, grup değerlendirme f…",
+     "o": "İçerik Çerçevesi"
+    }
+   ]
+  }
+ },
+ "Kimya|9|2": {
+  "ders": "Kimya",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Çeşitlilik",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Öğrencilerden fen bilimleri dersinde öğrendikleri bazı yaygın bileşiklerin adları ile formüllerini eşleştirmeleri istenebilir.",
+     "o": "Ön Değerlendirme Süreci"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|9|1": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…dil geceleri, doğum, cenaze, düğün, asker uğurlaması gibi merasimler ve kabir ziyaretlerinde Kur’an-ı Kerim okunduğunu gözlemledikleri; temel eğitim sürecinde aldığı din kültürü ve ahlak bilgisi dersleri kapsamında Kur’an-ı Kerim okumanın önemini ve kültürümüzdeki yerini bildikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|9|3": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "9",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim’i Okuyorum",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…n medditabii, meddimuttasıl ve meddimunfasıl konularını öğrendikleri, Kur’an-ı Kerim’i yüzünden okuyabildikleri, sure ve ayet kavramlarını temel eğitim seviyesindeki din kültürü ve ahlak bilgisi derslerinde öğrendikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|9|4": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "9",
+  "temaNo": "4",
+  "tema": "Kur’an-ı Kerim’den Sureler",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…esindeki surelerin isimlerini bildikleri, bu sureleri ve surelerin anlamlarını başta aileleri ve sosyal çevrelerinden olmak üzere temel eğitim seviyesinde aldıkları, din kültürü ve ahlak bilgisi dersleri kapsamında duydukları veya dinledikleri, bazı öğrencilerin ise bu sureleri ezberden okuyabildikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|10|3": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "10",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim’i Okuyorum",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…an ihfa, izhar ve iklabı ve idgam çeşitlerini bildikleri, Kur’an-ı Kerim’i yüzünden okuma becerisini kazandıkları, sure ve ayet kavramlarını temel eğitim seviyesinde din kültürü ve ahlak bilgisi derslerinde öğrendikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|10|4": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "10",
+  "temaNo": "4",
+  "tema": "Kur’an-ı Kerim’den Sureler",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…i surelerin ve ayetin isimlerini bildikleri, bu surelerin ve ayetin anlamlarını başta aileleri ve sosyal çevrelerinden olmak üzere temel eğitim seviyesinde aldıkları din kültürü ve ahlak bilgisi dersleri kapsamında duydukları veya dinledikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|11|4": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "11",
+  "temaNo": "4",
+  "tema": "Kur’an-ı Kerim’den Sureler",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…esindeki surelerin isimlerini bildikleri, bu sureleri ve surelerin anlamlarını başta aileleri ve sosyal çevrelerinden olmak üzere temel eğitim seviyesinde aldıkları, din kültürü ve ahlak bilgisi dersleri kapsamında duydukları veya dinledikleri, bu surelerin bazılarını ezberden okuyabildikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|12|1": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "12",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Öğrencilere temel eğitim seviyesindeki din kültürü ve ahlak bilgisi, seçmeli Kur’an-ı Kerim derslerinde öğrendikleri Rabbena dualarının anlamı ile Haşr suresinin 10.",
+     "o": "Köprü Kurma"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|12|4": {
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "12",
+  "temaNo": "4",
+  "tema": "Kur’an-ı Kerim’den Sureler",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "…vesindeki surelerin isimlerini bildikleri, bu sureleri ve surelerin anlamlarını başta aileleri ve sosyal çevrelerinden olmak üzere temel eğitim seviyesinde aldıkları din kültürü ve ahlak bilgisi dersleri kapsamında duydukları veya dinledikleri, bu surelerin bazılarını ezberden okuyabildikleri kabul edilmektedir.…",
+     "o": "Temel Kabuller"
+    }
+   ]
+  }
+ },
+ "Matematik|9|1": {
+  "ders": "Matematik",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Sayılar",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "Değerlendirme) Matematik dersini fizik, kimya ve biyoloji dersleriyle ilişkilendirmek için bu derslerdeki bilimsel gösterimlerin kullanımına yönelik araştırma ödevi verilebilir.",
+     "o": "Öğrenme Kanıtları"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Değerlendirme) Matematik dersini fizik, kimya ve biyoloji dersleriyle ilişkilendirmek için bu derslerdeki bilimsel gösterimlerin kullanımına yönelik araştırma ödevi verilebilir.",
+     "o": "Öğrenme Kanıtları"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Değerlendirme) Matematik dersini fizik, kimya ve biyoloji dersleriyle ilişkilendirmek için bu derslerdeki bilimsel gösterimlerin kullanımına yönelik araştırma ödevi verilebilir.",
+     "o": "Öğrenme Kanıtları"
+    }
+   ]
+  }
+ },
+ "Matematik|10|4": {
+  "ders": "Matematik",
+  "sinif": "10",
+  "temaNo": "4",
+  "tema": "Nicelikler ve Değişimler",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Zenginleştirme (*) Bilgisayar bilimleri, ekonomi, fizik, kimya gibi farklı disiplinlerde geçen karesel, karekök ve rasyonel referans fonksiyonlardan türetilen fonksiyon durumlarının keşfedilmesine ve bu durumların matematiksel temsillerle ilişkilendirilmesine yönelik araştırma ödevi verilebilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Zenginleştirme (*) Bilgisayar bilimleri, ekonomi, fizik, kimya gibi farklı disiplinlerde geçen karesel, karekök ve rasyonel referans fonksiyonlardan türetilen fonksiyon durumlarının keşfedilmesine ve bu durumların matematiksel temsillerle ilişkilendirilmesine yönelik araştırma ödevi verilebilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Matematik|11|3": {
+  "ders": "Matematik",
+  "sinif": "11",
+  "temaNo": "3",
+  "tema": "Nicelikler ve Değişimler",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "(*) Trigonometrik fonksiyonların kullanıldığı ve öğrencinin fizik dersinden bildiği bileşke vektör, Newton’ın hareket yasaları ve eğik atılan cisim gibi bağlamları içeren karmaşık problemlerin çözümleri araştırılabilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|Düzey 1|1": {
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "1",
+  "tema": "Strateji ve Zekâ Oyunlarının Matematiği",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Ortaöğretim Matematik Uygulamaları (I-II) Dersi Öğretim Programı’nın İçerik Tasarımı İçerik tasarımında kavramsal beceriler ile matematik alan becerilerini temel alan Ortaöğretim Matematik Uygulamaları (I-II) Dersi Öğretim Programı’nın geliştirmeyi amaçladığı 5 alan becerisi aşağıdaki gibidir: • Matematiksel muhakeme, • Matemati…",
+     "o": "Farklılaştırma · Destekleme"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|Düzey 2|2": {
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "2",
+  "tema": "Bilişimin Matematiği",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "KANITLARI Öğrencilere farklı disiplinlerle (coğrafya, bilgisayar bilimleri) ilişkilendirilmiş, öğrencilerin ilgi (Ölçme ve alanlarına göre çizge kuramı uygulamalarına yönelik bir performans görevi verilebilir.",
+     "o": "İçerik Çerçevesi"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|Düzey 2|5": {
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "5",
+  "tema": "Sanatın Matematiği",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Öğrencilerin disiplinler arası bağlantı kurmaları ve matematiksel temsiller kullanmaları teşvik edilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ]
+  }
+ },
+ "Temel Matematik|11|1": {
+  "ders": "Temel Matematik",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "Nicelikler ve Değişimler",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Ekonomi, fizik, kimya gibi farklı disiplinlerde geçen doğru orantılı veya ters orantılı ilişkilerin bulunduğu durumların keşfedilmesine ve bu durumların matematiksel temsillerle ilişkilendirilmesine yönelik görevler verilebilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Ekonomi, fizik, kimya gibi farklı disiplinlerde geçen doğru orantılı veya ters orantılı ilişkilerin bulunduğu durumların keşfedilmesine ve bu durumların matematiksel temsillerle ilişkilendirilmesine yönelik görevler verilebilir.",
+     "o": "Farklılaştırma · Zenginleştirme"
     }
    ]
   }

@@ -66,12 +66,31 @@ PROGRAMLAR = [
  ('Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi', 'Proje Tasarımı ve Uygulamaları (Seçmeli)', r'PTU\.\d{1,2}\.\d{1,2}', None),
  ('Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi', 'Spor ve Fiziki Etkinlikler (Seçmeli)', r'SFE\.\d{1,2}\.\d{1,2}', None),
  ('Secmeli_Halk_Oyunlari_Ogretim_Programi', 'Halk Oyunları (Seçmeli)', r'HO\.\d{1,2}\.\d{1,2}', None),
+ # --- lise (Eylül 2026)
+ ('Lise_Beden_Egitimi_ve_Spor_Ogretim_Programi', 'Beden Eğitimi ve Spor', r'BES\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Biyoloji_Ogretim_Programi', 'Biyoloji', r'BİY\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Cografya_Ogretim_Programi', 'Coğrafya', r'COĞ\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Din_Kulturu_ve_Ahlak_Bilgisi_Ogretim_Programi', 'Din Kültürü ve Ahlak Bilgisi', r'DKAB\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Felsefe_Ogretim_Programi', 'Felsefe', r'FEL\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Fizik_Ogretim_Programi', 'Fizik', r'FİZ\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Gorsel_Sanatlar_Ogretim_Programi', 'Görsel Sanatlar', r'GS\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Kimya_Ogretim_Programi', 'Kimya', r'KİM\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Kurani_Kerim_Ogretim_Programi', "Kur'an-ı Kerim (Seçmeli)", r'KK\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Matematik_Ogretim_Programi', 'Matematik', r'MAT\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Matematik_Uygulamalari_Ogretim_Programi', 'Matematik Uygulamaları (Seçmeli)', r'U\.[1-3]\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Muzik_Ogretim_Programi', 'Müzik', r'MÜZ\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Peygamberimizin_Hayati_Ogretim_Programi', 'Peygamberimizin Hayatı (Seçmeli)', r'PH\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_TC_Inkilap_Tarihi_Ogretim_Programi', 'T.C. İnkılap Tarihi ve Atatürkçülük', r'İTA\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Tarih_Ogretim_Programi', 'Tarih', r'TAR\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
+ ('Lise_Temel_Matematik_Ogretim_Programi', 'Temel Matematik', r'T\.\d{1,2}\.\d{1,2}\.\d{1,2}', None),
 ]
 
 DERS_KALIP = [
  ('Türkçe', r'türkçe'),
  ('Matematik ve Bilim Uygulamaları (Seçmeli)', r'matematik ve bilim uygulamaları'),
- ('Matematik', r'matematik(?! ve bilim)'), ('Fen Bilimleri', r'fen bilimleri'),
+ ('Matematik Uygulamaları (Seçmeli)', r'matematik uygulamaları'),
+ ('Temel Matematik', r'temel matematik'),
+ ('Matematik', r'(?<!temel )matematik(?! ve bilim| uygulamaları)'), ('Fen Bilimleri', r'fen bilimleri'),
  ('Sosyal Bilgiler', r'sosyal bilgiler'), ('Din Kültürü ve Ahlak Bilgisi', r'din kültürü'),
  ('T.C. İnkılap Tarihi ve Atatürkçülük', r'i̇nkılap tarihi|inkılap tarihi'),
  ('Bilişim Teknolojileri ve Yazılım', r'bilişim teknolojileri'),
@@ -93,6 +112,8 @@ DERS_KALIP = [
  ('Proje Tasarımı ve Uygulamaları (Seçmeli)', r'proje tasarımı ve uygulamaları'),
  ('Spor ve Fiziki Etkinlikler (Seçmeli)', r'spor ve fiziki etkinlikler'),
  ('Halk Oyunları (Seçmeli)', r'halk oyunları'),
+ ('Biyoloji', r'biyoloji'), ('Coğrafya', r'coğrafya'), ('Felsefe', r'felsefe'),
+ ('Fizik', r'fizik(?!sel| etkinlik)'), ('Kimya', r'kimya(?!sal)'), ('Tarih', r'tarih dersi'),
 ]
 
 def hedef_duzelt(hedef, sinif):
@@ -301,6 +322,9 @@ ESLE = {
  'Robotik Kodlama':'Robotik Kodlama (Seçmeli)','Yapay Zekâ Uygulamaları':'Yapay Zekâ Uygulamaları (Seçmeli)',
  'Proje Tasarımı ve Uygulamaları':'Proje Tasarımı ve Uygulamaları (Seçmeli)',
  'Spor ve Fiziki Etkinlikler':'Spor ve Fiziki Etkinlikler (Seçmeli)','Halk Oyunları':'Halk Oyunları (Seçmeli)',
+ 'Biyoloji':'Biyoloji','Coğrafya':'Coğrafya','Felsefe':'Felsefe','Fizik':'Fizik','Kimya':'Kimya',
+ 'Tarih Dersi':'Tarih','Temel Matematik':'Temel Matematik',
+ 'Matematik Uygulamaları':'Matematik Uygulamaları (Seçmeli)',
 }
 KOD_RE2 = re.compile(r'\b(KB\d[\d.]*|SDB\d[\d.]*|OB\d+|E\d\.\d+|D\d+(?:\.\d+)?)\b')
 

@@ -1,12 +1,12 @@
 {
  "uretim": "2026-09-05",
  "kaynak": "https://tymm.meb.gov.tr",
- "belge": 41,
+ "belge": 60,
  "kayitlar": {
   "beceri kodu": 444,
-  "öğrenme çıktısı": 2107,
-  "tema": 539,
-  "çıktı düzeyi köprü": 134,
-  "tema düzeyi köprü": 48
+  "öğrenme çıktısı": 2924,
+  "tema": 759,
+  "çıktı düzeyi köprü": 190,
+  "tema düzeyi köprü": 100
  }
 }

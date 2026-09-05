@@ -1011,6 +1011,22 @@
    ]
   }
  },
+ "Görsel Sanatlar|GS.4.7.1": {
+  "kod": "GS.4.7.1",
+  "ders": "Görsel Sanatlar",
+  "sinif": "4",
+  "temaNo": "7",
+  "tema": "Müze ve Kültür",
+  "statement": "Anadolu coğrafyasının etnografik çeşitliliği hakkında genelleme yapabilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Anadolu coğrafyasının etnografik çeşitliliği hakkında genelleme yapabilme a) Anadolu coğrafyasındaki kültürler hakkında bilgi toplar.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
  "Görsel Sanatlar|GS.8.2.2": {
   "kod": "GS.8.2.2",
   "ders": "Görsel Sanatlar",
@@ -1522,6 +1538,12 @@
      "a": "Bu süreçte fen bilimleri disiplininden yararlanılır.",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
+   ],
+   "Biyoloji": [
+    {
+     "a": "Bal arısının biyolojik özellikleri ve balın insan sağlığına katkıları ele alınır, bu bilgiler üzerinden Allah’ın (cc) insana verdiği maddi ve manevi nimetlere dikkat çekilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
    ]
   }
  },
@@ -1888,6 +1910,740 @@
    "Matematik": [
     {
      "a": "Bu bağlamda öğrencilerin Harezmi Eğitim Modeli kapsamında yer alan fen, teknoloji, mühendislik, sanat ve matematik disiplinlerinin bir arada kullanıldığı STEAM yaklaşımı ile uygulamalı proje, toplumsal fayda ve sanatsal projeler hakkında bilgi toplamaları sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Biyoloji|BİY.11.2.2": {
+  "kod": "BİY.11.2.2",
+  "ders": "Biyoloji",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Homeostazi",
+  "statement": "Homeostatik süreçleri sorgulayabilme",
+  "kopru": {
+   "Kimya": [
+    {
+     "a": "Öğrencilerin kimya disiplinindeki pH, elektrolitler ve çözeltilere ilişkin bilgilerinden yararlanmaları beklenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Coğrafya|COĞ.12.6.1": {
+  "kod": "COĞ.12.6.1",
+  "ders": "Coğrafya",
+  "sinif": "12",
+  "temaNo": "6",
+  "tema": "Afetler ve Sürdürülebilir Çevre",
+  "statement": "Türkiye’de toprağın sürdürülebilir kullanımını sorgulayabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Konuya ilişkin tematik öğrenmeyi desteklemek üzere Türk dili ve edebiyatı, görsel sanatlar, müzik dersi öğretmenleri ile iletişime geçilerek resim yapma; şiir, şarkı sözü, hikâye veya kompozisyon yazma çalışmaları yapılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Müzik": [
+    {
+     "a": "Konuya ilişkin tematik öğrenmeyi desteklemek üzere Türk dili ve edebiyatı, görsel sanatlar, müzik dersi öğretmenleri ile iletişime geçilerek resim yapma; şiir, şarkı sözü, hikâye veya kompozisyon yazma çalışmaları yapılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.11.2.1": {
+  "kod": "DKAB.11.2.1",
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Din, Felsefe, Bilim ve Sanat",
+  "statement": "Din tanımlarını ve farklı disiplinlerin dine yaklaşımları arasında mukayese yapabilme",
+  "kopru": {
+   "Felsefe": [
+    {
+     "a": "Felsefe, psikoloji, sosyoloji ve antropoloji disiplinlerinin dine yaklaşımları açıklanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.12.1.1": {
+  "kod": "DKAB.12.1.1",
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "12",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim",
+  "statement": "Kur’an-ı Kerim’in tarihî süreci hakkında bilgi toplayabilme",
+  "kopru": {
+   "Kur'an-ı Kerim (Seçmeli)": [
+    {
+     "a": "Kur’an-ı Kerim’in tarihî süreci hakkında bilgi toplayabilme a) Kur’an-ı Kerim’in tarihî süreciyle ilgili kaynakları araştırır.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
+ "Fizik|FİZ.9.1.1": {
+  "kod": "FİZ.9.1.1",
+  "ders": "Fizik",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Fizik Bilimi ve Kariyer Keşfi",
+  "statement": "Fizik biliminin tanımına yönelik tümevarımsal akıl yürütebilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Gruplara matematik, kimya, biyoloji, müzik gibi disiplinlerin fizik bilimi ile ilişkisi ve astronomi ve uzay bilimlerinin gelişiminde fizik biliminin kullanılmasına yönelik açıklamalar içeren bilgi kartları dağıtılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Müzik": [
+    {
+     "a": "Gruplara matematik, kimya, biyoloji, müzik gibi disiplinlerin fizik bilimi ile ilişkisi ve astronomi ve uzay bilimlerinin gelişiminde fizik biliminin kullanılmasına yönelik açıklamalar içeren bilgi kartları dağıtılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Fizik|FİZ.9.3.4": {
+  "kod": "FİZ.9.3.4",
+  "ders": "Fizik",
+  "sinif": "9",
+  "temaNo": "3",
+  "tema": "Akışkanlar",
+  "statement": "Açık hava basıncına ilişkin çıkarım yapabilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Alçak basınç ve yüksek basınç bölgeleri arasında havanın yer değiştirmesiyle rüzgârın oluştuğu belirtilerek coğrafya disipliniyle ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Fizik|FİZ.12.1.1": {
+  "kod": "FİZ.12.1.1",
+  "ders": "Fizik",
+  "sinif": "12",
+  "temaNo": "1",
+  "tema": "Kuvvet ve Hareket",
+  "statement": "Torkun matematiksel modeline yönelik tümevarımsal akıl yürütebilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Torkun matematiksel modeline yönelik tümevarımsal akıl yürütebilme a) Torkun kuvvet, dönme noktasına uzaklık ve kuvvetin uygulama açısı ile ilişkisini matematiksel olarak modeller.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
+ "Fizik|FİZ.12.4.7": {
+  "kod": "FİZ.12.4.7",
+  "ders": "Fizik",
+  "sinif": "12",
+  "temaNo": "4",
+  "tema": "Madde ve Doğası",
+  "statement": "Modern Atom Teorisi ile ilgili bilgileri yapılandırabilme",
+  "kopru": {
+   "Kimya": [
+    {
+     "a": "Atomu oluşturan temel parçacıkların etkileşimlerini keşfederek Modern Atom Teorisi'ne göre atomun yapısını kimya disipliniyle de ilişki kurarak açıklar.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kimya|KİM.12.1.7": {
+  "kod": "KİM.12.1.7",
+  "ders": "Kimya",
+  "sinif": "12",
+  "temaNo": "1",
+  "tema": "Etkileşim",
+  "statement": "Elektroliz olayında madde-elektrik akımı miktarı ilişkisini açıklayabilmek için kanıt kullanabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "matematiksel hesaplamalar yapmadan verilen bu bilimsel bilgileri elektroliz olayında değişime uğrayan madde miktarının hem devreden geçen elektrik akımı miktarı ile hem de elektroliz süresi ile ilişkisine yönelik açıklamalarını desteklemek için kullanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.10.1.1": {
+  "kod": "KK.10.1.1",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "10",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "statement": "Kur’an-ı Kerim’i anlayarak okumanın önemini sorgulayabilme",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Kur’an-ı Kerim’in gönderiliş amaçları vurgulanarak, onu anlayarak okumanın önemi din kültürü ve ahlak bilgisi disiplinindeki Kur’an-ı Kerim’in rehberliği içerik çerçevesi ile ilişkilendirilerek ele alınır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.9.2.3": {
+  "kod": "MAT.9.2.3",
+  "ders": "Matematik",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Nicelikler ve Değişimler",
+  "statement": "Doğrusal fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problem çözebilme",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Kullanılan gerçek yaşam problemlerinin ekonomi, fizik gibi disiplinlerle ilişkili olmasına ve toplumsal yarara vurgu yapmasına özen gösterilir (D20.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.9.2.1": {
+  "kod": "MAT.9.2.1",
+  "ders": "Matematik",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Nicelikler ve Değişimler",
+  "statement": "Gerçek sayılarda f(x) = x şeklinde tanımlı doğrusal referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen g(x) = a ∙ f(x ± r) ± k, (a, r, k ∈ ℝ, a ≠ 0) doğrusal fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+  "kopru": {
+   "Kimya": [
+    {
+     "a": "Örneğin kimya disiplini bağlamında ısıtılan bir buz kütlesinin sıcaklık değişimine ilişkin bir deneyin zamana bağlı sıcaklık verileri incelenir (OB7).",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.9.6.1": {
+  "kod": "MAT.9.6.1",
+  "ders": "Matematik",
+  "sinif": "9",
+  "temaNo": "6",
+  "tema": "İstatistiksel Araştırma Süreci",
+  "statement": "Tek nicel değişkenli veri dağılımları ile çalışabilme ve tek nicel değişken içeren veriye dayalı karar verebilme",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "Örneğin biyoloji dersiyle ilişkilendirmek için memelilerin boylarının nasıl bir dağılım gösterdiği incelenebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Coğrafya": [
+    {
+     "a": "Meteorolojik verilerden hareketle ortalama sıcaklıkların değişimine dair çıkarım yapılarak coğrafya dersiyle, farklı kültürlere ait bilgiler toplanarak tarih dersiyle, bireylerin psikolojik değişkenlerine yönelik veri toplanarak psikoloji dersiyle, toplumsal olaylara yönelik araştırmalar yapılarak sosyoloji dersiyle ilişkilendir…",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Tarih": [
+    {
+     "a": "Meteorolojik verilerden hareketle ortalama sıcaklıkların değişimine dair çıkarım yapılarak coğrafya dersiyle, farklı kültürlere ait bilgiler toplanarak tarih dersiyle, bireylerin psikolojik değişkenlerine yönelik veri toplanarak psikoloji dersiyle, toplumsal olaylara yönelik araştırmalar yapılarak sosyoloji dersiyle ilişkilendir…",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.10.2.1": {
+  "kod": "MAT.10.2.1",
+  "ders": "Matematik",
+  "sinif": "10",
+  "temaNo": "2",
+  "tema": "İstatistiksel Araştırma Süreci",
+  "statement": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "Örneğin öğrencilerin kimya dersi konularından yola çıkarak bir elementin metal olup olmaması ile kristal yapısının kübik olup olmaması arasında bir ilişki olup olmadığını, biyoloji dersi konularından yola çıkarak bir canlının omurgalı olup olmama ile etçil beslenip beslenmeme arasındaki ilişkililiği incelemeleri sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Örneğin öğrencilerin kimya dersi konularından yola çıkarak bir elementin metal olup olmaması ile kristal yapısının kübik olup olmaması arasında bir ilişki olup olmadığını, biyoloji dersi konularından yola çıkarak bir canlının omurgalı olup olmama ile etçil beslenip beslenmeme arasındaki ilişkililiği incelemeleri sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.10.6.1": {
+  "kod": "MAT.10.6.1",
+  "ders": "Matematik",
+  "sinif": "10",
+  "temaNo": "6",
+  "tema": "Analitik İnceleme",
+  "statement": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Çevrim içi haritalarda enlem ve boylamın ne için kullanıldığı üzerinde durularak coğrafya dersi ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.11.1.1": {
+  "kod": "MAT.11.1.1",
+  "ders": "Matematik",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "İstatistiksel Araştırma Süreci",
+  "statement": "İki nicel değişkenli veri ile çalışabilme ve iki nicel değişken arasındaki ilişkililiğe dayalı karar verebilme",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "…kililik olup olmadığını, astronomi ve uzay bilimleri dersi konularından yola çıkarak gezegenlerin Güneş’e olan uzaklıkları ile dönme hızları arasındaki ilişkililiği, biyoloji dersi konularından yola çıkarak omurgalı hayvanların kilosu ile yaşam süreleri arasındaki ilişkililiği inceleyebilir (OB3).…",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.11.3.4": {
+  "kod": "MAT.11.3.4",
+  "ders": "Matematik",
+  "sinif": "11",
+  "temaNo": "3",
+  "tema": "Nicelikler ve Değişimler",
+  "statement": "Üstel fonksiyonların ters fonksiyonlarını inceleyerek logaritmik fonksiyona dair çıkarım yapabilme",
+  "kopru": {
+   "Kimya": [
+    {
+     "a": "Ayrıca arkeoloji ve kimya disiplinleri bağlamında fosillerin yaşının hesaplanmasında kullanılan karbon-14 yöntemi incelenebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.11.3.7": {
+  "kod": "MAT.11.3.7",
+  "ders": "Matematik",
+  "sinif": "11",
+  "temaNo": "3",
+  "tema": "Nicelikler ve Değişimler",
+  "statement": "Fonksiyonların bileşkelerine ilişkin muhakeme yapabilme",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "Bileşke fonksiyonlara ilişkin önermeler; ekonomi, fizik, kimya ve biyoloji gibi disiplinlerdeki kullanımları açısından değerlendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Bileşke fonksiyonlara ilişkin önermeler; ekonomi, fizik, kimya ve biyoloji gibi disiplinlerdeki kullanımları açısından değerlendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Kimya": [
+    {
+     "a": "Bileşke fonksiyonlara ilişkin önermeler; ekonomi, fizik, kimya ve biyoloji gibi disiplinlerdeki kullanımları açısından değerlendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.12.2.3": {
+  "kod": "MAT.12.2.3",
+  "ders": "Matematik",
+  "sinif": "12",
+  "temaNo": "2",
+  "tema": "Geometrik Şekiller",
+  "statement": "Çemberin açı, kiriş, teğet özelliklerini ve dairenin alanını kullanarak problem çözme",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Bu problemler fizik dersinde yer alan dairesel hareketle ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.1.1": {
+  "kod": "U.1.1.1",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "1",
+  "tema": "Strateji ve Zekâ Oyunlarının Matematiği",
+  "statement": "Strateji ve zekâ oyunlarında karşılaşılan duruma yönelik en uygun hamleye VE SÜREÇ BİLEŞENLERİ karar verebilme",
+  "kopru": {
+   "Bilişim Teknolojileri ve Yazılım": [
+    {
+     "a": "Disiplinler arası bağlamda bilişim teknolojileri disiplini ile dijital strateji oyunlarının oynanması, psikoloji disiplini ile karar verme süreçleri ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.2.2": {
+  "kod": "U.1.2.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Bilişimin Matematiği",
+  "statement": "Sayı sistemleri ve matematiksel yöntemleri kullanarak farklı şifreleme algoritmalarına yönelik analojik akıl yürütebilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Öğrencilere benzer matematiksel yöntemleri kullanarak kendi şifreleme sistemlerini geliştirmeleri için bireysel çalışma veya grup çalışmaları yapma imkânı tanınır (E3.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Bilişim Teknolojileri ve Yazılım": [
+    {
+     "a": "Tema süresince sayı ve şifreleme sistemleri bağlamında bilişim teknolojileri, yazılım ve kriptoloji disiplinleri ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.2.1": {
+  "kod": "U.1.2.1",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Bilişimin Matematiği",
+  "statement": "Bilgisayar sistemlerinde kullanılan sayı sistemlerini ve bu sistemlerin mantıkVE SÜREÇ BİLEŞENLERİ sal karşılıklarını çözümleyebilme",
+  "kopru": {
+   "Fizik": [
+    {
+     "a": "Elektronik devreler konusunda fizik disiplini ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.3.2": {
+  "kod": "U.1.3.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "3",
+  "tema": "Rota Belirlemenin Matematiği",
+  "statement": "Gezegenlerin çekim kuvvetine ilişkin hesaplamalarda matematiksel temsillerden yararlanabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Örnek ve uygulamalar sonrasında öğrencilerden “En hafif hissedeceğiniz gezegen hangisidir? En çok hangisinde ağır hissedersiniz?” gibi sorulara matematiksel gerekçelendirmeler ile cevap vermeleri istenebilir (E3.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Gezegenlerin çekim kuvveti (F) hesaplamalarıyla öğrencilerin fizik disiplini ile ilişki kurmaları sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.4.1": {
+  "kod": "U.1.4.1",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "4",
+  "tema": "Finansın Matematiği",
+  "statement": "Bütçe dengesi ve tasarruf planlamasında matematiksel temsillerden yararVE SÜREÇ BİLEŞENLERİ lanabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Bütçe dengesi ve tasarruf planlamasında matematiksel temsillerden yararVE SÜREÇ BİLEŞENLERİ lanabilme a) Bütçe dengesi ve tasarruf planlaması sürecine ilişkin verileri, matematiksel temsil bağlamındaki anlamıyla tanır.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.4.2": {
+  "kod": "U.1.4.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "4",
+  "tema": "Finansın Matematiği",
+  "statement": "Yatırım karar süreçlerini matematiksel olarak değerlendirerek uygun yatırım kararları verebilme",
+  "kopru": {
+   "Bilişim Teknolojileri ve Yazılım": [
+    {
+     "a": "Bu süreçte bilişim teknolojileri disiplini ile iş birliği sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.1.5.2": {
+  "kod": "U.1.5.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "5",
+  "tema": "Sanatın Matematiği",
+  "statement": "Geometrik şekiller ve matematiksel ilişkileri kullanarak süslemeler sentezleyebilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Geometrik desenleri inceleme ve sentezleme sürecinde görsel sanatlar disiplini ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.2.1.2": {
+  "kod": "U.2.1.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "1",
+  "tema": "Strateji ve Zekâ Oyunlarının Matematiği",
+  "statement": "Yaşam alışkanlıklarına bağlı olarak sağlıklı yaşam seçimleri konusunda matematiksel temsillerden yararlanarak karar verebilme",
+  "kopru": {
+   "Beden Eğitimi ve Oyun": [
+    {
+     "a": "Bilgi toplama aşamasında öğrencilerin biyoloji, beden eğitimi gibi farklı disiplinlerden yararlanmaları desteklenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Biyoloji": [
+    {
+     "a": "Bilgi toplama aşamasında öğrencilerin biyoloji, beden eğitimi gibi farklı disiplinlerden yararlanmaları desteklenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.2.2.1": {
+  "kod": "U.2.2.1",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "2",
+  "tema": "Bilişimin Matematiği",
+  "statement": "Çizge teoreminden yararlanarak günlük hayat problemlerini çözebilme",
+  "kopru": {
+   "Bilişim Teknolojileri ve Yazılım": [
+    {
+     "a": "Bu esnada bilişim teknolojileri ve yazılım disiplini ile ilişki kurulabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Fizik": [
+    {
+     "a": "Fizik disiplini ile ilişki kurularak elektrik devreleri, dirençlerin bağlanma şekilleri (seri-paralel) ve akım yolları çizge temsilleri ile modellenebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.2.4.2": {
+  "kod": "U.2.4.2",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "4",
+  "tema": "Finansın Matematiği",
+  "statement": "Sigorta poliçesi prim hesabında matematiksel temsillerden yararlanabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Poliçe prim hesaplamalarında ekonomi ve finansal matematik disiplinleri ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "İnsan Hakları, Vatandaşlık ve Demokrasi": [
+    {
+     "a": "Bu bağlamda sigortanın bireysel ve toplumsal güvence sağlaması demokrasi ve insan hakları disiplini ile ilişkilendirilerek ele alınır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Coğrafya": [
+    {
+     "a": "Deprem sigortası prim hesabına etki eden bölge seçiminde coğrafya disiplini ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik Uygulamaları (Seçmeli)|U.2.5.1": {
+  "kod": "U.2.5.1",
+  "ders": "Matematik Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "5",
+  "tema": "Sanatın Matematiği",
+  "statement": "Doğadaki örüntüleri ve sanatsal tasarımlardaki altın oranı ifade etmede FiboVE SÜREÇ BİLEŞENLERİ nacci sayılarından ve altın orandan yararlanabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Bu süreçte görsel sanatlar disiplini ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Müzik|MÜZ.9.1.1": {
+  "kod": "MÜZ.9.1.1",
+  "ders": "Müzik",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Müzik Dili",
+  "statement": "İstiklal Marşı’nı müziksel söyleyebilme",
+  "kopru": {
+   "T.C. İnkılap Tarihi ve Atatürkçülük": [
+    {
+     "a": "İnkılap tarihi ve Atatürkçülük disiplininden faydalanılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Müzik|MÜZ.9.2.5": {
+  "kod": "MÜZ.9.2.5",
+  "ders": "Müzik",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Müzik Kültürü",
+  "statement": "Marşları, şarkıları ve türküleri müziksel söyleyebilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Bu süreçte fen bilimleri disiplininden faydalanılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Müzik|MÜZ.9.2.4": {
+  "kod": "MÜZ.9.2.4",
+  "ders": "Müzik",
+  "sinif": "9",
+  "temaNo": "2",
+  "tema": "Müzik Kültürü",
+  "statement": "Atatürk’ün güzel sanatlar içinde müziğe verdiği yeri ve önemi özetleyebilme",
+  "kopru": {
+   "T.C. İnkılap Tarihi ve Atatürkçülük": [
+    {
+     "a": "İnkılap tarihi ve Atatürkçülük disiplininden faydalanılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Müzik|MÜZ.10.1.1": {
+  "kod": "MÜZ.10.1.1",
+  "ders": "Müzik",
+  "sinif": "10",
+  "temaNo": "1",
+  "tema": "Müzik Dili",
+  "statement": "İstiklal Marşı’nı ve toplumsal yaşamda önemli yeri olan marşları müziksel söyleyebilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Marşlardaki ritmik yapılara ait süre değerleri kesirli sayılarla ifade edilerek matematik disipliniyle ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Müzik|MÜZ.11.2.3": {
+  "kod": "MÜZ.11.2.3",
+  "ders": "Müzik",
+  "sinif": "11",
+  "temaNo": "2",
+  "tema": "Müzik Kültürü",
+  "statement": "Marşları, şarkıları ve türküleri müziksel söyleyebilme",
+  "kopru": {
+   "T.C. İnkılap Tarihi ve Atatürkçülük": [
+    {
+     "a": "İnkılap tarihi ve Atatürkçülük disiplininden faydalanılabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.9.1.1": {
+  "kod": "PH.9.1.1",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "9",
+  "temaNo": "1",
+  "tema": "Peygamberimizin Hayatında Önemli Bir Şehir:",
+  "statement": "İslam’dan önce Mekke’de gerçekleşen önemli olayları çözümleyebilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Şehrin coğrafi özelliklerine değinilirken konu, coğrafya disiplininin iklim ve yeryüzü şekilleri içerikleriyle ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.10.1.1": {
+  "kod": "PH.10.1.1",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "10",
+  "temaNo": "1",
+  "tema": "Peygamberimizin Hayatında Önemli Bir Şehir:",
+  "statement": "Hz. Peygamber’in Taif yolculuğuna dair tarihsel empati kurabilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Şehrin coğrafi özelliklerine değinilirken konu, coğrafya disiplininin iklim ve yeryüzü şekilleri içerikleriyle ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.10.3.1": {
+  "kod": "PH.10.3.1",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "10",
+  "temaNo": "3",
+  "tema": "Peygamberimizin Hayatında Önemli Bir Hadise:",
+  "statement": "Askerî mücadeleyi gerektiren durumlar konusunda Kur’an-ı Kerim meallerine başvurabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "rumlamaları istenerek konu matematik disiplininin istatiksel görseli yorumlama içeriğiyle ilişkilendirilir (OB7, MAB4.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.11.1.1": {
+  "kod": "PH.11.1.1",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "11",
+  "temaNo": "1",
+  "tema": "Peygamberimizin Hayatında Önemli Bir Şehir:",
+  "statement": "Yesrib ile Hicaz bölgesinin diğer önemli şehirlerinin İslam öncesindeki durumlarını mukayese edebilme",
+  "kopru": {
+   "Coğrafya": [
+    {
+     "a": "Bu kapsamda konu, coğrafya disiplininin ekonomik faaliyetleri etkileyen coğrafi faktörler içeriğiyle ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.12.3.1": {
+  "kod": "PH.12.3.1",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "12",
+  "temaNo": "3",
+  "tema": "Peygamberimizin Hayatında Önemli Bir Hadise:",
+  "statement": "Veda Haccı’nın önemini çözümleyebilme",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Bu kapsamda konu, din kültürü ve ahlak bilgisi disiplininin İslam’da temel ibadetler içeriğiyle ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Temel Matematik|T.12.1.3": {
+  "kod": "T.12.1.3",
+  "ders": "Temel Matematik",
+  "sinif": "12",
+  "temaNo": "1",
+  "tema": "Nicelikler ve Değişimler",
+  "statement": "Aritmetik ve geometrik diziler ile ifade edilebilen problemleri çözebilme",
+  "kopru": {
+   "Biyoloji": [
+    {
+     "a": "Ekonomide bir şirketin kazancının modellenmesi, biyolojide popülasyon tahmini gibi farklı disiplinlerde karşılaşılabilen problem durumları için uygun bir strateji seçilerek problemler çözülür.",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]
