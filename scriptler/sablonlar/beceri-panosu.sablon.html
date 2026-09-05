@@ -140,7 +140,7 @@
 
 <div class="wrap">
   <header>
-    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Temel Eğitim</p>
     <h1>Beceri Gelişim Panosu</h1>
     <p class="sub">Model, öğrencinin gelişimini <b>süreç bileşeni düzeyinde</b> izlemeyi istiyor. Bu pano o matrisi kurar: sınıf listenizi girin, temayı seçin, derste gözlemledikçe hücreye dokunun. Dört durum arasında geçiş yapar: boş → başlıyor → gelişiyor → kazandı.</p>
   </header>
@@ -377,7 +377,8 @@ function istemUret(){
   const sinifAd = /^\d+$/.test(sinifSec) ? sinifSec + '. sınıf' : sinifSec;
   const tema = cs[0] ? cs[0].tema : temaSec;
 
-  return 'Sen farklılaştırılmış öğretim konusunda deneyimli bir ortaokul öğretmenisin.\n\n'
+  const kademe = parseInt(sinifSec) && parseInt(sinifSec) <= 4 ? 'ilkokul' : 'ortaokul';
+  return `Sen farklılaştırılmış öğretim konusunda deneyimli bir ${kademe} öğretmenisin.\n\n`
     + 'Aşağıda Türkiye Yüzyılı Maarif Modeli\'nin resmî öğretim programından alınmış çıktılar ve '
     + 'benim sınıfımda tuttuğum gözlem var.\n\n'
     + '## Sınıf\n'

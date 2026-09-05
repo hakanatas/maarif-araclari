@@ -56,6 +56,32 @@ PROGRAMLAR = {
         '/assets/pdf/okuma-becerileri-dersi_20260819_073100_538.pdf',
     'Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi':
         '/assets/pdf/yazarlik-ve-yazma-becerileri-dersi_20260819_080157_403.pdf',
+    # --- ilkokul (Eylül 2026 genişlemesi) ---
+    'Ilkokul_Turkce_1-4_Ogretim_Programi': '/assets/pdf/ilkokul-turkce-dersi_20260902_111433_940.pdf',
+    'Ilkokul_Matematik_1-4_Ogretim_Programi': '/assets/pdf/ilkokul-matematik-dersi_20260902_111356_122.pdf',
+    'Hayat_Bilgisi_Ogretim_Programi': '/assets/pdf/hayat-bilgisi-dersi_20260902_111246_099.pdf',
+    'Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi': '/assets/pdf/2024programvat4Onayli.pdf',
+    'Beden_Egitimi_ve_Oyun_Ogretim_Programi': '/assets/pdf/beden-egitimi-ve-oyun-programi.pdf',
+    # --- site tarama genişlemesi (Eylül 2026): 17 seçmeli + Trafik Güvenliği.
+    # Okul Öncesi programı bilinçli olarak dışarıda: ders/tema/çıktı yapısı yok.
+    'Trafik_Guvenligi_Ogretim_Programi': '/assets/pdf/trafik-guvenligi-programi-tegm.pdf',
+    'Secmeli_Kurani_Kerim_Ogretim_Programi': '/assets/pdf/kuran-i-kerim-dersi_20260902_110338_869.pdf',
+    'Secmeli_Peygamberimizin_Hayati_Ogretim_Programi': '/assets/pdf/peygamberimizin-hayati-dersi_20260902_110804_873.pdf',
+    'Secmeli_Afet_Bilinci_Ogretim_Programi': '/assets/pdf/afet-bilinci-dersi_20260819_065745_171.pdf',
+    'Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi': '/assets/pdf/ahlak-ve-vatandaslik-egitimi-dersi_20260819_070330_389.pdf',
+    'Secmeli_Dijital_Sanatlar_Ogretim_Programi': '/assets/pdf/dijital-sanatlar-dersi_20260819_070938_522.pdf',
+    'Secmeli_Dusunme_Egitimi_Ogretim_Programi': '/assets/pdf/dusunme-egitimi-dersi_20260819_071101_966.pdf',
+    'Secmeli_Geleneksel_Sanatlar_Ogretim_Programi': '/assets/pdf/geleneksel-sanatlar-dersi_20260819_071232_389.pdf',
+    'Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi': '/assets/pdf/matematik-ve-bilim-uygulamalari-dersi_20260819_072414_252.pdf',
+    'Secmeli_Oyun_Drama_Ogretim_Programi': '/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-drama_20260819_073410_377.pdf',
+    'Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi': '/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-zeka-oyunlari_20260819_073852_194.pdf',
+    'Secmeli_Oyun_Satranc_Ogretim_Programi': '/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-santranc_20260819_073719_347.pdf',
+    'Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi': '/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-geleneksel-oyunlar_20260819_073604_446.pdf',
+    'Secmeli_Robotik_Kodlama_Ogretim_Programi': '/assets/pdf/robotik-kodlama-dersi_20260819_074141_399.pdf',
+    'Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi': '/assets/pdf/yapay-zeka-uygulamalari-dersi_20260819_080024_885.pdf',
+    'Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi': '/assets/pdf/proje-tasarimi-ve-uygulamalari-dersi_20260819_074038_150.pdf',
+    'Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi': '/assets/pdf/spor-ve-fiziki-etkinlikler-dersi_20260819_075451_091.pdf',
+    'Secmeli_Halk_Oyunlari_Ogretim_Programi': '/assets/pdf/halk-oyunlari-dersi_20260819_071852_879.pdf',
 }
 
 

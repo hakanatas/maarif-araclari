@@ -1,5 +1,22 @@
 {
- "MAT.5.1.1": {
+ "Türkçe|T.K.7.1": {
+  "kod": "T.K.7.1",
+  "ders": "Türkçe",
+  "sinif": "7",
+  "temaNo": "K",
+  "tema": "Konuşma",
+  "statement": "Konuşma sürecini yönetebilme",
+  "kopru": {
+   "Halk Oyunları (Seçmeli)": [
+    {
+     "a": "Öğrenciler geleneksel Türk tiyatrosu, halk oyunları, geleneksel Türk sanatları vb.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.5.1.1": {
+  "kod": "MAT.5.1.1",
   "ders": "Matematik",
   "sinif": "5",
   "temaNo": "1",
@@ -20,7 +37,8 @@
    ]
   }
  },
- "MAT.5.4.3": {
+ "Matematik|MAT.5.4.3": {
+  "kod": "MAT.5.4.3",
   "ders": "Matematik",
   "sinif": "5",
   "temaNo": "4",
@@ -35,7 +53,8 @@
    ]
   }
  },
- "MAT.6.1.8": {
+ "Matematik|MAT.6.1.8": {
+  "kod": "MAT.6.1.8",
   "ders": "Matematik",
   "sinif": "6",
   "temaNo": "1",
@@ -50,7 +69,8 @@
    ]
   }
  },
- "MAT.6.3.2": {
+ "Matematik|MAT.6.3.2": {
+  "kod": "MAT.6.3.2",
   "ders": "Matematik",
   "sinif": "6",
   "temaNo": "3",
@@ -65,7 +85,8 @@
    ]
   }
  },
- "MAT.6.3.4": {
+ "Matematik|MAT.6.3.4": {
+  "kod": "MAT.6.3.4",
   "ders": "Matematik",
   "sinif": "6",
   "temaNo": "3",
@@ -80,7 +101,8 @@
    ]
   }
  },
- "MAT.6.5.1": {
+ "Matematik|MAT.6.5.1": {
+  "kod": "MAT.6.5.1",
   "ders": "Matematik",
   "sinif": "6",
   "temaNo": "5",
@@ -95,7 +117,8 @@
    ]
   }
  },
- "MAT.7.2.2": {
+ "Matematik|MAT.7.2.2": {
+  "kod": "MAT.7.2.2",
   "ders": "Matematik",
   "sinif": "7",
   "temaNo": "2",
@@ -110,7 +133,8 @@
    ]
   }
  },
- "MAT.7.5.1": {
+ "Matematik|MAT.7.5.1": {
+  "kod": "MAT.7.5.1",
   "ders": "Matematik",
   "sinif": "7",
   "temaNo": "5",
@@ -125,7 +149,8 @@
    ]
   }
  },
- "MAT.7.6.1": {
+ "Matematik|MAT.7.6.1": {
+  "kod": "MAT.7.6.1",
   "ders": "Matematik",
   "sinif": "7",
   "temaNo": "6",
@@ -140,7 +165,8 @@
    ]
   }
  },
- "MAT.8.1.1": {
+ "Matematik|MAT.8.1.1": {
+  "kod": "MAT.8.1.1",
   "ders": "Matematik",
   "sinif": "8",
   "temaNo": "1",
@@ -161,7 +187,8 @@
    ]
   }
  },
- "MAT.8.2.2": {
+ "Matematik|MAT.8.2.2": {
+  "kod": "MAT.8.2.2",
   "ders": "Matematik",
   "sinif": "8",
   "temaNo": "2",
@@ -176,7 +203,8 @@
    ]
   }
  },
- "MAT.8.5.3": {
+ "Matematik|MAT.8.5.3": {
+  "kod": "MAT.8.5.3",
   "ders": "Matematik",
   "sinif": "8",
   "temaNo": "5",
@@ -191,7 +219,8 @@
    ]
   }
  },
- "MAT.8.7.1": {
+ "Matematik|MAT.8.7.1": {
+  "kod": "MAT.8.7.1",
   "ders": "Matematik",
   "sinif": "8",
   "temaNo": "7",
@@ -212,7 +241,8 @@
    ]
   }
  },
- "FB.5.1.1.1": {
+ "Fen Bilimleri|FB.5.1.1.1": {
+  "kod": "FB.5.1.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "1",
@@ -227,7 +257,8 @@
    ]
   }
  },
- "FB.5.2.2.1": {
+ "Fen Bilimleri|FB.5.2.2.1": {
+  "kod": "FB.5.2.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "2",
@@ -242,7 +273,8 @@
    ]
   }
  },
- "FB.5.2.1.2": {
+ "Fen Bilimleri|FB.5.2.1.2": {
+  "kod": "FB.5.2.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "2",
@@ -257,7 +289,8 @@
    ]
   }
  },
- "FB.5.3.1.2": {
+ "Fen Bilimleri|FB.5.3.1.2": {
+  "kod": "FB.5.3.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "3",
@@ -278,7 +311,8 @@
    ]
   }
  },
- "FB.5.3.2.2": {
+ "Fen Bilimleri|FB.5.3.2.2": {
+  "kod": "FB.5.3.2.2",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "3",
@@ -293,7 +327,8 @@
    ]
   }
  },
- "FB.5.3.1.1": {
+ "Fen Bilimleri|FB.5.3.1.1": {
+  "kod": "FB.5.3.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "3",
@@ -308,7 +343,8 @@
    ]
   }
  },
- "FB.5.4.1.1": {
+ "Fen Bilimleri|FB.5.4.1.1": {
+  "kod": "FB.5.4.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "4",
@@ -329,7 +365,8 @@
    ]
   }
  },
- "FB.5.5.4.2": {
+ "Fen Bilimleri|FB.5.5.4.2": {
+  "kod": "FB.5.5.4.2",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "5",
@@ -344,7 +381,8 @@
    ]
   }
  },
- "FB.5.6.1.2": {
+ "Fen Bilimleri|FB.5.6.1.2": {
+  "kod": "FB.5.6.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "6",
@@ -359,7 +397,8 @@
    ]
   }
  },
- "FB.5.7.1.3": {
+ "Fen Bilimleri|FB.5.7.1.3": {
+  "kod": "FB.5.7.1.3",
   "ders": "Fen Bilimleri",
   "sinif": "5",
   "temaNo": "7",
@@ -374,7 +413,8 @@
    ]
   }
  },
- "FB.6.1.1.1": {
+ "Fen Bilimleri|FB.6.1.1.1": {
+  "kod": "FB.6.1.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "6",
   "temaNo": "1",
@@ -389,7 +429,8 @@
    ]
   }
  },
- "FB.6.1.1.2": {
+ "Fen Bilimleri|FB.6.1.1.2": {
+  "kod": "FB.6.1.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "6",
   "temaNo": "1",
@@ -404,7 +445,8 @@
    ]
   }
  },
- "FB.6.3.1.1": {
+ "Fen Bilimleri|FB.6.3.1.1": {
+  "kod": "FB.6.3.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "6",
   "temaNo": "3",
@@ -419,7 +461,8 @@
    ]
   }
  },
- "FB.6.3.1.3": {
+ "Fen Bilimleri|FB.6.3.1.3": {
+  "kod": "FB.6.3.1.3",
   "ders": "Fen Bilimleri",
   "sinif": "6",
   "temaNo": "3",
@@ -434,7 +477,8 @@
    ]
   }
  },
- "FB.6.6.2.1": {
+ "Fen Bilimleri|FB.6.6.2.1": {
+  "kod": "FB.6.6.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "6",
   "temaNo": "6",
@@ -455,7 +499,8 @@
    ]
   }
  },
- "FB.7.1.2.1": {
+ "Fen Bilimleri|FB.7.1.2.1": {
+  "kod": "FB.7.1.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "1",
@@ -470,7 +515,8 @@
    ]
   }
  },
- "FB.7.1.1.2": {
+ "Fen Bilimleri|FB.7.1.1.2": {
+  "kod": "FB.7.1.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "1",
@@ -485,7 +531,8 @@
    ]
   }
  },
- "FB.7.3.2.1": {
+ "Fen Bilimleri|FB.7.3.2.1": {
+  "kod": "FB.7.3.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "3",
@@ -506,7 +553,8 @@
    ]
   }
  },
- "FB.7.3.1.2": {
+ "Fen Bilimleri|FB.7.3.1.2": {
+  "kod": "FB.7.3.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "3",
@@ -521,7 +569,8 @@
    ]
   }
  },
- "FB.7.5.1.2": {
+ "Fen Bilimleri|FB.7.5.1.2": {
+  "kod": "FB.7.5.1.2",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "5",
@@ -542,7 +591,8 @@
    ]
   }
  },
- "FB.7.5.1.4": {
+ "Fen Bilimleri|FB.7.5.1.4": {
+  "kod": "FB.7.5.1.4",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "5",
@@ -557,7 +607,8 @@
    ]
   }
  },
- "FB.7.6.1.1": {
+ "Fen Bilimleri|FB.7.6.1.1": {
+  "kod": "FB.7.6.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "6",
@@ -578,7 +629,8 @@
    ]
   }
  },
- "FB.7.7.2.1": {
+ "Fen Bilimleri|FB.7.7.2.1": {
+  "kod": "FB.7.7.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "7",
   "temaNo": "7",
@@ -599,7 +651,8 @@
    ]
   }
  },
- "FB.8.1.2.1": {
+ "Fen Bilimleri|FB.8.1.2.1": {
+  "kod": "FB.8.1.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "1",
@@ -614,7 +667,8 @@
    ]
   }
  },
- "FB.8.2.1.1": {
+ "Fen Bilimleri|FB.8.2.1.1": {
+  "kod": "FB.8.2.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "2",
@@ -629,7 +683,8 @@
    ]
   }
  },
- "FB.8.3.1.1": {
+ "Fen Bilimleri|FB.8.3.1.1": {
+  "kod": "FB.8.3.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "3",
@@ -644,7 +699,8 @@
    ]
   }
  },
- "FB.8.3.4.1": {
+ "Fen Bilimleri|FB.8.3.4.1": {
+  "kod": "FB.8.3.4.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "3",
@@ -659,7 +715,8 @@
    ]
   }
  },
- "FB.8.5.3.2": {
+ "Fen Bilimleri|FB.8.5.3.2": {
+  "kod": "FB.8.5.3.2",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "5",
@@ -674,7 +731,8 @@
    ]
   }
  },
- "FB.8.5.4.3": {
+ "Fen Bilimleri|FB.8.5.4.3": {
+  "kod": "FB.8.5.4.3",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "5",
@@ -689,7 +747,8 @@
    ]
   }
  },
- "FB.8.6.2.4": {
+ "Fen Bilimleri|FB.8.6.2.4": {
+  "kod": "FB.8.6.2.4",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "6",
@@ -704,7 +763,8 @@
    ]
   }
  },
- "FB.8.6.1.1": {
+ "Fen Bilimleri|FB.8.6.1.1": {
+  "kod": "FB.8.6.1.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "6",
@@ -719,7 +779,8 @@
    ]
   }
  },
- "FB.8.6.1.5": {
+ "Fen Bilimleri|FB.8.6.1.5": {
+  "kod": "FB.8.6.1.5",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "6",
@@ -734,7 +795,8 @@
    ]
   }
  },
- "FB.8.7.2.1": {
+ "Fen Bilimleri|FB.8.7.2.1": {
+  "kod": "FB.8.7.2.1",
   "ders": "Fen Bilimleri",
   "sinif": "8",
   "temaNo": "7",
@@ -749,7 +811,8 @@
    ]
   }
  },
- "DKAB.4.1.4": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.4.1.4": {
+  "kod": "DKAB.4.1.4",
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "4",
   "temaNo": "1",
@@ -764,7 +827,8 @@
    ]
   }
  },
- "DKAB.4.3.3": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.4.3.3": {
+  "kod": "DKAB.4.3.3",
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "4",
   "temaNo": "3",
@@ -779,7 +843,24 @@
    ]
   }
  },
- "DKAB.6.5.1": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.5.3.1": {
+  "kod": "DKAB.5.3.1",
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "5",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim",
+  "statement": "Kur’an-ı Kerim’in iç düzenini çözümleyebilme",
+  "kopru": {
+   "Kur'an-ı Kerim (Seçmeli)": [
+    {
+     "a": "Kur’an-ı Kerim’in iç düzenini çözümleyebilme a) Kur’an-ı Kerim’in iç düzenini inceler.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.6.5.1": {
+  "kod": "DKAB.6.5.1",
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "6",
   "temaNo": "5",
@@ -806,7 +887,8 @@
    ]
   }
  },
- "DKAB.7.4.2": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.7.4.2": {
+  "kod": "DKAB.7.4.2",
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "7",
   "temaNo": "4",
@@ -821,7 +903,8 @@
    ]
   }
  },
- "DKAB.8.1.1": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.8.1.1": {
+  "kod": "DKAB.8.1.1",
   "ders": "Din Kültürü ve Ahlak Bilgisi",
   "sinif": "8",
   "temaNo": "1",
@@ -842,7 +925,24 @@
    ]
   }
  },
- "BTY.6.1.2": {
+ "Din Kültürü ve Ahlak Bilgisi|DKAB.8.4.1": {
+  "kod": "DKAB.8.4.1",
+  "ders": "Din Kültürü ve Ahlak Bilgisi",
+  "sinif": "8",
+  "temaNo": "4",
+  "tema": "Kur’an ve İnsan",
+  "statement": "İnsanın Kur’an-ı Kerim’de anlatılan özelliklerini sentezleyebilme",
+  "kopru": {
+   "Kur'an-ı Kerim (Seçmeli)": [
+    {
+     "a": "İnsanın Kur’an-ı Kerim’de anlatılan özelliklerini sentezleyebilme a) İnsanın Kur’an-ı Kerim’de anlatılan özelliklerini öğretmen rehberliğinde bulur.",
+     "o": "Öğrenme Çıktısı metni"
+    }
+   ]
+  }
+ },
+ "Bilişim Teknolojileri ve Yazılım|BTY.6.1.2": {
+  "kod": "BTY.6.1.2",
   "ders": "Bilişim Teknolojileri ve Yazılım",
   "sinif": "6",
   "temaNo": "1",
@@ -863,7 +963,8 @@
    ]
   }
  },
- "BTY.6.2.5": {
+ "Bilişim Teknolojileri ve Yazılım|BTY.6.2.5": {
+  "kod": "BTY.6.2.5",
   "ders": "Bilişim Teknolojileri ve Yazılım",
   "sinif": "6",
   "temaNo": "2",
@@ -878,7 +979,8 @@
    ]
   }
  },
- "BTY.6.4.1": {
+ "Bilişim Teknolojileri ve Yazılım|BTY.6.4.1": {
+  "kod": "BTY.6.4.1",
   "ders": "Bilişim Teknolojileri ve Yazılım",
   "sinif": "6",
   "temaNo": "4",
@@ -893,7 +995,8 @@
    ]
   }
  },
- "GS.2.5.1": {
+ "Görsel Sanatlar|GS.2.5.1": {
+  "kod": "GS.2.5.1",
   "ders": "Görsel Sanatlar",
   "sinif": "2",
   "temaNo": "5",
@@ -908,7 +1011,8 @@
    ]
   }
  },
- "GS.8.2.2": {
+ "Görsel Sanatlar|GS.8.2.2": {
+  "kod": "GS.8.2.2",
   "ders": "Görsel Sanatlar",
   "sinif": "8",
   "temaNo": "2",
@@ -923,7 +1027,8 @@
    ]
   }
  },
- "GKN.1.1.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.1.2": {
+  "kod": "GKN.1.1.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "1",
@@ -944,7 +1049,8 @@
    ]
   }
  },
- "GKN.1.1.3": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.1.3": {
+  "kod": "GKN.1.1.3",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "1",
@@ -959,7 +1065,8 @@
    ]
   }
  },
- "GKN.1.2.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.2.2": {
+  "kod": "GKN.1.2.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "2",
@@ -974,7 +1081,8 @@
    ]
   }
  },
- "GKN.1.2.1": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.2.1": {
+  "kod": "GKN.1.2.1",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "2",
@@ -989,7 +1097,8 @@
    ]
   }
  },
- "GKN.1.3.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.3.2": {
+  "kod": "GKN.1.3.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "3",
@@ -1016,7 +1125,8 @@
    ]
   }
  },
- "GKN.1.3.1": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.3.1": {
+  "kod": "GKN.1.3.1",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "3",
@@ -1031,7 +1141,8 @@
    ]
   }
  },
- "GKN.1.4.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.1.4.2": {
+  "kod": "GKN.1.4.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 1",
   "temaNo": "4",
@@ -1046,7 +1157,8 @@
    ]
   }
  },
- "GKN.2.1.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.2.1.2": {
+  "kod": "GKN.2.1.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "1",
@@ -1067,7 +1179,8 @@
    ]
   }
  },
- "GKN.2.2.1": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.2.2.1": {
+  "kod": "GKN.2.2.1",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "2",
@@ -1088,7 +1201,8 @@
    ]
   }
  },
- "GKN.2.2.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.2.2.2": {
+  "kod": "GKN.2.2.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "2",
@@ -1109,7 +1223,8 @@
    ]
   }
  },
- "GKN.2.3.2": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.2.3.2": {
+  "kod": "GKN.2.3.2",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "3",
@@ -1124,7 +1239,8 @@
    ]
   }
  },
- "GKN.2.4.1": {
+ "Görgü Kuralları ve Nezaket (Seçmeli)|GKN.2.4.1": {
+  "kod": "GKN.2.4.1",
   "ders": "Görgü Kuralları ve Nezaket (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "4",
@@ -1145,7 +1261,8 @@
    ]
   }
  },
- "YYB.2.2.2": {
+ "Yazarlık ve Yazma Becerileri (Seçmeli)|YYB.2.2.2": {
+  "kod": "YYB.2.2.2",
   "ders": "Yazarlık ve Yazma Becerileri (Seçmeli)",
   "sinif": "Düzey 2",
   "temaNo": "2",
@@ -1155,6 +1272,622 @@
    "Türkçe": [
     {
      "a": "Yazma konusuna uygun olarak Türkçe dersindeki ön bilgilerinden yararlanıp metnin türünü belirlemesi ve türe uygun özgün bir içerik oluşturarak metin yazması istenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.2.4.1": {
+  "kod": "MAT.2.4.1",
+  "ders": "Matematik",
+  "sinif": "2",
+  "temaNo": "4",
+  "tema": "Nesnelerin Geometrisi",
+  "statement": "Kategorik veriye dayalı en çok iki veri grubu ile çalışabilme ve veriye dayalı SÜREÇ BİLEŞENLERİ karar verebilme",
+  "kopru": {
+   "Hayat Bilgisi": [
+    {
+     "a": "Hayat bilgisi dersinin ilgili konularıyla (mevsim vb.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.3.2.5": {
+  "kod": "MAT.3.2.5",
+  "ders": "Matematik",
+  "sinif": "3",
+  "temaNo": "2",
+  "tema": "Sayılar ve Nicelikler",
+  "statement": "Dört işlem gerektiren durumlar için verilen yönergeleri takip ederek yorumlayabilme",
+  "kopru": {
+   "Hayat Bilgisi": [
+    {
+     "a": "Okul dışından, adres tarifi gibi hayat bilgisi dersi ile de bağlantılı adımlar ifade edilerek yönergeleri takip etme ve yorumlama konusunda aşama kaydedilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.4.2.6": {
+  "kod": "MAT.4.2.6",
+  "ders": "Matematik",
+  "sinif": "4",
+  "temaNo": "2",
+  "tema": "Sayılar ve Nicelikler",
+  "statement": "Dört işlem içeren yönergeler oluşturarak süreci yorumlayabilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "tarif etmeleri, fen bilimleri dersinde uygulanmış ya da uygulanabilecek olan deneylerin basamaklarını ifade etmeleri şeklinde etkinliklerle yönerge oluşturma ve süreci yorumlama konusunda aşama kaydedilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Sosyal Bilgiler": [
+    {
+     "a": "Sosyal Bilgiler dersi ile bağlantılı olacak şekilde ev adreslerini yönerge oluşturarak ILK0KUL MATEMATİK DERSİ ÖĞRETİM PROGRAMI tarif etmeleri, fen bilimleri dersinde uygulanmış ya da uygulanabilecek olan deneylerin basamaklarını ifade etmeleri şeklinde etkinliklerle yönerge oluşturma ve süreci yorumlama konusunda aşama kaydedil…",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik|MAT.4.4.2": {
+  "kod": "MAT.4.4.2",
+  "ders": "Matematik",
+  "sinif": "4",
+  "temaNo": "4",
+  "tema": "Nesnelerin Geometrisi",
+  "statement": "Kategorik veriye ve sayma ile elde edilen nicel veriye dayalı en çok iki veri grubu ile çalışabilme ve veriye dayalı karar verebilme",
+  "kopru": {
+   "Beden Eğitimi ve Oyun": [
+    {
+     "a": "Belirlenen bağlam, farklı disiplinlerle (hayat bilgisi, beden eğitimi ve oyun) ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Hayat Bilgisi": [
+    {
+     "a": "Belirlenen bağlam, farklı disiplinlerle (hayat bilgisi, beden eğitimi ve oyun) ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.5.1.1": {
+  "kod": "KK.5.1.1",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "5",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "statement": "Kur’an-ı Kerim’i öğrenmenin önemini ve okumanın adabını çözümleyebilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Kur’an okumanın önemi işlenirken Türkçe dersindeki okuduğunu anlama becerilerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.5.1.5": {
+  "kod": "KK.5.1.5",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "5",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "statement": "Sübhaneke duası ve Rabbena dualarının anlamlarını yorumlayabilme",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Bu duaların içerdiği mesajlar ele alınırken din kültürü ve ahlak bilgisi disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.5.2.3": {
+  "kod": "KK.5.2.3",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "5",
+  "temaNo": "2",
+  "tema": "Kur’an-ı Kerim’i Okumaya Giriş",
+  "statement": "Tahiyyat duasının anlamını yorumlayabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu süreçte din kültürü ve ahlak bilgisi ile Türkçe disiplinlerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Bu süreçte din kültürü ve ahlak bilgisi ile Türkçe disiplinlerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.5.3.4": {
+  "kod": "KK.5.3.4",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "5",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim’i Öğreniyorum",
+  "statement": "Fatiha suresinin anlamında Kur’an-ı Kerim mealine başvurabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu aşamada Türkçe disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.6.1.4": {
+  "kod": "KK.6.1.4",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "6",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "statement": "Salli ve Barik dualarının anlamlarını yorumlayabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu süreçte din kültürü ve ahlak bilgisi ile Türkçe disiplinlerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ],
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Bu süreçte din kültürü ve ahlak bilgisi ile Türkçe disiplinlerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.6.2.3": {
+  "kod": "KK.6.2.3",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "6",
+  "temaNo": "2",
+  "tema": "Kur’an-ı Kerim’i Okumaya Giriş",
+  "statement": "Hz. Yunus’un imtihanı kıssasını çözümleyebilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu süreçte Türkçe dersinde kazandırılması hedeflenen okuduğunu anlama ve düşünceyi ifade etme becerilerinden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.6.4.4": {
+  "kod": "KK.6.4.4",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "6",
+  "temaNo": "4",
+  "tema": "Kur’an-ı Kerim’i Okuyorum",
+  "statement": "Nâs suresinin anlamında Kur’an-ı Kerim mealine başvurabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu süreçte öğrencilerin okuduğunu anlama ve düşünceyi ifade etme becerileri desteklenerek Türkçe disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.7.1.5": {
+  "kod": "KK.7.1.5",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "7",
+  "temaNo": "1",
+  "tema": "Kur’an-ı Kerim’i Tanıyorum",
+  "statement": "Kunut dualarının anlamlarını yorumlayabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Duanın anlamı yorumlanırken öğrencilerin okuduğunu anlama, yorumlama ve düşünceyi ifade etme becerileri desteklenerek Türkçe disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.7.2.2": {
+  "kod": "KK.7.2.2",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "7",
+  "temaNo": "2",
+  "tema": "Kur’an-ı Kerim’i Okumaya Giriş",
+  "statement": "Sakin mimi sınıflandırabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Konunun açıklanması ve tecvitlerin sınıflandırılmasında öğrencilerin anlama ve ifade etme becerileri desteklenerek Türkçe disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.7.3.3": {
+  "kod": "KK.7.3.3",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "7",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim’i Öğreniyorum",
+  "statement": "Nahl suresinin 68-69. ayetleriyle ilgili bilgi toplayabilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Bu süreçte fen bilimleri disiplininden yararlanılır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.8.2.3": {
+  "kod": "KK.8.2.3",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "8",
+  "temaNo": "2",
+  "tema": "Kur’an-ı Kerim’i Okumaya Giriş",
+  "statement": "Ashabıkehf kıssasını çözümleyebilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Bu süreçte Türkçe disiplininden yararlanılarak öğrencilerin okuduğunu anlama ve düşüncelerini ifade etme becerileri geliştirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Kur'an-ı Kerim (Seçmeli)|KK.8.3.4": {
+  "kod": "KK.8.3.4",
+  "ders": "Kur'an-ı Kerim (Seçmeli)",
+  "sinif": "8",
+  "temaNo": "3",
+  "tema": "Kur’an-ı Kerim’i Öğreniyorum",
+  "statement": "Maun suresinin anlamında Kur’an-ı Kerim mealine başvurabilme",
+  "kopru": {
+   "Türkçe": [
+    {
+     "a": "Türkçe disiplininden yararlanılarak öğrencilerin okuduğunu anlama ve ve sunum becerilerini geliştirmeleri sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Peygamberimizin Hayatı (Seçmeli)|PH.6.3.3": {
+  "kod": "PH.6.3.3",
+  "ders": "Peygamberimizin Hayatı (Seçmeli)",
+  "sinif": "6",
+  "temaNo": "3",
+  "tema": "Rehberim Peygamberim",
+  "statement": "Yüce Allah’a şükretmenin Peygamberimizin hayatındaki yerini yorumlayabilme",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Peygamber’in Allah’a (cc) bağlılığı, namazla ilgili tutumları ve şükretmesine dair olay ve durumların aktarılmasında konu; din kültürü ve ahlak bilgisi dersindeki “Namazın İnsana Kazandırdıkları” konusuyla ilişkilendirilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Ahlak ve Vatandaşlık Eğitimi (Seçmeli)|AVE.1.4.1": {
+  "kod": "AVE.1.4.1",
+  "ders": "Ahlak ve Vatandaşlık Eğitimi (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "4",
+  "tema": "Vatandaşlık Bilinci ve Toplumsal Sorumluluk",
+  "statement": "Vatandaşlığın temel kavramları ile ilgili bilgi toplayabilme",
+  "kopru": {
+   "İnsan Hakları, Vatandaşlık ve Demokrasi": [
+    {
+     "a": ") sunularak, öğrencilerden bu durumların hangi vatandaşlık kavramlarıyla ilişkili olduğunu insan hakları, vatandaşlık ve demokrasi dersinin hak, özgürlük ve sorumluluk konusundan edindikleri bilgilerden de yararlanarak belirlemeleri istenir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Ahlak ve Vatandaşlık Eğitimi (Seçmeli)|AVE.2.4.2": {
+  "kod": "AVE.2.4.2",
+  "ders": "Ahlak ve Vatandaşlık Eğitimi (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "4",
+  "tema": "Vatandaşlık Bilinci ve Toplumsal Sorumluluk",
+  "statement": "Vatandaşlıkla ilgili güncel konulara ilişkin kanıta dayalı ürün oluşturabilme",
+  "kopru": {
+   "İnsan Hakları, Vatandaşlık ve Demokrasi": [
+    {
+     "a": "Örnekler üzerinden bu konulara ilişkin ülkemizde ve dünyada meydana gelen olaylar ile yürütülen çalışmalar, insan hakları ve demokrasi dersiyle ilişkilendirilerek sınıfça değerlendirilir (E3.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Düşünme Eğitimi (Seçmeli)|DE.1.3.1": {
+  "kod": "DE.1.3.1",
+  "ders": "Düşünme Eğitimi (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "3",
+  "tema": "Veri, Malumat ve Bilgi",
+  "statement": "Veri-malumat-bilgi ayrımlarını yorumlayabilme SÜREÇ BİLEŞENLERİ a) Veri-malumat-bilgi ayrımını inceler.",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Matematik dersi \"İstatistiksel Araştırma Süreci\" teması ile bağlantı kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Düşünme Eğitimi (Seçmeli)|DE.1.4.1": {
+  "kod": "DE.1.4.1",
+  "ders": "Düşünme Eğitimi (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "4",
+  "tema": "Yaratıcı Düşünme ve Karar Verme",
+  "statement": "Günlük hayatta karşılaşılan problemleri çözebilme SÜREÇ BİLEŞENLERİ a) Günlük hayatta karşılaşılan sorunlara yönelik bir problemi yapılandırır.",
+  "kopru": {
+   "Teknoloji ve Tasarım": [
+    {
+     "a": "Teknoloji ve tasarım dersinin \"Temel Tasarım\" ünitesi ile bağlantı kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Düşünme Eğitimi (Seçmeli)|DE.2.4.1": {
+  "kod": "DE.2.4.1",
+  "ders": "Düşünme Eğitimi (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "4",
+  "tema": "Yaratıcı Düşünme ve Karar Verme",
+  "statement": "Yaratıcı düşünmenin bireyin yaşamına etkisini yorumlayabilme SÜREÇ BİLEŞENLERİ a) Yaratıcı düşünmenin bireyin yaşamına etkisini inceler. b)Yaratıcı düşünmenin bireyin yaşamına etkisini bağlamdan kopmadan dönüştürür.",
+  "kopru": {
+   "Teknoloji ve Tasarım": [
+    {
+     "a": "Teknoloji ve tasarım dersinin \"Temel Tasarım\" ünitesi ile ilişki kurulur.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Geleneksel Sanatlar (Seçmeli)|GS.1.2.2": {
+  "kod": "GS.1.2.2",
+  "ders": "Geleneksel Sanatlar (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Ebru Sanatı",
+  "statement": "Klasik ebru tekniklerini uygulayarak ürün oluşturabilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Öğrencilere “Ebru uygulamalarında boya damlaları çoğunlukla kıvamlı suyun yüzeyinde yayılırken bazı durumlarda neden dibe çöker?” sorusu yöneltilir ve fen bilimleri dersiyle ilişki kurularak öğrencilerin yoğunluk kavramı hakkında çıkarım yapmaları sağlanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Geleneksel Sanatlar (Seçmeli)|GS.2.1.1": {
+  "kod": "GS.2.1.1",
+  "ders": "Geleneksel Sanatlar (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "1",
+  "tema": "Hüsnühat Sanatı",
+  "statement": "Hüsnühat sanatının tarihsel süreci ile ilgili bilgi toplayabilme",
+  "kopru": {
+   "Din Kültürü ve Ahlak Bilgisi": [
+    {
+     "a": "Hat sanatının Kur’an-ı Kerim, kitabeler ve yazma eserler aracılığıyla kültürel mirasın kuşaktan kuşağa aktarılmasındaki rolü üzerinde durularak din kültürü ve ahlak bilgisi ile sosyal bilgiler dersleriyle ilişki kurulabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.1.2": {
+  "kod": "MU.1.1.2",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "1",
+  "tema": "Günlük Hayatta Matematik",
+  "statement": "Gerçek yaşamda doğal sayılarla dört işlem yapmayı gerektiren durumlarla ilgili problemleri çözebilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Çevre bilincine ve yeşil vatana yönelik bu tartışmalar fen bilimleri dersi ile ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.1.3": {
+  "kod": "MU.1.1.3",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "1",
+  "tema": "Günlük Hayatta Matematik",
+  "statement": "Yemek hazırlama ya da alışveriş gibi günlük eylemlerin matematikle ilişkisini yorumlayabilme",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "İhtiyaçlar konusu sosyal bilgiler dersiyle ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.2.2": {
+  "kod": "MU.1.2.2",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Sağlık ve Sporda Matematik",
+  "statement": "Sağlık ve spor alanlarında kullanılan uzunluk, zaman ve kütle ölçme birimleri ile ilgili problemleri çözebilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Beslenme ve sağlık konulu bu tür problemler, fen bilimleri dersiyle ilişkilendirilebilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.2.3": {
+  "kod": "MU.1.2.3",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "2",
+  "tema": "Sağlık ve Sporda Matematik",
+  "statement": "Sağlıklı yaşam ve sporla ilişkili konularda veri ile çalışma ve veriye dayalı karar verebilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Tasarım görevi sürecinde görsel sanatlar dersi ile bağlantı kurulabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.3.4": {
+  "kod": "MU.1.3.4",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "3",
+  "tema": "Sanatta Matematik",
+  "statement": "Geometrik şekillere dayalı deneyimlerini resim, heykel, dokuma ve dijital sanatlar gibi tasarımlara yansıtabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "Bu tasarımlar görsel sanatlar dersi ile ilişkili olarak okul ortamında sergilenebilir (SDB2.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.4.2": {
+  "kod": "MU.1.4.2",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "4",
+  "tema": "Doğada Matematik",
+  "statement": "Kesişen iki doğru ile oluşan açı modellerini doğadaki örnekler üzerinden yorumlayabilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Atık malzemeler kullanılmasıyla sürdürülebilir tüketim ve doğayı koruma konusuna vurgu yapılarak fen bilimleri dersi ile bağlantı kurulur (OB8, D17.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.5.1": {
+  "kod": "MU.1.5.1",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "5",
+  "tema": "Meslekler ve Matematik",
+  "statement": "Farklı medeniyetlerin sayı sistemlerine olan katkılarıyla ilgili bilgi toplayaSÜREÇ BİLEŞENLERİ bilme",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "Tartışma esnasında sosyal bilgiler dersiyle ilişkili olarak Roma, Hint-Arap, Mısır, Maya, Babil vb.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.1.5.2": {
+  "kod": "MU.1.5.2",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 1",
+  "temaNo": "5",
+  "tema": "Meslekler ve Matematik",
+  "statement": "Meslek gruplarında kesirlerin farklı gösterimleri (tam sayılı, ondalık, yüzde) ve ölçme türlerinin kullanımları ile ilgili bilgi toplayabilme",
+  "kopru": {
+   "Görsel Sanatlar": [
+    {
+     "a": "tasarımı noktasında görsel sanatlar dersinden faydalanılabilir (OB4).",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.2.2.2": {
+  "kod": "MU.2.2.2",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "2",
+  "tema": "Sağlık ve Sporda Bilim",
+  "statement": "Sağlıklı yaşam ile ilgili bilgilerini matematiksel veriler ve temsillerden yararlanarak günlük alışkanlıklarına yansıtabilme",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Ardından fen bilimleri dersiyle ilişki kurularak sağlıklı yaşam için bu kavramların önemi kısaca açıklanır.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.2.2.3": {
+  "kod": "MU.2.2.3",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "2",
+  "tema": "Sağlık ve Sporda Bilim",
+  "statement": "Sağlık ve spor ile ilgili günlük hayattan yüzde problemlerine yönelik problemleri çözebilme",
+  "kopru": {
+   "Beden Eğitimi ve Oyun": [
+    {
+     "a": "Bu problem durumları aracılığıyla beden eğitimi ve spor dersi ile ilişki kurulabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.2.4.1": {
+  "kod": "MU.2.4.1",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "4",
+  "tema": "Doğada Bilim",
+  "statement": "Doğadaki örüntüleri gözlemleyebilme VE SÜREÇ BİLEŞENLERİ a) Doğadaki örnekleri incelerken, örüntü özelliğini ölçüt olarak belirler.",
+  "kopru": {
+   "Fen Bilimleri": [
+    {
+     "a": "Doğadaki örüntü örneklerini gözlemlerken doğaya zarar vermemeleri gerektiği vurgulanarak fen bilimleri ve çevre eğitimi ve iklim değişikliği dersleri ile ilişki kurulabilir (D5.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Matematik ve Bilim Uygulamaları (Seçmeli)|MU.2.5.3": {
+  "kod": "MU.2.5.3",
+  "ders": "Matematik ve Bilim Uygulamaları (Seçmeli)",
+  "sinif": "Düzey 2",
+  "temaNo": "5",
+  "tema": "Mesleklerde Bilim",
+  "statement": "Veri toplama, analiz etme ve sonuç çıkarma ile uğraşan meslek grupları ile ilgili bilgi toplayabilme",
+  "kopru": {
+   "Sosyal Bilgiler": [
+    {
+     "a": "Örneğin istatistikçilerin anketler, gözlemler veya deneyler yoluyla topladıkları verileri analiz ederek toplumun ihtiyaçlarını, eğilimlerini ya da sorunlarını ortaya koydukları tartışılarak sosyal bilgiler dersiyle bağlantı kurulabilir.",
+     "o": "Öğrenme-Öğretme Uygulamaları"
+    }
+   ]
+  }
+ },
+ "Proje Tasarımı ve Uygulamaları (Seçmeli)|PTU.2.1": {
+  "kod": "PTU.2.1",
+  "ders": "Proje Tasarımı ve Uygulamaları (Seçmeli)",
+  "sinif": "—",
+  "temaNo": "2",
+  "tema": "Proje Türleri",
+  "statement": "Proje türleri hakkında bilgi toplayabilme",
+  "kopru": {
+   "Matematik": [
+    {
+     "a": "Bu bağlamda öğrencilerin Harezmi Eğitim Modeli kapsamında yer alan fen, teknoloji, mühendislik, sanat ve matematik disiplinlerinin bir arada kullanıldığı STEAM yaklaşımı ile uygulamalı proje, toplumsal fayda ve sanatsal projeler hakkında bilgi toplamaları sağlanır.",
      "o": "Öğrenme-Öğretme Uygulamaları"
     }
    ]

@@ -28,6 +28,33 @@ PROGRAMLAR = [
  ('Secmeli_Masal_ve_Destanlarimiz_Ogretim_Programi', 'Masal ve Destanlarımız (Seçmeli)', 'MD', 'dtn'),
  ('Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi', 'Yazarlık ve Yazma Becerileri (Seçmeli)', 'YYB', 'dtn'),
  ('Secmeli_Okuma_Becerileri_Ogretim_Programi', 'Okuma Becerileri (Seçmeli)', 'OB', 'tn'),
+ # --- ilkokul (Eylül 2026 genişlemesi). Türkçe ve Matematik ortaokuldaki adıyla
+ # birleşir: Fen 3-8 ve Görsel Sanatlar 1-8 nasıl tek dersse bunlar da öyle.
+ ('Ilkokul_Turkce_1-4_Ogretim_Programi', 'Türkçe', 'T', 'turkce'),
+ ('Ilkokul_Matematik_1-4_Ogretim_Programi', 'Matematik', 'MAT', 'gtn'),
+ ('Hayat_Bilgisi_Ogretim_Programi', 'Hayat Bilgisi', 'HB', 'gtn'),
+ ('Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi',
+  'İnsan Hakları, Vatandaşlık ve Demokrasi', 'İHVD', 'gtn'),
+ ('Beden_Egitimi_ve_Oyun_Ogretim_Programi', 'Beden Eğitimi ve Oyun', 'BEO', 'gtn'),
+ # --- site tarama genişlemesi (Eylül 2026): 17 seçmeli + Trafik Güvenliği
+ ('Trafik_Guvenligi_Ogretim_Programi', 'Trafik Güvenliği', 'TG', 'gtn'),
+ ('Secmeli_Kurani_Kerim_Ogretim_Programi', "Kur'an-ı Kerim (Seçmeli)", 'KK', 'gtn'),
+ ('Secmeli_Peygamberimizin_Hayati_Ogretim_Programi', 'Peygamberimizin Hayatı (Seçmeli)', 'PH', 'gtn'),
+ ('Secmeli_Afet_Bilinci_Ogretim_Programi', 'Afet Bilinci (Seçmeli)', 'AB', 'dtn'),
+ ('Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi', 'Ahlak ve Vatandaşlık Eğitimi (Seçmeli)', 'AVE', 'dtn'),
+ ('Secmeli_Dijital_Sanatlar_Ogretim_Programi', 'Dijital Sanatlar (Seçmeli)', 'DS', 'dtn'),
+ ('Secmeli_Dusunme_Egitimi_Ogretim_Programi', 'Düşünme Eğitimi (Seçmeli)', 'DE', 'dtn'),
+ ('Secmeli_Geleneksel_Sanatlar_Ogretim_Programi', 'Geleneksel Sanatlar (Seçmeli)', 'GS', 'dtn'),
+ ('Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi', 'Matematik ve Bilim Uygulamaları (Seçmeli)', 'MU', 'dtn'),
+ ('Secmeli_Oyun_Drama_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Drama (Seçmeli)', 'OOED', 'dtn'),
+ ('Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Zekâ Oyunları (Seçmeli)', 'OOEZO', 'dtn'),
+ ('Secmeli_Robotik_Kodlama_Ogretim_Programi', 'Robotik Kodlama (Seçmeli)', 'RK', 'dtn0'),
+ ('Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi', 'Yapay Zekâ Uygulamaları (Seçmeli)', 'YZU', 'dtn0'),
+ ('Secmeli_Oyun_Satranc_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Satranç (Seçmeli)', 'OOEST', 'tn'),
+ ('Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Geleneksel Oyunlar (Seçmeli)', 'OOEGO', 'tn'),
+ ('Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi', 'Proje Tasarımı ve Uygulamaları (Seçmeli)', 'PTU', 'tn'),
+ ('Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi', 'Spor ve Fiziki Etkinlikler (Seçmeli)', 'SFE', 'tn'),
+ ('Secmeli_Halk_Oyunlari_Ogretim_Programi', 'Halk Oyunları (Seçmeli)', 'HO', 'tn'),
 ]
 
 TR_ALAN = {'D': 'Dinleme/İzleme', 'O': 'Okuma', 'K': 'Konuşma', 'Y': 'Yazma'}
@@ -74,9 +101,15 @@ def parse_program(stem, ders, onek, bicim):
     if bicim == 'turkce':
         code_re = re.compile(r'\b(T\.[DOKY]\.[1-8]\.\d{1,2})\.(?!\d)')
     elif bicim == 'gttn':
-        code_re = re.compile(r'\b(' + onek + r'\.\d\.\d{1,2}\.\d{1,2}\.\d{1,2})\.(?!\d)')
+        # Fen 3-4. sınıfta dört parçalı kod kullanır (FB.3.1.1), 5-8'de beş parçalı
+        # (FB.5.1.1.1). Yalnız beş parçayı arayan eski desen 3-4'ü sessizce düşürüyordu.
+        code_re = re.compile(r'\b(' + onek + r'\.\d\.\d{1,2}\.\d{1,2}(?:\.\d{1,2})?)\.(?!\d)')
     elif bicim == 'tn':
         code_re = re.compile(r'\b(' + onek + r'\.\d{1,2}\.\d{1,2})\.(?!\d)')
+    elif bicim == 'dtn0':
+        # Robotik Kodlama ve Yapay Zekâ belgeleri kodu önekten sonra noktasız yazar
+        # (RK1.1.1, YZU2.3.2); ara sıra noktalı biçim de geçer.
+        code_re = re.compile(r'\b(' + onek + r'\.?\d\.\d{1,2}\.\d{1,2})\.?(?!\d)')
     else:
         code_re = re.compile(r'\b(' + onek + r'\.\d\.\d{1,2}\.\d{1,2})\.(?!\d)')
 
@@ -87,6 +120,8 @@ def parse_program(stem, ders, onek, bicim):
         m = re.match(r'^\s*(\d)\.\s*SINIF\b', ln)
         if m: sinif_ctx = m.group(1)
         m = re.match(r'^\s*DÜZEY[ -]*(I{1,3})\b', ln)
+        if m: sinif_ctx = str(len(m.group(1)))
+        m = re.match(r'^\s*(I{1,3})\.\s*DÜZEY\b', ln)   # "I. DÜZEY" biçimi (2026 seçmelileri)
         if m: sinif_ctx = str(len(m.group(1)))
         m = re.match(r'^\s*(\d{1,2})\.\s*(?:TEMA|ÜNİTE|ÖĞRENME ALANI):?\s*(.{3,80})$', ln)
         if m:
@@ -107,8 +142,26 @@ def parse_program(stem, ders, onek, bicim):
         cur['statement'] = temiz(cur['statement'])[:600]
         cur['sb'] = [temiz(x)[:600] for x in cur['sb'] if temiz(x)]
         eski = adaylar.get(code)
-        puan = (len(cur['sb']), len(cur['statement']))
-        if not eski or puan > (len(eski['sb']), len(eski['statement'])):
+        # bazı PDF sayfalarında metin katmanı çift basılmış: "Trafik Trafikile ile…".
+        # bitişik yinelenen parçalar bozukluk sayılır; temiz aday her zaman önce gelir.
+        duz = cur['statement'].replace(' ', '')
+        bozuk = 1 if re.search(r'(.{4,})\1', duz) else 0
+        # TYMM çıktı ifadeleri hemen her zaman "-abilme/-ebilme" ile biter; iki sütunlu
+        # sayfadan yan sütun metni karışan adaylar bu yüzden sondan tanınır.
+        bitis = 1 if re.search(r'bilme(?:si|leri)?\s*$', cur['statement'].rstrip('. ')) else 0
+        puan = (1 - bozuk, bitis, len(cur['sb']), len(cur['statement']))
+        if eski:
+            eski_duz = eski['statement'].replace(' ', '')
+            eski_puan = (1 - (1 if re.search(r'(.{4,})\1', eski_duz) else 0),
+                         1 if re.search(r'bilme(?:si|leri)?\s*$', eski['statement'].rstrip('. ')) else 0,
+                         len(eski['sb']), len(eski['statement']))
+        # iki aday birbirini tamamlayabilir: temiz ifadeli ama bileşensiz aday kazandığında
+        # yenilen adayın süreç bileşenlerini yanına al (ifade ayrı sayfada tekrar basılıyor)
+        if eski and not cur['sb'] and eski['sb']:
+            cur = dict(cur, sb=eski['sb'])
+        elif eski and cur['sb'] and not eski['sb']:
+            adaylar[code] = eski = dict(eski, sb=cur['sb'])
+        if not eski or puan > eski_puan:
             adaylar[code] = cur
         cur = None
 
@@ -125,7 +178,13 @@ def parse_program(stem, ders, onek, bicim):
                 tumkod = re.findall(r'T\.[DOKY]\.[1-8]\.\d{1,2}', ln)
                 chain = list(dict.fromkeys(tumkod))
                 rest = re.sub(r'^[\s/.]*(T\.[DOKY]\.[1-8]\.\d{1,2}[\s/.]*)*', '', ln[m.end():]).strip()
-            cur = {'code': m.group(1), 'chain': chain, 'statement': rest, 'sb': []}
+            kod = m.group(1)
+            if bicim == 'dtn0' and not re.match(r'^[A-ZÇĞİÖŞÜ]+\.', kod):
+                # RK2.4.2 → RK.2.4.2: aday anahtarı da kanonik olsun, yoksa aynı
+                # çıktı iki yazımdan iki kayıt üretir
+                km = re.match(r'([A-ZÇĞİÖŞÜ]+)(\d.*)', kod)
+                kod = km.group(1) + '.' + km.group(2)
+            cur = {'code': kod, 'chain': chain, 'statement': rest, 'sb': []}
             continue
         if cur is None:
             continue
@@ -181,8 +240,17 @@ def parse_program(stem, ders, onek, bicim):
             g, tema, tno = p[2], TR_ALAN.get(p[1], p[1]), p[3]
             temaNo = p[1]
         elif bicim == 'gttn':
-            g, temaNo, tno = p[1], p[2], p[4]
+            g, temaNo = p[1], p[2]
+            tno = p[4] if len(p) > 4 else p[3]
             tema = tema_ad.get((g, temaNo)) or tema_ad.get(('*', temaNo)) or f'Tema {temaNo}'
+        elif bicim == 'dtn0':
+            # noktasız yazımı kanonik noktalı koda çevir (RK1.1.1 → RK.1.1.1)
+            if len(p) == 3:                       # ['RK1','1','1']
+                onk = re.match(r'([A-ZÇĞİÖŞÜ]+)(\d)', p[0])
+                code = f'{onk.group(1)}.{onk.group(2)}.{p[1]}.{p[2]}'
+                p = code.split('.')
+            g, temaNo, tno = f'Düzey {p[1]}', p[2], p[3]
+            tema = tema_ad.get((p[1], temaNo)) or tema_ad.get(('*', temaNo)) or f'Tema {temaNo}'
         elif bicim == 'tn':
             g, temaNo, tno = '—', p[1], p[2]
             tema = tema_ad.get(('1', temaNo)) or tema_ad.get(('*', temaNo)) or f'Tema {temaNo}'
@@ -199,6 +267,16 @@ def parse_program(stem, ders, onek, bicim):
         sonuc.append(kayit)
     return sonuc
 
+def ikileme_coz(m):
+    """Türkçe programında zincirli kod satırları (T.O.5.1 / T.O.6.1 / …) ifadeyi
+    sınıf sütunu başına tekrarlıyor; ayrıştırma bunları uç uca ekleyince
+    "X X" biçiminde ikilenmiş 88 ifade kalıyordu. Tam ikilenmeyi tek kopyaya indir."""
+    m = m.strip()
+    n = len(m)
+    if n >= 8 and n % 2 == 1 and m[n // 2] == ' ' and m[:n // 2] == m[n // 2 + 1:]:
+        return m[:n // 2]
+    return m
+
 hepsi = []
 for stem, ders, onek, bicim in PROGRAMLAR:
     r = parse_program(stem, ders, onek, bicim)
@@ -212,6 +290,8 @@ def anahtar(c):
         except: return 0
     return (c['ders'], num(c['sinif']), num(c['temaNo']), num(c['code'].split('.')[-1]))
 hepsi.sort(key=anahtar)
+for k in hepsi:
+    k['statement'] = ikileme_coz(k['statement'])
 
 json.dump(hepsi, open(os.path.join(VERI, 'ogrenme-ciktilari.json'), 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)

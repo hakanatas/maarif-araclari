@@ -1,224 +1,251 @@
 {
- "tarih": "2026-08-26",
+ "tarih": "2026-09-05",
  "kaynaklar": {
+  "Beden_Egitimi_ve_Oyun_Ogretim_Programi": {
+   "yol": "kaynak/metin/Beden_Egitimi_ve_Oyun_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/beden-egitimi-ve-oyun-programi.pdf",
+   "ozet": "23612da69600e402",
+   "boyut": 367778
+  },
   "Beden_Egitimi_ve_Spor_Ogretim_Programi": {
    "yol": "kaynak/metin/Beden_Egitimi_ve_Spor_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/beden-egitimi-ve-spor-tegm.pdf",
    "ozet": "5f0c5cf8f46606ba",
-   "boyut": 287948,
-   "uzak": {
-    "content-length": "2335844",
-    "last-modified": "Wed, 10 Sep 2025 08:01:01 GMT",
-    "etag": "\"1dc22290c71f8e4\""
-   }
+   "boyut": 287948
   },
   "Bilisim_Teknolojileri_ve_Yazilim_Ogretim_Programi": {
    "yol": "kaynak/metin/Bilisim_Teknolojileri_ve_Yazilim_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/bilisim-teknolojileri-ve-yazilim-tegm.pdf",
    "ozet": "2c734a3d8be8acce",
-   "boyut": 394391,
-   "uzak": {
-    "content-length": "2728893",
-    "last-modified": "Fri, 12 Sep 2025 08:35:35 GMT",
-    "etag": "\"1dc23c03570863d\""
-   }
+   "boyut": 394391
   },
   "Coklu_Yabanci_Dil_Modeli_Almanca": {
    "yol": "kaynak/metin/Coklu_Yabanci_Dil_Modeli_Almanca.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/almanca-tegm.pdf",
    "ozet": "e297117ef4154074",
-   "boyut": 1108118,
-   "uzak": {
-    "content-length": "4448112",
-    "last-modified": "Fri, 12 Sep 2025 08:35:38 GMT",
-    "etag": "\"1dc23c037613670\""
-   }
+   "boyut": 1108118
   },
   "Coklu_Yabanci_Dil_Modeli_Ingilizce": {
    "yol": "kaynak/metin/Coklu_Yabanci_Dil_Modeli_Ingilizce.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/coklu-yabanci-dil-egitim-modeli-ingilizce.pdf",
    "ozet": "e41b846408ffd047",
-   "boyut": 3437339,
-   "uzak": {
-    "content-length": "8757676",
-    "last-modified": "Fri, 12 Sep 2025 09:17:25 GMT",
-    "etag": "\"1dc23c60de9612c\""
-   }
+   "boyut": 3437339
   },
   "Din_Kulturu_ve_Ahlak_Bilgisi_4-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Din_Kulturu_ve_Ahlak_Bilgisi_4-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programdin45678Onayli.pdf",
    "ozet": "0fca4a0c780a31ef",
-   "boyut": 289949,
-   "uzak": {
-    "content-length": "2630532",
-    "last-modified": "Thu, 27 Jun 2024 20:03:09 GMT",
-    "etag": "\"1dac8cd08385f04\""
-   }
+   "boyut": 289949
   },
   "Fen_Bilimleri_3-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Fen_Bilimleri_3-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programfen345678Onayli.pdf",
    "ozet": "e456528f6ef2d264",
-   "boyut": 660596,
-   "uzak": {
-    "content-length": "3753707",
-    "last-modified": "Thu, 27 Jun 2024 20:03:32 GMT",
-    "etag": "\"1dac8cd15ff44eb\""
-   }
+   "boyut": 660596
   },
   "Gorsel_Sanatlar_Ogretim_Programi": {
    "yol": "kaynak/metin/Gorsel_Sanatlar_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/gorsel-sanatlar-ogretim-programi-temel-egitim.pdf",
    "ozet": "d478fdd47d7202bb",
-   "boyut": 576016,
-   "uzak": {
-    "content-length": "4213559",
-    "last-modified": "Sat, 18 Oct 2025 04:23:59 GMT",
-    "etag": "\"1dc3fe7060d12b7\""
-   }
+   "boyut": 576016
+  },
+  "Hayat_Bilgisi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Hayat_Bilgisi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/hayat-bilgisi-dersi_20260902_111246_099.pdf",
+   "ozet": "3be4d41f989f7a15",
+   "boyut": 308924
+  },
+  "Ilkokul_Matematik_1-4_Ogretim_Programi": {
+   "yol": "kaynak/metin/Ilkokul_Matematik_1-4_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/ilkokul-matematik-dersi_20260902_111356_122.pdf",
+   "ozet": "52aaffde5dd15cc4",
+   "boyut": 713842
+  },
+  "Ilkokul_Turkce_1-4_Ogretim_Programi": {
+   "yol": "kaynak/metin/Ilkokul_Turkce_1-4_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/ilkokul-turkce-dersi_20260902_111433_940.pdf",
+   "ozet": "82f5f67d9dc8954c",
+   "boyut": 823471
   },
   "Ingilizce_2-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Ingilizce_2-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/ingilizce-dersi-2-8.pdf",
    "ozet": "b999a27dbe8eac56",
-   "boyut": 4041911,
-   "uzak": {
-    "content-length": "12114454",
-    "last-modified": "Fri, 12 Sep 2025 09:17:30 GMT",
-    "etag": "\"1dc23c610df6b16\""
-   }
+   "boyut": 4041911
+  },
+  "Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/2024programvat4Onayli.pdf",
+   "ozet": "ca31a7963f5090f7",
+   "boyut": 96144
   },
   "Matematik_5-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Matematik_5-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programmat5678Onayli.pdf",
    "ozet": "50392e09079c0e00",
-   "boyut": 703336,
-   "uzak": {
-    "content-length": "3420179",
-    "last-modified": "Thu, 27 Jun 2024 20:04:31 GMT",
-    "etag": "\"1dac8cd38c48193\""
-   }
+   "boyut": 703336
   },
   "Muzik_Ogretim_Programi": {
    "yol": "kaynak/metin/Muzik_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/muzik-dersi-programi-tegm.pdf",
    "ozet": "8b95b0dfde3d2e6d",
-   "boyut": 336145,
-   "uzak": {
-    "content-length": "2732380",
-    "last-modified": "Tue, 09 Sep 2025 04:22:20 GMT",
-    "etag": "\"1dc21415507575c\""
-   }
+   "boyut": 336145
+  },
+  "Secmeli_Afet_Bilinci_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Afet_Bilinci_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/afet-bilinci-dersi_20260819_065745_171.pdf",
+   "ozet": "200d9aa2470cfd3e",
+   "boyut": 185517
+  },
+  "Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/ahlak-ve-vatandaslik-egitimi-dersi_20260819_070330_389.pdf",
+   "ozet": "e742ee580d137cf1",
+   "boyut": 179747
+  },
+  "Secmeli_Dijital_Sanatlar_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Dijital_Sanatlar_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/dijital-sanatlar-dersi_20260819_070938_522.pdf",
+   "ozet": "4f5bfa95c3db9a4f",
+   "boyut": 128581
+  },
+  "Secmeli_Dusunme_Egitimi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Dusunme_Egitimi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/dusunme-egitimi-dersi_20260819_071101_966.pdf",
+   "ozet": "33ba28d98fca6acc",
+   "boyut": 168413
+  },
+  "Secmeli_Geleneksel_Sanatlar_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Geleneksel_Sanatlar_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/geleneksel-sanatlar-dersi_20260819_071232_389.pdf",
+   "ozet": "2ccd4f6cd8ce2260",
+   "boyut": 196078
   },
   "Secmeli_Gorgu_Kurallari_ve_Nezaket_Ogretim_Programi": {
    "yol": "kaynak/metin/Secmeli_Gorgu_Kurallari_ve_Nezaket_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/gorgu-kurallari-ve-nezaket-dersi_20260819_071525_341.pdf",
    "ozet": "916bd5620f5da502",
-   "boyut": 135726,
-   "uzak": {
-    "content-length": "3169172",
-    "last-modified": "Wed, 19 Aug 2026 04:15:25 GMT",
-    "etag": "\"1dd2f915bdcb714\""
-   }
+   "boyut": 135726
+  },
+  "Secmeli_Halk_Oyunlari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Halk_Oyunlari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/halk-oyunlari-dersi_20260819_071852_879.pdf",
+   "ozet": "df7d30e15a825b72",
+   "boyut": 72668
+  },
+  "Secmeli_Kurani_Kerim_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Kurani_Kerim_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/kuran-i-kerim-dersi_20260902_110338_869.pdf",
+   "ozet": "ed07342e26d21919",
+   "boyut": 319326
   },
   "Secmeli_Masal_ve_Destanlarimiz_Ogretim_Programi": {
    "yol": "kaynak/metin/Secmeli_Masal_ve_Destanlarimiz_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/masal-ve-destanlarimiz-dersi_20260819_072649_012.pdf",
    "ozet": "695e795996aa8305",
-   "boyut": 150405,
-   "uzak": {
-    "content-length": "2708621",
-    "last-modified": "Wed, 19 Aug 2026 04:26:49 GMT",
-    "etag": "\"1dd2f92f3b65e0d\""
-   }
+   "boyut": 150405
+  },
+  "Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/matematik-ve-bilim-uygulamalari-dersi_20260819_072414_252.pdf",
+   "ozet": "51774ef5bf6fdf3c",
+   "boyut": 433077
   },
   "Secmeli_Okuma_Becerileri_Ogretim_Programi": {
    "yol": "kaynak/metin/Secmeli_Okuma_Becerileri_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/okuma-becerileri-dersi_20260819_073100_538.pdf",
    "ozet": "d88da51fac1fc1e5",
-   "boyut": 92021,
-   "uzak": {
-    "content-length": "2505756",
-    "last-modified": "Wed, 19 Aug 2026 04:31:00 GMT",
-    "etag": "\"1dd2f93891ca61c\""
-   }
+   "boyut": 92021
+  },
+  "Secmeli_Oyun_Drama_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Oyun_Drama_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-drama_20260819_073410_377.pdf",
+   "ozet": "9823f70e19c1b987",
+   "boyut": 245097
+  },
+  "Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-geleneksel-oyunlar_20260819_073604_446.pdf",
+   "ozet": "a5775d96f1209583",
+   "boyut": 101709
+  },
+  "Secmeli_Oyun_Satranc_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Oyun_Satranc_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-santranc_20260819_073719_347.pdf",
+   "ozet": "3047544ccb903397",
+   "boyut": 148653
+  },
+  "Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/oyun-ve-oyun-etkinlikleri-dersi-zeka-oyunlari_20260819_073852_194.pdf",
+   "ozet": "ec7f720bcfa6cacc",
+   "boyut": 148169
+  },
+  "Secmeli_Peygamberimizin_Hayati_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Peygamberimizin_Hayati_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/peygamberimizin-hayati-dersi_20260902_110804_873.pdf",
+   "ozet": "cd6a8a722ae54655",
+   "boyut": 224983
+  },
+  "Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/proje-tasarimi-ve-uygulamalari-dersi_20260819_074038_150.pdf",
+   "ozet": "651a5f837c512b75",
+   "boyut": 147525
+  },
+  "Secmeli_Robotik_Kodlama_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Robotik_Kodlama_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/robotik-kodlama-dersi_20260819_074141_399.pdf",
+   "ozet": "6875a362ca2868c6",
+   "boyut": 120968
+  },
+  "Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/spor-ve-fiziki-etkinlikler-dersi_20260819_075451_091.pdf",
+   "ozet": "8d2b40290fe3bda2",
+   "boyut": 68826
+  },
+  "Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi": {
+   "yol": "kaynak/metin/Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/yapay-zeka-uygulamalari-dersi_20260819_080024_885.pdf",
+   "ozet": "c5dff93467ae5c46",
+   "boyut": 98288
   },
   "Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi": {
    "yol": "kaynak/metin/Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/yazarlik-ve-yazma-becerileri-dersi_20260819_080157_403.pdf",
    "ozet": "d71497568b7132a1",
-   "boyut": 128901,
-   "uzak": {
-    "content-length": "2540451",
-    "last-modified": "Wed, 19 Aug 2026 05:01:57 GMT",
-    "etag": "\"1dd2f97dc309323\""
-   }
+   "boyut": 128901
   },
   "Sosyal_Bilgiler_4-7_Ogretim_Programi": {
    "yol": "kaynak/metin/Sosyal_Bilgiler_4-7_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programsos4567Onayli.pdf",
    "ozet": "ccc7516108982814",
-   "boyut": 350048,
-   "uzak": {
-    "content-length": "4104069",
-    "last-modified": "Thu, 27 Jun 2024 20:05:29 GMT",
-    "etag": "\"1dac8cd5bbc5505\""
-   }
+   "boyut": 350048
   },
   "TC_Inkilap_Tarihi_ve_Ataturkculuk_8_Ogretim_Programi": {
    "yol": "kaynak/metin/TC_Inkilap_Tarihi_ve_Ataturkculuk_8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programink8Onayli.pdf",
    "ozet": "9c92a80594948688",
-   "boyut": 116382,
-   "uzak": {
-    "content-length": "2068240",
-    "last-modified": "Thu, 27 Jun 2024 20:03:54 GMT",
-    "etag": "\"1dac8cd22fd7e10\""
-   }
+   "boyut": 116382
   },
   "Teknoloji_ve_Tasarim_7-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Teknoloji_ve_Tasarim_7-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/teknoloji-tasarim-dersi-ogretim-programi-7-8.pdf",
    "ozet": "1196d3eeb6e3cda2",
-   "boyut": 287224,
-   "uzak": {
-    "content-length": "3256517",
-    "last-modified": "Tue, 19 May 2026 06:09:06 GMT",
-    "etag": "\"1dce755ffbc5dc5\""
-   }
+   "boyut": 287224
+  },
+  "Trafik_Guvenligi_Ogretim_Programi": {
+   "yol": "kaynak/metin/Trafik_Guvenligi_Ogretim_Programi.txt",
+   "url": "https://tymm.meb.gov.tr/assets/pdf/trafik-guvenligi-programi-tegm.pdf",
+   "ozet": "5c226fe82ac41021",
+   "boyut": 115894
   },
   "Turkce_5-8_Ogretim_Programi": {
    "yol": "kaynak/metin/Turkce_5-8_Ogretim_Programi.txt",
    "url": "https://tymm.meb.gov.tr/assets/pdf/2024programtur5678Onayli.pdf",
    "ozet": "51284e371542a462",
-   "boyut": 883774,
-   "uzak": {
-    "content-length": "8789254",
-    "last-modified": "Thu, 27 Jun 2024 20:06:14 GMT",
-    "etag": "\"1dac8cd76d32206\""
-   }
-  },
-  "beceri:kavramsal-beceriler": {
-   "url": "https://tymm.meb.gov.tr/beceriler/kavramsal-beceriler"
-  },
-  "beceri:egilimler": {
-   "url": "https://tymm.meb.gov.tr/beceriler/egilimler"
-  },
-  "beceri:sosyal-duygusal-ogrenme-becerileri": {
-   "url": "https://tymm.meb.gov.tr/beceriler/sosyal-duygusal-ogrenme-becerileri"
-  },
-  "beceri:erdem-deger-eylem-cercevesi": {
-   "url": "https://tymm.meb.gov.tr/beceriler/erdem-deger-eylem-cercevesi"
-  },
-  "beceri:okuryazarlik-becerileri": {
-   "url": "https://tymm.meb.gov.tr/beceriler/okuryazarlik-becerileri"
-  },
-  "beceri:fiziksel-beceriler": {
-   "url": "https://tymm.meb.gov.tr/beceriler/fiziksel-beceriler"
-  },
-  "beceri:alan-becerileri": {
-   "url": "https://tymm.meb.gov.tr/alan-becerileri"
+   "boyut": 883774
   }
  }
 }

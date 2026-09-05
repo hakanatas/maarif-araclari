@@ -176,6 +176,7 @@
     border-left: 2px solid var(--line); padding: 0.12rem 0 0.12rem 0.45rem; margin-bottom: 0.2rem; line-height: 1.4;
   }
   .ob-tema:hover { color: var(--petrol); border-color: var(--petrol); }
+  .ob-ckod { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 600; color: var(--petrol); }
 
   /* --- arama --- */
   input[type=search] {
@@ -432,7 +433,7 @@
 
 <div class="wrap">
   <header>
-    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Ortaokul</p>
+    <p class="eyebrow">Türkiye Yüzyılı Maarif Modeli · Temel Eğitim</p>
     <h1>Disiplinler Arası Harita</h1>
     <p class="sub">Üç görünüm. <b>Ders ağı</b> bütünü gösterir — hangi ders hangi dersle kaç temada ilişkilendiriliyor, köprüyü doğuran öğrenme çıktısı ve programdan alıntılanan cümle nedir; ağ olarak ya da matris olarak okunur. <b>Ortak beceriler</b> resmî köprünün ötesine geçer: iki programın aynı beceri, değer ya da eğilim kodunu nerede çalıştığını gösterir. <b>Yıl takvimi</b> ise günlük iş içindir: kendi temanızı bulun, aynı haftalarda diğer derslerde ne işlendiğini ve programın hangi dersle köprü kurmanızı istediğini görün.</p>
   </header>
@@ -467,7 +468,7 @@
     </div>
     <div class="panel" id="panel">
       <h2 id="p-baslik">Bir ders ya da bağlantı seçin</h2>
-      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir. Ayrıca 69 öğrenme çıktısının kendi uygulama metninde 90 köprü gerekçesi bulundu; 23 gerekçe ise temanın geneline ait bölümlerde (Köprü Kurma, Ön Değerlendirme vb.) geçtiği için belirli bir çıktıya bağlanmadı, "tema geneli" olarak işaretlendi. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
+      <p class="ipucu" id="p-ipucu">Grafikte bir düğüme ya da çizgiye tıklayın. Ağdaki oklar temaların "Disiplinler Arası İlişkiler" satırından gelir. Ayrıca 109 öğrenme çıktısının kendi uygulama metninde 134 köprü gerekçesi bulundu; 48 gerekçe ise temanın geneline ait bölümlerde (Köprü Kurma, Ön Değerlendirme vb.) geçtiği için belirli bir çıktıya bağlanmadı, "tema geneli" olarak işaretlendi. Fen Bilimleri ile Teknoloji-Tasarım programlarında tema düzeyi bölüm ayrıştırılamadığından bu iki ders ağda yalnız aldıkları bağlantılarla görünür — çıktı düzeyi köprüleri yine listelenir.</p>
       <div id="p-icerik"></div>
     </div>
   </div>
@@ -501,6 +502,7 @@
     </div>
     <div class="cips" id="ob-sinif" role="group" aria-label="Sınıf düzeyi"></div>
     <div class="cips" id="ob-tur" role="group" aria-label="Kod türü"></div>
+    <div class="cips" id="ob-duzey" role="group" aria-label="Düzey"></div>
     <div id="ob-sonuc"></div>
   </section>
 
@@ -530,24 +532,34 @@
   </section>
 
   <footer>
-    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Ağustos 2026). Çıktı düzeyi köprüler, bir dersin adının anıldığı cümlenin hangi bölgede geçtiğine bakılarak sınıflandırılır: cümle bir öğrenme çıktısının kendi uygulama metnindeyse o çıktıya bağlanır (69 çıktı, 90 bağ), temanın geneline ait bir bölümdeyse hiçbir çıktıya bağlanmaz (23 bağ). Bu ayrım olmadan tema geneli ifadeler listedeki son çıktıya yapışıp olmayan bir bağ üretiyordu. "Benzer temalar" ve <b>Ortak beceriler</b> sekmesi resmî bir ilişki değil, türetilmiş bir ölçüdür: temaların beceri-değer kodu kesişiminden hesaplanır ve nadirliğe göre sıralanır. <b>Roller ve kapsama</b> bölümündeki "veri boşluğu" rozeti, ilişkinin yokluğunu değil ayrıştırmanın yetmediğini gösterir. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a> · <a href="./beceri-panosu.html">Beceri Gelişim Panosu</a>. Bu sayfa resmî bir MEB ürünü değildir.
+    Kaynak: <a href="https://tymm.meb.gov.tr">tymm.meb.gov.tr</a> resmî öğretim programlarının "Disiplinler Arası İlişkiler" bölümleri (otomatik ayrıştırma, Eylül 2026). Çıktı düzeyi köprüler, bir dersin adının anıldığı cümlenin hangi bölgede geçtiğine bakılarak sınıflandırılır: cümle bir öğrenme çıktısının kendi uygulama metnindeyse o çıktıya bağlanır (109 çıktı, 134 bağ), temanın geneline ait bir bölümdeyse hiçbir çıktıya bağlanmaz (48 bağ). Bu ayrım olmadan tema geneli ifadeler listedeki son çıktıya yapışıp olmayan bir bağ üretiyordu. "Benzer temalar" ve <b>Ortak beceriler</b> sekmesi resmî bir ilişki değil, türetilmiş bir ölçüdür: temaların beceri-değer kodu kesişiminden hesaplanır ve nadirliğe göre sıralanır. <b>Roller ve kapsama</b> bölümündeki "veri boşluğu" rozeti, ilişkinin yokluğunu değil ayrıştırmanın yetmediğini gösterir. Diğer araçlar: <a href="./kod-pusulasi.html">Kod Pusulası</a> · <a href="./kazanim-gezgini.html">Kazanım Gezgini</a> · <a href="./ders-plani.html">Ders Planı Atölyesi</a> · <a href="./beceri-panosu.html">Beceri Gelişim Panosu</a>. Bu sayfa resmî bir MEB ürünü değildir.
   </footer>
 </div>
 
 <script>
 const VERI = {/*DATA*/};
 const TEMALAR = VERI.temalar, KOD = VERI.kodlar, CK = VERI.ciktiKopru || {}, TK = VERI.temaKopru || {};
+const ETIKET = VERI.ciktiEtiket || [];
 const $ = id => document.getElementById(id);
 const esc = s => { const d=document.createElement('span'); d.textContent=s??''; return d.innerHTML; };
 const KISA = {'T.C. İnkılap Tarihi ve Atatürkçülük':'İnkılap Tarihi','Din Kültürü ve Ahlak Bilgisi':'Din Kültürü',
  'Bilişim Teknolojileri ve Yazılım':'Bilişim Tek.','Görgü Kuralları ve Nezaket (Seçmeli)':'Görgü Kuralları (S)',
  'Masal ve Destanlarımız (Seçmeli)':'Masal-Destan (S)','Yazarlık ve Yazma Becerileri (Seçmeli)':'Yazarlık (S)',
- 'Okuma Becerileri (Seçmeli)':'Okuma Bec. (S)','İnsan Hakları ve Vatandaşlık':'İnsan Hakları (İlkokul)',
- 'Hayat Bilgisi':'Hayat Bilgisi (İlkokul)','Beden Eğitimi ve Spor':'Beden Eğitimi','Teknoloji ve Tasarım':'Teknoloji-Tasarım'};
+ 'Okuma Becerileri (Seçmeli)':'Okuma Bec. (S)',
+ 'Beden Eğitimi ve Spor':'Beden Eğitimi','Beden Eğitimi ve Oyun':'Beden Eğ. ve Oyun','Teknoloji ve Tasarım':'Teknoloji-Tasarım',
+ "Kur'an-ı Kerim (Seçmeli)":"Kur'an-ı Kerim (S)",'Peygamberimizin Hayatı (Seçmeli)':'Peyg. Hayatı (S)',
+ 'Ahlak ve Vatandaşlık Eğitimi (Seçmeli)':'Ahlak ve Vat. (S)','Afet Bilinci (Seçmeli)':'Afet Bilinci (S)',
+ 'Dijital Sanatlar (Seçmeli)':'Dijital San. (S)','Düşünme Eğitimi (Seçmeli)':'Düşünme Eğt. (S)',
+ 'Geleneksel Sanatlar (Seçmeli)':'Geleneksel San. (S)','Matematik ve Bilim Uygulamaları (Seçmeli)':'Mat-Bilim Uyg. (S)',
+ 'Oyun ve Oyun Etkinlikleri: Drama (Seçmeli)':'Drama (S)','Oyun ve Oyun Etkinlikleri: Zekâ Oyunları (Seçmeli)':'Zekâ Oyunları (S)',
+ 'Oyun ve Oyun Etkinlikleri: Satranç (Seçmeli)':'Satranç (S)','Oyun ve Oyun Etkinlikleri: Geleneksel Oyunlar (Seçmeli)':'Gel. Oyunlar (S)',
+ 'Robotik Kodlama (Seçmeli)':'Robotik Kod. (S)','Yapay Zekâ Uygulamaları (Seçmeli)':'Yapay Zekâ (S)',
+ 'Proje Tasarımı ve Uygulamaları (Seçmeli)':'Proje Tasarımı (S)','Spor ve Fiziki Etkinlikler (Seçmeli)':'Spor-Fiziki Etk. (S)',
+ 'Halk Oyunları (Seçmeli)':'Halk Oyunları (S)','İnsan Hakları, Vatandaşlık ve Demokrasi':'İnsan Hak. ve Demokrasi'};
 const kisa = d => KISA[d] || d;
 // matris sütun başlıkları dikey; parantezli ek kısaltılmazsa taşıyor
 const kisaBaslik = d => kisa(d).replace('(İlkokul)', '(İlk.)');
-const DIS = new Set(['Hayat Bilgisi','İnsan Hakları ve Vatandaşlık','İngilizce']);
+const DIS = new Set(['İngilizce','Trafik Güvenliği']);   // programı ayrıştırılmamış, yalnız atıf alan dersler
 const sinifEt = s => /^\d+$/.test(s) ? s+'. sınıf' : s;
 const KUCUK={'I':'ı','İ':'i','Ç':'ç','Ğ':'ğ','Ö':'ö','Ş':'ş','Ü':'ü'};
 const BAGLAC=new Set(['ve','ile','de','da','için','mi','mı']);
@@ -563,11 +575,7 @@ function trBaslik(s){
 // --- sınıf filtresi
 const FILTRELER = [
   {id:'*', ad:'Tümü', test: s=>true},
-  {id:'5', ad:'5. sınıf', test: s=>s==='5'},
-  {id:'6', ad:'6. sınıf', test: s=>s==='6'},
-  {id:'7', ad:'7. sınıf', test: s=>s==='7'},
-  {id:'8', ad:'8. sınıf', test: s=>s==='8'},
-  {id:'ilk', ad:'İlkokul (1-4)', test: s=>['1','2','3','4'].includes(s)},
+  ...['1','2','3','4','5','6','7','8'].map(n=>({id:n, ad:n+'. sınıf', test: s=>s===n})),
   {id:'sec', ad:'Seçmeli düzeyleri', test: s=>String(s).startsWith('Düzey')||s==='—'},
 ];
 let filtre = FILTRELER[0];
@@ -1047,7 +1055,7 @@ function grafOlaylari(){
 /* Ağın tamamı tek karede durunca "hangi bağ hangi yaşta kuruluyor" görünmüyor.
    Oynat, sınıf filtresini sırayla değiştirir; düğümler yerinde kaldığı için
    yalnız bağlar belirip söner — değişimin kendisi izlenebilir hâle gelir. */
-const OYNAT_SIRA = ['5', '6', '7', '8'];
+const OYNAT_SIRA = ['1', '2', '3', '4', '5', '6', '7', '8'];
 let oynatZaman = null, oynatIdx = 0;
 
 function oynatDurdur(){
@@ -1081,7 +1089,7 @@ function oynatBasla(){
 }
 
 // ============ MATRİS GÖRÜNÜMÜ ============
-/* 15 ders ve 70 yönlü kenar dairesel bir grafikte saç yumağına dönüyor: kenarlar
+/* 36 ders ve yüzlerce yönlü kenar dairesel bir grafikte saç yumağına dönüyor: kenarlar
    ortadan geçtiği için ne yön ne ağırlık okunabiliyor. Aynı veri matris olarak
    çizildiğinde her ders çifti kendi hücresinde durur; satır köprüyü kuran, sütun
    atıf alan derstir. Boş hücre de bilgidir: o yönde hiç bağ yok demektir. */
@@ -1286,7 +1294,7 @@ function blokBul(sinif, ders, temaNo){
 
 function cizTakvimSinif(){
   const kap = $('takvim-sinif'); kap.innerHTML = '<span class="et">Sınıf:</span>';
-  for(const s of ['5','6','7','8']){
+  for(const s of ['1','2','3','4','5','6','7','8']){
     const b = document.createElement('button');
     b.className = 'cip' + (tkSinif===s ? ' acik' : '');
     b.textContent = s + '. sınıf';
@@ -1402,7 +1410,8 @@ function cizBrifing(){
    TÜRETİLMİŞ bir ölçüdür — programda böyle bir ilişki yazmaz, kod kesişimi vardır. */
 let obA = '', obB = '', obSinif = '*';
 
-const OB_SINIF = [['*', 'Tüm sınıflar'], ['5', '5. sınıf'], ['6', '6. sınıf'], ['7', '7. sınıf'], ['8', '8. sınıf']];
+const OB_SINIF = [['*', 'Tüm sınıflar'],
+  ...['1','2','3','4','5','6','7','8'].map(n => [n, n + '. sınıf'])];
 
 /* Beş kod türü tek listede karışınca kesişim yorumlanamıyor: değer ve eğilim
    kodları neredeyse her derste var, asıl ayırt edici olan çoğu zaman kavramsal
@@ -1415,6 +1424,17 @@ const OB_TUR = [
   ['E',   'Eğilimler',           'eğilim'],
 ];
 let obTur = new Set(OB_TUR.map(x => x[0]));
+
+/* İki düzey var ve ikisi farklı veriden gelir. Tema düzeyi: kodlar 36 dersin
+   hepsinde tema başlığına yazılı. Çıktı düzeyi: yalnız 265 çıktının yanında
+   etiket var (204'ü Türkçe'de) — kapsamı dar ama adresi kesin. Boş sonucun
+   "ilişki yok" değil "bu derste etiket yok" demek olduğunu arayüz söyler. */
+let obDuzey = 'tema';
+const ETIKETLI = (function(){
+  const m = new Map();
+  for(const x of ETIKET){ m.set(x.d, (m.get(x.d) || 0) + 1); }
+  return m;
+})();
 function kodTuru(k){
   // önek uzunluğuna göre: SDB, OB, KB önce; D ve E tek harf
   for(const on of ['SDB', 'OB', 'KB', 'D', 'E']) if(k.startsWith(on)) return on;
@@ -1451,6 +1471,38 @@ function obHesapla(a, b){
                   || x.kod.localeCompare(y.kod, 'tr'));
 }
 
+function obCiktiHesapla(a, b){
+  const topla = ders => {
+    const m = new Map();
+    for(const x of ETIKET){
+      if(x.d !== ders) continue;
+      if(obSinif !== '*' && String(x.s) !== obSinif) continue;
+      for(const k of x.r){
+        if(!obTur.has(kodTuru(k))) continue;
+        if(!m.has(k)) m.set(k, []);
+        m.get(k).push(x);
+      }
+    }
+    return m;
+  };
+  const kodA = topla(a), kodB = topla(b);
+  const ortak = [...kodA.keys()].filter(k => kodB.has(k));
+  return ortak.map(k => ({
+    kod: k,
+    yaygin: (YAYGIN.get(k) || new Set()).size,
+    dersler: [...(YAYGIN.get(k) || new Set())].sort((x, y) => x.localeCompare(y, 'tr')),
+    a: kodA.get(k), b: kodB.get(k),
+  })).sort((x, y) => x.yaygin - y.yaygin
+                  || (y.a.length + y.b.length) - (x.a.length + x.b.length)
+                  || x.kod.localeCompare(y.kod, 'tr'));
+}
+
+function obCiktiDugme(x){
+  const bag = URLD.bag('kazanim-gezgini.html', { ders: x.d, sinif: x.s, tema: x.t, q: x.c });
+  return `<a class="ob-tema" href="${bag}" title="Kazanım Gezgini'nde aç">
+    <span class="ob-ckod">${esc(x.c)}</span> ${esc(x.st.length > 90 ? x.st.slice(0, 90) + '…' : x.st)}</a>`;
+}
+
 function obEnIyiCift(){
   const dersler = [...new Set(TEMALAR.map(t => t.ders))];
   let en = null;
@@ -1481,16 +1533,38 @@ function cizOrtak(){
     $('ob-sonuc').innerHTML = '<p class="ipucu">İki farklı ders seçin.</p>';
     return;
   }
-  const r = obHesapla(obA, obB);
+  const ciktiDuzeyi = obDuzey === 'cikti';
+
+  if(ciktiDuzeyi && (!ETIKETLI.has(obA) || !ETIKETLI.has(obB))){
+    const eksik = [obA, obB].filter(d => !ETIKETLI.has(d));
+    const varOlan = [...ETIKETLI.entries()].sort((x, y) => y[1] - x[1])
+      .map(([d, n]) => `${kisa(d)} (${n})`).join(' · ');
+    $('ob-sonuc').innerHTML = `<div class="uyari-kutu"><b>Bu düzey burada çalışmaz.</b>
+      ${eksik.map(d => '<b>' + esc(kisa(d)) + '</b>').join(' ve ')} programında beceri kodları
+      tek tek çıktılara değil, temanın başına yazılmış — çıktı düzeyinde etiket yok.
+      Bu bir eksik değil, programın yazım biçimi. Çıktı düzeyi etiket taşıyan dersler:
+      ${esc(varOlan)}. Diğer bütün dersler için <b>Temalar</b> düzeyini kullanın.</div>`;
+    return;
+  }
+
+  const r = ciktiDuzeyi ? obCiktiHesapla(obA, obB) : obHesapla(obA, obB);
   const nadir = r.filter(x => x.yaygin <= 5);
-  const goster = (nadir.length ? nadir : r).slice(0, 25);
+  // çıktı düzeyi zaten seyrek: nadirlik elemesi uygulanmaz, hepsi gösterilir
+  const goster = (ciktiDuzeyi ? r : (nadir.length ? nadir : r)).slice(0, 25);
   const toplamKod = [...YAYGIN.keys()].filter(k => obTur.has(kodTuru(k))).length;
   const turAd = obTur.size === OB_TUR.length ? 'kod'
     : OB_TUR.filter(([id]) => obTur.has(id)).map(x => x[2]).join(' + ') + ' kodu';
 
+  if(!r.length){
+    $('ob-sonuc').innerHTML = `<p class="ipucu"><b>${esc(kisa(obA))}</b> ile <b>${esc(kisa(obB))}</b> ${
+      ciktiDuzeyi ? 'öğrenme çıktısı düzeyinde, seçili tür ve sınıfta' : 'seçili tür ve sınıfta'} hiç kod paylaşmıyor.${
+      ciktiDuzeyi ? ' Tema düzeyini de deneyin; oradaki kapsam çok daha geniş.' : ''}</p>`;
+    return;
+  }
+
   let h = `<p class="ob-ozet"><b>${esc(kisa(obA))}</b> ile <b>${esc(kisa(obB))}</b>
-      ${obSinif === '*' ? '' : esc(obSinif) + '. sınıfta '}<b>${r.length}</b> ${esc(turAd)} paylaşıyor
-      (bu türlerde dolaşan ${toplamKod} kodun ${toplamKod ? Math.round(r.length / toplamKod * 100) : 0}%'i).
+      ${obSinif === '*' ? '' : esc(obSinif) + '. sınıfta '}${ciktiDuzeyi ? '<b>öğrenme çıktısı düzeyinde</b> ' : ''}<b>${r.length}</b> ${esc(turAd)} paylaşıyor${ciktiDuzeyi ? '' : `
+      (bu türlerde dolaşan ${toplamKod} kodun ${toplamKod ? Math.round(r.length / toplamKod * 100) : 0}%'i)`}.
       Aşağıda ${goster.length} tanesi var; sıralama <b>nadirlikten</b> yoğuna:
       az derste geçen bir kod, ortak çalışma için daha ayırt edici bir gerekçedir.</p>`;
 
@@ -1508,8 +1582,8 @@ function cizOrtak(){
         </div>
         ${b && b.d ? `<p class="ob-tanim">${esc(b.d)}</p>` : ''}
         <div class="ob-iki">
-          <div><h4>${esc(kisa(obA))}</h4>${x.a.map(obTemaDugme).join('')}</div>
-          <div><h4>${esc(kisa(obB))}</h4>${x.b.map(obTemaDugme).join('')}</div>
+          <div><h4>${esc(kisa(obA))}</h4>${x.a.map(ciktiDuzeyi ? obCiktiDugme : obTemaDugme).join('')}</div>
+          <div><h4>${esc(kisa(obB))}</h4>${x.b.map(ciktiDuzeyi ? obCiktiDugme : obTemaDugme).join('')}</div>
         </div></div>`;
     }
     h += '</div>';
@@ -1517,6 +1591,19 @@ function cizOrtak(){
       h += `<p class="ipucu">${r.length - goster.length} kod daha paylaşılıyor; hepsi ${goster[goster.length-1].yaygin} ya da daha çok derste geçtiği için ayırt edici sayılmadı.</p>`;
   }
   $('ob-sonuc').innerHTML = h;
+}
+
+const OB_DUZEY = [['tema', 'Temalar'], ['cikti', 'Öğrenme çıktıları']];
+function cizObDuzey(){
+  const kap = $('ob-duzey'); kap.innerHTML = '<span class="et">Düzey:</span>';
+  for(const [id, ad] of OB_DUZEY){
+    const b = document.createElement('button');
+    b.className = 'cip' + (obDuzey === id ? ' acik' : '');
+    b.textContent = ad;
+    b.setAttribute('aria-pressed', String(obDuzey === id));
+    b.onclick = () => { obDuzey = id; cizObDuzey(); cizOrtak(); durumYaz(); };
+    kap.appendChild(b);
+  }
 }
 
 function cizObTur(){
@@ -1551,7 +1638,7 @@ function cizObSinif(){
 
 
 // ============ ARAMA + ZÜMRE RAPORU ============
-/* Haritada 274 tema ve yüzlerce program alıntısı var; hepsini gezerek aramak
+/* Haritada 539 tema ve yüzlerce program alıntısı var; hepsini gezerek aramak
    mümkün değil. Burası tek bir metin kutusundan bütün katmanlara bakar: tema adı,
    beceri kodu ve adı, bir de köprüyü gerekçelendiren program cümleleri.
    Zümre raporu ise toplantıya götürülecek çıktıdır: bir dersin bütün köprüleri,
@@ -1734,7 +1821,8 @@ function durumYaz(){
   }
   if(!$('gorunum-ortak').hidden){
     URLD.yaz({ g: 'ortak', a: obA, b: obB, s: obSinif !== '*' ? obSinif : '',
-               t: obTur.size !== OB_TUR.length ? [...obTur].join('.') : '' });
+               t: obTur.size !== OB_TUR.length ? [...obTur].join('.') : '',
+               dz: obDuzey !== 'tema' ? obDuzey : '' });
     return;
   }
   const takvimMi = !$('gorunum-takvim').hidden;
@@ -1746,7 +1834,7 @@ function durumYaz(){
 function durumOku(){
   const d = URLD.oku();
   if (d.g === 'takvim') {
-    if (d.sinif && ['5','6','7','8'].includes(d.sinif)) tkSinif = d.sinif;
+    if (d.sinif && ['1','2','3','4','5','6','7','8'].includes(d.sinif)) tkSinif = d.sinif;
     cizTakvimSinif(); cizTakvim();
     if (d.ders && d.tema) {
       tkSecili = TEMALAR.find(t=>t.ders===d.ders && String(t.sinif)===String(tkSinif) && t.temaNo===d.tema) || null;
@@ -1765,12 +1853,13 @@ function durumOku(){
     const var_ = ad => TEMALAR.some(t => t.ders === ad);
     if (d.a && var_(d.a)) obA = d.a;
     if (d.b && var_(d.b)) obB = d.b;
-    if (d.s && ['5','6','7','8'].includes(d.s)) obSinif = d.s;
+    if (d.s && ['1','2','3','4','5','6','7','8'].includes(d.s)) obSinif = d.s;
     if (d.t) {
       const sec = d.t.split('.').filter(x => OB_TUR.some(([id]) => id === x));
       if (sec.length) obTur = new Set(sec);
     }
-    cizObSinif(); cizObTur(); cizOrtak(); sekmeGec('ortak');
+    if (d.dz === 'cikti') obDuzey = 'cikti';
+    cizObSinif(); cizObTur(); cizObDuzey(); cizObDuzey(); cizOrtak(); sekmeGec('ortak');
     return;
   }
   const f = FILTRELER.find(x=>x.id===d.f);

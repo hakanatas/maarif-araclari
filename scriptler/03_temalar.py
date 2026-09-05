@@ -13,7 +13,7 @@ DIR = os.path.join(KAYNAK, 'metin')
 PROGRAMLAR = [
  ('Turkce_5-8_Ogretim_Programi', 'Türkçe', r'T\.[DOKY]\.([1-8])\.\d{1,2}', 'sirali'),
  ('Matematik_5-8_Ogretim_Programi', 'Matematik', r'MAT\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
- ('Fen_Bilimleri_3-8_Ogretim_Programi', 'Fen Bilimleri', r'FB\.([1-8])\.(\d{1,2})\.\d{1,2}\.\d{1,2}', 'kod'),
+ ('Fen_Bilimleri_3-8_Ogretim_Programi', 'Fen Bilimleri', r'FB\.([1-8])\.(\d{1,2})\.\d{1,2}(?:\.\d{1,2})?', 'kod'),
  ('Sosyal_Bilgiler_4-7_Ogretim_Programi', 'Sosyal Bilgiler', r'SB\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
  ('Din_Kulturu_ve_Ahlak_Bilgisi_4-8_Ogretim_Programi', 'Din Kültürü ve Ahlak Bilgisi', r'DKAB\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
  ('TC_Inkilap_Tarihi_ve_Ataturkculuk_8_Ogretim_Programi', 'T.C. İnkılap Tarihi ve Atatürkçülük', r'İTA\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
@@ -26,6 +26,32 @@ PROGRAMLAR = [
  ('Secmeli_Masal_ve_Destanlarimiz_Ogretim_Programi', 'Masal ve Destanlarımız (Seçmeli)', r'MD\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
  ('Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi', 'Yazarlık ve Yazma Becerileri (Seçmeli)', r'YYB\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
  ('Secmeli_Okuma_Becerileri_Ogretim_Programi', 'Okuma Becerileri (Seçmeli)', r'OB\.(\d{1,2})\.\d{1,2}', 'tek'),
+ # --- ilkokul (Eylül 2026 genişlemesi)
+ ('Ilkokul_Turkce_1-4_Ogretim_Programi', 'Türkçe', r'T\.[DOKY]\.([1-8])\.\d{1,2}', 'sirali'),
+ ('Ilkokul_Matematik_1-4_Ogretim_Programi', 'Matematik', r'MAT\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Hayat_Bilgisi_Ogretim_Programi', 'Hayat Bilgisi', r'HB\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi',
+  'İnsan Hakları, Vatandaşlık ve Demokrasi', r'İHVD\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Beden_Egitimi_ve_Oyun_Ogretim_Programi', 'Beden Eğitimi ve Oyun', r'BEO\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ # --- site tarama genişlemesi (Eylül 2026)
+ ('Trafik_Guvenligi_Ogretim_Programi', 'Trafik Güvenliği', r'TG\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Secmeli_Kurani_Kerim_Ogretim_Programi', "Kur'an-ı Kerim (Seçmeli)", r'KK\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Secmeli_Peygamberimizin_Hayati_Ogretim_Programi', 'Peygamberimizin Hayatı (Seçmeli)', r'PH\.([1-8])\.(\d{1,2})\.\d{1,2}', 'kod'),
+ ('Secmeli_Afet_Bilinci_Ogretim_Programi', 'Afet Bilinci (Seçmeli)', r'AB\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi', 'Ahlak ve Vatandaşlık Eğitimi (Seçmeli)', r'AVE\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Dijital_Sanatlar_Ogretim_Programi', 'Dijital Sanatlar (Seçmeli)', r'DS\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Dusunme_Egitimi_Ogretim_Programi', 'Düşünme Eğitimi (Seçmeli)', r'DE\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Geleneksel_Sanatlar_Ogretim_Programi', 'Geleneksel Sanatlar (Seçmeli)', r'GS\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi', 'Matematik ve Bilim Uygulamaları (Seçmeli)', r'MU\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Oyun_Drama_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Drama (Seçmeli)', r'OOED\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Zekâ Oyunları (Seçmeli)', r'OOEZO\.([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Robotik_Kodlama_Ogretim_Programi', 'Robotik Kodlama (Seçmeli)', r'RK\.?([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi', 'Yapay Zekâ Uygulamaları (Seçmeli)', r'YZU\.?([1-3])\.(\d{1,2})\.\d{1,2}', 'kod_duzey'),
+ ('Secmeli_Oyun_Satranc_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Satranç (Seçmeli)', r'OOEST\.(\d{1,2})\.\d{1,2}', 'tek'),
+ ('Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi', 'Oyun ve Oyun Etkinlikleri: Geleneksel Oyunlar (Seçmeli)', r'OOEGO\.(\d{1,2})\.\d{1,2}', 'tek'),
+ ('Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi', 'Proje Tasarımı ve Uygulamaları (Seçmeli)', r'PTU\.(\d{1,2})\.\d{1,2}', 'tek'),
+ ('Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi', 'Spor ve Fiziki Etkinlikler (Seçmeli)', r'SFE\.(\d{1,2})\.\d{1,2}', 'tek'),
+ ('Secmeli_Halk_Oyunlari_Ogretim_Programi', 'Halk Oyunları (Seçmeli)', r'HO\.(\d{1,2})\.\d{1,2}', 'tek'),
 ]
 
 ETIKETLER = [
@@ -116,7 +142,14 @@ for stem, ders, kod_pat, mod in PROGRAMLAR:
         onsoz = metin[bas:saat_poz]
 
         # gerçek tema bloğu mu? (süre tabloları da DERS SAATİ içerir; dev bloklar örnek-yapı sayfalarıdır)
-        if 'Temel Kabuller' not in blok and 'Köprü Kurma' not in blok:
+        # 2026 seçmelilerinde döngü kısaltılmış: Temel Kabuller / Köprü Kurma yok,
+        # ama ÖĞRENME ÇIKTILARI VE SÜREÇ BİLEŞENLERİ bloğu var. Süre tabloları
+        # "Öğrenme Çıktıları Sayısı" yazar, SÜREÇ BİLEŞENLERİ demez.
+        # Satranç/Zekâ Oyunları PDF'lerinde başlıklar sütunlara bölündüğünden
+        # "SÜREÇ BİLEŞENLERİ" ifadesi bile bütünleşmiyor; İçerik Çerçevesi ve
+        # Öğrenme Kanıtları başlıkları da blok kanıtı sayılır.
+        if not any(x in blok for x in ('Temel Kabuller', 'Köprü Kurma', 'SÜREÇ BİLEŞENLERİ',
+                                       'İÇERİK ÇERÇEVESİ', 'Öğrenme Kanıtları', 'ÖĞRENME KANITLARI')):
             continue
         if len(blok) > 60000:
             continue
@@ -167,7 +200,8 @@ for stem, ders, kod_pat, mod in PROGRAMLAR:
         sm = re.match(r'\s*(\d{1,3})', parcalar.get('saat',''))
         if sm: saat = sm.group(1)
 
-        tam_kod_re = re.compile(kod_pat.replace('(', '(?:'))
+        # yalnız yakalayan grupları çevir; desendeki (?: zaten yakalamıyor
+        tam_kod_re = re.compile(re.sub(r'\((?!\?)', '(?:', kod_pat))
         blok_kodlar = sorted(set(m2.group(0) for m2 in tam_kod_re.finditer(blok)))
         kayit = {'ders': ders, 'sinif': sinif, 'temaNo': temaNo, 'tema': tema, 'saat': saat, 'kodlar': blok_kodlar}
         for k in ['alan','kavramsal','egilimler','sdb','degerler','okuryazarlik','disiplinler','beceriler',

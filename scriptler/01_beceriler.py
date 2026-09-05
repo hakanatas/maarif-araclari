@@ -257,6 +257,31 @@ DERSLER = {
  'Secmeli_Masal_ve_Destanlarimiz_Ogretim_Programi': 'Masal-Destan (S)',
  'Secmeli_Okuma_Becerileri_Ogretim_Programi': 'Okuma Bec. (S)',
  'Secmeli_Yazarlik_ve_Yazma_Becerileri_Ogretim_Programi': 'Yazarlık (S)',
+ # --- ilkokul (Eylül 2026 genişlemesi)
+ 'Ilkokul_Turkce_1-4_Ogretim_Programi': 'Türkçe',
+ 'Ilkokul_Matematik_1-4_Ogretim_Programi': 'Matematik',
+ 'Hayat_Bilgisi_Ogretim_Programi': 'Hayat Bilgisi',
+ 'Insan_Haklari_Vatandaslik_ve_Demokrasi_Ogretim_Programi': 'İnsan Hak. Vat. Dem.',
+ 'Beden_Egitimi_ve_Oyun_Ogretim_Programi': 'Beden Eğitimi ve Oyun',
+ # --- site tarama genişlemesi (Eylül 2026)
+ 'Trafik_Guvenligi_Ogretim_Programi': 'Trafik Güvenliği',
+ 'Secmeli_Kurani_Kerim_Ogretim_Programi': "Kur'an-ı Kerim (S)",
+ 'Secmeli_Peygamberimizin_Hayati_Ogretim_Programi': 'Peygamberimizin Hayatı (S)',
+ 'Secmeli_Afet_Bilinci_Ogretim_Programi': 'Afet Bilinci (S)',
+ 'Secmeli_Ahlak_ve_Vatandaslik_Egitimi_Ogretim_Programi': 'Ahlak ve Vat. Eğitimi (S)',
+ 'Secmeli_Dijital_Sanatlar_Ogretim_Programi': 'Dijital Sanatlar (S)',
+ 'Secmeli_Dusunme_Egitimi_Ogretim_Programi': 'Düşünme Eğitimi (S)',
+ 'Secmeli_Geleneksel_Sanatlar_Ogretim_Programi': 'Geleneksel Sanatlar (S)',
+ 'Secmeli_Matematik_ve_Bilim_Uygulamalari_Ogretim_Programi': 'Mat. ve Bilim Uyg. (S)',
+ 'Secmeli_Oyun_Drama_Ogretim_Programi': 'Oyun Etk.: Drama (S)',
+ 'Secmeli_Oyun_Zeka_Oyunlari_Ogretim_Programi': 'Oyun Etk.: Zekâ Oyunları (S)',
+ 'Secmeli_Oyun_Satranc_Ogretim_Programi': 'Oyun Etk.: Satranç (S)',
+ 'Secmeli_Oyun_Geleneksel_Oyunlar_Ogretim_Programi': 'Oyun Etk.: Geleneksel (S)',
+ 'Secmeli_Robotik_Kodlama_Ogretim_Programi': 'Robotik Kodlama (S)',
+ 'Secmeli_Yapay_Zeka_Uygulamalari_Ogretim_Programi': 'Yapay Zekâ Uyg. (S)',
+ 'Secmeli_Proje_Tasarimi_ve_Uygulamalari_Ogretim_Programi': 'Proje Tasarımı (S)',
+ 'Secmeli_Spor_ve_Fiziki_Etkinlikler_Ogretim_Programi': 'Spor ve Fiziki Etk. (S)',
+ 'Secmeli_Halk_Oyunlari_Ogretim_Programi': 'Halk Oyunları (S)',
 }
 # İngilizce programları kodları İngilizce adlarıyla kullanır
 ENG_MAP = {'KB': 'CS', 'SDB': 'SELS', 'D': 'V', 'E': 'D'}
@@ -270,7 +295,10 @@ def _say(kod, metin):
     pat = re.compile(r'(?<![A-Za-z0-9.])' + re.escape(kod) + r'(?![0-9])(?!\.[0-9])(?!\.?SB)(?!\.?G\d)')
     return len(pat.findall(metin))
 
-metinler = {ad: _oku(stem) for stem, ad in DERSLER.items()}
+# aynı ders adına birden çok belge düşebilir (Türkçe 1-4 + 5-8): metinleri birleştir
+metinler = {}
+for stem, ad in DERSLER.items():
+    metinler[ad] = metinler.get(ad, '') + '\n' + _oku(stem)
 eng = ''.join(_oku(s) for s in ENG_DOSYA)
 
 kullanim = {}
